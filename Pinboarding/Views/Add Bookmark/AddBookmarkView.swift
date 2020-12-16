@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct AddPostView: View {
+struct AddBookmarkView: View {
 
     // MARK: - Properties
 
-     @ObservedObject var viewModel: AddPostViewModel
+     @ObservedObject var viewModel: AddBookmarkViewModel
 
     // MARK: - Life cycle
 
@@ -30,22 +30,21 @@ struct AddPostView: View {
         }
         .padding()
     }
-
-    // MARK: - Private
 }
 
 // MARK: - PreviewProvider
 
-struct AddPostView_Previews: PreviewProvider {
+struct AddBookmarkView_Previews: PreviewProvider {
+
     static var previews: some View {
         Group {
-            AddPostView(
-                viewModel: AddPostViewModel()
+            AddBookmarkView(
+                viewModel: AddBookmarkViewModel()
             )
             .preferredColorScheme(.light)
 
-            AddPostView(
-                viewModel: AddPostViewModel()
+            AddBookmarkView(
+                viewModel: AddBookmarkViewModel()
             )
             .preferredColorScheme(.dark)
         }

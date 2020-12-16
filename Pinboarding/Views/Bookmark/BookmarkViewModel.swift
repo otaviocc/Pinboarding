@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class PostViewModel {
+final class BookmarkViewModel {
 
     // MARK: - Properties
 
@@ -20,8 +20,4 @@ final class PostViewModel {
         self.description = description
         self.tags = tags
     }
-
-    // MARK: - Public
-
-    // MARK: - Private
 }

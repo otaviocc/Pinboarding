@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct PostView: View {
+struct BookmarkView: View {
 
     // MARK: - Properties
 
-    let viewModel: PostViewModel
+    let viewModel: BookmarkViewModel
 
     // MARK: - Life cycle
 
@@ -32,23 +32,23 @@ struct PostView: View {
 
 // MARK: - PreviewProvider
 
-struct PostView_Previews: PreviewProvider {
+struct BookmarkView_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            PostView(viewModel: makePostViewModelViewModel())
+            BookmarkView(viewModel: makeBookmarkViewModel())
                 .frame(width: 320)
                 .preferredColorScheme(.light)
 
-            PostView(viewModel: makePostViewModelViewModel())
+            BookmarkView(viewModel: makeBookmarkViewModel())
                 .frame(width: 320)
                 .preferredColorScheme(.dark)
         }
         .previewLayout(.sizeThatFits)
     }
 
-    static func makePostViewModelViewModel() -> PostViewModel {
-        PostViewModel(
+    private static func makeBookmarkViewModel() -> BookmarkViewModel {
+        BookmarkViewModel(
             title: "Lorem Ipsum",
             description: "Nulla purus urna, fermentum eu tristique non, bibendum nec purus.",
             tags: "tag1, tag2, tag3, tag4, tag5"

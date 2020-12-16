@@ -16,13 +16,12 @@ struct LoginView: View {
         }
         .padding()
     }
-
-    // MARK: - Private
 }
 
 // MARK: - PreviewProvider
 
 struct LoginView_Previews: PreviewProvider {
+
     static var previews: some View {
         Group {
             LoginView(viewModel: LoginViewModel())

@@ -7,35 +7,47 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3A5C258A07CA00227428 /* BookmarksView.swift */; };
+		AE0F3A5F258A07CA00227428 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3A5D258A07CA00227428 /* BookmarksViewModel.swift */; };
+		AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B10258A0F9200227428 /* SidebarView.swift */; };
+		AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B11258A0F9200227428 /* SidebarViewModel.swift */; };
+		AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B16258A339C00227428 /* SidebarItemView.swift */; };
+		AE0F3B19258A339C00227428 /* SidebarItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B17258A339C00227428 /* SidebarItemViewModel.swift */; };
 		AE317AF92588FD9D00B7420A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF72588FD9D00B7420A /* LoginView.swift */; };
 		AE317AFA2588FD9D00B7420A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF82588FD9D00B7420A /* LoginViewModel.swift */; };
 		AE317AFE2589018F00B7420A /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AFD2589018F00B7420A /* ButtonStyle.swift */; };
 		AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793003258675DB00A68947 /* PinboardingApp.swift */; };
-		AE793006258675DB00A68947 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793005258675DB00A68947 /* ContentView.swift */; };
+		AE793006258675DB00A68947 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793005258675DB00A68947 /* MainView.swift */; };
 		AE793008258675DC00A68947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE793007258675DC00A68947 /* Assets.xcassets */; };
 		AE79300B258675DC00A68947 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE79300A258675DC00A68947 /* Preview Assets.xcassets */; };
-		AEBFB5062589D9FF001521A2 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* PostView.swift */; };
-		AEBFB5072589D9FF001521A2 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* PostViewModel.swift */; };
-		AEF4F4782589529200FF8F45 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4762589529200FF8F45 /* AddPostView.swift */; };
-		AEF4F4792589529200FF8F45 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddPostViewModel.swift */; };
+		AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* BookmarkView.swift */; };
+		AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */; };
+		AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */; };
+		AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */; };
 		AEFAAB4B25883BE2001DB745 /* PinboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = AEFAAB4A25883BE2001DB745 /* PinboardKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE0F3A5C258A07CA00227428 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
+		AE0F3A5D258A07CA00227428 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
+		AE0F3B10258A0F9200227428 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
+		AE0F3B11258A0F9200227428 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
+		AE0F3B16258A339C00227428 /* SidebarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItemView.swift; sourceTree = "<group>"; };
+		AE0F3B17258A339C00227428 /* SidebarItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItemViewModel.swift; sourceTree = "<group>"; };
 		AE317AF72588FD9D00B7420A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AE317AF82588FD9D00B7420A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AE317AFD2589018F00B7420A /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		AE793000258675DB00A68947 /* Pinboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE793003258675DB00A68947 /* PinboardingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardingApp.swift; sourceTree = "<group>"; };
-		AE793005258675DB00A68947 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		AE793005258675DB00A68947 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		AE793007258675DC00A68947 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AE79300A258675DC00A68947 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE79300C258675DC00A68947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE79300D258675DC00A68947 /* Pinboarding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pinboarding.entitlements; sourceTree = "<group>"; };
-		AEBFB5042589D9FF001521A2 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
-		AEBFB5052589D9FF001521A2 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
-		AEF4F4762589529200FF8F45 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
-		AEF4F4772589529200FF8F45 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
+		AEBFB5042589D9FF001521A2 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
+		AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
+		AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkView.swift; sourceTree = "<group>"; };
+		AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +75,68 @@
 				AE317AFD2589018F00B7420A /* ButtonStyle.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AE3675FF258AAF6700F57A3C /* Add Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */,
+				AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */,
+			);
+			path = "Add Bookmark";
+			sourceTree = "<group>";
+		};
+		AE367600258AAF7600F57A3C /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				AE317AF72588FD9D00B7420A /* LoginView.swift */,
+				AE317AF82588FD9D00B7420A /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		AE367601258AAF7E00F57A3C /* Sidebar Item */ = {
+			isa = PBXGroup;
+			children = (
+				AE0F3B16258A339C00227428 /* SidebarItemView.swift */,
+				AE0F3B17258A339C00227428 /* SidebarItemViewModel.swift */,
+			);
+			path = "Sidebar Item";
+			sourceTree = "<group>";
+		};
+		AE367602258AAF8600F57A3C /* Sidebar */ = {
+			isa = PBXGroup;
+			children = (
+				AE0F3B10258A0F9200227428 /* SidebarView.swift */,
+				AE0F3B11258A0F9200227428 /* SidebarViewModel.swift */,
+			);
+			path = Sidebar;
+			sourceTree = "<group>";
+		};
+		AE367604258AAF8F00F57A3C /* Bookmarks */ = {
+			isa = PBXGroup;
+			children = (
+				AE0F3A5C258A07CA00227428 /* BookmarksView.swift */,
+				AE0F3A5D258A07CA00227428 /* BookmarksViewModel.swift */,
+			);
+			path = Bookmarks;
+			sourceTree = "<group>";
+		};
+		AE367606258AAF9B00F57A3C /* Bookmark */ = {
+			isa = PBXGroup;
+			children = (
+				AEBFB5042589D9FF001521A2 /* BookmarkView.swift */,
+				AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */,
+			);
+			path = Bookmark;
+			sourceTree = "<group>";
+		};
+		AE494F40258ABE5200CFECB6 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AE793005258675DB00A68947 /* MainView.swift */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 		AE792FF7258675DB00A68947 = {
@@ -97,13 +171,13 @@
 		AE7930152586837900A68947 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				AEF4F4762589529200FF8F45 /* AddPostView.swift */,
-				AEF4F4772589529200FF8F45 /* AddPostViewModel.swift */,
-				AE793005258675DB00A68947 /* ContentView.swift */,
-				AE317AF72588FD9D00B7420A /* LoginView.swift */,
-				AE317AF82588FD9D00B7420A /* LoginViewModel.swift */,
-				AEBFB5042589D9FF001521A2 /* PostView.swift */,
-				AEBFB5052589D9FF001521A2 /* PostViewModel.swift */,
+				AE3675FF258AAF6700F57A3C /* Add Bookmark */,
+				AE367606258AAF9B00F57A3C /* Bookmark */,
+				AE367604258AAF8F00F57A3C /* Bookmarks */,
+				AE367600258AAF7600F57A3C /* Login */,
+				AE494F40258ABE5200CFECB6 /* Main */,
+				AE367602258AAF8600F57A3C /* Sidebar */,
+				AE367601258AAF7E00F57A3C /* Sidebar Item */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -210,14 +284,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE317AFA2588FD9D00B7420A /* LoginViewModel.swift in Sources */,
+				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
 				AE317AF92588FD9D00B7420A /* LoginView.swift in Sources */,
-				AEBFB5062589D9FF001521A2 /* PostView.swift in Sources */,
-				AE793006258675DB00A68947 /* ContentView.swift in Sources */,
+				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,
+				AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */,
+				AE793006258675DB00A68947 /* MainView.swift in Sources */,
 				AE317AFE2589018F00B7420A /* ButtonStyle.swift in Sources */,
-				AEF4F4782589529200FF8F45 /* AddPostView.swift in Sources */,
-				AEBFB5072589D9FF001521A2 /* PostViewModel.swift in Sources */,
+				AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */,
+				AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */,
+				AE0F3A5F258A07CA00227428 /* BookmarksViewModel.swift in Sources */,
 				AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */,
-				AEF4F4792589529200FF8F45 /* AddPostViewModel.swift in Sources */,
+				AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */,
+				AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */,
+				AE0F3B19258A339C00227428 /* SidebarItemViewModel.swift in Sources */,
+				AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

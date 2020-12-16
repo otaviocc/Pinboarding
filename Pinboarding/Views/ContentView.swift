@@ -1,6 +1,4 @@
 import SwiftUI
-import PinboardKit
-import Combine
 
 struct ContentView: View {
 

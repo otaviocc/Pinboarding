@@ -7,14 +7,24 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE317AF92588FD9D00B7420A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF72588FD9D00B7420A /* LoginView.swift */; };
+		AE317AFA2588FD9D00B7420A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF82588FD9D00B7420A /* LoginViewModel.swift */; };
+		AE317AFE2589018F00B7420A /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AFD2589018F00B7420A /* ButtonStyle.swift */; };
 		AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793003258675DB00A68947 /* PinboardingApp.swift */; };
 		AE793006258675DB00A68947 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793005258675DB00A68947 /* ContentView.swift */; };
 		AE793008258675DC00A68947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE793007258675DC00A68947 /* Assets.xcassets */; };
 		AE79300B258675DC00A68947 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE79300A258675DC00A68947 /* Preview Assets.xcassets */; };
+		AEBFB5062589D9FF001521A2 /* PostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* PostView.swift */; };
+		AEBFB5072589D9FF001521A2 /* PostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* PostViewModel.swift */; };
+		AEF4F4782589529200FF8F45 /* AddPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4762589529200FF8F45 /* AddPostView.swift */; };
+		AEF4F4792589529200FF8F45 /* AddPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddPostViewModel.swift */; };
 		AEFAAB4B25883BE2001DB745 /* PinboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = AEFAAB4A25883BE2001DB745 /* PinboardKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE317AF72588FD9D00B7420A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AE317AF82588FD9D00B7420A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AE317AFD2589018F00B7420A /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		AE793000258675DB00A68947 /* Pinboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE793003258675DB00A68947 /* PinboardingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardingApp.swift; sourceTree = "<group>"; };
 		AE793005258675DB00A68947 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -22,6 +32,10 @@
 		AE79300A258675DC00A68947 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE79300C258675DC00A68947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE79300D258675DC00A68947 /* Pinboarding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pinboarding.entitlements; sourceTree = "<group>"; };
+		AEBFB5042589D9FF001521A2 /* PostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostView.swift; sourceTree = "<group>"; };
+		AEBFB5052589D9FF001521A2 /* PostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostViewModel.swift; sourceTree = "<group>"; };
+		AEF4F4762589529200FF8F45 /* AddPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostView.swift; sourceTree = "<group>"; };
+		AEF4F4772589529200FF8F45 /* AddPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPostViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +55,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE317AFC2589017400B7420A /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE317AFD2589018F00B7420A /* ButtonStyle.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AE792FF7258675DB00A68947 = {
@@ -65,6 +87,7 @@
 			children = (
 				AE793003258675DB00A68947 /* PinboardingApp.swift */,
 				AE7930162586838700A68947 /* Assets */,
+				AE317AFC2589017400B7420A /* Extensions */,
 				AE793017258683C800A68947 /* Supporting Files */,
 				AE7930152586837900A68947 /* Views */,
 			);
@@ -74,7 +97,13 @@
 		AE7930152586837900A68947 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				AEF4F4762589529200FF8F45 /* AddPostView.swift */,
+				AEF4F4772589529200FF8F45 /* AddPostViewModel.swift */,
 				AE793005258675DB00A68947 /* ContentView.swift */,
+				AE317AF72588FD9D00B7420A /* LoginView.swift */,
+				AE317AF82588FD9D00B7420A /* LoginViewModel.swift */,
+				AEBFB5042589D9FF001521A2 /* PostView.swift */,
+				AEBFB5052589D9FF001521A2 /* PostViewModel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -180,8 +209,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE317AFA2588FD9D00B7420A /* LoginViewModel.swift in Sources */,
+				AE317AF92588FD9D00B7420A /* LoginView.swift in Sources */,
+				AEBFB5062589D9FF001521A2 /* PostView.swift in Sources */,
 				AE793006258675DB00A68947 /* ContentView.swift in Sources */,
+				AE317AFE2589018F00B7420A /* ButtonStyle.swift in Sources */,
+				AEF4F4782589529200FF8F45 /* AddPostView.swift in Sources */,
+				AEBFB5072589D9FF001521A2 /* PostViewModel.swift in Sources */,
 				AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */,
+				AEF4F4792589529200FF8F45 /* AddPostViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

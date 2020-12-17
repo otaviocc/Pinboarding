@@ -5,7 +5,7 @@ final class SidebarViewModel: ObservableObject {
 
     // MARK: - Properties
 
-    @Published var items: [SidebarItemViewModel]
+    let items: [SidebarItemViewModel]
 
     // MARK: - Life cycle
 

@@ -11,7 +11,6 @@ struct LoginView: View {
     var body: some View {
         VStack(alignment: .center, spacing: 8) {
             TextField("Auth Token", text: $viewModel.authToken)
-
             Button("Save") { }
         }
         .padding()
@@ -29,7 +28,6 @@ struct LoginView_Previews: PreviewProvider {
 
             LoginView(viewModel: LoginViewModel())
                 .preferredColorScheme(.dark)
-
         }
         .previewLayout(.fixed(width: 300, height: 100))
     }

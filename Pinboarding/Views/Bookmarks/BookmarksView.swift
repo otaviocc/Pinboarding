@@ -9,7 +9,11 @@ struct BookmarksView: View {
     // MARK: - Life cycle
 
     var body: some View {
-        Text("hello, world")
+        List(viewModel.bookmarks, id: \.hash) { bookmark in
+            BookmarkView(
+                viewModel: BookmarkViewModel(bookmark: bookmark)
+            )
+        }
     }
 }
 

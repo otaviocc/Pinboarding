@@ -4,7 +4,7 @@ struct AddBookmarkView: View {
 
     // MARK: - Properties
 
-     @ObservedObject var viewModel: AddBookmarkViewModel
+    @ObservedObject var viewModel: AddBookmarkViewModel
 
     // MARK: - Life cycle
 

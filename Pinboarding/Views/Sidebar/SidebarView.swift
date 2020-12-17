@@ -4,7 +4,7 @@ struct SidebarView: View {
 
     // MARK: - Properties
 
-    @ObservedObject var viewModel: SidebarViewModel
+    let viewModel: SidebarViewModel
 
     // MARK: - Life cycle
 

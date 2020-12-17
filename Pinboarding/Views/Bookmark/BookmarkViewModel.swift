@@ -12,12 +12,12 @@ final class BookmarkViewModel {
     // MARK: - Life cycle
 
     init(
-        title: String,
-        description: String,
-        tags: String
+        bookmark: Bookmark
     ) {
-        self.title = title
-        self.description = description
-        self.tags = tags
+        self.title = bookmark.title
+        self.description = bookmark.description
+        self.tags = bookmark.tags
+            .sorted { $0 < $1 }
+            .joined(separator: ", ")
     }
 }

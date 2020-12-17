@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AE00EA07258AD5B1002D9558 /* PinboardRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE00EA06258AD5B1002D9558 /* PinboardRepository.swift */; };
+		AE00EA0A258AD814002D9558 /* PinboardRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE00EA09258AD814002D9558 /* PinboardRepositoryProtocol.swift */; };
+		AE00EA0E258AE0EA002D9558 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE00EA0D258AE0EA002D9558 /* Bookmark.swift */; };
+		AE00EA12258AE963002D9558 /* Bookmark+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE00EA11258AE963002D9558 /* Bookmark+Repository.swift */; };
 		AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3A5C258A07CA00227428 /* BookmarksView.swift */; };
 		AE0F3A5F258A07CA00227428 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3A5D258A07CA00227428 /* BookmarksViewModel.swift */; };
 		AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B10258A0F9200227428 /* SidebarView.swift */; };
@@ -22,12 +26,17 @@
 		AE79300B258675DC00A68947 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE79300A258675DC00A68947 /* Preview Assets.xcassets */; };
 		AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* BookmarkView.swift */; };
 		AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */; };
+		AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */; };
 		AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */; };
 		AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */; };
 		AEFAAB4B25883BE2001DB745 /* PinboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = AEFAAB4A25883BE2001DB745 /* PinboardKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AE00EA06258AD5B1002D9558 /* PinboardRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardRepository.swift; sourceTree = "<group>"; };
+		AE00EA09258AD814002D9558 /* PinboardRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardRepositoryProtocol.swift; sourceTree = "<group>"; };
+		AE00EA0D258AE0EA002D9558 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
+		AE00EA11258AE963002D9558 /* Bookmark+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bookmark+Repository.swift"; sourceTree = "<group>"; };
 		AE0F3A5C258A07CA00227428 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		AE0F3A5D258A07CA00227428 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 		AE0F3B10258A0F9200227428 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
@@ -46,6 +55,7 @@
 		AE79300D258675DC00A68947 /* Pinboarding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pinboarding.entitlements; sourceTree = "<group>"; };
 		AEBFB5042589D9FF001521A2 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
+		AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Booleans+Repository.swift"; sourceTree = "<group>"; };
 		AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkView.swift; sourceTree = "<group>"; };
 		AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -62,6 +72,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AE00EA04258AD573002D9558 /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				AE00EA06258AD5B1002D9558 /* PinboardRepository.swift */,
+				AE00EA09258AD814002D9558 /* PinboardRepositoryProtocol.swift */,
+				AE00EA10258AE948002D9558 /* Extensions */,
+				AE00EA05258AD582002D9558 /* Models */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		AE00EA05258AD582002D9558 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AE00EA0D258AE0EA002D9558 /* Bookmark.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AE00EA10258AE948002D9558 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AE00EA11258AE963002D9558 /* Bookmark+Repository.swift */,
+				AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		AE1303BE2587E3DA0083EEFB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -162,6 +200,7 @@
 				AE793003258675DB00A68947 /* PinboardingApp.swift */,
 				AE7930162586838700A68947 /* Assets */,
 				AE317AFC2589017400B7420A /* Extensions */,
+				AE00EA04258AD573002D9558 /* Repository */,
 				AE793017258683C800A68947 /* Supporting Files */,
 				AE7930152586837900A68947 /* Views */,
 			);
@@ -285,6 +324,7 @@
 			files = (
 				AE317AFA2588FD9D00B7420A /* LoginViewModel.swift in Sources */,
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
+				AE00EA07258AD5B1002D9558 /* PinboardRepository.swift in Sources */,
 				AE317AF92588FD9D00B7420A /* LoginView.swift in Sources */,
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,
 				AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */,
@@ -292,12 +332,16 @@
 				AE317AFE2589018F00B7420A /* ButtonStyle.swift in Sources */,
 				AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */,
 				AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */,
+				AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */,
 				AE0F3A5F258A07CA00227428 /* BookmarksViewModel.swift in Sources */,
 				AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */,
 				AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */,
 				AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */,
 				AE0F3B19258A339C00227428 /* SidebarItemViewModel.swift in Sources */,
 				AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */,
+				AE00EA0A258AD814002D9558 /* PinboardRepositoryProtocol.swift in Sources */,
+				AE00EA12258AE963002D9558 /* Bookmark+Repository.swift in Sources */,
+				AE00EA0E258AE0EA002D9558 /* Bookmark.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

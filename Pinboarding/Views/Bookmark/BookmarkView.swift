@@ -4,7 +4,7 @@ struct BookmarkView: View {
 
     // MARK: - Properties
 
-    let viewModel: BookmarkViewModel
+    let viewModel: BookmarkViewModelProtocol
 
     // MARK: - Life cycle
 
@@ -34,36 +34,22 @@ struct BookmarkView: View {
 
 struct BookmarkView_Previews: PreviewProvider {
 
+    struct BookmarkMock: BookmarkViewModelProtocol {
+        var title = "Lorem Ipsum"
+        var description = "Nulla purus urna, fermentum eu tristique non, bibendum nec purus."
+        var tags: String = "tag1, tag2, tag3, tag4"
+    }
+
     static var previews: some View {
         Group {
-            BookmarkView(viewModel: makeBookmarkViewModelMock())
+            BookmarkView(viewModel: BookmarkMock())
                 .frame(width: 320)
                 .preferredColorScheme(.light)
 
-            BookmarkView(viewModel: makeBookmarkViewModelMock())
+            BookmarkView(viewModel: BookmarkMock())
                 .frame(width: 320)
                 .preferredColorScheme(.dark)
         }
         .previewLayout(.sizeThatFits)
-    }
-
-    private static func makeBookmarkViewModelMock() -> BookmarkViewModel {
-        BookmarkViewModel(
-            bookmark: makeBookmarkMock()
-        )
-    }
-
-    private static func makeBookmarkMock() -> Bookmark {
-        Bookmark(
-            href: "",
-            title: "Lorem Ipsum",
-            description: "Nulla purus urna, fermentum eu tristique non, bibendum nec purus.",
-            meta: "",
-            hash: "",
-            time: Date(),
-            isShared: true,
-            isToRead: false,
-            tags: ["tag1", "tag2", "tag3", "tag4", "tag5"]
-        )
     }
 }

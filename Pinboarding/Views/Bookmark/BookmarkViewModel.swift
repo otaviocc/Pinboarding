@@ -1,7 +1,13 @@
 import Combine
 import Foundation
 
-final class BookmarkViewModel {
+protocol BookmarkViewModelProtocol {
+    var title: String { get }
+    var description: String { get }
+    var tags: String { get }
+}
+
+final class BookmarkViewModel: BookmarkViewModelProtocol {
 
     // MARK: - Properties
 

@@ -9,5 +9,8 @@ struct PinboardingApp: App {
         WindowGroup {
             MainView()
         }
+        .commands {
+            SidebarCommands()
+        }
     }
 }

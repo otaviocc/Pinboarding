@@ -23,7 +23,11 @@ struct AddBookmarkView: View {
             TextField("", text: $viewModel.tags)
 
             HStack {
+                Button("Cancel") {}
+                    .padding()
+
                 Spacer()
+
                 Button("Add") {}
                     .padding()
             }

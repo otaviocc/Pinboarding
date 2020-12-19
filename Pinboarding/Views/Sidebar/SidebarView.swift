@@ -18,10 +18,6 @@ struct SidebarView: View {
                     )
                 }
             }
-
-            Section(header: Text("Help")) {
-                Label("Settings", systemImage: "gear")
-            }
         }
         .listStyle(SidebarListStyle())
     }

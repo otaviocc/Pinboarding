@@ -12,5 +12,9 @@ struct PinboardingApp: App {
         .commands {
             SidebarCommands()
         }
+
+        Settings {
+            SettingsView(viewModel: SettingsViewModel())
+        }
     }
 }

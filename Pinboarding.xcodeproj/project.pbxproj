@@ -17,8 +17,8 @@
 		AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B11258A0F9200227428 /* SidebarViewModel.swift */; };
 		AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B16258A339C00227428 /* SidebarItemView.swift */; };
 		AE0F3B19258A339C00227428 /* SidebarItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B17258A339C00227428 /* SidebarItemViewModel.swift */; };
-		AE317AF92588FD9D00B7420A /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF72588FD9D00B7420A /* LoginView.swift */; };
-		AE317AFA2588FD9D00B7420A /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF82588FD9D00B7420A /* LoginViewModel.swift */; };
+		AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF72588FD9D00B7420A /* SettingsView.swift */; };
+		AE317AFA2588FD9D00B7420A /* SettingsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF82588FD9D00B7420A /* SettingsViewModel.swift */; };
 		AE317AFE2589018F00B7420A /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AFD2589018F00B7420A /* ButtonStyle.swift */; };
 		AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793003258675DB00A68947 /* PinboardingApp.swift */; };
 		AE793006258675DB00A68947 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793005258675DB00A68947 /* MainView.swift */; };
@@ -43,8 +43,8 @@
 		AE0F3B11258A0F9200227428 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		AE0F3B16258A339C00227428 /* SidebarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItemView.swift; sourceTree = "<group>"; };
 		AE0F3B17258A339C00227428 /* SidebarItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItemViewModel.swift; sourceTree = "<group>"; };
-		AE317AF72588FD9D00B7420A /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		AE317AF82588FD9D00B7420A /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		AE317AF72588FD9D00B7420A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AE317AF82588FD9D00B7420A /* SettingsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewModel.swift; sourceTree = "<group>"; };
 		AE317AFD2589018F00B7420A /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		AE793000258675DB00A68947 /* Pinboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE793003258675DB00A68947 /* PinboardingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardingApp.swift; sourceTree = "<group>"; };
@@ -124,13 +124,13 @@
 			path = "Add Bookmark";
 			sourceTree = "<group>";
 		};
-		AE367600258AAF7600F57A3C /* Login */ = {
+		AE367600258AAF7600F57A3C /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				AE317AF72588FD9D00B7420A /* LoginView.swift */,
-				AE317AF82588FD9D00B7420A /* LoginViewModel.swift */,
+				AE317AF72588FD9D00B7420A /* SettingsView.swift */,
+				AE317AF82588FD9D00B7420A /* SettingsViewModel.swift */,
 			);
-			path = Login;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		AE367601258AAF7E00F57A3C /* Sidebar Item */ = {
@@ -213,8 +213,8 @@
 				AE3675FF258AAF6700F57A3C /* Add Bookmark */,
 				AE367606258AAF9B00F57A3C /* Bookmark */,
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
-				AE367600258AAF7600F57A3C /* Login */,
 				AE494F40258ABE5200CFECB6 /* Main */,
+				AE367600258AAF7600F57A3C /* Settings */,
 				AE367602258AAF8600F57A3C /* Sidebar */,
 				AE367601258AAF7E00F57A3C /* Sidebar Item */,
 			);
@@ -322,10 +322,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AE317AFA2588FD9D00B7420A /* LoginViewModel.swift in Sources */,
+				AE317AFA2588FD9D00B7420A /* SettingsViewModel.swift in Sources */,
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
 				AE00EA07258AD5B1002D9558 /* PinboardRepository.swift in Sources */,
-				AE317AF92588FD9D00B7420A /* LoginView.swift in Sources */,
+				AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */,
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,
 				AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */,
 				AE793006258675DB00A68947 /* MainView.swift in Sources */,

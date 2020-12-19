@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class LoginViewModel: ObservableObject {
+final class SettingsViewModel: ObservableObject {
 
     // MARK: - Properties
 

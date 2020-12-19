@@ -26,6 +26,8 @@ final class LoginViewModel: ObservableObject {
             .store(in: &cancellables)
     }
 
+    // MARK: - Public
+
     func save() {
     }
 

@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MainView: View {
 
-    // MARK: - Life cycle
+    // MARK: - Public
 
     var body: some View {
         NavigationView {

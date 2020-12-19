@@ -4,9 +4,17 @@ struct BookmarksView: View {
 
     // MARK: - Properties
 
-    @ObservedObject var viewModel: BookmarksViewModel
+    @ObservedObject private var viewModel: BookmarksViewModel
 
     // MARK: - Life cycle
+
+    init(
+        viewModel: BookmarksViewModel
+    ) {
+        self.viewModel = viewModel
+    }
+
+    // MARK: - Public
 
     var body: some View {
         List(viewModel.bookmarks, id: \.hash) { bookmark in

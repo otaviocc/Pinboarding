@@ -4,9 +4,17 @@ struct BookmarkView: View {
 
     // MARK: - Properties
 
-    let viewModel: BookmarkViewModelProtocol
+    private let viewModel: BookmarkViewModelProtocol
 
     // MARK: - Life cycle
+
+    init(
+        viewModel: BookmarkViewModelProtocol
+    ) {
+        self.viewModel = viewModel
+    }
+
+    // MARK: - Public
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

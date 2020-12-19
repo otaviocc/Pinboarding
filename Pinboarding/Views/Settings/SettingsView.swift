@@ -2,31 +2,41 @@ import SwiftUI
 
 struct SettingsView: View {
 
+    // MARK: - Nested types
+
+    private enum SettingsTab: Hashable {
+        case login, general
+    }
+
     // MARK: - Properties
 
-    @ObservedObject var viewModel: SettingsViewModel
+    @ObservedObject private var viewModel: SettingsViewModel
 
     // MARK: - Life cycle
 
+    init(
+        viewModel: SettingsViewModel
+    ) {
+        self.viewModel = viewModel
+    }
+
+    // MARK: - Public
+
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Pinboard.in Auth Token")
-
-            Text("Pinboarding uses auth token to access Pinboard.in.")
-                .font(.footnote)
-
-            TextField(
-                "Auth Token",
-                text: $viewModel.authToken
-            )
-
-            HStack {
-                Spacer()
-                Button("Save") { }
-            }
+        TabView {
+            LoginView(authToken: $viewModel.authToken)
+                .tabItem {
+                    Label("Login", systemImage: "person")
+                }
+                .tag(SettingsTab.login)
+            Text("hello, world")
+                .tabItem {
+                    Label("General", systemImage: "gear")
+                }
+                .tag(SettingsTab.general)
         }
-        .padding()
-        .frame(width: 400)
+        .padding(20)
+        .frame(width: 375, height: 150)
     }
 }
 
@@ -42,6 +52,5 @@ struct SettingsView_Previews: PreviewProvider {
             SettingsView(viewModel: SettingsViewModel())
                 .preferredColorScheme(.dark)
         }
-        .previewLayout(.fixed(width: 300, height: 100))
     }
 }

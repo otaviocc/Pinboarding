@@ -4,9 +4,17 @@ struct SidebarView: View {
 
     // MARK: - Properties
 
-    let viewModel: SidebarViewModel
+    private let viewModel: SidebarViewModel
 
     // MARK: - Life cycle
+
+    init(
+        viewModel: SidebarViewModel
+    ) {
+        self.viewModel = viewModel
+    }
+
+    // MARK: - Public
 
     var body: some View {
         List {

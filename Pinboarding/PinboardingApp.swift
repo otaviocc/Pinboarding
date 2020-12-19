@@ -1,9 +1,8 @@
 import SwiftUI
 
-@main
-struct PinboardingApp: App {
+@main struct PinboardingApp: App {
 
-    // MARK: - Life cycle
+    // MARK: - Public
 
     var body: some Scene {
         WindowGroup {

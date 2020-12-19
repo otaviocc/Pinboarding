@@ -4,7 +4,7 @@ struct SidebarItemView: View {
 
     // MARK: - Properties
 
-    let viewModel: SidebarItemViewModel
+    private let viewModel: SidebarItemViewModel
 
     // MARK: - Life cycle
 
@@ -13,6 +13,8 @@ struct SidebarItemView: View {
     ) {
         self.viewModel = viewModel
     }
+
+    // MARK: - Public
 
     var body: some View {
         Label(

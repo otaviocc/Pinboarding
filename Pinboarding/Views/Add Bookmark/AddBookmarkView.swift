@@ -4,9 +4,17 @@ struct AddBookmarkView: View {
 
     // MARK: - Properties
 
-    @ObservedObject var viewModel: AddBookmarkViewModel
+    @ObservedObject private var viewModel: AddBookmarkViewModel
 
     // MARK: - Life cycle
+
+    init(
+        viewModel: AddBookmarkViewModel
+    ) {
+        self.viewModel = viewModel
+    }
+
+    // MARK: - Public
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {

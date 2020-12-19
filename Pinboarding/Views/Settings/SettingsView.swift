@@ -24,7 +24,7 @@ struct SettingsView: View {
 
     var body: some View {
         TabView {
-            LoginView(authToken: $viewModel.authToken)
+            LoginView(viewModel: LoginViewModel())
                 .tabItem {
                     Label("Login", systemImage: "person")
                 }

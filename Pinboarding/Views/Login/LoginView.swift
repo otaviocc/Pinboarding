@@ -4,14 +4,14 @@ struct LoginView: View {
 
     // MARK: - Properties
 
-    @Binding private var authToken: String
+    @ObservedObject private var viewModel: LoginViewModel
 
     // MARK: - Life cycle
 
     init(
-        authToken: Binding<String>
+        viewModel: LoginViewModel
     ) {
-        self._authToken = authToken
+        self.viewModel = viewModel
     }
 
     // MARK: - Public
@@ -19,18 +19,20 @@ struct LoginView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Pinboard.in Auth Token")
-
             Text("Pinboarding uses auth token to access Pinboard.in.")
                 .font(.footnote)
-
             TextField(
                 "Auth Token",
-                text: $authToken
+                text: $viewModel.authToken
             )
-
             HStack {
+                if !viewModel.isValid {
+                    Text(viewModel.authTokenMessage)
+                        .foregroundColor(.red)
+                }
                 Spacer()
-                Button("Save") { }
+                Button("Save") { viewModel.save() }
+                    .disabled(!viewModel.isValid)
             }
         }
     }
@@ -43,13 +45,13 @@ struct LoginView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             LoginView(
-                authToken: .constant("")
+                viewModel: .init()
             )
             .padding()
             .preferredColorScheme(.light)
 
             LoginView(
-                authToken: .constant("a8858fef15c56d12fc7810b310a4503c")
+                viewModel: .init()
             )
             .padding()
             .preferredColorScheme(.dark)

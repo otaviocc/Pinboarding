@@ -11,6 +11,7 @@
 		AE00EA0A258AD814002D9558 /* PinboardRepositoryProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE00EA09258AD814002D9558 /* PinboardRepositoryProtocol.swift */; };
 		AE00EA0E258AE0EA002D9558 /* Bookmark.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE00EA0D258AE0EA002D9558 /* Bookmark.swift */; };
 		AE00EA12258AE963002D9558 /* Bookmark+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE00EA11258AE963002D9558 /* Bookmark+Repository.swift */; };
+		AE039704258E5B3900D744FB /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE039703258E5B3900D744FB /* LoginViewModel.swift */; };
 		AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3A5C258A07CA00227428 /* BookmarksView.swift */; };
 		AE0F3A5F258A07CA00227428 /* BookmarksViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3A5D258A07CA00227428 /* BookmarksViewModel.swift */; };
 		AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B10258A0F9200227428 /* SidebarView.swift */; };
@@ -38,6 +39,7 @@
 		AE00EA09258AD814002D9558 /* PinboardRepositoryProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardRepositoryProtocol.swift; sourceTree = "<group>"; };
 		AE00EA0D258AE0EA002D9558 /* Bookmark.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bookmark.swift; sourceTree = "<group>"; };
 		AE00EA11258AE963002D9558 /* Bookmark+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Bookmark+Repository.swift"; sourceTree = "<group>"; };
+		AE039703258E5B3900D744FB /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AE0F3A5C258A07CA00227428 /* BookmarksView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksView.swift; sourceTree = "<group>"; };
 		AE0F3A5D258A07CA00227428 /* BookmarksViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksViewModel.swift; sourceTree = "<group>"; };
 		AE0F3B10258A0F9200227428 /* SidebarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarView.swift; sourceTree = "<group>"; };
@@ -183,6 +185,7 @@
 			isa = PBXGroup;
 			children = (
 				AE5781F6258DE42F00A524F4 /* LoginView.swift */,
+				AE039703258E5B3900D744FB /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -335,6 +338,7 @@
 			files = (
 				AE317AFA2588FD9D00B7420A /* SettingsViewModel.swift in Sources */,
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
+				AE039704258E5B3900D744FB /* LoginViewModel.swift in Sources */,
 				AE00EA07258AD5B1002D9558 /* PinboardRepository.swift in Sources */,
 				AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */,
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,

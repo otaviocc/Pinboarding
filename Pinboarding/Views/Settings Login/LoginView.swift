@@ -38,7 +38,6 @@ struct LoginView: View {
 
                 Button("Save") {
                     viewModel.save()
-
                 }
                 .disabled(!viewModel.isValid)
             }

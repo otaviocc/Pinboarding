@@ -20,7 +20,7 @@ final class BookmarksViewModel: ObservableObject {
         self.store = store
 
         self.repository = PinboardRepository(
-            pinboardAPI: PinboardAPI { "USER:TOKEN" }
+            pinboardAPI: PinboardAPI { store.authToken }
         )
 
         self.repository

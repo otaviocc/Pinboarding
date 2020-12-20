@@ -52,7 +52,7 @@ final class AddBookmarkViewModel: ObservableObject {
         $urlString
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .removeDuplicates()
-            .map {URL(string: $0) != nil }
+            .map { URL(string: $0) != nil }
             .eraseToAnyPublisher()
     }
 

@@ -1,14 +1,7 @@
 import Combine
 import Foundation
 
-enum SettingsChange {
-    case authToken
-    case isPrivate
-    case isToRead
-    case showPrivateIcon
-}
-
-final class SettingsStore {
+final class SettingsStore: SettingsStoreProtocol {
 
     // MARK: - Nested types
 
@@ -56,7 +49,7 @@ final class SettingsStore {
     }
 
     private let userDefaults: UserDefaults
-    private let changesSubject = PassthroughSubject<SettingsChange, Never>()
+    private let changesSubject = PassthroughSubject<SettingsStoreChange, Never>()
 
     // MARK: - Life cycle
 
@@ -68,7 +61,7 @@ final class SettingsStore {
 
     // MARK: - Public
 
-    func changes() -> AnyPublisher<SettingsChange, Never> {
+    func changes() -> AnyPublisher<SettingsStoreChange, Never> {
         changesSubject
             .eraseToAnyPublisher()
     }

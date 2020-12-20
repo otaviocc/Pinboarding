@@ -9,12 +9,16 @@ final class BookmarksViewModel: ObservableObject {
     @Published var bookmarks: [Bookmark] = []
 
     private let repository: PinboardRepository
+    private let store: SettingsStore
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
     init(
+        store: SettingsStore = .shared
     ) {
+        self.store = store
+
         self.repository = PinboardRepository(
             pinboardAPI: PinboardAPI { "USER:TOKEN" }
         )

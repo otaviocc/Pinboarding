@@ -1,37 +1,75 @@
 import Combine
 import Foundation
 
-final class SettingsStore: ObservableObject {
+enum SettingsChange {
+    case authToken
+    case isPrivate
+    case isToRead
+    case showPrivateIcon
+}
+
+final class SettingsStore {
 
     // MARK: - Nested types
 
-    private enum Key: String {
-        case settingsAuthToken
-        case settingsIsPrivate
-        case settingsIsToRead
+    private enum Key {
+        static let authToken = "settingsAuthToken"
+        static let isPrivate = "settingsIsPrivate"
+        static let isToRead = "settingsIsToRead"
+        static let showPrivateIcon = "settingsShowPrivateIcon"
     }
 
     // MARK: - Properties
 
-    let changesSubject = PassthroughSubject<Void, Never>()
+    static let shared = SettingsStore()
 
-    @UserDefaultWrapper(Key.settingsAuthToken.rawValue, initialValue: "") var authToken
-    @UserDefaultWrapper(Key.settingsIsPrivate.rawValue, initialValue: true) var isPrivate
-    @UserDefaultWrapper(Key.settingsIsToRead.rawValue, initialValue: false) var isToRead
+    var isPrivate: Bool {
+        get { userDefaults.bool(forKey: Key.isPrivate) }
+        set {
+            userDefaults.setValue(newValue, forKey: Key.isPrivate)
+            changesSubject.send(.isPrivate)
+        }
+    }
 
-    private var cancellable: AnyCancellable?
-    private let notificationCenter: NotificationCenter
+    var isToRead: Bool {
+        get { userDefaults.bool(forKey: Key.isToRead) }
+        set {
+            userDefaults.setValue(newValue, forKey: Key.isToRead)
+            changesSubject.send(.isToRead)
+        }
+    }
+
+    var authToken: String {
+        get { userDefaults.string(forKey: Key.authToken) ?? "" }
+        set {
+            userDefaults.setValue(newValue, forKey: Key.authToken)
+            changesSubject.send(.authToken)
+        }
+    }
+
+    var showPrivateIcon: Bool {
+        get { userDefaults.bool(forKey: Key.showPrivateIcon) }
+        set {
+            userDefaults.setValue(newValue, forKey: Key.showPrivateIcon)
+            changesSubject.send(.showPrivateIcon)
+        }
+    }
+
+    private let userDefaults: UserDefaults
+    private let changesSubject = PassthroughSubject<SettingsChange, Never>()
 
     // MARK: - Life cycle
 
     init(
-        notificationCenter: NotificationCenter = .default
+        userDefaults: UserDefaults = .standard
     ) {
-        self.notificationCenter = notificationCenter
-        self.cancellable = notificationCenter
-            .publisher(for: UserDefaults.didChangeNotification)
-            .map { _ in () }
-            .receive(on: DispatchQueue.main)
-            .subscribe(changesSubject)
+        self.userDefaults = userDefaults
+    }
+
+    // MARK: - Public
+
+    func changes() -> AnyPublisher<SettingsChange, Never> {
+        changesSubject
+            .eraseToAnyPublisher()
     }
 }

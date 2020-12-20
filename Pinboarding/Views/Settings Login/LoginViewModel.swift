@@ -13,7 +13,7 @@ final class LoginViewModel: ObservableObject {
     private var cancellables: Set<AnyCancellable> = []
 
     init(
-        settingsStore: SettingsStore = SettingsStore()
+        settingsStore: SettingsStore = .shared
     ) {
         self.settingsStore = settingsStore
         self.authToken = settingsStore.authToken

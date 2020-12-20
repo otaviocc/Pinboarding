@@ -41,7 +41,7 @@ struct GeneralView: View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Reading")
 
-            Toggle("Show private icon", isOn: $viewModel.isPrivate)
+            Toggle("Show private icon", isOn: $viewModel.showPrivateIcon)
         }
     }
 }

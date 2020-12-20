@@ -9,18 +9,21 @@ final class LoginViewModel: ObservableObject {
     @Published private(set) var authTokenMessage: String = ""
     @Published private(set) var isValid = false
 
-    private var settingsStore = SettingsStore()
+    private let settingsStore: SettingsStore
     private var cancellables: Set<AnyCancellable> = []
 
-    init() {
-        authToken = settingsStore.authToken
+    init(
+        settingsStore: SettingsStore = SettingsStore()
+    ) {
+        self.settingsStore = settingsStore
+        self.authToken = settingsStore.authToken
 
-        isAuthTokenValidPublisher
+        self.isAuthTokenValidPublisher
             .receive(on: RunLoop.main)
             .assign(to: \.isValid, on: self)
             .store(in: &cancellables)
 
-        isAuthTokenValidPublisher
+        self.isAuthTokenValidPublisher
             .receive(on: RunLoop.main)
             .map { isAuthValid in
                 isAuthValid ? "" : "Auth Token must contain ':'"

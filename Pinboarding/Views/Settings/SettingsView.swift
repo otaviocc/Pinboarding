@@ -29,14 +29,15 @@ struct SettingsView: View {
                     Label("Login", systemImage: "person")
                 }
                 .tag(SettingsTab.login)
-            Text("hello, world")
+
+            GeneralView(viewModel: GeneralViewModel())
                 .tabItem {
                     Label("General", systemImage: "gear")
                 }
                 .tag(SettingsTab.general)
         }
-        .padding(20)
-        .frame(width: 375, height: 150)
+        .padding(16)
+        .frame(width: 375, height: 200)
     }
 }
 

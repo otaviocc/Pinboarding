@@ -1,6 +1,6 @@
 import Foundation
 
-@propertyWrapper struct UserDefault<T> {
+@propertyWrapper struct UserDefaultWrapper<T> {
 
     // MARK: - Properties
 
@@ -14,14 +14,13 @@ import Foundation
     }
 
     // MARK: - Life cycle
-
     init(
-        key: String,
+        _ key: String,
         initialValue: T,
         userDefaults: UserDefaults = .standard
     ) {
-        self.key = key
         self.initialValue = initialValue
+        self.key = key
         self.userDefaults = userDefaults
     }
 }

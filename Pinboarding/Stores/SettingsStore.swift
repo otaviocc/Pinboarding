@@ -6,18 +6,18 @@ final class SettingsStore: ObservableObject {
     // MARK: - Nested types
 
     private enum Key: String {
-        case authToken
-        case isPrivate
-        case isToRead
+        case settingsAuthToken
+        case settingsIsPrivate
+        case settingsIsToRead
     }
 
     // MARK: - Properties
 
-    let objectWillChange = PassthroughSubject<Void, Never>()
+    let changesSubject = PassthroughSubject<Void, Never>()
 
-    @UserDefault(key: Key.authToken.rawValue, initialValue: "") var authToken: String
-    @UserDefault(key: Key.isPrivate.rawValue, initialValue: true) var isPrivate: Bool
-    @UserDefault(key: Key.isToRead.rawValue, initialValue: false) var isToRead: Bool
+    @UserDefaultWrapper(Key.settingsAuthToken.rawValue, initialValue: "") var authToken
+    @UserDefaultWrapper(Key.settingsIsPrivate.rawValue, initialValue: true) var isPrivate
+    @UserDefaultWrapper(Key.settingsIsToRead.rawValue, initialValue: false) var isToRead
 
     private var cancellable: AnyCancellable?
     private let notificationCenter: NotificationCenter
@@ -32,6 +32,6 @@ final class SettingsStore: ObservableObject {
             .publisher(for: UserDefaults.didChangeNotification)
             .map { _ in () }
             .receive(on: DispatchQueue.main)
-            .subscribe(objectWillChange)
+            .subscribe(changesSubject)
     }
 }

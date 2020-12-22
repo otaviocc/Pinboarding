@@ -31,6 +31,7 @@
 		AE79300B258675DC00A68947 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE79300A258675DC00A68947 /* Preview Assets.xcassets */; };
 		AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* BookmarkView.swift */; };
 		AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */; };
+		AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC622882591DA6F003FDE66 /* PersistenceController.swift */; };
 		AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */; };
 		AECE16F72591BE290024DC88 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */; };
 		AECE16F82591BE290024DC88 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */; };
@@ -70,6 +71,7 @@
 		AE79300D258675DC00A68947 /* Pinboarding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pinboarding.entitlements; sourceTree = "<group>"; };
 		AEBFB5042589D9FF001521A2 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
+		AEC622882591DA6F003FDE66 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		AECE16F22591BD640024DC88 /* Pinboarding.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinboarding.xcdatamodel; sourceTree = "<group>"; };
 		AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -95,11 +97,11 @@
 		AE00EA04258AD573002D9558 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				AECE16F02591BD3F0024DC88 /* Persistence */,
 				AE00EA06258AD5B1002D9558 /* PinboardRepository.swift */,
 				AE00EA09258AD814002D9558 /* PinboardRepositoryProtocol.swift */,
 				AE00EA10258AE948002D9558 /* Extensions */,
 				AE00EA05258AD582002D9558 /* Models */,
+				AECE16F02591BD3F0024DC88 /* Persistence */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -293,6 +295,7 @@
 		AECE16F02591BD3F0024DC88 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
+				AEC622882591DA6F003FDE66 /* PersistenceController.swift */,
 				AECE16FC2591BEAA0024DC88 /* Core Data */,
 				AECE16FD2591BEB10024DC88 /* Core Data Models */,
 			);
@@ -421,6 +424,7 @@
 				AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */,
 				AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */,
 				AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */,
+				AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */,
 				AE0F3B19258A339C00227428 /* SidebarItemViewModel.swift in Sources */,
 				AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */,
 				AECE16F82591BE290024DC88 /* Post+CoreDataProperties.swift in Sources */,

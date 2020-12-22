@@ -61,7 +61,7 @@ final class SettingsStore: SettingsStoreProtocol {
 
     // MARK: - Public
 
-    func changes() -> AnyPublisher<SettingsStoreChange, Never> {
+    func changesPublisher() -> AnyPublisher<SettingsStoreChange, Never> {
         changesSubject
             .eraseToAnyPublisher()
     }

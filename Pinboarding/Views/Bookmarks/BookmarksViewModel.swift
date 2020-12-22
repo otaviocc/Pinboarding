@@ -8,27 +8,18 @@ final class BookmarksViewModel: ObservableObject {
 
     @Published var bookmarks: [Bookmark] = []
 
-    private let repository: PinboardRepository
-    private let settingsStore: SettingsStoreProtocol
-    private var cancellables = Set<AnyCancellable>()
+    private var cancellables: Set<AnyCancellable> = []
 
     // MARK: - Life cycle
 
     init(
-        store: SettingsStoreProtocol = SettingsStore.shared
+        repository: PinboardRepositoryProtocol
     ) {
-        self.settingsStore = store
-
-        self.repository = PinboardRepository(
-            pinboardAPI: PinboardAPI { store.authToken }
-        )
-
-        self.repository
-            .recentBookmarks()
-            .sink(
-                receiveCompletion: { _ in },
-                receiveValue: { self.bookmarks = $0 }
-            )
+        repository.allBookmarksPublisher()
+            .receive(on: RunLoop.main)
+            .sink { [weak self] bookmarks in
+                self?.bookmarks = bookmarks
+            }
             .store(in: &cancellables)
     }
 }

@@ -3,20 +3,19 @@ import PinboardKit
 
 extension Bookmark {
 
-    /// Builds a Bookmark from PinboardKit's PostResponse.
     static func makeBookmark(
-        from postResponse: PostResponse
+        from post: Post
     ) -> Bookmark {
         Bookmark(
-            href: postResponse.href,
-            title: postResponse.description,
-            description: postResponse.extended,
-            meta: postResponse.meta,
-            hash: postResponse.hash,
-            time: postResponse.time,
-            isShared: postResponse.shared.booleanValue,
-            isToRead: postResponse.toread.booleanValue,
-            tags: postResponse.tags.components(separatedBy: " ")
+            href: post.href,
+            title: post.title,
+            description: post.extended,
+            meta: post.meta,
+            hash: post.id,
+            time: post.time,
+            isShared: post.shared.booleanValue,
+            isToRead: post.toread.booleanValue,
+            tags: post.tags.components(separatedBy: " ")
         )
     }
 }

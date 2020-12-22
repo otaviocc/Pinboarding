@@ -10,7 +10,7 @@ final class LoginViewModel: ObservableObject {
     @Published private(set) var isValid = false
 
     private var settingsStore: SettingsStoreProtocol
-    private var cancellables: Set<AnyCancellable> = []
+    private var cancellables = Set<AnyCancellable>()
 
     init(
         settingsStore: SettingsStoreProtocol = SettingsStore.shared
@@ -18,12 +18,12 @@ final class LoginViewModel: ObservableObject {
         self.settingsStore = settingsStore
         self.authToken = settingsStore.authToken
 
-        self.isAuthTokenValidPublisher
+        self.isAuthTokenValidPublisher()
             .receive(on: RunLoop.main)
             .assign(to: \.isValid, on: self)
             .store(in: &cancellables)
 
-        self.isAuthTokenValidPublisher
+        self.isAuthTokenValidPublisher()
             .receive(on: RunLoop.main)
             .map { isAuthValid in
                 isAuthValid ? "" : "Auth Token must contain ':'"
@@ -42,7 +42,7 @@ final class LoginViewModel: ObservableObject {
 
     // MARK: - Private
 
-    private var isAuthTokenValidPublisher: AnyPublisher<Bool, Never> {
+    private func isAuthTokenValidPublisher() -> AnyPublisher<Bool, Never> {
         $authToken
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .removeDuplicates()

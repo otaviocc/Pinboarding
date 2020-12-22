@@ -2,90 +2,57 @@ import Combine
 import Foundation
 import PinboardKit
 
-public struct PinboardRepository: PinboardRepositoryProtocol {
+public class PinboardRepository: PinboardRepositoryProtocol, ObservableObject {
 
     // MARK: - Properties
 
-    private let pinboardAPI: PinboardAPI
+    static let shared = PinboardRepository()
+
+    private let networkController: NetworkController
+    private let persistenceController: PersistenceController
+    private let bookmarksSubject = PassthroughSubject<[Bookmark], Never>()
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
-    init(
-        pinboardAPI: PinboardAPI
-    ) {
-        self.pinboardAPI = pinboardAPI
-    }
-}
-
-// MARK: - Bookmarks
-
-extension PinboardRepository {
-
-    func addBookmark(
-        url: URL,
-        description: String,
-        extended: String? = nil,
-        tags: String? = nil,
-        date: Date? = nil,
-        replace: Bool? = nil,
-        shared: Bool? = nil,
-        toread: Bool? = nil
-    ) -> AnyPublisher<Bool, Error> {
-        pinboardAPI.add(
-            url: url,
-            description: description,
-            extended: extended,
-            tags: tags,
-            date: date,
-            replace: replace?.stringValue,
-            shared: shared?.stringValue,
-            toread: toread?.stringValue
+    convenience init() {
+        self.init(
+            networkController: NetworkController(
+                settingsController: .shared
+            ),
+            persistenceController: PersistenceController(
+                inMemory: false
+            )
         )
-        .map { $0.resultCode == "done" }
-        .eraseToAnyPublisher()
+
+        self.synchronizeBookmarksContinuously()
     }
 
-    func deleteBookmark(
-        url: URL
-    ) -> AnyPublisher<Bool, Error> {
-        pinboardAPI.delete(url: url)
-            .map { $0.resultCode == "done" }
+    private init(
+        networkController: NetworkController,
+        persistenceController: PersistenceController
+    ) {
+        self.networkController = networkController
+        self.persistenceController = persistenceController
+    }
+
+    // MARK: - Public
+
+    func allBookmarksPublisher() -> AnyPublisher<[Bookmark], Never> {
+        persistenceController.allPostsPublisher()
+            .map {
+                $0.map(Bookmark.makeBookmark(from:))
+            }
             .eraseToAnyPublisher()
     }
 
-    func allBookmarks(
-        tag: String? = nil,
-        start: Int? = nil,
-        results: Int? = nil,
-        fromDate: Date? = nil,
-        toDate: Date? = nil,
-        meta: Int? = nil
-    ) -> AnyPublisher<[Bookmark], Error> {
-        pinboardAPI.all(
-            tag: tag,
-            start: start,
-            results: results,
-            fromDate: fromDate,
-            toDate: toDate,
-            meta: meta
-        )
-        .map { response in
-            response.posts.map(Bookmark.makeBookmark(from:))
-        }
-        .eraseToAnyPublisher()
-    }
+    // MARK: - Private
 
-    func recentBookmarks(
-        tag: String? = nil,
-        count: Int? = nil
-    ) -> AnyPublisher<[Bookmark], Error> {
-        pinboardAPI.recents(
-            tag: tag,
-            count: count
-        )
-        .map { response in
-            response.posts.map(Bookmark.makeBookmark(from:))
-        }
-        .eraseToAnyPublisher()
+    private func synchronizeBookmarksContinuously() {
+        networkController.updatesPublisher()
+            .sink { [weak self] posts in
+                self?.persistenceController.appendNewPosts(posts)
+            }
+            .store(in: &cancellables)
     }
 }

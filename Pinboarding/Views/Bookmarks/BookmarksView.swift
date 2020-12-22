@@ -27,9 +27,18 @@ struct BookmarksView: View {
 
 // MARK: - PreviewProvider
 
+#if DEBUG
+
 struct BookmarksView_Previews: PreviewProvider {
 
     static var previews: some View {
-        BookmarksView(viewModel: BookmarksViewModel())
+        BookmarksView(
+            viewModel: BookmarksViewModel(
+                repository: PinboardRepositoryMock()
+            )
+        )
+        .frame(width: 320)
     }
 }
+
+#endif

@@ -14,12 +14,12 @@ final class AddBookmarkViewModel: ObservableObject {
     @Published private(set) var urlMessage: String = ""
     @Published private(set) var titleMessage: String = ""
 
-    private var cancellables: Set<AnyCancellable> = []
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
     init() {
-        isURLValidPublisher
+        isURLValidPublisher()
             .receive(on: RunLoop.main)
             .map { isValid in
                 isValid ? "" : "Invalid URL"
@@ -27,7 +27,7 @@ final class AddBookmarkViewModel: ObservableObject {
             .assign(to: \.urlMessage, on: self)
             .store(in: &cancellables)
 
-        isTitleValidPublisher
+        isTitleValidPublisher()
             .receive(on: RunLoop.main)
             .map { isValid in
                 isValid ? "" : "Invalid Title"
@@ -35,7 +35,7 @@ final class AddBookmarkViewModel: ObservableObject {
             .assign(to: \.titleMessage, on: self)
             .store(in: &cancellables)
 
-        isFormValidPublisher
+        isFormValidPublisher()
             .receive(on: RunLoop.main)
             .assign(to: \.isValid, on: self)
             .store(in: &cancellables)
@@ -48,7 +48,7 @@ final class AddBookmarkViewModel: ObservableObject {
 
     // MARK: - Private
 
-    private var isURLValidPublisher: AnyPublisher<Bool, Never> {
+    private func isURLValidPublisher() -> AnyPublisher<Bool, Never> {
         $urlString
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .removeDuplicates()
@@ -56,7 +56,7 @@ final class AddBookmarkViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
 
-    private var isTitleValidPublisher: AnyPublisher<Bool, Never> {
+    private func isTitleValidPublisher() -> AnyPublisher<Bool, Never> {
         $title
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .removeDuplicates()
@@ -64,8 +64,8 @@ final class AddBookmarkViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
 
-    private var isFormValidPublisher: AnyPublisher<Bool, Never> {
-        Publishers.CombineLatest(isURLValidPublisher, isTitleValidPublisher)
+    private func isFormValidPublisher() -> AnyPublisher<Bool, Never> {
+        Publishers.CombineLatest(isURLValidPublisher(), isTitleValidPublisher())
             .map { $0 && $1 }
             .eraseToAnyPublisher()
     }

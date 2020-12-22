@@ -6,5 +6,5 @@ protocol SettingsStoreProtocol {
     var authToken: String { get set }
     var showPrivateIcon: Bool { get set }
 
-    func changes() -> AnyPublisher<SettingsStoreChange, Never>
+    func changesPublisher() -> AnyPublisher<SettingsStoreChange, Never>
 }

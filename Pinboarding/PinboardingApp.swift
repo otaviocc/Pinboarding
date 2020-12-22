@@ -7,6 +7,7 @@ import SwiftUI
     var body: some Scene {
         WindowGroup {
             MainView()
+                .environmentObject(PinboardRepository.shared)
         }
         .commands {
             SidebarCommands()

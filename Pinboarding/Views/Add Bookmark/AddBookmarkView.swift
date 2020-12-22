@@ -56,11 +56,13 @@ struct AddBookmarkView_Previews: PreviewProvider {
             AddBookmarkView(
                 viewModel: AddBookmarkViewModel()
             )
+            .frame(width: 320)
             .preferredColorScheme(.light)
 
             AddBookmarkView(
                 viewModel: AddBookmarkViewModel()
             )
+            .frame(width: 320)
             .preferredColorScheme(.dark)
         }
     }

@@ -10,7 +10,7 @@ final class GeneralViewModel: ObservableObject {
     @Published var showPrivateIcon: Bool = true
 
     private var settingsStore: SettingsStoreProtocol
-    private var cancellables: Set<AnyCancellable> = []
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
@@ -24,17 +24,17 @@ final class GeneralViewModel: ObservableObject {
 
         $isPrivate
             .dropFirst()
-            .sink { self.settingsStore.isPrivate = $0 }
+            .sink { [weak self] in self?.settingsStore.isPrivate = $0 }
             .store(in: &cancellables)
 
         $isToRead
             .dropFirst()
-            .sink { self.settingsStore.isToRead = $0 }
+            .sink { [weak self] in self?.settingsStore.isToRead = $0 }
             .store(in: &cancellables)
 
         $showPrivateIcon
             .dropFirst()
-            .sink { self.settingsStore.showPrivateIcon = $0 }
+            .sink { [weak self] in self?.settingsStore.showPrivateIcon = $0 }
             .store(in: &cancellables)
     }
 }

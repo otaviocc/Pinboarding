@@ -6,18 +6,18 @@ final class NetworkController: NetworkControllerProtocol {
 
     // MARK: - Properties
 
-    private var cancellables: Set<AnyCancellable> = []
+    private var cancellables = Set<AnyCancellable>()
     private var pinboardAPI: PinboardAPI
     private let postResponseSubject = PassthroughSubject<[PostResponse], Never>()
 
     // MARK: - Life cycle
 
     init(
-        pinboardAPI: PinboardAPI
+        settingsController: SettingsStore
     ) {
-        self.pinboardAPI = pinboardAPI
+        self.pinboardAPI = PinboardAPI { settingsController.authToken }
 
-        recentBookmarksPublisher
+        recentBookmarksPublisher()
             .receive(on: RunLoop.main)
             .sink(
                 receiveCompletion: { _ in },
@@ -30,21 +30,21 @@ final class NetworkController: NetworkControllerProtocol {
 
     // MARK: - Public
 
-    func updates() -> AnyPublisher<[PostResponse], Never> {
+    func updatesPublisher() -> AnyPublisher<[PostResponse], Never> {
         postResponseSubject
             .eraseToAnyPublisher()
     }
 
     // MARK: - Private
 
-    private var timerPublisher: AnyPublisher<Date, Never> {
+    private func timerPublisher() -> AnyPublisher<Date, Never> {
         Timer.TimerPublisher(interval: 15, runLoop: .main, mode: .common)
             .autoconnect()
             .eraseToAnyPublisher()
     }
 
-    private var recentBookmarksPublisher: AnyPublisher<[PostResponse], Error> {
-        timerPublisher
+    private func recentBookmarksPublisher() -> AnyPublisher<[PostResponse], Error> {
+        timerPublisher()
             .flatMap { _ in self.pinboardAPI.recents() }
             .map { $0.posts }
             .eraseToAnyPublisher()

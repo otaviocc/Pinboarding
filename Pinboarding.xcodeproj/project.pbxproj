@@ -32,6 +32,8 @@
 		AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* BookmarkView.swift */; };
 		AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */; };
 		AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC622882591DA6F003FDE66 /* PersistenceController.swift */; };
+		AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6228C2591DB03003FDE66 /* NetworkController.swift */; };
+		AEC622902591DC73003FDE66 /* NetworkControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6228F2591DC73003FDE66 /* NetworkControllerProtocol.swift */; };
 		AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */; };
 		AECE16F72591BE290024DC88 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */; };
 		AECE16F82591BE290024DC88 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */; };
@@ -72,6 +74,8 @@
 		AEBFB5042589D9FF001521A2 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		AEC622882591DA6F003FDE66 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
+		AEC6228C2591DB03003FDE66 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		AEC6228F2591DC73003FDE66 /* NetworkControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkControllerProtocol.swift; sourceTree = "<group>"; };
 		AECE16F22591BD640024DC88 /* Pinboarding.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinboarding.xcdatamodel; sourceTree = "<group>"; };
 		AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -101,6 +105,7 @@
 				AE00EA09258AD814002D9558 /* PinboardRepositoryProtocol.swift */,
 				AE00EA10258AE948002D9558 /* Extensions */,
 				AE00EA05258AD582002D9558 /* Models */,
+				AEC6228B2591DAD3003FDE66 /* Network */,
 				AECE16F02591BD3F0024DC88 /* Persistence */,
 			);
 			path = Repository;
@@ -292,6 +297,15 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		AEC6228B2591DAD3003FDE66 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				AEC6228C2591DB03003FDE66 /* NetworkController.swift */,
+				AEC6228F2591DC73003FDE66 /* NetworkControllerProtocol.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		AECE16F02591BD3F0024DC88 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,6 +417,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */,
 				AE628CC3258FA29E00F91800 /* SettingsStoreProtocol.swift in Sources */,
 				AE317AFA2588FD9D00B7420A /* SettingsViewModel.swift in Sources */,
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
@@ -412,6 +427,7 @@
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,
 				AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */,
 				AE793006258675DB00A68947 /* MainView.swift in Sources */,
+				AEC622902591DC73003FDE66 /* NetworkControllerProtocol.swift in Sources */,
 				AE317AFE2589018F00B7420A /* ButtonStyle.swift in Sources */,
 				AEF0DF11258ECB8D000F4BFF /* GeneralViewModel.swift in Sources */,
 				AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */,

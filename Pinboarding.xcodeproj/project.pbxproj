@@ -31,6 +31,9 @@
 		AE79300B258675DC00A68947 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE79300A258675DC00A68947 /* Preview Assets.xcassets */; };
 		AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* BookmarkView.swift */; };
 		AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */; };
+		AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */; };
+		AECE16F72591BE290024DC88 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */; };
+		AECE16F82591BE290024DC88 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */; };
 		AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */; };
 		AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DF07258EC8A8000F4BFF /* GeneralView.swift */; };
 		AEF0DF11258ECB8D000F4BFF /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DF10258ECB8D000F4BFF /* GeneralViewModel.swift */; };
@@ -67,6 +70,9 @@
 		AE79300D258675DC00A68947 /* Pinboarding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pinboarding.entitlements; sourceTree = "<group>"; };
 		AEBFB5042589D9FF001521A2 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
+		AECE16F22591BD640024DC88 /* Pinboarding.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinboarding.xcdatamodel; sourceTree = "<group>"; };
+		AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Booleans+Repository.swift"; sourceTree = "<group>"; };
 		AEF0DF07258EC8A8000F4BFF /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		AEF0DF10258ECB8D000F4BFF /* GeneralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
@@ -89,6 +95,7 @@
 		AE00EA04258AD573002D9558 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				AECE16F02591BD3F0024DC88 /* Persistence */,
 				AE00EA06258AD5B1002D9558 /* PinboardRepository.swift */,
 				AE00EA09258AD814002D9558 /* PinboardRepositoryProtocol.swift */,
 				AE00EA10258AE948002D9558 /* Extensions */,
@@ -283,6 +290,16 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		AECE16F02591BD3F0024DC88 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */,
+				AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */,
+				AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		AEF0DF05258EC88B000F4BFF /* Settings General */ = {
 			isa = PBXGroup;
 			children = (
@@ -384,10 +401,13 @@
 				AE0F3A5F258A07CA00227428 /* BookmarksViewModel.swift in Sources */,
 				AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */,
 				AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */,
+				AECE16F72591BE290024DC88 /* Post+CoreDataClass.swift in Sources */,
+				AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */,
 				AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */,
 				AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */,
 				AE0F3B19258A339C00227428 /* SidebarItemViewModel.swift in Sources */,
 				AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */,
+				AECE16F82591BE290024DC88 /* Post+CoreDataProperties.swift in Sources */,
 				AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */,
 				AE628CC6258FA2D300F91800 /* SettingsStoreChange.swift in Sources */,
 				AE00EA0A258AD814002D9558 /* PinboardRepositoryProtocol.swift in Sources */,
@@ -600,6 +620,19 @@
 			productName = PinboardKit;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				AECE16F22591BD640024DC88 /* Pinboarding.xcdatamodel */,
+			);
+			currentVersion = AECE16F22591BD640024DC88 /* Pinboarding.xcdatamodel */;
+			path = Pinboarding.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = AE792FF8258675DB00A68947 /* Project object */;
 }

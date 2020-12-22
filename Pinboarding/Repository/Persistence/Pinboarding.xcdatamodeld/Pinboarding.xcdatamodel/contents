@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17707" systemVersion="20C69" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Post" representedClassName="Post" syncable="YES">
+        <attribute name="extended" attributeType="String"/>
+        <attribute name="href" attributeType="String"/>
+        <attribute name="id" attributeType="String"/>
+        <attribute name="meta" attributeType="String"/>
+        <attribute name="shared" attributeType="String"/>
+        <attribute name="tags" attributeType="String"/>
+        <attribute name="time" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="toread" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Post" positionX="-63" positionY="-18" width="128" height="164"/>
+    </elements>
+</model>

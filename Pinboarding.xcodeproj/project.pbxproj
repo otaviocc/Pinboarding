@@ -293,11 +293,27 @@
 		AECE16F02591BD3F0024DC88 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */,
-				AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */,
-				AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */,
+				AECE16FC2591BEAA0024DC88 /* Core Data */,
+				AECE16FD2591BEB10024DC88 /* Core Data Models */,
 			);
 			path = Persistence;
+			sourceTree = "<group>";
+		};
+		AECE16FC2591BEAA0024DC88 /* Core Data */ = {
+			isa = PBXGroup;
+			children = (
+				AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */,
+			);
+			path = "Core Data";
+			sourceTree = "<group>";
+		};
+		AECE16FD2591BEB10024DC88 /* Core Data Models */ = {
+			isa = PBXGroup;
+			children = (
+				AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */,
+				AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */,
+			);
+			path = "Core Data Models";
 			sourceTree = "<group>";
 		};
 		AEF0DF05258EC88B000F4BFF /* Settings General */ = {

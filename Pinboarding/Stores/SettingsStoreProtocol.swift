@@ -5,6 +5,4 @@ protocol SettingsStoreProtocol {
     var isToRead: Bool { get set }
     var authToken: String { get set }
     var showPrivateIcon: Bool { get set }
-
-    func changesPublisher() -> AnyPublisher<SettingsStoreChange, Never>
 }

@@ -2,7 +2,7 @@ import Combine
 import Foundation
 import PinboardKit
 
-final class NetworkController: NetworkControllerProtocol {
+final class NetworkController {
 
     // MARK: - Properties
 

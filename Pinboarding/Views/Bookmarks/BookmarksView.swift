@@ -4,41 +4,26 @@ struct BookmarksView: View {
 
     // MARK: - Properties
 
-    @ObservedObject private var viewModel: BookmarksViewModel
+    @Environment(\.managedObjectContext) var viewContext
 
-    // MARK: - Life cycle
-
-    init(
-        viewModel: BookmarksViewModel
-    ) {
-        self.viewModel = viewModel
-    }
+    @FetchRequest(entity: Post.entity(), sortDescriptors: [
+        .init(
+            key: "time",
+            ascending: false
+        )
+    ]) var posts: FetchedResults<Post>
 
     // MARK: - Public
 
     var body: some View {
-        List(viewModel.bookmarks, id: \.hash) { bookmark in
-            BookmarkView(
-                viewModel: BookmarkViewModel(bookmark: bookmark)
-            )
+        List {
+            ForEach(posts, id: \.hash) { post in
+                BookmarkView(
+                    viewModel: BookmarkViewModel(
+                        bookmark: post
+                    )
+                )
+            }
         }
     }
 }
-
-// MARK: - PreviewProvider
-
-#if DEBUG
-
-struct BookmarksView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        BookmarksView(
-            viewModel: BookmarksViewModel(
-                repository: PinboardRepositoryMock()
-            )
-        )
-        .frame(width: 320)
-    }
-}
-
-#endif

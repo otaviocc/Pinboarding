@@ -4,6 +4,7 @@ import PinboardKit
 
 extension Post {
 
+    @discardableResult
     static func makePost(
         from postResponse: PostResponse,
         in context: NSManagedObjectContext

@@ -8,18 +8,6 @@ struct SettingsView: View {
         case login, general
     }
 
-    // MARK: - Properties
-
-    @ObservedObject private var viewModel: SettingsViewModel
-
-    // MARK: - Life cycle
-
-    init(
-        viewModel: SettingsViewModel
-    ) {
-        self.viewModel = viewModel
-    }
-
     // MARK: - Public
 
     var body: some View {
@@ -47,10 +35,10 @@ struct SettingsView_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            SettingsView(viewModel: SettingsViewModel())
+            SettingsView()
                 .preferredColorScheme(.light)
 
-            SettingsView(viewModel: SettingsViewModel())
+            SettingsView()
                 .preferredColorScheme(.dark)
         }
     }

@@ -8,13 +8,14 @@ import SwiftUI
         WindowGroup {
             MainView()
                 .environmentObject(PinboardRepository.shared)
+                .environment(\.managedObjectContext, PinboardRepository.shared.persistenceController.container.viewContext)
         }
         .commands {
             SidebarCommands()
         }
 
         Settings {
-            SettingsView(viewModel: SettingsViewModel())
+            SettingsView()
         }
     }
 }

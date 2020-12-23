@@ -2,15 +2,14 @@ import Combine
 import Foundation
 import PinboardKit
 
-public class PinboardRepository: PinboardRepositoryProtocol, ObservableObject {
+public class PinboardRepository: ObservableObject {
 
     // MARK: - Properties
 
     static let shared = PinboardRepository()
 
+    let persistenceController: PersistenceController
     private let networkController: NetworkController
-    private let persistenceController: PersistenceController
-    private let bookmarksSubject = PassthroughSubject<[Bookmark], Never>()
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
@@ -34,16 +33,6 @@ public class PinboardRepository: PinboardRepositoryProtocol, ObservableObject {
     ) {
         self.networkController = networkController
         self.persistenceController = persistenceController
-    }
-
-    // MARK: - Public
-
-    func allBookmarksPublisher() -> AnyPublisher<[Bookmark], Never> {
-        persistenceController.allPostsPublisher()
-            .map {
-                $0.map(Bookmark.makeBookmark(from:))
-            }
-            .eraseToAnyPublisher()
     }
 
     // MARK: - Private

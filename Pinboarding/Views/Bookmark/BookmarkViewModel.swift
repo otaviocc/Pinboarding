@@ -18,11 +18,12 @@ final class BookmarkViewModel: BookmarkViewModelProtocol {
     // MARK: - Life cycle
 
     init(
-        bookmark: Bookmark
+        bookmark: Post
     ) {
         self.title = bookmark.title
-        self.description = bookmark.description
+        self.description = bookmark.extended
         self.tags = bookmark.tags
+            .split(separator: " ")
             .sorted { $0 < $1 }
             .joined(separator: ", ")
     }

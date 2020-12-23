@@ -11,17 +11,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             SidebarView(viewModel: SidebarViewModel())
-            BookmarksView(viewModel: BookmarksViewModel(repository: repository))
+            BookmarksView()
         }
     }
 }
-
-// MARK: - PreviewProvider
-
-//struct MainView_Previews: PreviewProvider {
-//
-//    static var previews: some View {
-//        MainView()
-//            .environmentObject(PinboardRepository.shared)
-//    }
-//}

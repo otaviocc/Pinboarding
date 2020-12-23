@@ -26,7 +26,7 @@ final class LoginViewModel: ObservableObject {
         self.isAuthTokenValidPublisher()
             .receive(on: RunLoop.main)
             .map { isAuthValid in
-                isAuthValid ? "" : "Auth Token must contain ':'"
+                isAuthValid ? "" : "Please enter a valid token"
             }
             .assign(to: \.authTokenMessage, on: self)
             .store(in: &cancellables)

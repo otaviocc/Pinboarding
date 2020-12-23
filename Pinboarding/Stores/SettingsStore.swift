@@ -58,11 +58,4 @@ final class SettingsStore: SettingsStoreProtocol {
     ) {
         self.userDefaults = userDefaults
     }
-
-    // MARK: - Public
-
-    func changesPublisher() -> AnyPublisher<SettingsStoreChange, Never> {
-        changesSubject
-            .eraseToAnyPublisher()
-    }
 }

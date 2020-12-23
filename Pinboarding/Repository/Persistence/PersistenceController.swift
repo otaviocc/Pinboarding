@@ -23,9 +23,9 @@ struct PersistenceController {
             )
         }
 
-        self.container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        self.container.loadPersistentStores { [container] _, error in
+            container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
 
-        self.container.loadPersistentStores { _, error in
             if let error = error as NSError? {
                 fatalError(
                     "Something bad happened: \(error), \(error.userInfo)"

@@ -6,10 +6,9 @@ public class PinboardRepository: ObservableObject {
 
     // MARK: - Properties
 
-    static let shared = PinboardRepository()
-
     let persistenceController: PersistenceController
-    private let networkController: NetworkController
+    let networkController: NetworkController
+
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle

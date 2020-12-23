@@ -17,9 +17,7 @@ final class BookmarksViewModel: ObservableObject {
     ) {
         repository.allBookmarksPublisher()
             .receive(on: RunLoop.main)
-            .sink { [weak self] bookmarks in
-                self?.bookmarks = bookmarks
-            }
+            .assign(to: \.bookmarks, on: self)
             .store(in: &cancellables)
     }
 }

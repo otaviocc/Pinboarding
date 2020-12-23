@@ -24,17 +24,17 @@ final class GeneralViewModel: ObservableObject {
 
         $isPrivate
             .dropFirst()
-            .sink { [weak self] in self?.settingsStore.isPrivate = $0 }
+            .assign(to: \.settingsStore.isPrivate, on: self)
             .store(in: &cancellables)
 
         $isToRead
             .dropFirst()
-            .sink { [weak self] in self?.settingsStore.isToRead = $0 }
+            .assign(to: \.settingsStore.isToRead, on: self)
             .store(in: &cancellables)
 
         $showPrivateIcon
             .dropFirst()
-            .sink { [weak self] in self?.settingsStore.showPrivateIcon = $0 }
+            .assign(to: \.settingsStore.showPrivateIcon, on: self)
             .store(in: &cancellables)
     }
 }

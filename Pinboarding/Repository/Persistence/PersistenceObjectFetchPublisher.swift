@@ -10,8 +10,8 @@ struct PersistenceObjectFetchPublisher<Model: NSManagedObject>: Publisher {
 
     // MARK: - Properties
 
-    let request: NSFetchRequest<Model>
-    let context: NSManagedObjectContext
+    private let request: NSFetchRequest<Model>
+    private let context: NSManagedObjectContext
 
     // MARK: - Life cycle
 

@@ -25,6 +25,7 @@
 		AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* BookmarkView.swift */; };
 		AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */; };
 		AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */; };
+		AEBFB699259413C8001626AA /* NSSortDescriptor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB698259413C8001626AA /* NSSortDescriptor+App.swift */; };
 		AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC622882591DA6F003FDE66 /* PersistenceController.swift */; };
 		AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6228C2591DB03003FDE66 /* NetworkController.swift */; };
 		AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6229A259222B4003FDE66 /* Post+Repository.swift */; };
@@ -61,6 +62,7 @@
 		AEBFB5042589D9FF001521A2 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardingAppEnvironment.swift; sourceTree = "<group>"; };
+		AEBFB698259413C8001626AA /* NSSortDescriptor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSortDescriptor+App.swift"; sourceTree = "<group>"; };
 		AEC622882591DA6F003FDE66 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		AEC6228C2591DB03003FDE66 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		AEC6229A259222B4003FDE66 /* Post+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Repository.swift"; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 				AE793003258675DB00A68947 /* PinboardingApp.swift */,
 				AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */,
 				AE7930162586838700A68947 /* Assets */,
+				AEBFB697259413B1001626AA /* Extensions */,
 				AE00EA04258AD573002D9558 /* Repository */,
 				AE2F588B258EB73900D19421 /* Stores */,
 				AE793017258683C800A68947 /* Supporting Files */,
@@ -262,6 +265,14 @@
 				AE79300A258675DC00A68947 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		AEBFB697259413B1001626AA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AEBFB698259413C8001626AA /* NSSortDescriptor+App.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		AEC6228B2591DAD3003FDE66 /* Network */ = {
@@ -408,6 +419,7 @@
 				AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */,
 				AECE16F82591BE290024DC88 /* Post+CoreDataProperties.swift in Sources */,
 				AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */,
+				AEBFB699259413C8001626AA /* NSSortDescriptor+App.swift in Sources */,
 				AE628CC6258FA2D300F91800 /* SettingsStoreChange.swift in Sources */,
 				AE2F588D258EB84D00D19421 /* SettingsStore.swift in Sources */,
 			);

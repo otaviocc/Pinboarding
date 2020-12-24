@@ -4,14 +4,11 @@ struct BookmarksView: View {
 
     // MARK: - Properties
 
-    @Environment(\.managedObjectContext) var viewContext
+    @Environment(\.managedObjectContext)
+    var viewContext
 
-    @FetchRequest(entity: Post.entity(), sortDescriptors: [
-        .init(
-            key: "time",
-            ascending: false
-        )
-    ]) var posts: FetchedResults<Post>
+    @FetchRequest(entity: Post.entity(), sortDescriptors: [.makeSortByTimeAscending()])
+    var posts: FetchedResults<Post>
 
     // MARK: - Public
 

@@ -6,7 +6,7 @@ extension NSSortDescriptor {
     ) -> NSSortDescriptor {
         NSSortDescriptor(
             key: "time",
-            ascending: true
+            ascending: false
         )
     }
 }

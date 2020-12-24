@@ -24,6 +24,7 @@ import SwiftUI
 
         Settings {
             SettingsView()
+                .environmentObject(appEnvironment.settingsStore)
         }
     }
 }

@@ -14,6 +14,10 @@
 		AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B11258A0F9200227428 /* SidebarViewModel.swift */; };
 		AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B16258A339C00227428 /* SidebarItemView.swift */; };
 		AE0F3B19258A339C00227428 /* SidebarItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE0F3B17258A339C00227428 /* SidebarItemViewModel.swift */; };
+		AE10FAEA2594D54500C79B82 /* Tag+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FAE62594D54500C79B82 /* Tag+CoreDataClass.swift */; };
+		AE10FAEB2594D54500C79B82 /* Tag+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FAE72594D54500C79B82 /* Tag+CoreDataProperties.swift */; };
+		AE10FAEC2594D54500C79B82 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FAE82594D54500C79B82 /* Post+CoreDataProperties.swift */; };
+		AE10FAED2594D54500C79B82 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FAE92594D54500C79B82 /* Post+CoreDataClass.swift */; };
 		AE2F588D258EB84D00D19421 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F588C258EB84D00D19421 /* SettingsStore.swift */; };
 		AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF72588FD9D00B7420A /* SettingsView.swift */; };
 		AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5781F6258DE42F00A524F4 /* LoginView.swift */; };
@@ -30,8 +34,6 @@
 		AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6228C2591DB03003FDE66 /* NetworkController.swift */; };
 		AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6229A259222B4003FDE66 /* Post+Repository.swift */; };
 		AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */; };
-		AECE16F72591BE290024DC88 /* Post+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */; };
-		AECE16F82591BE290024DC88 /* Post+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */; };
 		AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */; };
 		AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DF07258EC8A8000F4BFF /* GeneralView.swift */; };
 		AEF0DF11258ECB8D000F4BFF /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DF10258ECB8D000F4BFF /* GeneralViewModel.swift */; };
@@ -48,6 +50,10 @@
 		AE0F3B11258A0F9200227428 /* SidebarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarViewModel.swift; sourceTree = "<group>"; };
 		AE0F3B16258A339C00227428 /* SidebarItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItemView.swift; sourceTree = "<group>"; };
 		AE0F3B17258A339C00227428 /* SidebarItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SidebarItemViewModel.swift; sourceTree = "<group>"; };
+		AE10FAE62594D54500C79B82 /* Tag+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataClass.swift"; sourceTree = "<group>"; };
+		AE10FAE72594D54500C79B82 /* Tag+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Tag+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AE10FAE82594D54500C79B82 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		AE10FAE92594D54500C79B82 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AE2F588C258EB84D00D19421 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		AE317AF72588FD9D00B7420A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AE5781F6258DE42F00A524F4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -67,8 +73,6 @@
 		AEC6228C2591DB03003FDE66 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		AEC6229A259222B4003FDE66 /* Post+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Repository.swift"; sourceTree = "<group>"; };
 		AECE16F22591BD640024DC88 /* Pinboarding.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinboarding.xcdatamodel; sourceTree = "<group>"; };
-		AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataClass.swift"; sourceTree = "<group>"; };
-		AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Booleans+Repository.swift"; sourceTree = "<group>"; };
 		AEF0DF07258EC8A8000F4BFF /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		AEF0DF10258ECB8D000F4BFF /* GeneralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
@@ -304,8 +308,10 @@
 		AECE16FD2591BEB10024DC88 /* Core Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				AECE16F52591BE290024DC88 /* Post+CoreDataClass.swift */,
-				AECE16F62591BE290024DC88 /* Post+CoreDataProperties.swift */,
+				AE10FAE92594D54500C79B82 /* Post+CoreDataClass.swift */,
+				AE10FAE82594D54500C79B82 /* Post+CoreDataProperties.swift */,
+				AE10FAE62594D54500C79B82 /* Tag+CoreDataClass.swift */,
+				AE10FAE72594D54500C79B82 /* Tag+CoreDataProperties.swift */,
 			);
 			path = "Core Data Models";
 			sourceTree = "<group>";
@@ -398,7 +404,10 @@
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
 				AE039704258E5B3900D744FB /* LoginViewModel.swift in Sources */,
 				AE00EA07258AD5B1002D9558 /* PinboardRepository.swift in Sources */,
+				AE10FAEC2594D54500C79B82 /* Post+CoreDataProperties.swift in Sources */,
+				AE10FAEA2594D54500C79B82 /* Tag+CoreDataClass.swift in Sources */,
 				AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */,
+				AE10FAED2594D54500C79B82 /* Post+CoreDataClass.swift in Sources */,
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,
 				AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */,
 				AE793006258675DB00A68947 /* MainView.swift in Sources */,
@@ -409,15 +418,14 @@
 				AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */,
 				AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */,
 				AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */,
-				AECE16F72591BE290024DC88 /* Post+CoreDataClass.swift in Sources */,
 				AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */,
 				AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */,
+				AE10FAEB2594D54500C79B82 /* Tag+CoreDataProperties.swift in Sources */,
 				AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */,
 				AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */,
 				AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */,
 				AE0F3B19258A339C00227428 /* SidebarItemViewModel.swift in Sources */,
 				AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */,
-				AECE16F82591BE290024DC88 /* Post+CoreDataProperties.swift in Sources */,
 				AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */,
 				AEBFB699259413C8001626AA /* NSSortDescriptor+App.swift in Sources */,
 				AE628CC6258FA2D300F91800 /* SettingsStoreChange.swift in Sources */,

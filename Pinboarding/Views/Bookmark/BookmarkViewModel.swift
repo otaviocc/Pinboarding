@@ -21,10 +21,10 @@ final class BookmarkViewModel: BookmarkViewModelProtocol {
         bookmark: Post
     ) {
         self.title = bookmark.title
-        self.description = bookmark.extended
+        self.description = bookmark.abstract
         self.tags = bookmark.tags
-            .split(separator: " ")
-            .sorted { $0 < $1 }
+            .compactMap { $0 as? Tag }
+            .map { $0.name }
             .joined(separator: ", ")
     }
 }

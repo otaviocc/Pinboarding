@@ -9,13 +9,13 @@ final class GeneralViewModel: ObservableObject {
     @Published var isToRead: Bool = false
     @Published var showPrivateIcon: Bool = true
 
-    private var settingsStore: SettingsStoreProtocol
+    private var settingsStore: SettingsStore
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
     init(
-        settingsStore: SettingsStoreProtocol = SettingsStore.shared
+        settingsStore: SettingsStore
     ) {
         self.settingsStore = settingsStore
         self.isPrivate = settingsStore.isPrivate

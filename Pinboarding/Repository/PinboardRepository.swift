@@ -13,33 +13,15 @@ public class PinboardRepository: ObservableObject {
 
     // MARK: - Life cycle
 
-    convenience init() {
-        self.init(
-            networkController: NetworkController(
-                settingsController: .shared
-            ),
-            persistenceController: PersistenceController(
-                inMemory: false
-            )
-        )
-
-        self.synchronizeBookmarksContinuously()
-    }
-
-    private init(
+    init(
         networkController: NetworkController,
         persistenceController: PersistenceController
     ) {
         self.networkController = networkController
         self.persistenceController = persistenceController
-    }
-
-    // MARK: - Private
-
-    private func synchronizeBookmarksContinuously() {
-        networkController.updatesPublisher()
-            .sink { [weak self] posts in
-                self?.persistenceController.appendNewPosts(posts)
+        self.networkController.updatesPublisher()
+            .sink { posts in
+                self.persistenceController.appendNewPosts(posts)
             }
             .store(in: &cancellables)
     }

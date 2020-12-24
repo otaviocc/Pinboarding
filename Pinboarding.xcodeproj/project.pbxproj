@@ -17,7 +17,6 @@
 		AE2F588D258EB84D00D19421 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F588C258EB84D00D19421 /* SettingsStore.swift */; };
 		AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF72588FD9D00B7420A /* SettingsView.swift */; };
 		AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5781F6258DE42F00A524F4 /* LoginView.swift */; };
-		AE628CC3258FA29E00F91800 /* SettingsStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE628CC2258FA29E00F91800 /* SettingsStoreProtocol.swift */; };
 		AE628CC6258FA2D300F91800 /* SettingsStoreChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE628CC5258FA2D300F91800 /* SettingsStoreChange.swift */; };
 		AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793003258675DB00A68947 /* PinboardingApp.swift */; };
 		AE793006258675DB00A68947 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793005258675DB00A68947 /* MainView.swift */; };
@@ -25,6 +24,7 @@
 		AE79300B258675DC00A68947 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE79300A258675DC00A68947 /* Preview Assets.xcassets */; };
 		AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* BookmarkView.swift */; };
 		AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */; };
+		AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */; };
 		AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC622882591DA6F003FDE66 /* PersistenceController.swift */; };
 		AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6228C2591DB03003FDE66 /* NetworkController.swift */; };
 		AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6229A259222B4003FDE66 /* Post+Repository.swift */; };
@@ -50,7 +50,6 @@
 		AE2F588C258EB84D00D19421 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		AE317AF72588FD9D00B7420A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AE5781F6258DE42F00A524F4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
-		AE628CC2258FA29E00F91800 /* SettingsStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreProtocol.swift; sourceTree = "<group>"; };
 		AE628CC5258FA2D300F91800 /* SettingsStoreChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreChange.swift; sourceTree = "<group>"; };
 		AE793000258675DB00A68947 /* Pinboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE793003258675DB00A68947 /* PinboardingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardingApp.swift; sourceTree = "<group>"; };
@@ -61,6 +60,7 @@
 		AE79300D258675DC00A68947 /* Pinboarding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pinboarding.entitlements; sourceTree = "<group>"; };
 		AEBFB5042589D9FF001521A2 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
+		AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardingAppEnvironment.swift; sourceTree = "<group>"; };
 		AEC622882591DA6F003FDE66 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		AEC6228C2591DB03003FDE66 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		AEC6229A259222B4003FDE66 /* Post+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Repository.swift"; sourceTree = "<group>"; };
@@ -118,7 +118,6 @@
 			children = (
 				AE2F588C258EB84D00D19421 /* SettingsStore.swift */,
 				AE628CC5258FA2D300F91800 /* SettingsStoreChange.swift */,
-				AE628CC2258FA29E00F91800 /* SettingsStoreProtocol.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -213,6 +212,7 @@
 			isa = PBXGroup;
 			children = (
 				AE793003258675DB00A68947 /* PinboardingApp.swift */,
+				AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */,
 				AE7930162586838700A68947 /* Assets */,
 				AE00EA04258AD573002D9558 /* Repository */,
 				AE2F588B258EB73900D19421 /* Stores */,
@@ -384,7 +384,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */,
-				AE628CC3258FA29E00F91800 /* SettingsStoreProtocol.swift in Sources */,
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
 				AE039704258E5B3900D744FB /* LoginViewModel.swift in Sources */,
 				AE00EA07258AD5B1002D9558 /* PinboardRepository.swift in Sources */,
@@ -404,6 +403,7 @@
 				AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */,
 				AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */,
 				AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */,
+				AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */,
 				AE0F3B19258A339C00227428 /* SidebarItemViewModel.swift in Sources */,
 				AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */,
 				AECE16F82591BE290024DC88 /* Post+CoreDataProperties.swift in Sources */,

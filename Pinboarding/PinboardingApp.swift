@@ -4,17 +4,18 @@ import SwiftUI
 
     // MARK: - Properties
 
-    private let repository = PinboardRepository()
+    private let appEnvironment = PinboardingAppEnvironment()
 
     // MARK: - Public
 
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(repository)
+                .environmentObject(appEnvironment.repository)
+                .environmentObject(appEnvironment.settingsStore)
                 .environment(
                     \.managedObjectContext,
-                    repository.persistenceController.container.viewContext
+                    appEnvironment.persistenceController.container.viewContext
                 )
         }
         .commands {

@@ -44,24 +44,3 @@ struct LoginView: View {
         }
     }
 }
-
-// MARK: - PreviewProvider
-
-struct LoginView_Previews: PreviewProvider {
-
-    static var previews: some View {
-        Group {
-            LoginView(
-                viewModel: .init()
-            )
-            .padding()
-            .preferredColorScheme(.light)
-
-            LoginView(
-                viewModel: .init()
-            )
-            .padding()
-            .preferredColorScheme(.dark)
-        }
-    }
-}

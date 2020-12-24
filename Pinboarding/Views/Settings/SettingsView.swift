@@ -4,6 +4,8 @@ struct SettingsView: View {
 
     // MARK: - Nested types
 
+    @EnvironmentObject var settingsStore: SettingsStore
+
     private enum SettingsTab: Hashable {
         case login, general
     }
@@ -12,13 +14,13 @@ struct SettingsView: View {
 
     var body: some View {
         TabView {
-            LoginView(viewModel: LoginViewModel())
+            LoginView(viewModel: LoginViewModel(settingsStore: settingsStore))
                 .tabItem {
                     Label("Login", systemImage: "person")
                 }
                 .tag(SettingsTab.login)
 
-            GeneralView(viewModel: GeneralViewModel())
+            GeneralView(viewModel: GeneralViewModel(settingsStore: settingsStore))
                 .tabItem {
                     Label("General", systemImage: "gear")
                 }

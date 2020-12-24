@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class SettingsStore: SettingsStoreProtocol {
+final class SettingsStore: ObservableObject {
 
     // MARK: - Nested types
 
@@ -13,8 +13,6 @@ final class SettingsStore: SettingsStoreProtocol {
     }
 
     // MARK: - Properties
-
-    static let shared = SettingsStore()
 
     var isPrivate: Bool {
         get { userDefaults.bool(forKey: Key.isPrivate) }
@@ -54,7 +52,7 @@ final class SettingsStore: SettingsStoreProtocol {
     // MARK: - Life cycle
 
     init(
-        userDefaults: UserDefaults = .standard
+        userDefaults: UserDefaults
     ) {
         self.userDefaults = userDefaults
     }

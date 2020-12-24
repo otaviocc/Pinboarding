@@ -9,11 +9,11 @@ final class LoginViewModel: ObservableObject {
     @Published private(set) var authTokenMessage: String = ""
     @Published private(set) var isValid = false
 
-    private var settingsStore: SettingsStoreProtocol
+    private var settingsStore: SettingsStore
     private var cancellables = Set<AnyCancellable>()
 
     init(
-        settingsStore: SettingsStoreProtocol = SettingsStore.shared
+        settingsStore: SettingsStore
     ) {
         self.settingsStore = settingsStore
         self.authToken = settingsStore.authToken

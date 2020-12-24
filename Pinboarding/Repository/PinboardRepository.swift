@@ -20,8 +20,8 @@ public class PinboardRepository: ObservableObject {
         self.networkController = networkController
         self.persistenceController = persistenceController
         self.networkController.updatesPublisher()
-            .sink { posts in
-                self.persistenceController.appendNewPosts(posts)
+            .sink { bookmark in
+                self.persistenceController.appendNewBookmarks(bookmark)
             }
             .store(in: &cancellables)
     }

@@ -36,12 +36,12 @@ struct PersistenceController {
 
     // MARK: - Public
 
-    func appendNewPosts(
+    func appendNewBookmarks(
         _ posts: [PostResponse]
     ) {
         posts.forEach { postResponse in
             do {
-                try Post.makePost(
+                try Bookmark.makeBookmark(
                     from: postResponse,
                     in: container.viewContext
                 )

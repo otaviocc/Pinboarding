@@ -2,25 +2,25 @@ import CoreData
 import Foundation
 import PinboardKit
 
-extension Post {
+extension Bookmark {
 
     @discardableResult
-    static func makePost(
+    static func makeBookmark(
         from postResponse: PostResponse,
         in context: NSManagedObjectContext
-    ) throws -> Post {
-        let post = Post(
+    ) throws -> Bookmark {
+        let bookmark = Bookmark(
             context: context
         )
 
-        post.href = postResponse.href
-        post.title = postResponse.description
-        post.abstract = postResponse.extended
-        post.meta = postResponse.meta
-        post.time = postResponse.time
-        post.isShared = postResponse.shared.booleanValue
-        post.isToRead = postResponse.toread.booleanValue
-        post.id = postResponse.hash
+        bookmark.href = postResponse.href
+        bookmark.title = postResponse.description
+        bookmark.abstract = postResponse.extended
+        bookmark.meta = postResponse.meta
+        bookmark.time = postResponse.time
+        bookmark.isShared = postResponse.shared.booleanValue
+        bookmark.isToRead = postResponse.toread.booleanValue
+        bookmark.id = postResponse.hash
 
         let tags: [Tag] = postResponse.tags
             .split(separator: " ")
@@ -30,10 +30,10 @@ extension Post {
                 tag.name = name.lowercased()
                 return tag
             }
-        post.tags = NSSet(array: tags)
+        bookmark.tags = NSSet(array: tags)
 
         try context.save()
 
-        return post
+        return bookmark
     }
 }

@@ -18,7 +18,7 @@ final class BookmarkViewModel: BookmarkViewModelProtocol {
     // MARK: - Life cycle
 
     init(
-        bookmark: Post
+        bookmark: Bookmark
     ) {
         self.title = bookmark.title
         self.description = bookmark.abstract

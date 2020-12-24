@@ -6,7 +6,7 @@ extension Tag {
     // MARK: - Properties
 
     @NSManaged public var name: String
-    @NSManaged public var posts: NSSet
+    @NSManaged public var bookmarks: NSSet
 
     // MARK: - Public
 
@@ -17,17 +17,17 @@ extension Tag {
 
     // MARK: - Relationships
 
-    @objc(addPostsObject:)
-    @NSManaged public func addToPosts(_ value: Post)
+    @objc(addBookmarkObject:)
+    @NSManaged public func addToBookmarks(_ value: Bookmark)
 
-    @objc(removePostsObject:)
-    @NSManaged public func removeFromPosts(_ value: Post)
+    @objc(removeBookmarkObject:)
+    @NSManaged public func removeFromBookmarks(_ value: Bookmark)
 
-    @objc(addPosts:)
-    @NSManaged public func addToPosts(_ values: NSSet)
+    @objc(addBookmark:)
+    @NSManaged public func addToBookmarks(_ values: NSSet)
 
-    @objc(removePosts:)
-    @NSManaged public func removeFromPosts(_ values: NSSet)
+    @objc(removeBookmark:)
+    @NSManaged public func removeFromBookmarks(_ values: NSSet)
 }
 
 extension Tag: Identifiable { }

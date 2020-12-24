@@ -1,7 +1,7 @@
 import Foundation
 import CoreData
 
-extension Post {
+extension Bookmark {
 
     // MARK: - Properties
 
@@ -19,9 +19,9 @@ extension Post {
     // MARK: - Public
 
     @nonobjc
-    public class func fetchRequest() -> NSFetchRequest<Post> {
-        NSFetchRequest<Post>(
-            entityName: "Post"
+    public class func fetchRequest() -> NSFetchRequest<Bookmark> {
+        NSFetchRequest<Bookmark>(
+            entityName: "Bookmark"
         )
     }
 
@@ -41,4 +41,4 @@ extension Post {
 
 }
 
-extension Post: Identifiable { }
+extension Bookmark: Identifiable { }

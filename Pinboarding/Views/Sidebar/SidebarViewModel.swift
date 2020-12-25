@@ -5,12 +5,12 @@ final class SidebarViewModel: ObservableObject {
 
     // MARK: - Properties
 
-    let items: [SidebarItemViewModel]
+    let items: [SidebarPrimaryItem]
 
     // MARK: - Life cycle
 
     init(
     ) {
-        self.items =  SidebarItemViewModel.allCases
+        self.items =  SidebarPrimaryItem.allCases
     }
 }

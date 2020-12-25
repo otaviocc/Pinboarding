@@ -1,7 +1,7 @@
 import Foundation
 import Combine
 
-enum SidebarItemViewModel: String, CaseIterable {
+enum SidebarPrimaryItem: String, CaseIterable {
 
     case all
     case `public`

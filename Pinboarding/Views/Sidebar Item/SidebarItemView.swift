@@ -4,12 +4,12 @@ struct SidebarItemView: View {
 
     // MARK: - Properties
 
-    private let viewModel: SidebarItemViewModel
+    private let viewModel: SidebarPrimaryItem
 
     // MARK: - Life cycle
 
     init(
-        viewModel: SidebarItemViewModel
+        viewModel: SidebarPrimaryItem
     ) {
         self.viewModel = viewModel
     }

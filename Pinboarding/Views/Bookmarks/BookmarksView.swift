@@ -5,10 +5,10 @@ struct BookmarksView: View {
     // MARK: - Properties
 
     @Environment(\.managedObjectContext)
-    var viewContext
+    private var viewContext
 
-    @FetchRequest(entity: Bookmark.entity(), sortDescriptors: [.makeSortByTimeAscending()])
-    var bookmarks: FetchedResults<Bookmark>
+    @FetchRequest(entity: Bookmark.entity(), sortDescriptors: [.makeSortByTimeDescending()])
+    private var bookmarks: FetchedResults<Bookmark>
 
     // MARK: - Public
 

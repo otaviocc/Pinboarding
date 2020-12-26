@@ -39,10 +39,10 @@ struct PersistenceController {
     func appendNewBookmarks(
         _ posts: [PostResponse]
     ) {
-        posts.forEach { postResponse in
+        posts.forEach { post in
             do {
                 try Bookmark.makeBookmark(
-                    from: postResponse,
+                    from: post,
                     in: container.viewContext
                 )
             } catch {

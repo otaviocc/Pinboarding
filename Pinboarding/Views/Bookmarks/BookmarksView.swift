@@ -14,13 +14,34 @@ struct BookmarksView: View {
 
     var body: some View {
         List {
-            ForEach(bookmarks, id: \.id) { post in
+            ForEach(bookmarks, id: \.id) { bookmark in
                 BookmarkView(
                     viewModel: BookmarkViewModel(
-                        bookmark: post
+                        bookmark: bookmark
                     )
                 )
             }
         }
+    }
+}
+
+// MARK: - PreviewProvider
+
+struct BookmarksView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        let controller = Preview.makePersistenceControllerInMemory()
+
+        Group {
+            BookmarksView()
+                .preferredColorScheme(.light)
+                .frame(width: 320)
+            BookmarksView()
+                .preferredColorScheme(.dark)
+                .frame(width: 320)
+        }.environment(
+            \.managedObjectContext,
+            controller.container.viewContext
+        )
     }
 }

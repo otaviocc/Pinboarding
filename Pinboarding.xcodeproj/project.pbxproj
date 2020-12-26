@@ -33,6 +33,8 @@
 		AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC622882591DA6F003FDE66 /* PersistenceController.swift */; };
 		AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6228C2591DB03003FDE66 /* NetworkController.swift */; };
 		AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6229A259222B4003FDE66 /* Post+Repository.swift */; };
+		AEC72E0E259780FF008C7FF3 /* Preview+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */; };
+		AEC72E112597890E008C7FF3 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC72E102597890E008C7FF3 /* Preview.swift */; };
 		AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */; };
 		AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */; };
 		AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DF07258EC8A8000F4BFF /* GeneralView.swift */; };
@@ -72,6 +74,8 @@
 		AEC622882591DA6F003FDE66 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		AEC6228C2591DB03003FDE66 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		AEC6229A259222B4003FDE66 /* Post+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Repository.swift"; sourceTree = "<group>"; };
+		AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Persistence.swift"; sourceTree = "<group>"; };
+		AEC72E102597890E008C7FF3 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		AECE16F22591BD640024DC88 /* Pinboarding.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinboarding.xcdatamodel; sourceTree = "<group>"; };
 		AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Booleans+Repository.swift"; sourceTree = "<group>"; };
 		AEF0DF07258EC8A8000F4BFF /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
@@ -266,6 +270,8 @@
 		AE79301B2586841700A68947 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				AEC72E102597890E008C7FF3 /* Preview.swift */,
+				AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */,
 				AE79300A258675DC00A68947 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
@@ -410,6 +416,7 @@
 				AE10FAED2594D54500C79B82 /* Bookmark+CoreDataClass.swift in Sources */,
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,
 				AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */,
+				AEC72E112597890E008C7FF3 /* Preview.swift in Sources */,
 				AE793006258675DB00A68947 /* MainView.swift in Sources */,
 				AEF0DF11258ECB8D000F4BFF /* GeneralViewModel.swift in Sources */,
 				AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */,
@@ -418,6 +425,7 @@
 				AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */,
 				AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */,
 				AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */,
+				AEC72E0E259780FF008C7FF3 /* Preview+Persistence.swift in Sources */,
 				AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */,
 				AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */,
 				AE10FAEB2594D54500C79B82 /* Tag+CoreDataProperties.swift in Sources */,

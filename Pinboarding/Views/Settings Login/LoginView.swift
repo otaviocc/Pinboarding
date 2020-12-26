@@ -44,3 +44,30 @@ struct LoginView: View {
         }
     }
 }
+
+// MARK: - PreviewProvider
+
+struct LoginView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        let settingsStore = Preview.makeSettingsStore()
+
+        Group {
+            LoginView(
+                viewModel: LoginViewModel(
+                    settingsStore: settingsStore
+                )
+            )
+            .padding()
+            .preferredColorScheme(.light)
+
+            LoginView(
+                viewModel: LoginViewModel(
+                    settingsStore: settingsStore
+                )
+            )
+            .padding()
+            .preferredColorScheme(.dark)
+        }
+    }
+}

@@ -63,11 +63,18 @@ struct SidebarView_Previews: PreviewProvider {
     static var previews: some View {
         let controller = Preview.makePersistenceControllerInMemory()
 
-        SidebarView(viewModel: SidebarViewModel())
-            .frame(width: 200)
-            .environment(
-                \.managedObjectContext,
-                controller.container.viewContext
-            )
+        Group {
+            SidebarView(viewModel: SidebarViewModel())
+                .preferredColorScheme(.light)
+                .frame(width: 200)
+
+            SidebarView(viewModel: SidebarViewModel())
+                .preferredColorScheme(.dark)
+                .frame(width: 200)
+        }
+        .environment(
+            \.managedObjectContext,
+            controller.container.viewContext
+        )
     }
 }

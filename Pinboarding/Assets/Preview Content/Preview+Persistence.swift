@@ -16,6 +16,11 @@ extension Preview {
             in: controller.container.viewContext
         )
 
+        makeTags(
+            count: 5,
+            in: controller.container.viewContext
+        )
+
         return controller
     }
 
@@ -41,6 +46,18 @@ extension Preview {
             tag.name = "sample"
             bookmark.tags = NSSet(array: [tag])
 
+            try? context.save()
+        }
+    }
+
+    static func makeTags(
+        count: Int,
+        in context: NSManagedObjectContext
+    ) {
+        for i in 0..<count {
+            let tag = Tag(context: context)
+            tag.name = "tag\(i)"
+            tag.bookmarks = []
             try? context.save()
         }
     }

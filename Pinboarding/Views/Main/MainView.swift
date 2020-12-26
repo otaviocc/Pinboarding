@@ -11,3 +11,26 @@ struct MainView: View {
         }
     }
 }
+
+// MARK: - PreviewProvider
+
+struct MainView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        let controller = Preview.makePersistenceControllerInMemory()
+        let settingsStore = Preview.makeSettingsStore()
+
+        Group {
+            MainView()
+                .preferredColorScheme(.light)
+
+            MainView()
+                .preferredColorScheme(.dark)
+        }
+        .environmentObject(settingsStore)
+        .environment(
+            \.managedObjectContext,
+            controller.container.viewContext
+        )
+    }
+}

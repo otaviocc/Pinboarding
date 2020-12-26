@@ -45,3 +45,28 @@ struct GeneralView: View {
         }
     }
 }
+
+// MARK: - PreviewProvider
+
+struct GeneralView_Previews: PreviewProvider {
+
+    static var previews: some View {
+        let settingsStore = Preview.makeSettingsStore()
+
+        Group {
+            GeneralView(
+                viewModel: GeneralViewModel(
+                    settingsStore: settingsStore
+                )
+            )
+            .preferredColorScheme(.light)
+
+            GeneralView(
+                viewModel: GeneralViewModel(
+                    settingsStore: settingsStore
+                )
+            )
+            .preferredColorScheme(.dark)
+        }
+    }
+}

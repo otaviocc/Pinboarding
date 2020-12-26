@@ -227,6 +227,7 @@
 				AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */,
 				AE7930162586838700A68947 /* Assets */,
 				AEBFB697259413B1001626AA /* Extensions */,
+				AE79301B2586841700A68947 /* Preview Content */,
 				AE00EA04258AD573002D9558 /* Repository */,
 				AE2F588B258EB73900D19421 /* Stores */,
 				AE793017258683C800A68947 /* Supporting Files */,
@@ -255,7 +256,6 @@
 			isa = PBXGroup;
 			children = (
 				AE793007258675DC00A68947 /* Assets.xcassets */,
-				AE79301B2586841700A68947 /* Preview Content */,
 			);
 			path = Assets;
 			sourceTree = "<group>";
@@ -571,7 +571,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Pinboarding/Supporting Files/Pinboarding.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Pinboarding/Assets/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -593,7 +593,7 @@
 				CODE_SIGN_ENTITLEMENTS = "Pinboarding/Supporting Files/Pinboarding.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"Pinboarding/Assets/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

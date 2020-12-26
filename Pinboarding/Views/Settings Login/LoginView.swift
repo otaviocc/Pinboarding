@@ -58,6 +58,7 @@ struct LoginView_Previews: PreviewProvider {
                     settingsStore: settingsStore
                 )
             )
+            .frame(width: 320)
             .padding()
             .preferredColorScheme(.light)
 
@@ -66,6 +67,7 @@ struct LoginView_Previews: PreviewProvider {
                     settingsStore: settingsStore
                 )
             )
+            .frame(width: 320)
             .padding()
             .preferredColorScheme(.dark)
         }

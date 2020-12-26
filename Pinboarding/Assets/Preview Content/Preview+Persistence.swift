@@ -5,21 +5,24 @@ extension Preview {
 
     // MARK: - Double
 
-    static func makePersistenceControllerInMemory(
+    static func makePersistenceController(
+        populated: Bool = false
     ) -> PersistenceController {
         let controller = PersistenceController(
             inMemory: true
         )
 
-        makeBookmarks(
-            count: 3,
-            in: controller.container.viewContext
-        )
+        if populated {
+            makeBookmarks(
+                count: 3,
+                in: controller.container.viewContext
+            )
 
-        makeTags(
-            count: 5,
-            in: controller.container.viewContext
-        )
+            makeTags(
+                count: 5,
+                in: controller.container.viewContext
+            )
+        }
 
         return controller
     }

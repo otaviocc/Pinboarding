@@ -17,8 +17,10 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let controller = Preview.makePersistenceControllerInMemory()
         let settingsStore = Preview.makeSettingsStore()
+        let controller = Preview.makePersistenceController(
+            populated: true
+        )
 
         Group {
             MainView()

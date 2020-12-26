@@ -61,8 +61,9 @@ struct SidebarView: View {
 struct SidebarView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let controller = Preview.makePersistenceControllerInMemory()
-
+        let controller = Preview.makePersistenceController(
+            populated: true
+        )
         Group {
             SidebarView(viewModel: SidebarViewModel())
                 .preferredColorScheme(.light)

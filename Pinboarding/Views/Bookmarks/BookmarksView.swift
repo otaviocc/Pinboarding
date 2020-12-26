@@ -30,7 +30,9 @@ struct BookmarksView: View {
 struct BookmarksView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let controller = Preview.makePersistenceControllerInMemory()
+        let controller = Preview.makePersistenceController(
+            populated: true
+        )
 
         Group {
             BookmarksView()

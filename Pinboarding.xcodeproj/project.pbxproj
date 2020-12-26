@@ -26,6 +26,7 @@
 		AE793006258675DB00A68947 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793005258675DB00A68947 /* MainView.swift */; };
 		AE793008258675DC00A68947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE793007258675DC00A68947 /* Assets.xcassets */; };
 		AE79300B258675DC00A68947 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE79300A258675DC00A68947 /* Preview Assets.xcassets */; };
+		AE83841025979D1100A4C5A7 /* Preview+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83840F25979D1100A4C5A7 /* Preview+Settings.swift */; };
 		AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* BookmarkView.swift */; };
 		AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */; };
 		AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */; };
@@ -67,6 +68,7 @@
 		AE79300A258675DC00A68947 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AE79300C258675DC00A68947 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AE79300D258675DC00A68947 /* Pinboarding.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Pinboarding.entitlements; sourceTree = "<group>"; };
+		AE83840F25979D1100A4C5A7 /* Preview+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Settings.swift"; sourceTree = "<group>"; };
 		AEBFB5042589D9FF001521A2 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardingAppEnvironment.swift; sourceTree = "<group>"; };
@@ -270,9 +272,10 @@
 		AE79301B2586841700A68947 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				AE79300A258675DC00A68947 /* Preview Assets.xcassets */,
 				AEC72E102597890E008C7FF3 /* Preview.swift */,
 				AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */,
-				AE79300A258675DC00A68947 /* Preview Assets.xcassets */,
+				AE83840F25979D1100A4C5A7 /* Preview+Settings.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -432,6 +435,7 @@
 				AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */,
 				AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */,
 				AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */,
+				AE83841025979D1100A4C5A7 /* Preview+Settings.swift in Sources */,
 				AE0F3B19258A339C00227428 /* SidebarPrimaryItem.swift in Sources */,
 				AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */,
 				AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */,

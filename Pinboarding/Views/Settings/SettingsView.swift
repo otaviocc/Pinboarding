@@ -43,5 +43,6 @@ struct SettingsView_Previews: PreviewProvider {
             SettingsView()
                 .preferredColorScheme(.dark)
         }
+        .environmentObject(Preview.makeSettingsStore())
     }
 }

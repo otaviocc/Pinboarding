@@ -6,6 +6,12 @@ struct SidebarView: View {
 
     private let viewModel: SidebarViewModel
 
+    @Environment(\.managedObjectContext)
+    private var viewContext
+
+    @FetchRequest(entity: Tag.entity(), sortDescriptors: [.makeSortByNameAscending()])
+    private var tags: FetchedResults<Tag>
+
     // MARK: - Life cycle
 
     init(
@@ -19,10 +25,29 @@ struct SidebarView: View {
     var body: some View {
         List {
             Section(header: Text("My Bookmarks")) {
-                ForEach(viewModel.items, id: \.self) { item in
+                ForEach(viewModel.primaryItems, id: \.self) { item in
                     NavigationLink(
                         destination: Text(item.title),
-                        label: { SidebarItemView(viewModel: item) }
+                        label: {
+                            SidebarItemView(
+                                title: item.title,
+                                iconName: item.iconName
+                            )
+                        }
+                    )
+                }
+            }
+
+            Section(header: Text("Tags")) {
+                ForEach(tags, id: \.self) { tag in
+                    NavigationLink(
+                        destination: Text(tag.name),
+                        label: {
+                            SidebarItemView(
+                                title: tag.name,
+                                iconName: "tag"
+                            )
+                        }
                     )
                 }
             }

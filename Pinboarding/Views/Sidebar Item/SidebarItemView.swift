@@ -4,23 +4,23 @@ struct SidebarItemView: View {
 
     // MARK: - Properties
 
-    private let viewModel: SidebarPrimaryItem
+    private let title: String
+    private let iconName: String
 
     // MARK: - Life cycle
 
     init(
-        viewModel: SidebarPrimaryItem
+        title: String,
+        iconName: String
     ) {
-        self.viewModel = viewModel
+        self.title = title
+        self.iconName = iconName
     }
 
     // MARK: - Public
 
     var body: some View {
-        Label(
-            viewModel.title,
-            systemImage: viewModel.iconName
-        )
+        Label(title, systemImage: iconName)
     }
 }
 
@@ -30,10 +30,10 @@ struct SidebarItemView_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            SidebarItemView(viewModel: .public)
+            SidebarItemView(title: "Foo", iconName: "tag")
                 .preferredColorScheme(.light)
 
-            SidebarItemView(viewModel: .private)
+            SidebarItemView(title: "Foo", iconName: "tag")
                 .preferredColorScheme(.dark)
         }
         .previewLayout(.sizeThatFits)

@@ -24,35 +24,46 @@ struct SidebarView: View {
 
     var body: some View {
         List {
-            Section(header: Text("My Bookmarks")) {
-                ForEach(viewModel.primaryItems, id: \.self) { item in
-                    NavigationLink(
-                        destination: Text(item.title),
-                        label: {
-                            SidebarItemView(
-                                title: item.title,
-                                iconName: item.iconName
-                            )
-                        }
-                    )
-                }
-            }
-
-            Section(header: Text("Tags")) {
-                ForEach(tags, id: \.self) { tag in
-                    NavigationLink(
-                        destination: Text(tag.name),
-                        label: {
-                            SidebarItemView(
-                                title: tag.name,
-                                iconName: "tag"
-                            )
-                        }
-                    )
-                }
-            }
+            makeMainSection()
+            makeTagsSection()
         }
         .listStyle(SidebarListStyle())
+    }
+
+    func makeMainSection() -> some View {
+        Section(header: Text("My Bookmarks")) {
+            ForEach(viewModel.primaryItems, id: \.self) { item in
+                NavigationLink(
+                    destination: BookmarksView(
+                        viewModel: item.listType
+                    ),
+                    label: {
+                        SidebarItemView(
+                            title: item.title,
+                            iconName: item.iconName
+                        )
+                    }
+                )
+            }
+        }
+    }
+
+    func makeTagsSection() -> some View {
+        Section(header: Text("Tags")) {
+            ForEach(tags, id: \.self) { tag in
+                NavigationLink(
+                    destination: BookmarksView(
+                        viewModel: .tag(name: tag.name)
+                    ),
+                    label: {
+                        SidebarItemView(
+                            title: tag.name,
+                            iconName: "tag"
+                        )
+                    }
+                )
+            }
+        }
     }
 }
 
@@ -64,6 +75,7 @@ struct SidebarView_Previews: PreviewProvider {
         let controller = Preview.makePersistenceController(
             populated: true
         )
+
         Group {
             SidebarView(viewModel: SidebarViewModel())
                 .preferredColorScheme(.light)

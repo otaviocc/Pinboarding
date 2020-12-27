@@ -7,7 +7,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             SidebarView(viewModel: SidebarViewModel())
-            BookmarksView()
+            BookmarksView(viewModel: .all)
         }
     }
 }

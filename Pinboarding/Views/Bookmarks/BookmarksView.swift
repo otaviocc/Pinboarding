@@ -7,21 +7,20 @@ struct BookmarksView: View {
     @Environment(\.managedObjectContext)
     private var viewContext
 
-    @FetchRequest(entity: Bookmark.entity(), sortDescriptors: [.makeSortByTimeDescending()])
-    private var bookmarks: FetchedResults<Bookmark>
+    private let viewModel: BookmarksListViewModel
+
+    // MARK: - Life cycle
+
+    init(
+        viewModel: BookmarksListViewModel
+    ) {
+        self.viewModel = viewModel
+    }
 
     // MARK: - Public
 
     var body: some View {
-        List {
-            ForEach(bookmarks, id: \.id) { bookmark in
-                BookmarkView(
-                    viewModel: BookmarkViewModel(
-                        bookmark: bookmark
-                    )
-                )
-            }
-        }
+        BookmarksListView(viewModel: viewModel)
     }
 }
 
@@ -35,10 +34,10 @@ struct BookmarksView_Previews: PreviewProvider {
         )
 
         Group {
-            BookmarksView()
+            BookmarksView(viewModel: .all)
                 .preferredColorScheme(.light)
                 .frame(width: 320)
-            BookmarksView()
+            BookmarksView(viewModel: .all)
                 .preferredColorScheme(.dark)
                 .frame(width: 320)
         }.environment(

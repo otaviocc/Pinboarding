@@ -46,7 +46,7 @@ extension Preview {
             bookmark.tags = []
 
             let tag = Tag(context: context)
-            tag.name = "sample"
+            tag.name = "sample\(i)"
             bookmark.tags = NSSet(array: [tag])
 
             try? context.save()

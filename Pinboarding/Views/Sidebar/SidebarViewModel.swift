@@ -5,12 +5,18 @@ final class SidebarViewModel: ObservableObject {
 
     // MARK: - Properties
 
-    let primaryItems: [SidebarPrimaryItem]
+    @Published var isLoading = false
+
+    private var cancellables: Set<AnyCancellable> = []
 
     // MARK: - Life cycle
 
     init(
+        networkActivityPublisher: AnyPublisher<NetworkControllerEvent, Never>
     ) {
-        self.primaryItems = SidebarPrimaryItem.allCases
+        networkActivityPublisher
+            .map { $0 == .loading }
+            .assign(to: \.isLoading, on: self)
+            .store(in: &cancellables)
     }
 }

@@ -2,11 +2,18 @@ import SwiftUI
 
 struct MainView: View {
 
+    @EnvironmentObject var repository: PinboardRepository
+
     // MARK: - Public
 
     var body: some View {
         NavigationView {
-            SidebarView(viewModel: SidebarViewModel())
+            SidebarView(
+                viewModel: SidebarViewModel(
+                    networkActivityPublisher: repository.networkController.eventPublisher()
+                )
+            )
+
             BookmarksView(viewModel: .all)
         }
     }

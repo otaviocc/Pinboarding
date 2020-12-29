@@ -4,13 +4,7 @@ struct SidebarView: View {
 
     // MARK: - Properties
 
-    private let viewModel: SidebarViewModel
-
-    @Environment(\.managedObjectContext)
-    private var viewContext
-
-    @FetchRequest(entity: Tag.entity(), sortDescriptors: [.makeSortByNameAscending()])
-    private var tags: FetchedResults<Tag>
+    @ObservedObject private var viewModel: SidebarViewModel
 
     // MARK: - Life cycle
 
@@ -23,45 +17,19 @@ struct SidebarView: View {
     // MARK: - Public
 
     var body: some View {
-        List {
-            makeMainSection()
-            makeTagsSection()
-        }
-        .listStyle(SidebarListStyle())
-    }
-
-    func makeMainSection() -> some View {
-        Section(header: Text("My Bookmarks")) {
-            ForEach(viewModel.primaryItems, id: \.self) { item in
-                NavigationLink(
-                    destination: BookmarksView(
-                        viewModel: item.listType
-                    ),
-                    label: {
-                        SidebarItemView(
-                            title: item.title,
-                            iconName: item.iconName
-                        )
-                    }
+        VStack {
+            List {
+                MyBookmarksSectionView(
+                    viewModel: MyBookmarksSectionViewModel()
                 )
+                TagsSectionView()
             }
-        }
-    }
+            .listStyle(SidebarListStyle())
 
-    func makeTagsSection() -> some View {
-        Section(header: Text("Tags")) {
-            ForEach(tags, id: \.self) { tag in
-                NavigationLink(
-                    destination: BookmarksView(
-                        viewModel: .tag(name: tag.name)
-                    ),
-                    label: {
-                        SidebarItemView(
-                            title: tag.name,
-                            iconName: "tag"
-                        )
-                    }
-                )
+            Spacer()
+
+            if viewModel.isLoading {
+                ProgressView()
             }
         }
     }
@@ -76,12 +44,21 @@ struct SidebarView_Previews: PreviewProvider {
             populated: true
         )
 
+        let loadingPublisher = Preview.makeNetworkActivityPublisher(loading: true)
+        let notLoadingPublisher = Preview.makeNetworkActivityPublisher(loading: false)
+
         Group {
-            SidebarView(viewModel: SidebarViewModel())
+            SidebarView(
+                viewModel: SidebarViewModel(
+                    networkActivityPublisher: notLoadingPublisher
+                ))
                 .preferredColorScheme(.light)
                 .frame(width: 200)
 
-            SidebarView(viewModel: SidebarViewModel())
+            SidebarView(
+                viewModel: SidebarViewModel(
+                    networkActivityPublisher: loadingPublisher
+                ))
                 .preferredColorScheme(.dark)
                 .frame(width: 200)
         }

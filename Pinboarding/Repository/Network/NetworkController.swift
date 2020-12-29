@@ -30,8 +30,23 @@ final class NetworkController {
 
     // MARK: - Public
 
-    func updatesPublisher() -> AnyPublisher<[PostResponse], Never> {
+    func updatesPublisher(
+    ) -> AnyPublisher<[PostResponse], Never> {
         postResponseSubject
+            .eraseToAnyPublisher()
+    }
+
+    func eventPublisher(
+    ) -> AnyPublisher<NetworkControllerEvent, Never> {
+        pinboardAPI.eventPublisher()
+            .map { event in
+                switch event {
+                case .loading:
+                    return .loading
+                case .finishedLoading:
+                    return .finishedLoading
+                }
+            }
             .eraseToAnyPublisher()
     }
 
@@ -43,7 +58,8 @@ final class NetworkController {
             .eraseToAnyPublisher()
     }
 
-    private func recentBookmarksPublisher() -> AnyPublisher<[PostResponse], Error> {
+    private func recentBookmarksPublisher(
+    ) -> AnyPublisher<[PostResponse], Error> {
         timerPublisher()
             .flatMap { _ in self.pinboardAPI.recents() }
             .map { $0.posts }

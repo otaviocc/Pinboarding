@@ -30,6 +30,8 @@ struct SidebarView: View {
 
             if viewModel.isLoading {
                 ProgressView()
+                    .progressViewStyle(LinearProgressViewStyle())
+                    .padding()
             }
         }
     }
@@ -51,16 +53,18 @@ struct SidebarView_Previews: PreviewProvider {
             SidebarView(
                 viewModel: SidebarViewModel(
                     networkActivityPublisher: notLoadingPublisher
-                ))
-                .preferredColorScheme(.light)
-                .frame(width: 200)
+                )
+            )
+            .preferredColorScheme(.light)
+            .frame(width: 200)
 
             SidebarView(
                 viewModel: SidebarViewModel(
                     networkActivityPublisher: loadingPublisher
-                ))
-                .preferredColorScheme(.dark)
-                .frame(width: 200)
+                )
+            )
+            .preferredColorScheme(.dark)
+            .frame(width: 200)
         }
         .environment(
             \.managedObjectContext,

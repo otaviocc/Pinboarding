@@ -19,9 +19,10 @@ struct SafariButton: View {
             action: { openURL(url) },
             label: {
                 Image(systemName: "safari")
+                    .font(.title3)
+                    .foregroundColor(.accentColor)
             }
         )
-        .foregroundColor(.accentColor)
         .buttonStyle(PlainButtonStyle())
     }
 }

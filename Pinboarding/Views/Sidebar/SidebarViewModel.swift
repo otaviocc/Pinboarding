@@ -7,7 +7,7 @@ final class SidebarViewModel: ObservableObject {
 
     @Published var isLoading = false
 
-    private var cancellables: Set<AnyCancellable> = []
+    private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
@@ -15,6 +15,7 @@ final class SidebarViewModel: ObservableObject {
         networkActivityPublisher: AnyPublisher<NetworkControllerEvent, Never>
     ) {
         networkActivityPublisher
+            .receive(on: RunLoop.main)
             .map { $0 == .loading }
             .assign(to: \.isLoading, on: self)
             .store(in: &cancellables)

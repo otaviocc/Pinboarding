@@ -15,7 +15,6 @@ extension Bookmark {
     @NSManaged public var isToRead: Bool
     @NSManaged public var tags: NSSet
 
-
     // MARK: - Public
 
     @nonobjc

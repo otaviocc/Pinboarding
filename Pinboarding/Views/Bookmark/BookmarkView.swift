@@ -18,9 +18,22 @@ struct BookmarkView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text(viewModel.title)
-                .font(.title)
-                .foregroundColor(.accentColor)
+            HStack(alignment: .top) {
+                Text(viewModel.title)
+                    .font(.title)
+                    .foregroundColor(.accentColor)
+
+                Spacer()
+
+                SafariButton(
+                    url: viewModel.url
+                )
+
+                ShareButton(
+                    title: viewModel.title,
+                    url: viewModel.url
+                )
+            }
 
             Text(viewModel.description)
                 .font(.body)
@@ -45,7 +58,8 @@ struct BookmarkView_Previews: PreviewProvider {
     struct BookmarkMock: BookmarkViewModelProtocol {
         var title = "Lorem Ipsum"
         var description = "Nulla purus urna, fermentum eu tristique non, bibendum nec purus."
-        var tags: String = "tag1, tag2, tag3, tag4"
+        var tags = "tag1, tag2, tag3, tag4"
+        var url = URL(string: "https://otaviocc.github.io")!
     }
 
     static var previews: some View {

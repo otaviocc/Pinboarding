@@ -3,8 +3,6 @@ import CoreData
 
 extension Preview {
 
-    // MARK: - Double
-
     static func makePersistenceController(
         populated: Bool = false
     ) -> PersistenceController {
@@ -26,8 +24,6 @@ extension Preview {
 
         return controller
     }
-
-    // MARK: - Private
 
     static func makeBookmarks(
         count: Int,

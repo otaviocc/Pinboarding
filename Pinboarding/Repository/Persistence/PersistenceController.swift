@@ -23,14 +23,8 @@ struct PersistenceController {
             )
         }
 
-        self.container.loadPersistentStores { [container] _, error in
+        self.container.loadPersistentStores { [container] _, _ in
             container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
-
-            if let error = error as NSError? {
-                fatalError(
-                    "Something bad happened: \(error), \(error.userInfo)"
-                )
-            }
         }
     }
 

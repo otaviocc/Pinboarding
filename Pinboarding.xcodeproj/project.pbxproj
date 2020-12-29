@@ -39,6 +39,8 @@
 		AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */; };
 		AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */; };
 		AEBFB699259413C8001626AA /* NSSortDescriptor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB698259413C8001626AA /* NSSortDescriptor+App.swift */; };
+		AEC4A94F259B9F09000C65A8 /* SafariButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4A94E259B9F09000C65A8 /* SafariButton.swift */; };
+		AEC4A953259B9F38000C65A8 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4A952259B9F38000C65A8 /* ShareButton.swift */; };
 		AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC622882591DA6F003FDE66 /* PersistenceController.swift */; };
 		AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6228C2591DB03003FDE66 /* NetworkController.swift */; };
 		AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6229A259222B4003FDE66 /* Post+Repository.swift */; };
@@ -89,6 +91,8 @@
 		AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardingAppEnvironment.swift; sourceTree = "<group>"; };
 		AEBFB698259413C8001626AA /* NSSortDescriptor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSortDescriptor+App.swift"; sourceTree = "<group>"; };
+		AEC4A94E259B9F09000C65A8 /* SafariButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariButton.swift; sourceTree = "<group>"; };
+		AEC4A952259B9F38000C65A8 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
 		AEC622882591DA6F003FDE66 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
 		AEC6228C2591DB03003FDE66 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		AEC6229A259222B4003FDE66 /* Post+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Repository.swift"; sourceTree = "<group>"; };
@@ -260,9 +264,11 @@
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
 				AE83841A2597B63400A4C5A7 /* BookmarksList */,
 				AE494F40258ABE5200CFECB6 /* Main */,
+				AEC4A94D259B9EF7000C65A8 /* SafariButton */,
 				AE367600258AAF7600F57A3C /* Settings */,
 				AEF0DF05258EC88B000F4BFF /* Settings General */,
 				AE5781FB258DE4DE00A524F4 /* Settings Login */,
+				AEC4A951259B9F1B000C65A8 /* ShareButton */,
 				AEA3DA92259B35F100C4DB0F /* Sharing Service Picker */,
 				AE367602258AAF8600F57A3C /* Sidebar */,
 				AE367601258AAF7E00F57A3C /* Sidebar Item */,
@@ -341,6 +347,22 @@
 				AEBFB698259413C8001626AA /* NSSortDescriptor+App.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AEC4A94D259B9EF7000C65A8 /* SafariButton */ = {
+			isa = PBXGroup;
+			children = (
+				AEC4A94E259B9F09000C65A8 /* SafariButton.swift */,
+			);
+			path = SafariButton;
+			sourceTree = "<group>";
+		};
+		AEC4A951259B9F1B000C65A8 /* ShareButton */ = {
+			isa = PBXGroup;
+			children = (
+				AEC4A952259B9F38000C65A8 /* ShareButton.swift */,
+			);
+			path = ShareButton;
 			sourceTree = "<group>";
 		};
 		AEC6228B2591DAD3003FDE66 /* Network */ = {
@@ -502,6 +524,8 @@
 				AE0F3B19258A339C00227428 /* SidebarPrimaryItem.swift in Sources */,
 				AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */,
 				AE9541EB259AB01A00B1AA15 /* NetworkControllerEvent.swift in Sources */,
+				AEC4A94F259B9F09000C65A8 /* SafariButton.swift in Sources */,
+				AEC4A953259B9F38000C65A8 /* ShareButton.swift in Sources */,
 				AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */,
 				AEBFB699259413C8001626AA /* NSSortDescriptor+App.swift in Sources */,
 				AE628CC6258FA2D300F91800 /* SettingsStoreChange.swift in Sources */,

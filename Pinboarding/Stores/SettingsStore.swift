@@ -67,7 +67,8 @@ final class SettingsStore: ObservableObject {
     }
 
     private let userDefaults: UserDefaults
-    private let changesSubject = PassthroughSubject<SettingsStoreChange, Never>()
+    private let changesSubject =
+        PassthroughSubject<SettingsStoreChange, Never>()
 
     // MARK: - Life cycle
 
@@ -79,7 +80,8 @@ final class SettingsStore: ObservableObject {
 
     // MARK: - Public
 
-    func changesPublisher() -> AnyPublisher<SettingsStoreChange, Never> {
+    func changesPublisher(
+    ) -> AnyPublisher<SettingsStoreChange, Never> {
         changesSubject
             .eraseToAnyPublisher()
     }

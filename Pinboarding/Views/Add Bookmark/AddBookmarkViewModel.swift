@@ -48,7 +48,8 @@ final class AddBookmarkViewModel: ObservableObject {
 
     // MARK: - Private
 
-    private func isURLValidPublisher() -> AnyPublisher<Bool, Never> {
+    private func isURLValidPublisher(
+    ) -> AnyPublisher<Bool, Never> {
         $urlString
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .removeDuplicates()
@@ -56,7 +57,8 @@ final class AddBookmarkViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
 
-    private func isTitleValidPublisher() -> AnyPublisher<Bool, Never> {
+    private func isTitleValidPublisher(
+    ) -> AnyPublisher<Bool, Never> {
         $title
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .removeDuplicates()
@@ -64,7 +66,8 @@ final class AddBookmarkViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
 
-    private func isFormValidPublisher() -> AnyPublisher<Bool, Never> {
+    private func isFormValidPublisher(
+    ) -> AnyPublisher<Bool, Never> {
         Publishers.CombineLatest(isURLValidPublisher(), isTitleValidPublisher())
             .map { $0 && $1 }
             .eraseToAnyPublisher()

@@ -5,31 +5,51 @@ struct SharingServicePicker: NSViewRepresentable {
 
     // MARK: - Properties
 
-    @Binding var isPresented: Bool
-    var sharingItems: [Any] = []
+    @Binding private var isPresented: Bool
+
+    private var sharingItems = [Any]()
+
+    // MARK: - Life cycle
+
+    init(
+        isPresented: Binding<Bool>,
+        sharingItems: [Any]
+    ) {
+        self._isPresented = isPresented
+        self.sharingItems = sharingItems
+    }
 
     // MARK: - Public
 
-    func makeNSView(context: Context) -> NSView {
+    func makeNSView(
+        context: Context
+    ) -> NSView {
         NSView()
     }
 
-    func updateNSView(_ nsView: NSView, context: Context) {
-        if isPresented {
-            let picker = NSSharingServicePicker(items: sharingItems)
-            picker.delegate = context.coordinator
+    func updateNSView(
+        _ nsView: NSView,
+        context: Context
+    ) {
+        guard isPresented else { return }
 
-            DispatchQueue.main.async {
-                picker.show(
-                    relativeTo: .zero,
-                    of: nsView,
-                    preferredEdge: .minY
-                )
-            }
+        let picker = NSSharingServicePicker(
+            items: sharingItems
+        )
+
+        picker.delegate = context.coordinator
+
+        DispatchQueue.main.async {
+            picker.show(
+                relativeTo: .zero,
+                of: nsView,
+                preferredEdge: .minY
+            )
         }
     }
 
-    func makeCoordinator() -> Coordinator {
+    func makeCoordinator(
+    ) -> Coordinator {
         Coordinator(picker: self)
     }
 
@@ -47,7 +67,7 @@ struct SharingServicePicker: NSViewRepresentable {
             didChoose service: NSSharingService?
         ) {
             sharingServicePicker.delegate = nil
-            self.picker.isPresented = false
+            picker.isPresented = false
         }
     }
 }

@@ -42,7 +42,8 @@ final class LoginViewModel: ObservableObject {
 
     // MARK: - Private
 
-    private func isAuthTokenValidPublisher() -> AnyPublisher<Bool, Never> {
+    private func isAuthTokenValidPublisher(
+    ) -> AnyPublisher<Bool, Never> {
         $authToken
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .removeDuplicates()

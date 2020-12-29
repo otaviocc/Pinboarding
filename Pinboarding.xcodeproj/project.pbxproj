@@ -34,6 +34,7 @@
 		AE9541F3259B2D1E00B1AA15 /* TagsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9541F2259B2D1E00B1AA15 /* TagsSectionView.swift */; };
 		AE9541F7259B2D8800B1AA15 /* MyBookmarksSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9541F6259B2D8800B1AA15 /* MyBookmarksSectionView.swift */; };
 		AE9541FA259B2DD500B1AA15 /* MyBookmarksSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9541F9259B2DD500B1AA15 /* MyBookmarksSectionViewModel.swift */; };
+		AEA3DA94259B360600C4DB0F /* SharingServicePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEA3DA93259B360600C4DB0F /* SharingServicePicker.swift */; };
 		AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5042589D9FF001521A2 /* BookmarkView.swift */; };
 		AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */; };
 		AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */; };
@@ -83,6 +84,7 @@
 		AE9541F2259B2D1E00B1AA15 /* TagsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsSectionView.swift; sourceTree = "<group>"; };
 		AE9541F6259B2D8800B1AA15 /* MyBookmarksSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookmarksSectionView.swift; sourceTree = "<group>"; };
 		AE9541F9259B2DD500B1AA15 /* MyBookmarksSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyBookmarksSectionViewModel.swift; sourceTree = "<group>"; };
+		AEA3DA93259B360600C4DB0F /* SharingServicePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharingServicePicker.swift; sourceTree = "<group>"; };
 		AEBFB5042589D9FF001521A2 /* BookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkView.swift; sourceTree = "<group>"; };
 		AEBFB5052589D9FF001521A2 /* BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkViewModel.swift; sourceTree = "<group>"; };
 		AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardingAppEnvironment.swift; sourceTree = "<group>"; };
@@ -261,6 +263,7 @@
 				AE367600258AAF7600F57A3C /* Settings */,
 				AEF0DF05258EC88B000F4BFF /* Settings General */,
 				AE5781FB258DE4DE00A524F4 /* Settings Login */,
+				AEA3DA92259B35F100C4DB0F /* Sharing Service Picker */,
 				AE367602258AAF8600F57A3C /* Sidebar */,
 				AE367601258AAF7E00F57A3C /* Sidebar Item */,
 				AE9541F5259B2D6C00B1AA15 /* Sidebar My Bookmarks Section */,
@@ -322,6 +325,14 @@
 				AE9541F9259B2DD500B1AA15 /* MyBookmarksSectionViewModel.swift */,
 			);
 			path = "Sidebar My Bookmarks Section";
+			sourceTree = "<group>";
+		};
+		AEA3DA92259B35F100C4DB0F /* Sharing Service Picker */ = {
+			isa = PBXGroup;
+			children = (
+				AEA3DA93259B360600C4DB0F /* SharingServicePicker.swift */,
+			);
+			path = "Sharing Service Picker";
 			sourceTree = "<group>";
 		};
 		AEBFB697259413B1001626AA /* Extensions */ = {
@@ -472,6 +483,7 @@
 				AEF0DF11258ECB8D000F4BFF /* GeneralViewModel.swift in Sources */,
 				AE9541F7259B2D8800B1AA15 /* MyBookmarksSectionView.swift in Sources */,
 				AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */,
+				AEA3DA94259B360600C4DB0F /* SharingServicePicker.swift in Sources */,
 				AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */,
 				AE9541F3259B2D1E00B1AA15 /* TagsSectionView.swift in Sources */,
 				AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */,

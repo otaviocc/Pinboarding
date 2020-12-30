@@ -57,12 +57,17 @@ final class NetworkController {
 
     private func timerPublisher(
     ) -> AnyPublisher<Date, Never> {
-        Timer.TimerPublisher(
-            interval: 15,
-            runLoop: .main,
-            mode: .common
+        Deferred {
+            Just(Date())
+        }
+        .append(
+            Timer.TimerPublisher(
+                interval: 15,
+                runLoop: .main,
+                mode: .common
+            )
+            .autoconnect()
         )
-        .autoconnect()
         .eraseToAnyPublisher()
     }
 

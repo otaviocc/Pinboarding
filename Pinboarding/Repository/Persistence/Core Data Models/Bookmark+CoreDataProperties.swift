@@ -18,7 +18,8 @@ extension Bookmark {
     // MARK: - Public
 
     @nonobjc
-    public class func fetchRequest() -> NSFetchRequest<Bookmark> {
+    public class func fetchRequest(
+    ) -> NSFetchRequest<Bookmark> {
         NSFetchRequest<Bookmark>(
             entityName: "Bookmark"
         )
@@ -27,17 +28,24 @@ extension Bookmark {
     // MARK: - Relationships
 
     @objc(addTagsObject:)
-    @NSManaged public func addToTags(_ value: Tag)
+    @NSManaged public func addToTags(
+        _ value: Tag
+    )
 
     @objc(removeTagsObject:)
-    @NSManaged public func removeFromTags(_ value: Tag)
+    @NSManaged public func removeFromTags(
+        _ value: Tag
+    )
 
     @objc(addTags:)
-    @NSManaged public func addToTags(_ values: NSSet)
+    @NSManaged public func addToTags(
+        _ values: NSSet
+    )
 
     @objc(removeTags:)
-    @NSManaged public func removeFromTags(_ values: NSSet)
-
+    @NSManaged public func removeFromTags(
+        _ values: NSSet
+    )
 }
 
 extension Bookmark: Identifiable { }

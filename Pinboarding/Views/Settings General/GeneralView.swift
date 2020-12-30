@@ -25,7 +25,8 @@ struct GeneralView: View {
 
     // MARK: - Private
 
-    private func makeNewBookmarksSection() -> some View {
+    private func makeNewBookmarksSection(
+    ) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Bookmarks")
 
@@ -37,7 +38,8 @@ struct GeneralView: View {
         }
     }
 
-    private func makeReadingSection() -> some View {
+    private func makeReadingSection(
+    ) -> some View {
         VStack(alignment: .leading, spacing: 12) {
             Text("Reading")
 

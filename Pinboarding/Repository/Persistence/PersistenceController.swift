@@ -60,26 +60,18 @@ struct PersistenceController {
     private func removeDeletedBookmarks(
         _ posts: [PostResponse]
     ) {
-        let hashes = posts.map { $0.hash }
         let request = NSFetchRequest<Bookmark>(
             entityName: "Bookmark"
         )
+
         request.predicate = NSPredicate(
             format: "NOT id IN %@",
-            hashes
+            posts.map { $0.hash }
         )
 
-        do {
-            let bookmarksToRemove = try container.viewContext.fetch(
-                request
-            )
-
-            for bookmark in bookmarksToRemove {
-                container.viewContext.delete(bookmark)
-            }
-        } catch {
-            print("Something happened: \(error)")
-        }
+        removeManagedObject(
+            fetchRequest: request
+        )
     }
 
     private func removeUnusedTags(
@@ -92,13 +84,21 @@ struct PersistenceController {
             format: "bookmarks.@count == 0"
         )
 
-        do {
-            let tagsToRemove = try container.viewContext.fetch(
-                request
-            )
+        removeManagedObject(
+            fetchRequest: request
+        )
+    }
 
-            for tag in tagsToRemove {
-                container.viewContext.delete(tag)
+    private func removeManagedObject<Object>(
+        fetchRequest: NSFetchRequest<Object>
+    ) where Object: NSManagedObject {
+        do {
+            let objectsToRemove = try container.viewContext.fetch(
+                fetchRequest
+            ) as [Object]
+
+            for object in objectsToRemove {
+                container.viewContext.delete(object)
             }
         } catch {
             print("Something happened: \(error)")

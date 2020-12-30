@@ -11,23 +11,34 @@ extension Tag {
     // MARK: - Public
 
     @nonobjc
-    public class func fetchRequest() -> NSFetchRequest<Tag> {
-        return NSFetchRequest<Tag>(entityName: "Tag")
+    public class func fetchRequest(
+    ) -> NSFetchRequest<Tag> {
+        return NSFetchRequest<Tag>(
+            entityName: "Tag"
+        )
     }
 
     // MARK: - Relationships
 
     @objc(addBookmarkObject:)
-    @NSManaged public func addToBookmarks(_ value: Bookmark)
+    @NSManaged public func addToBookmarks(
+        _ value: Bookmark
+    )
 
     @objc(removeBookmarkObject:)
-    @NSManaged public func removeFromBookmarks(_ value: Bookmark)
+    @NSManaged public func removeFromBookmarks(
+        _ value: Bookmark
+    )
 
     @objc(addBookmark:)
-    @NSManaged public func addToBookmarks(_ values: NSSet)
+    @NSManaged public func addToBookmarks(
+        _ values: NSSet
+    )
 
     @objc(removeBookmark:)
-    @NSManaged public func removeFromBookmarks(_ values: NSSet)
+    @NSManaged public func removeFromBookmarks(
+        _ values: NSSet
+    )
 }
 
 extension Tag: Identifiable { }

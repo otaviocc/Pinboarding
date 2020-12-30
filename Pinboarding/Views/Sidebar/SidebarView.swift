@@ -46,8 +46,13 @@ struct SidebarView_Previews: PreviewProvider {
             populated: true
         )
 
-        let loadingPublisher = Preview.makeNetworkActivityPublisher(loading: true)
-        let notLoadingPublisher = Preview.makeNetworkActivityPublisher(loading: false)
+        let loadingPublisher = Preview.makeNetworkActivityPublisher(
+            loading: true
+        )
+
+        let notLoadingPublisher = Preview.makeNetworkActivityPublisher(
+            loading: false
+        )
 
         Group {
             SidebarView(

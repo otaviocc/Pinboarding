@@ -14,10 +14,10 @@ final class NetworkController {
     // MARK: - Life cycle
 
     init(
-        settingsController: SettingsStore
+        settingsStore: SettingsStore
     ) {
         self.pinboardAPI = PinboardAPI {
-            settingsController.authToken
+            settingsStore.authToken
         }
 
         recentBookmarksPublisher()

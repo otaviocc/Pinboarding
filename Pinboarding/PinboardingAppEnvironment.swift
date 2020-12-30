@@ -9,7 +9,7 @@ final class PinboardingAppEnvironment {
     )
 
     private(set) lazy var networkController = NetworkController(
-        settingsController: settingsStore
+        settingsStore: settingsStore
     )
 
     private(set) lazy var persistenceController = PersistenceController(

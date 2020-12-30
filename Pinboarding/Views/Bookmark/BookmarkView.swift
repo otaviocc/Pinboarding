@@ -35,9 +35,11 @@ struct BookmarkView: View {
                 )
             }
 
-            Text(viewModel.description)
-                .font(.body)
-                .foregroundColor(.primary)
+            if !viewModel.description.isEmpty {
+                Text(viewModel.description)
+                    .font(.body)
+                    .foregroundColor(.primary)
+            }
 
             HStack {
                 Spacer()
@@ -62,6 +64,13 @@ struct BookmarkView_Previews: PreviewProvider {
         var url = URL(string: "https://otaviocc.github.io")!
     }
 
+    struct EmptyDescriptionBookmarkMock: BookmarkViewModelProtocol {
+        var title = "Lorem Ipsum"
+        var description = ""
+        var tags = "tag1, tag2, tag3, tag4"
+        var url = URL(string: "https://otaviocc.github.io")!
+    }
+
     static var previews: some View {
         Group {
             BookmarkView(viewModel: BookmarkMock())
@@ -69,6 +78,10 @@ struct BookmarkView_Previews: PreviewProvider {
                 .preferredColorScheme(.light)
 
             BookmarkView(viewModel: BookmarkMock())
+                .frame(width: 320)
+                .preferredColorScheme(.dark)
+
+            BookmarkView(viewModel: EmptyDescriptionBookmarkMock())
                 .frame(width: 320)
                 .preferredColorScheme(.dark)
         }

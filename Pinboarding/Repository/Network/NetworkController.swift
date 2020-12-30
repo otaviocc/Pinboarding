@@ -69,8 +69,7 @@ final class NetworkController {
     private func recentBookmarksPublisher(
     ) -> AnyPublisher<[PostResponse], Error> {
         timerPublisher()
-            .flatMap { _ in self.pinboardAPI.recents() }
-            .map { $0.posts }
+            .flatMap { _ in self.pinboardAPI.all() }
             .eraseToAnyPublisher()
     }
 }

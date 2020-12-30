@@ -13,7 +13,8 @@ final class PinboardingAppEnvironment {
     )
 
     private(set) lazy var persistenceController = PersistenceController(
-        inMemory: false
+        inMemory: false,
+        updatesPublisher: networkController.updatesPublisher()
     )
 
     private(set) lazy var repository = PinboardRepository(

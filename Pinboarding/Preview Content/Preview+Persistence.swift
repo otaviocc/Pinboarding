@@ -1,5 +1,7 @@
 import Foundation
+import Combine
 import CoreData
+import PinboardKit
 
 extension Preview {
 
@@ -7,7 +9,8 @@ extension Preview {
         populated: Bool = false
     ) -> PersistenceController {
         let controller = PersistenceController(
-            inMemory: true
+            inMemory: true,
+            updatesPublisher: makeUpdatesPublisher()
         )
 
         if populated {
@@ -59,5 +62,11 @@ extension Preview {
             tag.bookmarks = []
             try? context.save()
         }
+    }
+
+    static func makeUpdatesPublisher(
+    ) -> AnyPublisher<[PostResponse], Never> {
+        Just([])
+            .eraseToAnyPublisher()
     }
 }

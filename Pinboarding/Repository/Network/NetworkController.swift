@@ -8,6 +8,7 @@ final class NetworkController {
 
     private var cancellables = Set<AnyCancellable>()
     private var pinboardAPI: PinboardAPI
+    private var settingsStore: SettingsStore
     private let postResponseSubject =
         PassthroughSubject<[PostResponse], Never>()
 
@@ -16,6 +17,8 @@ final class NetworkController {
     init(
         settingsStore: SettingsStore
     ) {
+        self.settingsStore = settingsStore
+
         self.pinboardAPI = PinboardAPI {
             settingsStore.authToken
         }
@@ -57,23 +60,25 @@ final class NetworkController {
 
     private func timerPublisher(
     ) -> AnyPublisher<Date, Never> {
-        Deferred {
-            Just(Date())
-        }
-        .append(
-            Timer.TimerPublisher(
-                interval: 15,
-                runLoop: .main,
-                mode: .common
+        Deferred { Just(Date()) }
+            .append(
+                Timer.TimerPublisher(
+                    interval: 15,
+                    runLoop: .main,
+                    mode: .common
+                )
+                .autoconnect()
             )
-            .autoconnect()
-        )
-        .eraseToAnyPublisher()
+            .eraseToAnyPublisher()
     }
 
     private func recentBookmarksPublisher(
     ) -> AnyPublisher<[PostResponse], Error> {
         timerPublisher()
+            .flatMap { _ in self.pinboardAPI.update() }
+            .map { $0.updateTime }
+            .filter { $0 != self.settingsStore.lastSyncDate }
+            .map { self.settingsStore.lastSyncDate = $0 }
             .flatMap { _ in self.pinboardAPI.all() }
             .eraseToAnyPublisher()
     }

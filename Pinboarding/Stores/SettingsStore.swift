@@ -10,6 +10,7 @@ final class SettingsStore: ObservableObject {
         static let isPrivate = "settingsIsPrivate"
         static let isToRead = "settingsIsToRead"
         static let showPrivateIcon = "settingsShowPrivateIcon"
+        static let lastSyncDate = "lastSyncDate"
     }
 
     // MARK: - Properties
@@ -62,6 +63,19 @@ final class SettingsStore: ObservableObject {
             )
             changesSubject.send(
                 .showPrivateIcon(showPrivateIcon)
+            )
+        }
+    }
+
+    var lastSyncDate: Date? {
+        get { userDefaults.object(forKey: Key.lastSyncDate) as? Date }
+        set {
+            userDefaults.setValue(
+                newValue,
+                forKey: Key.lastSyncDate
+            )
+            changesSubject.send(
+                .lastSyncDate(lastSyncDate)
             )
         }
     }

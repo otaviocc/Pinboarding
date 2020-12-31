@@ -34,7 +34,10 @@ struct GeneralView: View {
                 .font(.footnote)
 
             Toggle("Mark as private", isOn: $viewModel.isPrivate)
+                .toggleStyle(SwitchToggleStyle())
+
             Toggle("Mark to read later", isOn: $viewModel.isToRead)
+                .toggleStyle(SwitchToggleStyle())
         }
     }
 
@@ -44,6 +47,7 @@ struct GeneralView: View {
             Text("Reading")
 
             Toggle("Show private icon", isOn: $viewModel.showPrivateIcon)
+                .toggleStyle(SwitchToggleStyle())
         }
     }
 }

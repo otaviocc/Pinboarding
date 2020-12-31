@@ -8,11 +8,15 @@ struct SafariButton: View {
 
     private let url: URL
 
+    // MARK: - Life cycle
+
     init(
         url: URL
     ) {
         self.url = url
     }
+
+    // MARK: - Public
 
     var body: some View {
         Button(

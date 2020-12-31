@@ -2,13 +2,19 @@ import SwiftUI
 
 struct MyBookmarksSectionView: View {
 
+    // MARK: - Properties
+
     private let viewModel: MyBookmarksSectionViewModel
+
+    // MARK: - Life cycle
 
     init(
         viewModel: MyBookmarksSectionViewModel
     ) {
         self.viewModel = viewModel
     }
+
+    // MARK: - Public
 
     var body: some View {
         Section(header: Text("My Bookmarks")) {

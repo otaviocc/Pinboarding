@@ -8,6 +8,8 @@ enum BookmarksListViewModel {
     case unread
     case tag(name: String)
 
+    // MARK: - Properties
+
     var predicate: NSPredicate? {
         switch self {
         case .all:

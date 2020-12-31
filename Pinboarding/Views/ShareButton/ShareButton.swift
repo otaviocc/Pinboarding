@@ -9,6 +9,8 @@ struct ShareButton: View {
     private let title: String
     private let url: URL
 
+    // MARK: - Life cycle
+
     init(
         title: String,
         url: URL
@@ -16,6 +18,8 @@ struct ShareButton: View {
         self.title = title
         self.url = url
     }
+
+    // MARK: - Public
 
     var body: some View {
         Button(

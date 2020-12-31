@@ -2,6 +2,8 @@ import SwiftUI
 
 struct MainView: View {
 
+    // MARK: - Properties
+
     @EnvironmentObject var repository: PinboardRepository
 
     // MARK: - Public

@@ -12,6 +12,8 @@ final class LoginViewModel: ObservableObject {
     private let userDefaultsStore: UserDefaultsStoreStore
     private var cancellables = Set<AnyCancellable>()
 
+    // MARK: - Life cycle
+
     init(
         userDefaultsStore: UserDefaultsStoreStore
     ) {

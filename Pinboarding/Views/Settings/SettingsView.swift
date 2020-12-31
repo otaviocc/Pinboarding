@@ -4,11 +4,13 @@ struct SettingsView: View {
 
     // MARK: - Nested types
 
-    @EnvironmentObject var userDefaultsStore: UserDefaultsStoreStore
-
     private enum SettingsTab: Hashable {
         case login, general
     }
+
+    // MARK: - Properties
+
+    @EnvironmentObject var userDefaultsStore: UserDefaultsStoreStore
 
     // MARK: - Public
 

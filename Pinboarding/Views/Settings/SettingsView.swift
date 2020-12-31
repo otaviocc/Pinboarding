@@ -4,7 +4,7 @@ struct SettingsView: View {
 
     // MARK: - Nested types
 
-    @EnvironmentObject var settingsStore: SettingsStore
+    @EnvironmentObject var userDefaultsStore: UserDefaultsStoreStore
 
     private enum SettingsTab: Hashable {
         case login, general
@@ -14,17 +14,25 @@ struct SettingsView: View {
 
     var body: some View {
         TabView {
-            LoginView(viewModel: LoginViewModel(settingsStore: settingsStore))
-                .tabItem {
-                    Label("Login", systemImage: "person")
-                }
-                .tag(SettingsTab.login)
+            LoginView(
+                viewModel: LoginViewModel(
+                    userDefaultsStore: userDefaultsStore
+                )
+            )
+            .tabItem {
+                Label("Login", systemImage: "person")
+            }
+            .tag(SettingsTab.login)
 
-            GeneralView(viewModel: GeneralViewModel(settingsStore: settingsStore))
-                .tabItem {
-                    Label("General", systemImage: "gear")
-                }
-                .tag(SettingsTab.general)
+            GeneralView(
+                viewModel: GeneralViewModel(
+                    userDefaultsStore: userDefaultsStore
+                )
+            )
+            .tabItem {
+                Label("General", systemImage: "gear")
+            }
+            .tag(SettingsTab.general)
         }
         .padding(16)
         .frame(width: 375, height: 200)
@@ -43,6 +51,6 @@ struct SettingsView_Previews: PreviewProvider {
             SettingsView()
                 .preferredColorScheme(.dark)
         }
-        .environmentObject(Preview.makeSettingsStore())
+        .environmentObject(Preview.makeUserDefaultsStore())
     }
 }

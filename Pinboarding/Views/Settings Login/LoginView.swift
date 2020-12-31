@@ -50,12 +50,12 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let settingsStore = Preview.makeSettingsStore()
+        let userDefaultsStore = Preview.makeUserDefaultsStore()
 
         Group {
             LoginView(
                 viewModel: LoginViewModel(
-                    settingsStore: settingsStore
+                    userDefaultsStore: userDefaultsStore
                 )
             )
             .frame(width: 320)
@@ -64,7 +64,7 @@ struct LoginView_Previews: PreviewProvider {
 
             LoginView(
                 viewModel: LoginViewModel(
-                    settingsStore: settingsStore
+                    userDefaultsStore: userDefaultsStore
                 )
             )
             .frame(width: 320)

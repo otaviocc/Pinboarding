@@ -1,6 +1,6 @@
 import Foundation
 
-enum SettingsStoreChange {
+enum UserDefaultsStoreChange {
     case authToken(_ token: String)
     case isPrivate(_ value: Bool)
     case isToRead(_ value: Bool)

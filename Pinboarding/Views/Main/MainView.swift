@@ -24,7 +24,7 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let settingsStore = Preview.makeSettingsStore()
+        let userDefaultsStore = Preview.makeUserDefaultsStore()
         let controller = Preview.makePersistenceController(
             populated: true
         )
@@ -36,7 +36,7 @@ struct MainView_Previews: PreviewProvider {
             MainView()
                 .preferredColorScheme(.dark)
         }
-        .environmentObject(settingsStore)
+        .environmentObject(userDefaultsStore)
         .environment(
             \.managedObjectContext,
             controller.container.viewContext

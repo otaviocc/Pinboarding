@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class SettingsStore: ObservableObject {
+final class UserDefaultsStoreStore: ObservableObject {
 
     // MARK: - Nested types
 
@@ -10,7 +10,7 @@ final class SettingsStore: ObservableObject {
         static let isPrivate = "settingsIsPrivate"
         static let isToRead = "settingsIsToRead"
         static let showPrivateIcon = "settingsShowPrivateIcon"
-        static let lastSyncDate = "lastSyncDate"
+        static let lastSyncDate = "syncLastUpdate"
     }
 
     // MARK: - Properties
@@ -82,7 +82,7 @@ final class SettingsStore: ObservableObject {
 
     private let userDefaults: UserDefaults
     private let changesSubject =
-        PassthroughSubject<SettingsStoreChange, Never>()
+        PassthroughSubject<UserDefaultsStoreChange, Never>()
 
     // MARK: - Life cycle
 
@@ -95,7 +95,7 @@ final class SettingsStore: ObservableObject {
     // MARK: - Public
 
     func changesPublisher(
-    ) -> AnyPublisher<SettingsStoreChange, Never> {
+    ) -> AnyPublisher<UserDefaultsStoreChange, Never> {
         changesSubject
             .eraseToAnyPublisher()
     }

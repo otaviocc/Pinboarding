@@ -4,12 +4,12 @@ final class PinboardingAppEnvironment {
 
     // MARK: - Properties
 
-    private(set) var settingsStore = SettingsStore(
+    private(set) var userDefaultsStore = UserDefaultsStoreStore(
         userDefaults: .standard
     )
 
     private(set) lazy var networkController = NetworkController(
-        settingsStore: settingsStore
+        userDefaultsStore: userDefaultsStore
     )
 
     private(set) lazy var persistenceController = PersistenceController(

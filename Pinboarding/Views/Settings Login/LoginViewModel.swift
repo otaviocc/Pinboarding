@@ -9,14 +9,14 @@ final class LoginViewModel: ObservableObject {
     @Published private(set) var authTokenMessage: String = ""
     @Published private(set) var isValid = false
 
-    private var settingsStore: SettingsStore
+    private let userDefaultsStore: UserDefaultsStoreStore
     private var cancellables = Set<AnyCancellable>()
 
     init(
-        settingsStore: SettingsStore
+        userDefaultsStore: UserDefaultsStoreStore
     ) {
-        self.settingsStore = settingsStore
-        self.authToken = settingsStore.authToken
+        self.userDefaultsStore = userDefaultsStore
+        self.authToken = userDefaultsStore.authToken
 
         self.isAuthTokenValidPublisher()
             .receive(on: RunLoop.main)
@@ -37,7 +37,7 @@ final class LoginViewModel: ObservableObject {
     func save() {
         guard isValid else { return }
 
-        settingsStore.authToken = authToken
+        userDefaultsStore.authToken = authToken
     }
 
     // MARK: - Private

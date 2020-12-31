@@ -9,32 +9,32 @@ final class GeneralViewModel: ObservableObject {
     @Published var isToRead: Bool = false
     @Published var showPrivateIcon: Bool = true
 
-    private var settingsStore: SettingsStore
+    private let userDefaultsStore: UserDefaultsStoreStore
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
     init(
-        settingsStore: SettingsStore
+        userDefaultsStore: UserDefaultsStoreStore
     ) {
-        self.settingsStore = settingsStore
-        self.isPrivate = settingsStore.isPrivate
-        self.isToRead = settingsStore.isToRead
-        self.showPrivateIcon = settingsStore.showPrivateIcon
+        self.userDefaultsStore = userDefaultsStore
+        self.isPrivate = userDefaultsStore.isPrivate
+        self.isToRead = userDefaultsStore.isToRead
+        self.showPrivateIcon = userDefaultsStore.showPrivateIcon
 
         $isPrivate
             .dropFirst()
-            .assign(to: \.settingsStore.isPrivate, on: self)
+            .assign(to: \.userDefaultsStore.isPrivate, on: self)
             .store(in: &cancellables)
 
         $isToRead
             .dropFirst()
-            .assign(to: \.settingsStore.isToRead, on: self)
+            .assign(to: \.userDefaultsStore.isToRead, on: self)
             .store(in: &cancellables)
 
         $showPrivateIcon
             .dropFirst()
-            .assign(to: \.settingsStore.showPrivateIcon, on: self)
+            .assign(to: \.userDefaultsStore.showPrivateIcon, on: self)
             .store(in: &cancellables)
     }
 }

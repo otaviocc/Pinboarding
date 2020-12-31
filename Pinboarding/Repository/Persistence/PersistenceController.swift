@@ -100,6 +100,8 @@ struct PersistenceController {
             for object in objectsToRemove {
                 container.viewContext.delete(object)
             }
+
+            try container.viewContext.save()
         } catch {
             print("Something happened: \(error)")
         }

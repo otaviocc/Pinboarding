@@ -2,9 +2,9 @@ import Foundation
 
 extension Preview {
 
-    static func makeSettingsStore(
-    ) -> SettingsStore {
-        let store = SettingsStore(
+    static func makeUserDefaultsStore(
+    ) -> UserDefaultsStoreStore {
+        let store = UserDefaultsStoreStore(
             userDefaults: makePreviewUserDefaults()
         )
 

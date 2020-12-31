@@ -7,7 +7,7 @@ struct SharingServicePicker: NSViewRepresentable {
 
     @Binding private var isPresented: Bool
 
-    private var sharingItems = [Any]()
+    private let sharingItems: [Any]
 
     // MARK: - Life cycle
 

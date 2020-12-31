@@ -18,36 +18,26 @@ struct GeneralView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            makeNewBookmarksSection()
-            makeReadingSection()
-        }
-    }
-
-    // MARK: - Private
-
-    private func makeNewBookmarksSection(
-    ) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Bookmarks")
-
-            Text("Default values for new bookmarks.")
-                .font(.footnote)
-
-            Toggle("Mark as private", isOn: $viewModel.isPrivate)
+            Toggle("Mark new posts as private", isOn: $viewModel.isPrivate)
                 .toggleStyle(SwitchToggleStyle())
+                .alignmentGuide(
+                    .leading,
+                    computeValue: { d in (d.width - 38) }
+                )
 
-            Toggle("Mark to read later", isOn: $viewModel.isToRead)
+            Toggle("Mark new posts to read later", isOn: $viewModel.isToRead)
                 .toggleStyle(SwitchToggleStyle())
-        }
-    }
-
-    private func makeReadingSection(
-    ) -> some View {
-        VStack(alignment: .leading, spacing: 12) {
-            Text("Reading")
+                .alignmentGuide(
+                    .leading,
+                    computeValue: { d in (d.width - 38) }
+                )
 
             Toggle("Show private icon", isOn: $viewModel.showPrivateIcon)
                 .toggleStyle(SwitchToggleStyle())
+                .alignmentGuide(
+                    .leading,
+                    computeValue: { d in (d.width - 38) }
+                )
         }
     }
 }

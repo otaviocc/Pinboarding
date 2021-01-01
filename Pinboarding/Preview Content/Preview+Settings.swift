@@ -6,8 +6,8 @@ extension Preview {
     /// It has a different Suite Name so it doesn't
     /// conflict with the Standard one.
     static func makeUserDefaultsStore(
-    ) -> UserDefaultsStoreStore {
-        let store = UserDefaultsStoreStore(
+    ) -> UserDefaultsStore {
+        let store = UserDefaultsStore(
             userDefaults: makePreviewUserDefaults()
         )
 

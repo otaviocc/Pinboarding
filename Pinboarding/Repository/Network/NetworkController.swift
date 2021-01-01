@@ -8,14 +8,14 @@ final class NetworkController {
 
     private var cancellables = Set<AnyCancellable>()
     private let pinboardAPI: PinboardAPI
-    private let userDefaultsStore: UserDefaultsStoreStore
+    private let userDefaultsStore: UserDefaultsStore
     private let postResponseSubject =
         PassthroughSubject<[PostResponse], Never>()
 
     // MARK: - Life cycle
 
     init(
-        userDefaultsStore: UserDefaultsStoreStore
+        userDefaultsStore: UserDefaultsStore
     ) {
         self.userDefaultsStore = userDefaultsStore
         self.pinboardAPI = PinboardAPI {

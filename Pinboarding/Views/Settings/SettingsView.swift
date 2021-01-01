@@ -10,7 +10,7 @@ struct SettingsView: View {
 
     // MARK: - Properties
 
-    @EnvironmentObject var userDefaultsStore: UserDefaultsStoreStore
+    @EnvironmentObject var userDefaultsStore: UserDefaultsStore
 
     // MARK: - Public
 

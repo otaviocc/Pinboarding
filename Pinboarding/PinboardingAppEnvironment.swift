@@ -4,7 +4,7 @@ final class PinboardingAppEnvironment {
 
     // MARK: - Properties
 
-    private(set) var userDefaultsStore = UserDefaultsStoreStore(
+    private(set) var userDefaultsStore = UserDefaultsStore(
         userDefaults: .standard
     )
 

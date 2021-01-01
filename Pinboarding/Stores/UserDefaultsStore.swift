@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class UserDefaultsStoreStore: ObservableObject {
+final class UserDefaultsStore: ObservableObject {
 
     // MARK: - Nested types
 
@@ -37,7 +37,7 @@ final class UserDefaultsStoreStore: ObservableObject {
     }
 }
 
-extension UserDefaultsStoreStore {
+extension UserDefaultsStore {
 
     /// Flag used to store preferences for new bookmarks.
     /// Bookmarks can be either private or public.

@@ -15,71 +15,6 @@ final class UserDefaultsStoreStore: ObservableObject {
 
     // MARK: - Properties
 
-    var isPrivate: Bool {
-        get { userDefaults.bool(forKey: Key.isPrivate) }
-        set {
-            userDefaults.setValue(
-                newValue,
-                forKey: Key.isPrivate
-            )
-            changesSubject.send(
-                .isPrivate(isPrivate)
-            )
-        }
-    }
-
-    var isToRead: Bool {
-        get { userDefaults.bool(forKey: Key.isToRead) }
-        set {
-            userDefaults.setValue(
-                newValue,
-                forKey: Key.isToRead
-            )
-            changesSubject.send(
-                .isToRead(isToRead)
-            )
-        }
-    }
-
-    var authToken: String {
-        get { userDefaults.string(forKey: Key.authToken) ?? "" }
-        set {
-            userDefaults.setValue(
-                newValue,
-                forKey: Key.authToken
-            )
-            changesSubject.send(
-                .authToken(authToken)
-            )
-        }
-    }
-
-    var showPrivateIcon: Bool {
-        get { userDefaults.bool(forKey: Key.showPrivateIcon) }
-        set {
-            userDefaults.setValue(
-                newValue,
-                forKey: Key.showPrivateIcon
-            )
-            changesSubject.send(
-                .showPrivateIcon(showPrivateIcon)
-            )
-        }
-    }
-
-    var lastSyncDate: Date? {
-        get { userDefaults.object(forKey: Key.lastSyncDate) as? Date }
-        set {
-            userDefaults.setValue(
-                newValue,
-                forKey: Key.lastSyncDate
-            )
-            changesSubject.send(
-                .lastSyncDate(lastSyncDate)
-            )
-        }
-    }
-
     private let userDefaults: UserDefaults
     private let changesSubject =
         PassthroughSubject<UserDefaultsStoreChange, Never>()
@@ -94,9 +29,88 @@ final class UserDefaultsStoreStore: ObservableObject {
 
     // MARK: - Public
 
+    /// Publishes changes made to the store.
     func changesPublisher(
     ) -> AnyPublisher<UserDefaultsStoreChange, Never> {
         changesSubject
             .eraseToAnyPublisher()
+    }
+}
+
+extension UserDefaultsStoreStore {
+
+    /// Flag used to store preferences for new bookmarks.
+    /// Bookmarks can be either private or public.
+    var isPrivate: Bool {
+        get { userDefaults.bool(forKey: Key.isPrivate) }
+        set {
+            userDefaults.setValue(
+                newValue,
+                forKey: Key.isPrivate
+            )
+            changesSubject.send(
+                .isPrivate(isPrivate)
+            )
+        }
+    }
+
+    /// Flag used to store preferences for reading option.
+    /// Bookmarks can be set as "read later".
+    var isToRead: Bool {
+        get { userDefaults.bool(forKey: Key.isToRead) }
+        set {
+            userDefaults.setValue(
+                newValue,
+                forKey: Key.isToRead
+            )
+            changesSubject.send(
+                .isToRead(isToRead)
+            )
+        }
+    }
+
+    /// Auth token required to perform the network requests.
+    var authToken: String {
+        get { userDefaults.string(forKey: Key.authToken) ?? "" }
+        set {
+            userDefaults.setValue(
+                newValue,
+                forKey: Key.authToken
+            )
+            changesSubject.send(
+                .authToken(authToken)
+            )
+        }
+    }
+
+    /// Used to display (or not) an icon indicating it's either
+    /// a private or public bookmark.
+    var showPrivateIcon: Bool {
+        get { userDefaults.bool(forKey: Key.showPrivateIcon) }
+        set {
+            userDefaults.setValue(
+                newValue,
+                forKey: Key.showPrivateIcon
+            )
+            changesSubject.send(
+                .showPrivateIcon(showPrivateIcon)
+            )
+        }
+    }
+
+    /// Uses to store the latest date when bookmarks where synchronized.
+    /// Pinboard API's asks to check the date before making additional
+    /// requests to retrieve all bookmarks.
+    var lastSyncDate: Date? {
+        get { userDefaults.object(forKey: Key.lastSyncDate) as? Date }
+        set {
+            userDefaults.setValue(
+                newValue,
+                forKey: Key.lastSyncDate
+            )
+            changesSubject.send(
+                .lastSyncDate(lastSyncDate)
+            )
+        }
     }
 }

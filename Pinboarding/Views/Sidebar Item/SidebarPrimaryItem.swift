@@ -2,7 +2,6 @@ import Foundation
 import Combine
 
 enum SidebarPrimaryItem: String, CaseIterable {
-
     case all
     case `public`
     case `private`

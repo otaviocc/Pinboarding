@@ -12,7 +12,8 @@ struct MainView: View {
         NavigationView {
             SidebarView(
                 viewModel: SidebarViewModel(
-                    networkActivityPublisher: repository.networkController.eventPublisher()
+                    networkActivityPublisher: repository.networkController
+                        .networkActivityPublisher()
                 )
             )
 

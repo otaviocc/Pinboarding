@@ -18,7 +18,6 @@ final class NetworkController {
         userDefaultsStore: UserDefaultsStoreStore
     ) {
         self.userDefaultsStore = userDefaultsStore
-
         self.pinboardAPI = PinboardAPI {
             userDefaultsStore.authToken
         }
@@ -36,14 +35,18 @@ final class NetworkController {
 
     // MARK: - Public
 
-    func updatesPublisher(
+    /// Publishes all bookmarks during recurring
+    /// updates.
+    func allBookmarksUpdatesPublisher(
     ) -> AnyPublisher<[PostResponse], Never> {
         postResponseSubject
             .eraseToAnyPublisher()
     }
 
-    func eventPublisher(
-    ) -> AnyPublisher<NetworkControllerEvent, Never> {
+    /// Publishes the network status to update the UI
+    /// during update requests.
+    func networkActivityPublisher(
+    ) -> AnyPublisher<NetworkActivityEvent, Never> {
         pinboardAPI.eventPublisher()
             .map { event in
                 switch event {
@@ -58,28 +61,53 @@ final class NetworkController {
 
     // MARK: - Private
 
-    private func timerPublisher(
-    ) -> AnyPublisher<Date, Never> {
-        Deferred { Just(Date()) }
-            .append(
-                Timer.TimerPublisher(
-                    interval: 15,
-                    runLoop: .main,
-                    mode: .common
-                )
-                .autoconnect()
-            )
-            .eraseToAnyPublisher()
-    }
-
-    private func recentBookmarksPublisher(
+    /// Pinboard API doesn't return the diff between two dates,
+    /// so there's no way to know if something got removed. The only
+    /// way to do that is by retrieving all the bookmarks again. For
+    /// that reason it's important to check the date of the latest
+    /// change (which includes add, edit, and remove).
+    private func allBookmarksPublisher(
     ) -> AnyPublisher<[PostResponse], Error> {
-        timerPublisher()
-            .flatMap { _ in self.pinboardAPI.update() }
+        pinboardAPI.update()
             .map { $0.updateTime }
             .filter { $0 != self.userDefaultsStore.lastSyncDate }
             .map { self.userDefaultsStore.lastSyncDate = $0 }
             .flatMap { _ in self.pinboardAPI.all() }
+            .eraseToAnyPublisher()
+    }
+
+    /// Publishes every x minutes starting now.
+    /// This is used to schedule updates, emitting
+    /// the first event right when `sink` is called.
+    private func timerPublisher(
+    ) -> AnyPublisher<Date, Never> {
+        Deferred {
+            Just(Date())
+        }
+        .append(
+            Timer.TimerPublisher(
+                interval: 15,
+                runLoop: .main,
+                mode: .common
+            )
+            .autoconnect()
+        )
+        .eraseToAnyPublisher()
+    }
+
+    /// Publishes all bookmarks every x minutes.
+    private func recentBookmarksPublisher(
+    ) -> AnyPublisher<[PostResponse], Error> {
+        timerPublisher()
+            .flatMap { _ in self.allBookmarksPublisher() }
+            .eraseToAnyPublisher()
+    }
+
+    /// Publishes the latest bookmark.
+    private func lastBookmarkPublisher(
+    ) -> AnyPublisher<PostResponse, Error> {
+        pinboardAPI.recents(count: 1)
+            .compactMap { $0.posts.first }
             .eraseToAnyPublisher()
     }
 }

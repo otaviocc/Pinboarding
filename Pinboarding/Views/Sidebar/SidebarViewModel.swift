@@ -12,7 +12,7 @@ final class SidebarViewModel: ObservableObject {
     // MARK: - Life cycle
 
     init(
-        networkActivityPublisher: AnyPublisher<NetworkControllerEvent, Never>
+        networkActivityPublisher: AnyPublisher<NetworkActivityEvent, Never>
     ) {
         networkActivityPublisher
             .receive(on: RunLoop.main)

@@ -5,12 +5,13 @@ import PinboardKit
 
 extension Preview {
 
+    /// In memory Persistence Controller for SwiftUI Previews.
     static func makePersistenceController(
         populated: Bool = false
     ) -> PersistenceController {
         let controller = PersistenceController(
             inMemory: true,
-            updatesPublisher: makeUpdatesPublisher()
+            updatesPublisher: makeAllBookmarksUpdatesPublisher()
         )
 
         if populated {
@@ -28,6 +29,8 @@ extension Preview {
         return controller
     }
 
+    /// Generates (and adds do Core Data) bookmarks
+    /// for SwiftUI Previews.
     static func makeBookmarks(
         count: Int,
         in context: NSManagedObjectContext
@@ -52,6 +55,8 @@ extension Preview {
         }
     }
 
+    /// Generates (and adds do Core Data) tags
+    /// for SwiftUI Previews.
     static func makeTags(
         count: Int,
         in context: NSManagedObjectContext
@@ -64,7 +69,9 @@ extension Preview {
         }
     }
 
-    static func makeUpdatesPublisher(
+    /// Publishes bookmarks updates for SwiftUI
+    /// Previews.
+    static func makeAllBookmarksUpdatesPublisher(
     ) -> AnyPublisher<[PostResponse], Never> {
         Just([])
             .eraseToAnyPublisher()

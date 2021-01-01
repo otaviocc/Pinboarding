@@ -4,6 +4,8 @@ import PinboardKit
 
 extension Bookmark {
 
+    /// Converts PostResponses to Bookmarks, adding
+    /// them to Core Data.
     @discardableResult
     static func makeBookmark(
         from postResponse: PostResponse,

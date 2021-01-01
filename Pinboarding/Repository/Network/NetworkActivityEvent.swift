@@ -1,6 +1,6 @@
 import Foundation
 
-enum NetworkControllerEvent {
+enum NetworkActivityEvent {
     case loading
     case finishedLoading
 }

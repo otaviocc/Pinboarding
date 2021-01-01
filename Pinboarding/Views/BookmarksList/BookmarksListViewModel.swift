@@ -1,7 +1,6 @@
 import Foundation
 
 enum BookmarksListViewModel {
-
     case all
     case `public`
     case `private`

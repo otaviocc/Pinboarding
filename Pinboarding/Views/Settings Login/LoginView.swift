@@ -18,9 +18,9 @@ struct LoginView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 12) {
-            Text("Pinboard.in Auth Token")
+            Text("Pinboard Auth Token")
 
-            Text("Pinboarding uses auth token to access Pinboard.in.")
+            Text("Pinboarding uses auth token to access Pinboard.")
                 .font(.footnote)
 
             TextField(

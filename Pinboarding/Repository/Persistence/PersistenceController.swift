@@ -14,7 +14,7 @@ struct PersistenceController {
 
     init(
         inMemory: Bool = false,
-        updatesPublisher: AnyPublisher<[PostResponse], Never>
+        allBookmarksUpdatesPublisher: AnyPublisher<[PostResponse], Never>
     ) {
         self.container = NSPersistentContainer(
             name: "Pinboarding"
@@ -31,7 +31,7 @@ struct PersistenceController {
         }
 
         // Adds new bookmarks to Core Data
-        updatesPublisher
+        allBookmarksUpdatesPublisher
             .sink { [self] posts in
                 self.addNewBookmarks(posts)
                 self.removeDeletedBookmarks(posts)

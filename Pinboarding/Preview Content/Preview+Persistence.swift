@@ -11,7 +11,7 @@ extension Preview {
     ) -> PersistenceController {
         let controller = PersistenceController(
             inMemory: true,
-            updatesPublisher: makeAllBookmarksUpdatesPublisher()
+            allBookmarksUpdatesPublisher: makeAllBookmarksUpdatesPublisher()
         )
 
         if populated {

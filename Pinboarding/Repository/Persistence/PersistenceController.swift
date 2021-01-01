@@ -27,10 +27,10 @@ struct PersistenceController {
         }
 
         self.container.loadPersistentStores { [container] _, _ in
-            container.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+            container.viewContext.mergePolicy =
+                NSMergeByPropertyObjectTrumpMergePolicy
         }
 
-        // Adds new bookmarks to Core Data
         allBookmarksUpdatesPublisher
             .sink { [self] posts in
                 self.addNewBookmarks(posts)
@@ -42,6 +42,7 @@ struct PersistenceController {
 
     // MARK: - Private
 
+    /// Stores all bookmarks on Core Data.
     private func addNewBookmarks(
         _ posts: [PostResponse]
     ) {
@@ -57,6 +58,8 @@ struct PersistenceController {
         }
     }
 
+    /// Remove bookmarks from Core Data if deleted from
+    /// Pinboard.
     private func removeDeletedBookmarks(
         _ posts: [PostResponse]
     ) {
@@ -74,6 +77,7 @@ struct PersistenceController {
         )
     }
 
+    /// Remove tags without associated bookmarks.
     private func removeUnusedTags(
     ) {
         let request = NSFetchRequest<Tag>(
@@ -89,6 +93,7 @@ struct PersistenceController {
         )
     }
 
+    /// Perform the removal from Core Data.
     private func removeManagedObject<Object>(
         fetchRequest: NSFetchRequest<Object>
     ) where Object: NSManagedObject {

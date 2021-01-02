@@ -42,7 +42,7 @@ struct AddBookmarkView: View {
                 Spacer()
 
                 Button("Add") {
-                    viewModel.save()
+                    viewModel.addBookmark()
                 }
                 .disabled(!viewModel.isValid)
                 .padding()

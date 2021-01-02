@@ -50,7 +50,7 @@ final class AddBookmarkViewModel: ObservableObject {
 
     // MARK: - Public
 
-    func save() {
+    func addBookmark() {
         guard
             let url = URL(string: urlString)
         else {

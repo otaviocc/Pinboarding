@@ -49,10 +49,16 @@ final class AddBookmarkViewModel: ObservableObject {
     // MARK: - Public
 
     func save() {
+        guard
+            let url = URL(string: urlString)
+        else {
+            return
+        }
+
         repository.addBookmark(
-            url: URL(string: urlString)!,
-            description: title,
-            extended: description,
+            url: url,
+            title: title,
+            description: description,
             tags: tags
         )
         .sink(

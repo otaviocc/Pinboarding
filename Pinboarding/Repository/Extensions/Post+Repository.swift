@@ -24,10 +24,10 @@ extension Bookmark {
         bookmark.isToRead = postResponse.toread.booleanValue
         bookmark.id = postResponse.hash
 
-        let tags: [Tag] = postResponse.tags
+        let tags = postResponse.tags
             .split(separator: " ")
             .map(String.init)
-            .map { name in
+            .map { name -> Tag in
                 let tag = Tag(context: context)
                 tag.name = name.lowercased()
                 return tag

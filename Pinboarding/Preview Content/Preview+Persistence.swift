@@ -10,8 +10,7 @@ extension Preview {
         populated: Bool = false
     ) -> PersistenceController {
         let controller = PersistenceController(
-            inMemory: true,
-            allBookmarksUpdatesPublisher: makeAllBookmarksUpdatesPublisher()
+            inMemory: true
         )
 
         if populated {

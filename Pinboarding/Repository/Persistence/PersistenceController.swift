@@ -8,13 +8,10 @@ struct PersistenceController {
 
     let container: NSPersistentContainer
 
-    private var cancellables = Set<AnyCancellable>()
-
     // MARK: - Life cycle
 
     init(
-        inMemory: Bool = false,
-        allBookmarksUpdatesPublisher: AnyPublisher<[PostResponse], Never>
+        inMemory: Bool = false
     ) {
         self.container = NSPersistentContainer(
             name: "Pinboarding"
@@ -30,21 +27,12 @@ struct PersistenceController {
             container.viewContext.mergePolicy =
                 NSMergeByPropertyObjectTrumpMergePolicy
         }
-
-        #warning("move logic to repository")
-        allBookmarksUpdatesPublisher
-            .sink { [self] posts in
-                self.addNewBookmarks(posts)
-                self.removeDeletedBookmarks(posts)
-                self.removeUnusedTags()
-            }
-            .store(in: &cancellables)
     }
 
     // MARK: - Public
 
-    /// Store a new bookmark on Core Data.
-    func addNewBookmarkPublisher(
+    /// Adds a new post to Core Data as a Bookmark.
+    func appendNewPostPublisher(
         _ post: PostResponse
     ) {
         do {
@@ -57,9 +45,20 @@ struct PersistenceController {
         }
     }
 
+    /// Adds all posts to Core Data as Bookmarks,
+    /// removing from Core Data posts that are not
+    /// in the payload, and unused tags.
+    func addAllPosts(
+        _ posts: [PostResponse]
+    ) {
+        addNewBookmarks(posts)
+        removeDeletedBookmarks(posts)
+        removeUnusedTags()
+    }
+
     // MARK: - Private
 
-    /// Stores all bookmarks on Core Data.
+    /// Stores all posts on Core Data as Bookmarks.
     private func addNewBookmarks(
         _ posts: [PostResponse]
     ) {

@@ -9,6 +9,8 @@ public class PinboardRepository: ObservableObject {
     let persistenceController: PersistenceController
     let networkController: NetworkController
 
+    private var cancellables = Set<AnyCancellable>()
+
     // MARK: - Life cycle
 
     init(
@@ -17,12 +19,19 @@ public class PinboardRepository: ObservableObject {
     ) {
         self.networkController = networkController
         self.persistenceController = persistenceController
+
+        networkController.allBookmarksUpdatesPublisher()
+            .sink { bookmarks in
+                persistenceController.addAllPosts(bookmarks)
+            }
+            .store(in: &cancellables)
     }
 
+    /// Adds a new bookmark.
     func addBookmark(
         url: URL,
-        description: String,
-        extended: String? = nil,
+        title: String,
+        description: String? = nil,
         tags: String? = nil,
         date: Date? = nil,
         replace: Bool = false,
@@ -31,15 +40,15 @@ public class PinboardRepository: ObservableObject {
     ) -> AnyPublisher<Void, Error> {
         networkController.addBookmarkPublisher(
             url: url,
-            description: description,
-            extended: extended,
+            description: title,
+            extended: description,
             tags: tags,
             date: date,
             replace: replace.stringValue,
             shared: shared.stringValue,
             toread: toread.stringValue
         )
-        .map(self.persistenceController.addNewBookmarkPublisher)
+        .map(persistenceController.appendNewPostPublisher)
         .eraseToAnyPublisher()
     }
 }

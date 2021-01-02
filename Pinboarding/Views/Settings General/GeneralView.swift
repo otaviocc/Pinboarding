@@ -17,27 +17,15 @@ struct GeneralView: View {
     // MARK: - Public
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 12) {
+        VStack(alignment: .trailing, spacing: 12) {
             Toggle("Mark new posts as private", isOn: $viewModel.isPrivate)
                 .toggleStyle(SwitchToggleStyle())
-                .alignmentGuide(
-                    .leading,
-                    computeValue: { d in (d.width - 38) }
-                )
 
             Toggle("Mark new posts to read later", isOn: $viewModel.isToRead)
                 .toggleStyle(SwitchToggleStyle())
-                .alignmentGuide(
-                    .leading,
-                    computeValue: { d in (d.width - 38) }
-                )
 
             Toggle("Show private icon", isOn: $viewModel.showPrivateIcon)
                 .toggleStyle(SwitchToggleStyle())
-                .alignmentGuide(
-                    .leading,
-                    computeValue: { d in (d.width - 38) }
-                )
         }
     }
 }

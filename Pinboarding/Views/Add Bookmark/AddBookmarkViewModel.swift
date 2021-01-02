@@ -16,7 +16,8 @@ final class AddBookmarkViewModel: ObservableObject {
 
     private let repository: PinboardRepository
     private var cancellables = Set<AnyCancellable>()
-    private let dismissalViewSubject = PassthroughSubject<Bool, Never>()
+    private let dismissalViewSubject =
+        PassthroughSubject<Bool, Never>()
 
     // MARK: - Life cycle
 

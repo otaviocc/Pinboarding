@@ -5,6 +5,7 @@ struct MainView: View {
     // MARK: - Properties
 
     @EnvironmentObject private var repository: PinboardRepository
+    @EnvironmentObject private var userDefaultsStore: UserDefaultsStore
     @State private var showAddBookmark = false
 
     // MARK: - Public
@@ -29,7 +30,8 @@ struct MainView: View {
         }.sheet(isPresented: $showAddBookmark) {
             AddBookmarkView(
                 viewModel: AddBookmarkViewModel(
-                    repository: repository
+                    repository: repository,
+                    userDefaultsStore: userDefaultsStore
                 ),
                 isPresented: $showAddBookmark
             )

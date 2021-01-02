@@ -9,12 +9,15 @@ final class AddBookmarkViewModel: ObservableObject {
     @Published var title: String = ""
     @Published var description: String = ""
     @Published var tags: String = ""
+    @Published var isPrivate: Bool = false
+    @Published var isToRead: Bool = false
 
     @Published private(set) var isValid: Bool = false
     @Published private(set) var urlMessage: String = ""
     @Published private(set) var titleMessage: String = ""
 
     private let repository: PinboardRepository
+    private let userDefaultsStore: UserDefaultsStore
     private var cancellables = Set<AnyCancellable>()
     private let dismissViewSubject =
         PassthroughSubject<Bool, Never>()
@@ -22,9 +25,11 @@ final class AddBookmarkViewModel: ObservableObject {
     // MARK: - Life cycle
 
     init(
-        repository: PinboardRepository
+        repository: PinboardRepository,
+        userDefaultsStore: UserDefaultsStore
     ) {
         self.repository = repository
+        self.userDefaultsStore = userDefaultsStore
 
         isURLValidPublisher()
             .receive(on: RunLoop.main)
@@ -46,6 +51,9 @@ final class AddBookmarkViewModel: ObservableObject {
             .receive(on: RunLoop.main)
             .assign(to: \.isValid, on: self)
             .store(in: &cancellables)
+
+        isPrivate = userDefaultsStore.isPrivate
+        isToRead = userDefaultsStore.isToRead
     }
 
     // MARK: - Public
@@ -61,7 +69,9 @@ final class AddBookmarkViewModel: ObservableObject {
             url: url,
             title: title,
             description: description,
-            tags: tags
+            tags: tags,
+            shared: !isPrivate,
+            toread: isToRead
         )
         .sink(
             receiveCompletion: { _ in },

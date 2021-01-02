@@ -33,24 +33,48 @@ struct AddBookmarkView: View {
             Text("Tags")
             TextField("", text: $viewModel.tags)
 
-            HStack {
-                Button("Cancel") {
-                    isPresented.toggle()
-                }
-                .padding()
+            makeTogglesView()
+                .padding(.top)
 
-                Spacer()
-
-                Button("Add") {
-                    viewModel.addBookmark()
-                }
-                .disabled(!viewModel.isValid)
-                .padding()
-            }
+            makeButtonsView()
+                .padding([.top, .bottom])
         }
         .padding()
         .onReceive(viewModel.dismissViewPublisher()) { _ in
             isPresented.toggle()
+        }
+    }
+
+    // MARK: - Private
+
+    private func makeTogglesView(
+    ) -> some View {
+        HStack {
+            Spacer()
+            VStack(alignment: .trailing) {
+                Toggle("Private", isOn: $viewModel.isPrivate)
+                    .toggleStyle(SwitchToggleStyle())
+
+                Toggle("Read later", isOn: $viewModel.isToRead)
+                    .toggleStyle(SwitchToggleStyle())
+            }
+        }
+    }
+
+    private func makeButtonsView(
+    ) -> some View {
+        HStack {
+            Button("Cancel") {
+                isPresented.toggle()
+            }
+            .padding()
+
+            Spacer()
+
+            Button("Add bookmark") {
+                viewModel.addBookmark()
+            }
+            .disabled(!viewModel.isValid)
         }
     }
 }
@@ -63,20 +87,22 @@ struct AddBookmarkView_Previews: PreviewProvider {
         Group {
             AddBookmarkView(
                 viewModel: AddBookmarkViewModel(
-                    repository: Preview.makeRepository()
+                    repository: Preview.makeRepository(),
+                    userDefaultsStore: Preview.makeUserDefaultsStore()
                 ),
                 isPresented: .constant(false)
             )
-            .frame(width: 320)
+            .frame(minWidth: 640, minHeight: 480)
             .preferredColorScheme(.light)
 
             AddBookmarkView(
                 viewModel: AddBookmarkViewModel(
-                    repository: Preview.makeRepository()
+                    repository: Preview.makeRepository(),
+                    userDefaultsStore: Preview.makeUserDefaultsStore()
                 ),
                 isPresented: .constant(false)
             )
-            .frame(width: 320)
+            .frame(minWidth: 640, minHeight: 480)
             .preferredColorScheme(.dark)
         }
     }

@@ -6,9 +6,8 @@ public class PinboardRepository: ObservableObject {
 
     // MARK: - Properties
 
-    let persistenceController: PersistenceController
-    let networkController: NetworkController
-
+    private let persistenceController: PersistenceController
+    private let networkController: NetworkController
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
@@ -50,5 +49,12 @@ public class PinboardRepository: ObservableObject {
         )
         .map(persistenceController.appendNewPostPublisher)
         .eraseToAnyPublisher()
+    }
+
+    /// Publishes the network status to update the UI
+    /// during update requests.
+    func networkActivityPublisher(
+    ) -> AnyPublisher<NetworkActivityEvent, Never> {
+        networkController.networkActivityPublisher()
     }
 }

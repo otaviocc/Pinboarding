@@ -4,7 +4,7 @@ struct MainView: View {
 
     // MARK: - Properties
 
-    @EnvironmentObject var repository: PinboardRepository
+    @EnvironmentObject private var repository: PinboardRepository
     @State private var showAddBookmark = false
 
     // MARK: - Public
@@ -13,8 +13,7 @@ struct MainView: View {
         NavigationView {
             SidebarView(
                 viewModel: SidebarViewModel(
-                    networkActivityPublisher: repository.networkController
-                        .networkActivityPublisher()
+                    networkActivityPublisher: repository.networkActivityPublisher()
                 )
             )
 

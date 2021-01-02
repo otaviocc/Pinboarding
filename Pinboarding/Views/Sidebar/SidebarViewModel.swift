@@ -5,7 +5,7 @@ final class SidebarViewModel: ObservableObject {
 
     // MARK: - Properties
 
-    @Published var isLoading = false
+    @Published private(set) var isLoading = false
 
     private var cancellables = Set<AnyCancellable>()
 

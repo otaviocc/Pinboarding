@@ -5,6 +5,7 @@ struct MainView: View {
     // MARK: - Properties
 
     @EnvironmentObject var repository: PinboardRepository
+    @State private var showAddBookmark = false
 
     // MARK: - Public
 
@@ -18,6 +19,22 @@ struct MainView: View {
             )
 
             BookmarksView(viewModel: .all)
+        }
+        .toolbar {
+            ToolbarItemGroup {
+                Button(
+                    action: { showAddBookmark.toggle() },
+                    label: { Image(systemName: "plus") }
+                )
+            }
+        }.sheet(isPresented: $showAddBookmark) {
+            AddBookmarkView(
+                viewModel: AddBookmarkViewModel(
+                    repository: repository
+                ),
+                isPresented: $showAddBookmark
+            )
+            .frame(minWidth: 640, minHeight: 480)
         }
     }
 }

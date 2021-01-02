@@ -31,6 +31,7 @@ struct PersistenceController {
                 NSMergeByPropertyObjectTrumpMergePolicy
         }
 
+        #warning("move logic to repository")
         allBookmarksUpdatesPublisher
             .sink { [self] posts in
                 self.addNewBookmarks(posts)
@@ -38,6 +39,22 @@ struct PersistenceController {
                 self.removeUnusedTags()
             }
             .store(in: &cancellables)
+    }
+
+    // MARK: - Public
+
+    /// Store a new bookmark on Core Data.
+    func addNewBookmarkPublisher(
+        _ post: PostResponse
+    ) {
+        do {
+            try Bookmark.makeBookmark(
+                from: post,
+                in: container.viewContext
+            )
+        } catch {
+            print("Something happened: \(error)")
+        }
     }
 
     // MARK: - Private

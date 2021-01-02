@@ -12,3 +12,14 @@ extension Preview {
             .eraseToAnyPublisher()
     }
 }
+
+extension Preview {
+
+    /// Network Controller for Swift UI Previews.
+    static func makeNetworkController(
+    ) -> NetworkController {
+        NetworkController(
+            userDefaultsStore: Preview.makeUserDefaultsStore()
+        )
+    }
+}

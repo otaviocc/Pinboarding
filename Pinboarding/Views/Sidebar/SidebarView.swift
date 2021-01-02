@@ -5,6 +5,7 @@ struct SidebarView: View {
     // MARK: - Properties
 
     @ObservedObject private var viewModel: SidebarViewModel
+    @EnvironmentObject private var repository: PinboardRepository
 
     // MARK: - Life cycle
 

@@ -14,11 +14,16 @@ final class AddBookmarkViewModel: ObservableObject {
     @Published private(set) var urlMessage: String = ""
     @Published private(set) var titleMessage: String = ""
 
+    private let repository: PinboardRepository
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
-    init() {
+    init(
+        repository: PinboardRepository
+    ) {
+        self.repository = repository
+
         isURLValidPublisher()
             .receive(on: RunLoop.main)
             .map { isValid in
@@ -44,6 +49,17 @@ final class AddBookmarkViewModel: ObservableObject {
     // MARK: - Public
 
     func save() {
+        repository.addBookmark(
+            url: URL(string: urlString)!,
+            description: title,
+            extended: description,
+            tags: tags
+        )
+        .sink(
+            receiveCompletion: { _ in },
+            receiveValue: { _ in }
+        )
+        .store(in: &cancellables)
     }
 
     // MARK: - Private

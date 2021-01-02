@@ -59,6 +59,35 @@ final class NetworkController {
             .eraseToAnyPublisher()
     }
 
+    /// Publishes a new bookmark and retrieve the
+    /// latest post. The Pinboard API doesn't return
+    /// the added bookmark on the payload, so it's necessary
+    /// to make an additional request to get it.
+    func addBookmarkPublisher(
+        url: URL,
+        description: String,
+        extended: String? = nil,
+        tags: String? = nil,
+        date: Date? = nil,
+        replace: String? = nil,
+        shared: String? = nil,
+        toread: String? = nil
+    ) -> AnyPublisher<PostResponse, Error> {
+        pinboardAPI.add(
+            url: url,
+            description: description,
+            extended: extended,
+            tags: tags,
+            date: date,
+            replace: replace,
+            shared: shared,
+            toread: toread
+        )
+        .filter { $0.resultCode == "done" }
+        .flatMap { _ in self.lastBookmarkPublisher() }
+        .eraseToAnyPublisher()
+    }
+
     // MARK: - Private
 
     /// Pinboard API doesn't return the diff between two dates,
@@ -109,20 +138,5 @@ final class NetworkController {
         pinboardAPI.recents(count: 1)
             .compactMap { $0.posts.first }
             .eraseToAnyPublisher()
-    }
-
-    /// Publishes a new bookmark and retrieve the
-    /// latest post. The Pinboard API doesn't return
-    /// the added bookmark on the payload, so it's necessary
-    /// to make an additional request to get it.
-    private func addBookmarkPublisher(
-    ) -> AnyPublisher<PostResponse, Error> {
-        pinboardAPI.add(
-            url: URL(string: "")!,
-            description: ""
-        )
-        .filter { $0.resultCode == "done" }
-        .flatMap { _ in self.lastBookmarkPublisher() }
-        .eraseToAnyPublisher()
     }
 }

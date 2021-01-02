@@ -18,4 +18,28 @@ public class PinboardRepository: ObservableObject {
         self.networkController = networkController
         self.persistenceController = persistenceController
     }
+
+    func addBookmark(
+        url: URL,
+        description: String,
+        extended: String? = nil,
+        tags: String? = nil,
+        date: Date? = nil,
+        replace: Bool = false,
+        shared: Bool = false,
+        toread: Bool = false
+    ) -> AnyPublisher<Void, Error> {
+        networkController.addBookmarkPublisher(
+            url: url,
+            description: description,
+            extended: extended,
+            tags: tags,
+            date: date,
+            replace: replace.stringValue,
+            shared: shared.stringValue,
+            toread: toread.stringValue
+        )
+        .map(self.persistenceController.addNewBookmarkPublisher)
+        .eraseToAnyPublisher()
+    }
 }

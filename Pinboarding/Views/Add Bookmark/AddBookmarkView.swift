@@ -5,13 +5,16 @@ struct AddBookmarkView: View {
     // MARK: - Properties
 
     @ObservedObject private var viewModel: AddBookmarkViewModel
+    @Binding private var isPresented: Bool
 
     // MARK: - Life cycle
 
     init(
-        viewModel: AddBookmarkViewModel
+        viewModel: AddBookmarkViewModel,
+        isPresented: Binding<Bool>
     ) {
         self.viewModel = viewModel
+        self._isPresented = isPresented
     }
 
     // MARK: - Public
@@ -31,8 +34,10 @@ struct AddBookmarkView: View {
             TextField("", text: $viewModel.tags)
 
             HStack {
-                Button("Cancel") {}
-                    .padding()
+                Button("Cancel") {
+                    isPresented.toggle()
+                }
+                .padding()
 
                 Spacer()
 
@@ -54,13 +59,19 @@ struct AddBookmarkView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             AddBookmarkView(
-                viewModel: AddBookmarkViewModel()
+                viewModel: AddBookmarkViewModel(
+                    repository: Preview.makeRepository()
+                ),
+                isPresented: .constant(false)
             )
             .frame(width: 320)
             .preferredColorScheme(.light)
 
             AddBookmarkView(
-                viewModel: AddBookmarkViewModel()
+                viewModel: AddBookmarkViewModel(
+                    repository: Preview.makeRepository()
+                ),
+                isPresented: .constant(false)
             )
             .frame(width: 320)
             .preferredColorScheme(.dark)

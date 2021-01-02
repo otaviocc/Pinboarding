@@ -49,7 +49,7 @@ struct AddBookmarkView: View {
             }
         }
         .padding()
-        .onReceive(viewModel.dismissalViewPublisher()) { _ in
+        .onReceive(viewModel.dismissViewPublisher()) { _ in
             isPresented.toggle()
         }
     }

@@ -16,7 +16,7 @@ final class AddBookmarkViewModel: ObservableObject {
 
     private let repository: PinboardRepository
     private var cancellables = Set<AnyCancellable>()
-    private let dismissalViewSubject =
+    private let dismissViewSubject =
         PassthroughSubject<Bool, Never>()
 
     // MARK: - Life cycle
@@ -66,15 +66,15 @@ final class AddBookmarkViewModel: ObservableObject {
         .sink(
             receiveCompletion: { _ in },
             receiveValue: { _ in
-                self.dismissalViewSubject.send(true)
+                self.dismissViewSubject.send(true)
             }
         )
         .store(in: &cancellables)
     }
 
-    func dismissalViewPublisher(
+    func dismissViewPublisher(
     ) -> AnyPublisher<Bool, Never> {
-        dismissalViewSubject
+        dismissViewSubject
             .eraseToAnyPublisher()
     }
 

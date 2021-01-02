@@ -49,6 +49,9 @@ struct AddBookmarkView: View {
             }
         }
         .padding()
+        .onReceive(viewModel.dismissalViewPublisher()) { _ in
+            isPresented.toggle()
+        }
     }
 }
 

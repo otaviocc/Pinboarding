@@ -18,26 +18,6 @@ final class UserDefaultsStore: ObservableObject {
     private let changesSubject =
         PassthroughSubject<UserDefaultsStoreChange, Never>()
 
-    // MARK: - Life cycle
-
-    init(
-        userDefaults: UserDefaults
-    ) {
-        self.userDefaults = userDefaults
-    }
-
-    // MARK: - Public
-
-    /// Publishes changes made to the store.
-    func changesPublisher(
-    ) -> AnyPublisher<UserDefaultsStoreChange, Never> {
-        changesSubject
-            .eraseToAnyPublisher()
-    }
-}
-
-extension UserDefaultsStore {
-
     /// Flag used to store preferences for new bookmarks.
     /// Bookmarks can be either private or public.
     var isPrivate: Bool {
@@ -96,5 +76,22 @@ extension UserDefaultsStore {
                 .lastSyncDate(lastSyncDate)
             )
         }
+    }
+
+    // MARK: - Life cycle
+
+    init(
+        userDefaults: UserDefaults
+    ) {
+        self.userDefaults = userDefaults
+    }
+
+    // MARK: - Public
+
+    /// Publishes changes made to the store.
+    func changesPublisher(
+    ) -> AnyPublisher<UserDefaultsStoreChange, Never> {
+        changesSubject
+            .eraseToAnyPublisher()
     }
 }

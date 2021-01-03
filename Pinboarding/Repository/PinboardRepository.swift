@@ -57,4 +57,13 @@ public class PinboardRepository: ObservableObject {
     ) -> AnyPublisher<NetworkActivityEvent, Never> {
         networkController.networkActivityPublisher()
     }
+
+    /// Forces an update without waiting for the next
+    /// x minutes to pass.
+    func forceRefreshBookmarksPublisher(
+    ) -> AnyPublisher<Void, Error> {
+        networkController.forceRefreshBookmarksPublisher()
+            .map(persistenceController.addAllPosts)
+            .eraseToAnyPublisher()
+    }
 }

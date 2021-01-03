@@ -22,6 +22,13 @@ struct MainView: View {
         }
         .toolbar {
             ToolbarItemGroup {
+                RefreshView(
+                    viewModel: RefreshViewModel(
+                        repository: repository
+                    )
+                )
+                .help("Force refresh")
+
                 Button(
                     action: { showAddBookmark.toggle() },
                     label: { Image(systemName: "plus") }

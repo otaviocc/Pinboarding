@@ -26,6 +26,7 @@ struct MainView: View {
                     action: { showAddBookmark.toggle() },
                     label: { Image(systemName: "plus") }
                 )
+                .help("Add a new bookmark")
             }
         }.sheet(isPresented: $showAddBookmark) {
             AddBookmarkView(

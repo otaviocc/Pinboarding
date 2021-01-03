@@ -22,6 +22,7 @@ struct PrivateView: View {
         )
         .font(.title3)
         .foregroundColor(.accentColor)
+        .help("Bookmark visibility")
     }
 }
 

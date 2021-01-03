@@ -28,6 +28,7 @@ struct SafariButton: View {
             }
         )
         .buttonStyle(PlainButtonStyle())
+        .help("Open on default browser")
     }
 }
 

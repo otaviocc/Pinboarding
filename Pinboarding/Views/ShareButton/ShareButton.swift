@@ -40,6 +40,7 @@ struct ShareButton: View {
                 ]
             )
         )
+        .help("Share this bookmark")
     }
 }
 

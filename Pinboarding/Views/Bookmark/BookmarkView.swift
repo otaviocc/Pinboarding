@@ -25,18 +25,20 @@ struct BookmarkView: View {
 
                 Spacer()
 
-                PrivateView(
-                    isPrivate: viewModel.isPrivate
-                )
+                HStack(alignment: .center, spacing: 8) {
+                    PrivateView(
+                        isPrivate: viewModel.isPrivate
+                    )
 
-                SafariButton(
-                    url: viewModel.url
-                )
+                    SafariButton(
+                        url: viewModel.url
+                    )
 
-                ShareButton(
-                    title: viewModel.title,
-                    url: viewModel.url
-                )
+                    ShareButton(
+                        title: viewModel.title,
+                        url: viewModel.url
+                    )
+                }
             }
 
             if !viewModel.description.isEmpty {

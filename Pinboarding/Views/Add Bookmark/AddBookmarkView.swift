@@ -29,6 +29,7 @@ struct AddBookmarkView: View {
 
             Text("Description")
             TextEditor(text: $viewModel.description)
+                .frame(height: 100)
 
             Text("Tags")
             TextField("", text: $viewModel.tags)
@@ -37,7 +38,6 @@ struct AddBookmarkView: View {
                 .padding(.top)
 
             makeButtonsView()
-                .padding([.top, .bottom])
         }
         .padding()
         .onReceive(viewModel.dismissViewPublisher()) { _ in
@@ -92,7 +92,7 @@ struct AddBookmarkView_Previews: PreviewProvider {
                 ),
                 isPresented: .constant(false)
             )
-            .frame(minWidth: 640, minHeight: 480)
+            .frame(width: 640)
             .preferredColorScheme(.light)
 
             AddBookmarkView(
@@ -102,8 +102,9 @@ struct AddBookmarkView_Previews: PreviewProvider {
                 ),
                 isPresented: .constant(false)
             )
-            .frame(minWidth: 640, minHeight: 480)
             .preferredColorScheme(.dark)
         }
+        .frame(width: 640)
+        .previewLayout(.sizeThatFits)
     }
 }

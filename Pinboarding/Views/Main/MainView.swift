@@ -27,16 +27,17 @@ struct MainView: View {
                     label: { Image(systemName: "plus") }
                 )
                 .help("Add a new bookmark")
+                .sheet(isPresented: $showAddBookmark) {
+                    AddBookmarkView(
+                        viewModel: AddBookmarkViewModel(
+                            repository: repository,
+                            userDefaultsStore: userDefaultsStore
+                        ),
+                        isPresented: $showAddBookmark
+                    )
+                    .frame(width: 640)
+                }
             }
-        }.sheet(isPresented: $showAddBookmark) {
-            AddBookmarkView(
-                viewModel: AddBookmarkViewModel(
-                    repository: repository,
-                    userDefaultsStore: userDefaultsStore
-                ),
-                isPresented: $showAddBookmark
-            )
-            .frame(minWidth: 640, minHeight: 480)
         }
     }
 }

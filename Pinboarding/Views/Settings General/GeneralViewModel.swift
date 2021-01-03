@@ -7,7 +7,6 @@ final class GeneralViewModel: ObservableObject {
 
     @Published var isPrivate: Bool = true
     @Published var isToRead: Bool = false
-    @Published var showPrivateIcon: Bool = true
 
     private let userDefaultsStore: UserDefaultsStore
     private var cancellables = Set<AnyCancellable>()
@@ -20,7 +19,6 @@ final class GeneralViewModel: ObservableObject {
         self.userDefaultsStore = userDefaultsStore
         self.isPrivate = userDefaultsStore.isPrivate
         self.isToRead = userDefaultsStore.isToRead
-        self.showPrivateIcon = userDefaultsStore.showPrivateIcon
 
         $isPrivate
             .dropFirst()
@@ -30,11 +28,6 @@ final class GeneralViewModel: ObservableObject {
         $isToRead
             .dropFirst()
             .assign(to: \.userDefaultsStore.isToRead, on: self)
-            .store(in: &cancellables)
-
-        $showPrivateIcon
-            .dropFirst()
-            .assign(to: \.userDefaultsStore.showPrivateIcon, on: self)
             .store(in: &cancellables)
     }
 }

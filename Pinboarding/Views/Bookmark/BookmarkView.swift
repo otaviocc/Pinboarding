@@ -25,6 +25,10 @@ struct BookmarkView: View {
 
                 Spacer()
 
+                PrivateView(
+                    isPrivate: viewModel.isPrivate
+                )
+
                 SafariButton(
                     url: viewModel.url
                 )
@@ -62,6 +66,7 @@ struct BookmarkView_Previews: PreviewProvider {
         var description = "Nulla purus urna, fermentum eu tristique non, bibendum nec purus."
         var tags = "tag1, tag2, tag3, tag4"
         var url = URL(string: "https://otaviocc.github.io")!
+        var isPrivate = true
     }
 
     struct EmptyDescriptionBookmarkMock: BookmarkViewModelProtocol {
@@ -69,6 +74,7 @@ struct BookmarkView_Previews: PreviewProvider {
         var description = ""
         var tags = "tag1, tag2, tag3, tag4"
         var url = URL(string: "https://otaviocc.github.io")!
+        var isPrivate = false
     }
 
     static var previews: some View {

@@ -23,9 +23,6 @@ struct GeneralView: View {
 
             Toggle("Mark new posts to read later", isOn: $viewModel.isToRead)
                 .toggleStyle(SwitchToggleStyle())
-
-            Toggle("Show private icon", isOn: $viewModel.showPrivateIcon)
-                .toggleStyle(SwitchToggleStyle())
         }
     }
 }

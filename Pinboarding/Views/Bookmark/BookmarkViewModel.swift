@@ -6,6 +6,7 @@ protocol BookmarkViewModelProtocol {
     var description: String { get }
     var tags: String { get }
     var url: URL { get }
+    var isPrivate: Bool { get }
 }
 
 final class BookmarkViewModel: BookmarkViewModelProtocol {
@@ -16,6 +17,7 @@ final class BookmarkViewModel: BookmarkViewModelProtocol {
     let description: String
     let tags: String
     let url: URL
+    let isPrivate: Bool
 
     // MARK: - Life cycle
 
@@ -29,5 +31,6 @@ final class BookmarkViewModel: BookmarkViewModelProtocol {
             .compactMap { $0 as? Tag }
             .map { $0.name }
             .joined(separator: ", ")
+        self.isPrivate = !bookmark.isShared
     }
 }

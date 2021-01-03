@@ -9,7 +9,6 @@ final class UserDefaultsStore: ObservableObject {
         static let authToken = "settingsAuthToken"
         static let isPrivate = "settingsIsPrivate"
         static let isToRead = "settingsIsToRead"
-        static let showPrivateIcon = "settingsShowPrivateIcon"
         static let lastSyncDate = "syncLastUpdate"
     }
 
@@ -79,21 +78,6 @@ extension UserDefaultsStore {
             )
             changesSubject.send(
                 .authToken(authToken)
-            )
-        }
-    }
-
-    /// Used to display (or not) an icon indicating it's either
-    /// a private or public bookmark.
-    var showPrivateIcon: Bool {
-        get { userDefaults.bool(forKey: Key.showPrivateIcon) }
-        set {
-            userDefaults.setValue(
-                newValue,
-                forKey: Key.showPrivateIcon
-            )
-            changesSubject.send(
-                .showPrivateIcon(showPrivateIcon)
             )
         }
     }

@@ -12,7 +12,6 @@ extension Preview {
         store.authToken = "mock token"
         store.isPrivate = true
         store.isToRead = false
-        store.showPrivateIcon = true
 
         return store
     }

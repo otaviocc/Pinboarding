@@ -13,7 +13,7 @@ final class NetworkController {
         PassthroughSubject<[PostResponse], Never>()
 
     #if DEBUG
-    let refreshInterval = 60.0
+    let refreshInterval = 30.0
     #else
     let refreshInterval = 300.0
     #endif
@@ -92,6 +92,18 @@ final class NetworkController {
         .filter { $0.resultCode == "done" }
         .flatMap { _ in self.lastBookmarkPublisher() }
         .eraseToAnyPublisher()
+    }
+
+    /// Publishes all bookmarks without waiting for the next
+    /// x minutes to pass. Used to force a full refresh.
+    func forceRefreshBookmarksPublisher(
+    ) -> AnyPublisher<[PostResponse], Error> {
+        pinboardAPI.update()
+            .map { $0.updateTime }
+            .filter { $0 != self.userDefaultsStore.lastSyncDate }
+            .map { self.userDefaultsStore.lastSyncDate = $0 }
+            .flatMap { _ in self.pinboardAPI.all() }
+            .eraseToAnyPublisher()
     }
 
     // MARK: - Private

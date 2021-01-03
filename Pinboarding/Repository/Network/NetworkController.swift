@@ -12,6 +12,12 @@ final class NetworkController {
     private let postResponseSubject =
         PassthroughSubject<[PostResponse], Never>()
 
+    #if DEBUG
+    let refreshInterval = 60.0
+    #else
+    let refreshInterval = 300.0
+    #endif
+
     // MARK: - Life cycle
 
     init(
@@ -115,7 +121,7 @@ final class NetworkController {
         }
         .append(
             Timer.TimerPublisher(
-                interval: 15,
+                interval: refreshInterval,
                 runLoop: .main,
                 mode: .common
             )

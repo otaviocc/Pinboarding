@@ -272,7 +272,7 @@
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
 				AE83841A2597B63400A4C5A7 /* BookmarksList */,
 				AE494F40258ABE5200CFECB6 /* Main */,
-				AE9F993C25A15F58001D2889 /* Prrivate */,
+				AE9F993C25A15F58001D2889 /* Private */,
 				AE9F994225A1ABD9001D2889 /* Refresh */,
 				AEC4A94D259B9EF7000C65A8 /* SafariButton */,
 				AE367600258AAF7600F57A3C /* Settings */,
@@ -344,12 +344,12 @@
 			path = "Sidebar My Bookmarks Section";
 			sourceTree = "<group>";
 		};
-		AE9F993C25A15F58001D2889 /* Prrivate */ = {
+		AE9F993C25A15F58001D2889 /* Private */ = {
 			isa = PBXGroup;
 			children = (
 				AE9F993D25A15F75001D2889 /* PrivateView.swift */,
 			);
-			path = Prrivate;
+			path = Private;
 			sourceTree = "<group>";
 		};
 		AE9F994225A1ABD9001D2889 /* Refresh */ = {

@@ -26,7 +26,8 @@ final class BookmarkViewModel: BookmarkViewModelProtocol {
     ) {
         self.title = bookmark.title
         self.description = bookmark.abstract
-        self.url = URL(string: bookmark.href)!
+        self.url = URL(string: bookmark.href)
+            ?? URL(string: "https://www.pinboard.in")!
         self.tags = bookmark.tags
             .compactMap { $0 as? Tag }
             .map { $0.name }

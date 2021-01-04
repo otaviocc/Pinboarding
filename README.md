@@ -1,14 +1,14 @@
 # Pinboarding
 
-Pinboarding is a [Pinboard](https://pinboard.in) client for macOS. It's a work in progress, but currently includes features such as:
+Pinboarding is a [Pinboard](https://pinboard.in) client for macOS. It's a work in progress, but already includes the following features:
 
-* automatic sync
+* automatic sync (and forced sync)
 * filter bookmarks by tag or visibility
 * add a new bookmark
 * open bookmark on browser
 * share a bookmark
 
-A [Pinboard](https://pinboard.in) account is requited to use the app.
+A [Pinboard](https://pinboard.in) account is required to use the app.
 
 ![](Images/dark.jpg)
 

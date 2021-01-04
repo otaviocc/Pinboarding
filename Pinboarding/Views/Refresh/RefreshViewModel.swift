@@ -28,8 +28,8 @@ final class RefreshViewModel: ObservableObject {
         cancellable = repository.forceRefreshBookmarksPublisher()
             .receive(on: RunLoop.main)
             .sink(
-                receiveCompletion: { _ in },
-                receiveValue:  { _ in self.isReloading = false }
+                receiveCompletion: { _ in self.isReloading = false },
+                receiveValue:  { _ in }
             )
     }
 }

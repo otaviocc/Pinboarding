@@ -40,7 +40,8 @@ struct BookmarksView_Previews: PreviewProvider {
             BookmarksView(viewModel: .all)
                 .preferredColorScheme(.dark)
                 .frame(width: 320)
-        }.environment(
+        }
+        .environment(
             \.managedObjectContext,
             controller.container.viewContext
         )

@@ -31,7 +31,6 @@ final class RefreshViewModel: ObservableObject {
         refreshCancellable?.cancel()
         refreshCancellable = repository.forceRefreshBookmarksPublisher()
             .receive(on: RunLoop.main)
-            .flatMap { Just($0) }
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue:  { _ in }

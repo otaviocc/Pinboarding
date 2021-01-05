@@ -8,7 +8,8 @@ final class RefreshViewModel: ObservableObject {
     @Published private(set) var isReloading = false
 
     private let repository: PinboardRepository
-    private var cancellable: AnyCancellable?
+    private var refreshCancellable: AnyCancellable?
+    private var activityCancellable: AnyCancellable?
 
     // MARK: - Life cycle
 
@@ -16,19 +17,22 @@ final class RefreshViewModel: ObservableObject {
         repository: PinboardRepository
     ) {
         self.repository = repository
+
+        self.activityCancellable = repository.networkActivityPublisher()
+            .map { $0 == .loading }
+            .assign(to: \.isReloading, on: self)
     }
 
     // MARK: - Public
 
     func refresh(
     ) {
-        isReloading = true
-        cancellable?.cancel()
-
-        cancellable = repository.forceRefreshBookmarksPublisher()
+        refreshCancellable?.cancel()
+        refreshCancellable = repository.forceRefreshBookmarksPublisher()
             .receive(on: RunLoop.main)
+            .flatMap { Just($0) }
             .sink(
-                receiveCompletion: { _ in self.isReloading = false },
+                receiveCompletion: { _ in },
                 receiveValue:  { _ in }
             )
     }

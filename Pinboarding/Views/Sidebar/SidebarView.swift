@@ -6,6 +6,7 @@ struct SidebarView: View {
 
     @ObservedObject private var viewModel: SidebarViewModel
     @EnvironmentObject private var repository: PinboardRepository
+    @EnvironmentObject private var searchStore: SearchStore
 
     // MARK: - Life cycle
 
@@ -19,6 +20,9 @@ struct SidebarView: View {
 
     var body: some View {
         VStack {
+            SearchField(searchTerm: $searchStore.currentSearchTerm)
+                .padding([.leading, .trailing])
+
             List {
                 MyBookmarksSectionView(
                     viewModel: MyBookmarksSectionViewModel()

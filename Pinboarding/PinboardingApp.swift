@@ -13,6 +13,7 @@ import SwiftUI
             MainView()
                 .environmentObject(appEnvironment.repository)
                 .environmentObject(appEnvironment.userDefaultsStore)
+                .environmentObject(appEnvironment.searchStore)
                 .environment(
                     \.managedObjectContext,
                     appEnvironment.persistenceController.container.viewContext

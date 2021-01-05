@@ -5,7 +5,7 @@ struct BookmarksListView: View {
 
     // MARK: - Properties
 
-    @State private var searchTerm: String = ""
+    @EnvironmentObject private var searchStore: SearchStore
 
     private var fetchRequest: FetchRequest<Bookmark>
 
@@ -24,31 +24,33 @@ struct BookmarksListView: View {
     // MARK: - Public
 
     var body: some View {
-        VStack {
-            SearchField(searchTerm: $searchTerm)
-                .padding()
-
-            List(
-                fetchRequest.wrappedValue.filter(title(matching: searchTerm)),
-                id: \.self
-            ) { bookmark in
-                BookmarkView(
-                    viewModel: BookmarkViewModel(
-                        bookmark: bookmark
-                    )
+        let bookmarks = fetchRequest
+            .wrappedValue
+            .filter(
+                matching(
+                    \.title,
+                    with: searchStore.currentSearchTerm
                 )
-            }
+            )
+
+        List(bookmarks, id: \.self) { bookmark in
+            BookmarkView(
+                viewModel: BookmarkViewModel(
+                    bookmark: bookmark
+                )
+            )
         }
     }
 }
 
 // MARK: - Private
 
-private func title(
-    matching term: String
+private func matching(
+    _ path: KeyPath<Bookmark, String>,
+    with term: String
 ) -> (Bookmark) -> Bool {
     { bookmark in
-        let title = bookmark.title.lowercased()
+        let title = bookmark[keyPath: path].lowercased()
         let searchTerm = term.lowercased()
         return title.contains(searchTerm) || term.isEmpty
     }

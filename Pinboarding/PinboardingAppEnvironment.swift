@@ -4,16 +4,18 @@ final class PinboardingAppEnvironment {
 
     // MARK: - Properties
 
-    private(set) var userDefaultsStore = UserDefaultsStore(
+    let searchStore = SearchStore()
+
+    let persistenceController = PersistenceController(
+        inMemory: false
+    )
+
+    let userDefaultsStore = UserDefaultsStore(
         userDefaults: .standard
     )
 
     private(set) lazy var networkController = NetworkController(
         userDefaultsStore: userDefaultsStore
-    )
-
-    private(set) lazy var persistenceController = PersistenceController(
-        inMemory: false
     )
 
     private(set) lazy var repository = PinboardRepository(

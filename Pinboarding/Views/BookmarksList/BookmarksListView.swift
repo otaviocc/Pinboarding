@@ -5,7 +5,9 @@ struct BookmarksListView: View {
 
     // MARK: - Properties
 
-    private let fetchRequest: FetchRequest<Bookmark>
+    @State private var searchTerm: String = ""
+
+    private var fetchRequest: FetchRequest<Bookmark>
 
     // MARK: - Life cycle
 
@@ -22,13 +24,33 @@ struct BookmarksListView: View {
     // MARK: - Public
 
     var body: some View {
-        List(fetchRequest.wrappedValue, id: \.self) { bookmark in
-            BookmarkView(
-                viewModel: BookmarkViewModel(
-                    bookmark: bookmark
+        VStack {
+            TextField("Search", text: $searchTerm)
+                .padding()
+
+            List(
+                fetchRequest.wrappedValue.filter(title(matching: searchTerm)),
+                id: \.self
+            ) { bookmark in
+                BookmarkView(
+                    viewModel: BookmarkViewModel(
+                        bookmark: bookmark
+                    )
                 )
-            )
+            }
         }
+    }
+}
+
+// MARK: - Private
+
+private func title(
+    matching term: String
+) -> (Bookmark) -> Bool {
+    { bookmark in
+        let title = bookmark.title.lowercased()
+        let searchTerm = term.lowercased()
+        return title.contains(searchTerm) || term.isEmpty
     }
 }
 

@@ -19,6 +19,7 @@ final class RefreshViewModel: ObservableObject {
         self.repository = repository
 
         self.activityCancellable = repository.networkActivityPublisher()
+            .receive(on: RunLoop.main)
             .map { $0 == .loading }
             .assign(to: \.isReloading, on: self)
     }

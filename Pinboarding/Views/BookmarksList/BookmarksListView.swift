@@ -25,7 +25,7 @@ struct BookmarksListView: View {
 
     var body: some View {
         VStack {
-            TextField("Search", text: $searchTerm)
+            SearchField(searchTerm: $searchTerm)
                 .padding()
 
             List(

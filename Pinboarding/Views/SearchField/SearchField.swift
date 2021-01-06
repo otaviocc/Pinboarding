@@ -20,14 +20,15 @@ struct SearchField: NSViewRepresentable {
     func makeNSView(
         context: Context
     ) -> NSSearchField {
-        NSSearchField()
+        let searchField = NSSearchField()
+        searchField.delegate = context.coordinator
+        return searchField
     }
 
     func updateNSView(
         _ control: NSSearchField,
         context: Context
     ) {
-        control.delegate = context.coordinator
     }
 
     func makeCoordinator(
@@ -54,7 +55,6 @@ struct SearchField: NSViewRepresentable {
             }
 
             searchField.searchTerm = control.stringValue
-            control.delegate = nil
         }
     }
 }

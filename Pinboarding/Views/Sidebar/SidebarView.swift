@@ -20,7 +20,7 @@ struct SidebarView: View {
 
     var body: some View {
         VStack {
-            SearchField(searchTerm: $searchStore.searchTerm)
+            SearchField(searchTerm: $searchStore.currentSearchTerm)
                 .padding([.leading, .trailing])
 
             List {

@@ -5,7 +5,7 @@ struct MainView: View {
     // MARK: - Properties
 
     @EnvironmentObject private var repository: PinboardRepository
-    @EnvironmentObject private var userDefaultsStore: UserDefaultsStore
+    @EnvironmentObject private var settingsStore: SettingsStore
     @State private var showAddBookmark = false
 
     // MARK: - Public
@@ -38,7 +38,7 @@ struct MainView: View {
                     AddBookmarkView(
                         viewModel: AddBookmarkViewModel(
                             repository: repository,
-                            userDefaultsStore: userDefaultsStore
+                            settingsStore: settingsStore
                         ),
                         isPresented: $showAddBookmark
                     )
@@ -54,7 +54,7 @@ struct MainView: View {
 struct MainView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let userDefaultsStore = Preview.makeUserDefaultsStore()
+        let settingsStore = Preview.makeSettingsStore()
         let controller = Preview.makePersistenceController(
             populated: true
         )
@@ -66,7 +66,7 @@ struct MainView_Previews: PreviewProvider {
             MainView()
                 .preferredColorScheme(.dark)
         }
-        .environmentObject(userDefaultsStore)
+        .environmentObject(settingsStore)
         .environment(
             \.managedObjectContext,
             controller.container.viewContext

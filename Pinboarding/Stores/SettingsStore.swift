@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class UserDefaultsStore: ObservableObject {
+final class SettingsStore: ObservableObject {
 
     // MARK: - Nested types
 
@@ -16,7 +16,7 @@ final class UserDefaultsStore: ObservableObject {
 
     private let userDefaults: UserDefaults
     private let changesSubject =
-        PassthroughSubject<UserDefaultsStoreChange, Never>()
+        PassthroughSubject<SettingsStoreChange, Never>()
 
     /// Flag used to store preferences for new bookmarks.
     /// Bookmarks can be either private or public.
@@ -90,7 +90,7 @@ final class UserDefaultsStore: ObservableObject {
 
     /// Publishes changes made to the store.
     func changesPublisher(
-    ) -> AnyPublisher<UserDefaultsStoreChange, Never> {
+    ) -> AnyPublisher<SettingsStoreChange, Never> {
         changesSubject
             .eraseToAnyPublisher()
     }

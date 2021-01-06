@@ -8,26 +8,26 @@ final class GeneralViewModel: ObservableObject {
     @Published var isPrivate: Bool = true
     @Published var isToRead: Bool = false
 
-    private let userDefaultsStore: UserDefaultsStore
+    private let settingsStore: SettingsStore
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
     init(
-        userDefaultsStore: UserDefaultsStore
+        settingsStore: SettingsStore
     ) {
-        self.userDefaultsStore = userDefaultsStore
-        self.isPrivate = userDefaultsStore.isPrivate
-        self.isToRead = userDefaultsStore.isToRead
+        self.settingsStore = settingsStore
+        self.isPrivate = settingsStore.isPrivate
+        self.isToRead = settingsStore.isToRead
 
         $isPrivate
             .dropFirst()
-            .assign(to: \.userDefaultsStore.isPrivate, on: self)
+            .assign(to: \.settingsStore.isPrivate, on: self)
             .store(in: &cancellables)
 
         $isToRead
             .dropFirst()
-            .assign(to: \.userDefaultsStore.isToRead, on: self)
+            .assign(to: \.settingsStore.isToRead, on: self)
             .store(in: &cancellables)
     }
 }

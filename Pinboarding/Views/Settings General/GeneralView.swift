@@ -32,19 +32,19 @@ struct GeneralView: View {
 struct GeneralView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let userDefaultsStore = Preview.makeUserDefaultsStore()
+        let settingsStore = Preview.makeSettingsStore()
 
         Group {
             GeneralView(
                 viewModel: GeneralViewModel(
-                    userDefaultsStore: userDefaultsStore
+                    settingsStore: settingsStore
                 )
             )
             .preferredColorScheme(.light)
 
             GeneralView(
                 viewModel: GeneralViewModel(
-                    userDefaultsStore: userDefaultsStore
+                    settingsStore: settingsStore
                 )
             )
             .preferredColorScheme(.dark)

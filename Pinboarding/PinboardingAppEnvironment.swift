@@ -10,12 +10,12 @@ final class PinboardingAppEnvironment {
         inMemory: false
     )
 
-    let userDefaultsStore = UserDefaultsStore(
+    let settingsStore = SettingsStore(
         userDefaults: .standard
     )
 
     private(set) lazy var networkController = NetworkController(
-        userDefaultsStore: userDefaultsStore
+        settingsStore: settingsStore
     )
 
     private(set) lazy var repository = PinboardRepository(

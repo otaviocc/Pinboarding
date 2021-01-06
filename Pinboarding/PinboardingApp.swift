@@ -12,7 +12,7 @@ import SwiftUI
         WindowGroup {
             MainView()
                 .environmentObject(appEnvironment.repository)
-                .environmentObject(appEnvironment.userDefaultsStore)
+                .environmentObject(appEnvironment.settingsStore)
                 .environmentObject(appEnvironment.searchStore)
                 .environment(
                     \.managedObjectContext,
@@ -25,7 +25,7 @@ import SwiftUI
 
         Settings {
             SettingsView()
-                .environmentObject(appEnvironment.userDefaultsStore)
+                .environmentObject(appEnvironment.settingsStore)
         }
     }
 }

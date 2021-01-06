@@ -88,7 +88,7 @@ struct AddBookmarkView_Previews: PreviewProvider {
             AddBookmarkView(
                 viewModel: AddBookmarkViewModel(
                     repository: Preview.makeRepository(),
-                    userDefaultsStore: Preview.makeUserDefaultsStore()
+                    settingsStore: Preview.makeSettingsStore()
                 ),
                 isPresented: .constant(false)
             )
@@ -98,7 +98,7 @@ struct AddBookmarkView_Previews: PreviewProvider {
             AddBookmarkView(
                 viewModel: AddBookmarkViewModel(
                     repository: Preview.makeRepository(),
-                    userDefaultsStore: Preview.makeUserDefaultsStore()
+                    settingsStore: Preview.makeSettingsStore()
                 ),
                 isPresented: .constant(false)
             )

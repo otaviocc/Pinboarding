@@ -17,7 +17,7 @@ final class AddBookmarkViewModel: ObservableObject {
     @Published private(set) var titleMessage: String = ""
 
     private let repository: PinboardRepository
-    private let userDefaultsStore: UserDefaultsStore
+    private let settingsStore: SettingsStore
     private var cancellables = Set<AnyCancellable>()
     private let dismissViewSubject =
         PassthroughSubject<Bool, Never>()
@@ -26,10 +26,10 @@ final class AddBookmarkViewModel: ObservableObject {
 
     init(
         repository: PinboardRepository,
-        userDefaultsStore: UserDefaultsStore
+        settingsStore: SettingsStore
     ) {
         self.repository = repository
-        self.userDefaultsStore = userDefaultsStore
+        self.settingsStore = settingsStore
 
         isURLValidPublisher()
             .receive(on: RunLoop.main)
@@ -52,8 +52,8 @@ final class AddBookmarkViewModel: ObservableObject {
             .assign(to: \.isValid, on: self)
             .store(in: &cancellables)
 
-        isPrivate = userDefaultsStore.isPrivate
-        isToRead = userDefaultsStore.isToRead
+        isPrivate = settingsStore.isPrivate
+        isToRead = settingsStore.isToRead
     }
 
     // MARK: - Public

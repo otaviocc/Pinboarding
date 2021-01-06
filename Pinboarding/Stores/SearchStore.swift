@@ -4,5 +4,6 @@ final class SearchStore: ObservableObject {
 
     // MARK: - Properties
 
-    @Published var currentSearchTerm: String = ""
+    /// Search term used across the app.
+    @Published var searchTerm: String = ""
 }

@@ -3,9 +3,9 @@ import Foundation
 extension Preview {
 
     /// User Defaults Store for SwiftUI Previews.
-    static func makeUserDefaultsStore(
-    ) -> UserDefaultsStore {
-        let store = UserDefaultsStore(
+    static func makeSettingsStore(
+    ) -> SettingsStore {
+        let store = SettingsStore(
             userDefaults: makePreviewUserDefaults()
         )
 

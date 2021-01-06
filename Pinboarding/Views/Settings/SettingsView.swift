@@ -10,7 +10,7 @@ struct SettingsView: View {
 
     // MARK: - Properties
 
-    @EnvironmentObject private var userDefaultsStore: UserDefaultsStore
+    @EnvironmentObject private var settingsStore: SettingsStore
 
     // MARK: - Public
 
@@ -18,7 +18,7 @@ struct SettingsView: View {
         TabView {
             LoginView(
                 viewModel: LoginViewModel(
-                    userDefaultsStore: userDefaultsStore
+                    settingsStore: settingsStore
                 )
             )
             .tabItem {
@@ -28,7 +28,7 @@ struct SettingsView: View {
 
             GeneralView(
                 viewModel: GeneralViewModel(
-                    userDefaultsStore: userDefaultsStore
+                    settingsStore: settingsStore
                 )
             )
             .tabItem {
@@ -53,6 +53,6 @@ struct SettingsView_Previews: PreviewProvider {
             SettingsView()
                 .preferredColorScheme(.dark)
         }
-        .environmentObject(Preview.makeUserDefaultsStore())
+        .environmentObject(Preview.makeSettingsStore())
     }
 }

@@ -29,7 +29,7 @@ struct BookmarksListView: View {
             .filter(
                 matching(
                     \.title,
-                    with: searchStore.currentSearchTerm
+                    with: searchStore.searchTerm
                 )
             )
 

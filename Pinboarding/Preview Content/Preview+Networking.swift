@@ -19,7 +19,7 @@ extension Preview {
     static func makeNetworkController(
     ) -> NetworkController {
         NetworkController(
-            userDefaultsStore: Preview.makeUserDefaultsStore()
+            settingsStore: Preview.makeSettingsStore()
         )
     }
 }

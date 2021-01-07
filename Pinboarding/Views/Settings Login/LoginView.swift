@@ -23,7 +23,7 @@ struct LoginView: View {
             Text("Pinboarding uses auth token to access Pinboard.")
                 .font(.footnote)
 
-            TextField(
+            SecureField(
                 "Auth Token",
                 text: $viewModel.authToken
             )

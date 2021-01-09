@@ -17,13 +17,24 @@ struct GeneralView: View {
     // MARK: - Public
 
     var body: some View {
-        VStack(alignment: .trailing, spacing: 12) {
-            Toggle("Mark new posts as private", isOn: $viewModel.isPrivate)
-                .toggleStyle(SwitchToggleStyle())
+        VStack(alignment: .settings, spacing: 12) {
+            HStack {
+                Text("Default values for new bookmarks")
 
-            Toggle("Mark new posts to read later", isOn: $viewModel.isToRead)
-                .toggleStyle(SwitchToggleStyle())
+                Toggle(
+                    "Mark new posts as private",
+                    isOn: $viewModel.isPrivate
+                )
+                .alignmentGuide(.settings) { $0[.leading] }
+            }
+
+            Toggle(
+                "Mark new posts to read later",
+                isOn: $viewModel.isToRead
+            )
+            .alignmentGuide(.settings) { $0[.leading] }
         }
+        .padding()
     }
 }
 

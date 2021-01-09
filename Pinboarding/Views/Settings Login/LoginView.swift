@@ -42,6 +42,7 @@ struct LoginView: View {
                 .disabled(!viewModel.isValid)
             }
         }
+        .padding()
     }
 }
 
@@ -58,8 +59,6 @@ struct LoginView_Previews: PreviewProvider {
                     settingsStore: settingsStore
                 )
             )
-            .frame(width: 320)
-            .padding()
             .preferredColorScheme(.light)
 
             LoginView(
@@ -67,8 +66,6 @@ struct LoginView_Previews: PreviewProvider {
                     settingsStore: settingsStore
                 )
             )
-            .frame(width: 320)
-            .padding()
             .preferredColorScheme(.dark)
         }
     }

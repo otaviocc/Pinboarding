@@ -8,7 +8,7 @@ struct TwoColumnsAlignment: AlignmentID {
     static func defaultValue(
         in context: ViewDimensions
     ) -> CGFloat {
-        return context[.leading]
+        context[.leading]
     }
 }
 
@@ -24,9 +24,11 @@ extension View {
     /// View modifier to align the right column to the
     /// left side.
     func rightColumnAlignmentGuide() -> some View {
-        self.alignmentGuide(.twoColumns) { $0[.leading] }
+        alignmentGuide(.twoColumns) { $0[.leading] }
     }
 }
+
+// MARK: - PreviewProvider
 
 struct SettingsAlignment_Previews: PreviewProvider {
 

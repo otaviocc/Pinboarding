@@ -17,7 +17,7 @@ struct GeneralView: View {
     // MARK: - Public
 
     var body: some View {
-        VStack(alignment: .settings, spacing: 12) {
+        VStack(alignment: .twoColumns, spacing: 12) {
             HStack {
                 Text("Default values for new bookmarks")
 
@@ -25,14 +25,14 @@ struct GeneralView: View {
                     "Mark new posts as private",
                     isOn: $viewModel.isPrivate
                 )
-                .alignmentGuide(.settings) { $0[.leading] }
+                .rightColumnAlignmentGuide()
             }
 
             Toggle(
                 "Mark new posts to read later",
                 isOn: $viewModel.isToRead
             )
-            .alignmentGuide(.settings) { $0[.leading] }
+            .rightColumnAlignmentGuide()
         }
         .padding()
     }

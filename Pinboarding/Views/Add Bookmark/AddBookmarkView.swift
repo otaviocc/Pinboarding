@@ -21,6 +21,24 @@ struct AddBookmarkView: View {
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
+            makeInputView()
+
+            makeTogglesView()
+                .padding([.top, .bottom])
+
+            makeButtonsView()
+        }
+        .padding()
+        .onReceive(viewModel.dismissViewPublisher()) { _ in
+            isPresented.toggle()
+        }
+    }
+
+    // MARK: - Private
+
+    private func makeInputView(
+    ) -> some View {
+        Group {
             Text("URL")
             TextField("", text: $viewModel.urlString)
 
@@ -33,19 +51,8 @@ struct AddBookmarkView: View {
 
             Text("Tags")
             TextField("", text: $viewModel.tags)
-
-            makeTogglesView()
-                .padding(.top)
-
-            makeButtonsView()
-        }
-        .padding()
-        .onReceive(viewModel.dismissViewPublisher()) { _ in
-            isPresented.toggle()
         }
     }
-
-    // MARK: - Private
 
     private func makeTogglesView(
     ) -> some View {
@@ -67,10 +74,7 @@ struct AddBookmarkView: View {
             Button("Cancel") {
                 isPresented.toggle()
             }
-            .padding()
-
             Spacer()
-
             Button("Add bookmark") {
                 viewModel.addBookmark()
             }

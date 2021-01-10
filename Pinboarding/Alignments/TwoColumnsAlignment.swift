@@ -23,7 +23,8 @@ extension View {
 
     /// View modifier to align the right column to the
     /// left side.
-    func rightColumnAlignmentGuide() -> some View {
+    func rightColumnAlignmentGuide(
+    ) -> some View {
         alignmentGuide(.twoColumns) { $0[.leading] }
     }
 }

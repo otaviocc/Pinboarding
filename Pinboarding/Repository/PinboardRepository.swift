@@ -9,6 +9,7 @@ public class PinboardRepository: ObservableObject {
     private let persistenceController: PersistenceController
     private let networkController: NetworkController
     private var cancellables = Set<AnyCancellable>()
+    private var refreshCancellable: AnyCancellable?
 
     // MARK: - Life cycle
 
@@ -51,19 +52,24 @@ public class PinboardRepository: ObservableObject {
         .eraseToAnyPublisher()
     }
 
+    /// Forces an update without waiting for the next
+    /// x minutes to pass.
+    func forceRefreshBookmarks(
+    ) {
+        refreshCancellable?.cancel()
+        refreshCancellable = networkController.forceRefreshBookmarksPublisher()
+            .map(persistenceController.addAllPosts)
+            .receive(on: RunLoop.main)
+            .sink(
+                receiveCompletion: { _ in },
+                receiveValue:  { _ in }
+            )
+    }
+
     /// Publishes the network status to update the UI
     /// during update requests.
     func networkActivityPublisher(
     ) -> AnyPublisher<NetworkActivityEvent, Never> {
         networkController.networkActivityPublisher()
-    }
-
-    /// Forces an update without waiting for the next
-    /// x minutes to pass.
-    func forceRefreshBookmarksPublisher(
-    ) -> AnyPublisher<Void, Error> {
-        networkController.forceRefreshBookmarksPublisher()
-            .map(persistenceController.addAllPosts)
-            .eraseToAnyPublisher()
     }
 }

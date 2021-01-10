@@ -21,6 +21,9 @@ import SwiftUI
         }
         .commands {
             SidebarCommands()
+            BookmarkCommands(
+                repository: appEnvironment.repository
+            )
         }
 
         Settings {

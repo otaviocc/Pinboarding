@@ -19,6 +19,7 @@
 		AE10FAEC2594D54500C79B82 /* Bookmark+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FAE82594D54500C79B82 /* Bookmark+CoreDataProperties.swift */; };
 		AE10FAED2594D54500C79B82 /* Bookmark+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE10FAE92594D54500C79B82 /* Bookmark+CoreDataClass.swift */; };
 		AE12D7832597DDCB007A9EFB /* BookmarksListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE12D7822597DDCB007A9EFB /* BookmarksListViewModel.swift */; };
+		AE2E0AA525AB71530077CBDC /* BookmarkCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2E0AA425AB71530077CBDC /* BookmarkCommands.swift */; };
 		AE2F588D258EB84D00D19421 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F588C258EB84D00D19421 /* SettingsStore.swift */; };
 		AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF72588FD9D00B7420A /* SettingsView.swift */; };
 		AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5781F6258DE42F00A524F4 /* LoginView.swift */; };
@@ -75,6 +76,7 @@
 		AE10FAE82594D54500C79B82 /* Bookmark+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bookmark+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		AE10FAE92594D54500C79B82 /* Bookmark+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bookmark+CoreDataClass.swift"; sourceTree = "<group>"; };
 		AE12D7822597DDCB007A9EFB /* BookmarksListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksListViewModel.swift; sourceTree = "<group>"; };
+		AE2E0AA425AB71530077CBDC /* BookmarkCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCommands.swift; sourceTree = "<group>"; };
 		AE2F588C258EB84D00D19421 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		AE317AF72588FD9D00B7420A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AE5781F6258DE42F00A524F4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -157,6 +159,14 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		AE2E0AA325AB71320077CBDC /* Commands */ = {
+			isa = PBXGroup;
+			children = (
+				AE2E0AA425AB71530077CBDC /* BookmarkCommands.swift */,
+			);
+			path = Commands;
 			sourceTree = "<group>";
 		};
 		AE2F588B258EB73900D19421 /* Stores */ = {
@@ -262,6 +272,7 @@
 				AEBFB68925940F4D001626AA /* PinboardingAppEnvironment.swift */,
 				AE7EE6B825A9B3AA004EDEB9 /* Alignments */,
 				AE7930162586838700A68947 /* Assets */,
+				AE2E0AA325AB71320077CBDC /* Commands */,
 				AEBFB697259413B1001626AA /* Extensions */,
 				AE79301B2586841700A68947 /* Preview Content */,
 				AE00EA04258AD573002D9558 /* Repository */,
@@ -545,6 +556,7 @@
 				AE039704258E5B3900D744FB /* LoginViewModel.swift in Sources */,
 				AE00EA07258AD5B1002D9558 /* PinboardRepository.swift in Sources */,
 				AE9541FA259B2DD500B1AA15 /* MyBookmarksSectionViewModel.swift in Sources */,
+				AE2E0AA525AB71530077CBDC /* BookmarkCommands.swift in Sources */,
 				AE12D7832597DDCB007A9EFB /* BookmarksListViewModel.swift in Sources */,
 				AEA5340425A4E23200AF2481 /* SearchField.swift in Sources */,
 				AE10FAEC2594D54500C79B82 /* Bookmark+CoreDataProperties.swift in Sources */,

@@ -32,6 +32,7 @@ struct MyBookmarksSectionView: View {
                 )
             }
         }
+        .collapsible(false)
     }
 }
 

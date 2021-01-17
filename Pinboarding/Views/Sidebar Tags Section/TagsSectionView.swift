@@ -28,6 +28,7 @@ struct TagsSectionView: View {
                 )
             }
         }
+        .collapsible(false)
     }
 }
 

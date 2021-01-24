@@ -43,7 +43,7 @@ extension Preview {
             bookmark.isShared = false
             bookmark.time = Date()
             bookmark.title = "Lorem Ipsum \(i)"
-            bookmark.isToRead  = false
+            bookmark.isToRead = false
             bookmark.tags = []
 
             let tag = Tag(context: context)

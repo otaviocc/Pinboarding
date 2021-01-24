@@ -9,16 +9,16 @@ final class LoginViewModel: ObservableObject {
     @Published private(set) var authTokenMessage: String = ""
     @Published private(set) var isValid = false
 
-    private let settingsStore: SettingsStore
+    private let tokenStore: AnyTokenStore
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
     init(
-        settingsStore: SettingsStore
+        tokenStore: AnyTokenStore
     ) {
-        self.settingsStore = settingsStore
-        self.authToken = settingsStore.authToken
+        self.tokenStore = tokenStore
+        self.authToken = tokenStore.authToken ?? ""
 
         self.isAuthTokenValidPublisher()
             .receive(on: RunLoop.main)
@@ -37,9 +37,11 @@ final class LoginViewModel: ObservableObject {
     // MARK: - Public
 
     func save() {
-        guard isValid else { return }
+        guard isValid else {
+            return
+        }
 
-        settingsStore.authToken = authToken
+        tokenStore.authToken = authToken
     }
 
     // MARK: - Private
@@ -61,8 +63,8 @@ final class LoginViewModel: ObservableObject {
             components.count == 2,
             let user = components.first,
             let key = components.last,
-            user.count > 0,
-            key.count > 0
+            !user.isEmpty,
+            !key.isEmpty
         else { return false }
 
         return true

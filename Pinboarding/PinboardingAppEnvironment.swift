@@ -6,16 +6,19 @@ final class PinboardingAppEnvironment {
 
     let searchStore = SearchStore()
 
-    let persistenceController = PersistenceController(
-        inMemory: false
-    )
-
     let settingsStore = SettingsStore(
         userDefaults: .standard
     )
 
+    let tokenStore = AnyTokenStore(SecureStore())
+
+    let persistenceController = PersistenceController(
+        inMemory: false
+    )
+
     private(set) lazy var networkController = NetworkController(
-        settingsStore: settingsStore
+        settingsStore: settingsStore,
+        tokenStore: tokenStore
     )
 
     private(set) lazy var repository = PinboardRepository(

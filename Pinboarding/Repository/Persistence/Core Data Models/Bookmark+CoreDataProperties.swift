@@ -1,24 +1,24 @@
 import Foundation
 import CoreData
 
-extension Bookmark {
+public extension Bookmark {
 
     // MARK: - Properties
 
-    @NSManaged public var abstract: String
-    @NSManaged public var href: String
-    @NSManaged public var id: String
-    @NSManaged public var meta: String
-    @NSManaged public var isShared: Bool
-    @NSManaged public var time: Date
-    @NSManaged public var title: String
-    @NSManaged public var isToRead: Bool
-    @NSManaged public var tags: NSSet
+    @NSManaged var abstract: String
+    @NSManaged var href: String
+    @NSManaged var id: String
+    @NSManaged var meta: String
+    @NSManaged var isShared: Bool
+    @NSManaged var time: Date
+    @NSManaged var title: String
+    @NSManaged var isToRead: Bool
+    @NSManaged var tags: NSSet
 
     // MARK: - Public
 
     @nonobjc
-    public class func fetchRequest(
+    static func fetchRequest(
     ) -> NSFetchRequest<Bookmark> {
         NSFetchRequest<Bookmark>(
             entityName: "Bookmark"
@@ -28,22 +28,22 @@ extension Bookmark {
     // MARK: - Relationships
 
     @objc(addTagsObject:)
-    @NSManaged public func addToTags(
+    @NSManaged func addToTags(
         _ value: Tag
     )
 
     @objc(removeTagsObject:)
-    @NSManaged public func removeFromTags(
+    @NSManaged func removeFromTags(
         _ value: Tag
     )
 
     @objc(addTags:)
-    @NSManaged public func addToTags(
+    @NSManaged func addToTags(
         _ values: NSSet
     )
 
     @objc(removeTags:)
-    @NSManaged public func removeFromTags(
+    @NSManaged func removeFromTags(
         _ values: NSSet
     )
 }

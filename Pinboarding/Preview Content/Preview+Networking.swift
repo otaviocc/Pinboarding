@@ -19,7 +19,12 @@ extension Preview {
     static func makeNetworkController(
     ) -> NetworkController {
         NetworkController(
-            settingsStore: Preview.makeSettingsStore()
+            settingsStore: Preview.makeSettingsStore(),
+            tokenStore: AnyTokenStore(
+                Preview.makeTokenStore(
+                    authToken: "valid:token"
+                )
+            )
         )
     }
 }

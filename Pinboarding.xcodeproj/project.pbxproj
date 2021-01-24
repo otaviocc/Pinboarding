@@ -24,6 +24,7 @@
 		AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF72588FD9D00B7420A /* SettingsView.swift */; };
 		AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5781F6258DE42F00A524F4 /* LoginView.swift */; };
 		AE628CC6258FA2D300F91800 /* SettingsStoreChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE628CC5258FA2D300F91800 /* SettingsStoreChange.swift */; };
+		AE6D05CE25BC920B00BEDDD4 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D05CD25BC920B00BEDDD4 /* SecureStorage.swift */; };
 		AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793003258675DB00A68947 /* PinboardingApp.swift */; };
 		AE793006258675DB00A68947 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE793005258675DB00A68947 /* MainView.swift */; };
 		AE793008258675DC00A68947 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AE793007258675DC00A68947 /* Assets.xcassets */; };
@@ -31,6 +32,9 @@
 		AE7EE6BA25A9B3C0004EDEB9 /* TwoColumnsAlignment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE7EE6B925A9B3C0004EDEB9 /* TwoColumnsAlignment.swift */; };
 		AE83841025979D1100A4C5A7 /* Preview+Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE83840F25979D1100A4C5A7 /* Preview+Settings.swift */; };
 		AE8384182597B5AE00A4C5A7 /* BookmarksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8384172597B5AE00A4C5A7 /* BookmarksListView.swift */; };
+		AE8F4DD925BD93A3007E6053 /* Preview+TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F4DD825BD93A3007E6053 /* Preview+TokenStore.swift */; };
+		AE8F4DDD25BD9687007E6053 /* TokenStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F4DDC25BD9687007E6053 /* TokenStoreProtocol.swift */; };
+		AE8F4DE025BD96A4007E6053 /* AnyTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F4DDF25BD96A4007E6053 /* AnyTokenStore.swift */; };
 		AE9541EB259AB01A00B1AA15 /* NetworkActivityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9541EA259AB01A00B1AA15 /* NetworkActivityEvent.swift */; };
 		AE9541EE259AC30600B1AA15 /* Preview+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9541ED259AC30600B1AA15 /* Preview+Networking.swift */; };
 		AE9541F3259B2D1E00B1AA15 /* TagsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9541F2259B2D1E00B1AA15 /* TagsSectionView.swift */; };
@@ -56,6 +60,7 @@
 		AEC72E112597890E008C7FF3 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC72E102597890E008C7FF3 /* Preview.swift */; };
 		AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */; };
 		AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */; };
+		AEED4D7025BB7CFB00756570 /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED4D6F25BB7CFB00756570 /* SecureStore.swift */; };
 		AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DF07258EC8A8000F4BFF /* GeneralView.swift */; };
 		AEF0DF11258ECB8D000F4BFF /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DF10258ECB8D000F4BFF /* GeneralViewModel.swift */; };
 		AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */; };
@@ -82,6 +87,7 @@
 		AE317AF72588FD9D00B7420A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		AE5781F6258DE42F00A524F4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AE628CC5258FA2D300F91800 /* SettingsStoreChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreChange.swift; sourceTree = "<group>"; };
+		AE6D05CD25BC920B00BEDDD4 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
 		AE793000258675DB00A68947 /* Pinboarding.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pinboarding.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AE793003258675DB00A68947 /* PinboardingApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PinboardingApp.swift; sourceTree = "<group>"; };
 		AE793005258675DB00A68947 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -92,6 +98,9 @@
 		AE7EE6B925A9B3C0004EDEB9 /* TwoColumnsAlignment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TwoColumnsAlignment.swift; sourceTree = "<group>"; };
 		AE83840F25979D1100A4C5A7 /* Preview+Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Settings.swift"; sourceTree = "<group>"; };
 		AE8384172597B5AE00A4C5A7 /* BookmarksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksListView.swift; sourceTree = "<group>"; };
+		AE8F4DD825BD93A3007E6053 /* Preview+TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+TokenStore.swift"; sourceTree = "<group>"; };
+		AE8F4DDC25BD9687007E6053 /* TokenStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStoreProtocol.swift; sourceTree = "<group>"; };
+		AE8F4DDF25BD96A4007E6053 /* AnyTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTokenStore.swift; sourceTree = "<group>"; };
 		AE9541EA259AB01A00B1AA15 /* NetworkActivityEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityEvent.swift; sourceTree = "<group>"; };
 		AE9541ED259AC30600B1AA15 /* Preview+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Networking.swift"; sourceTree = "<group>"; };
 		AE9541F2259B2D1E00B1AA15 /* TagsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsSectionView.swift; sourceTree = "<group>"; };
@@ -117,6 +126,7 @@
 		AEC72E102597890E008C7FF3 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
 		AECE16F22591BD640024DC88 /* Pinboarding.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinboarding.xcdatamodel; sourceTree = "<group>"; };
 		AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Booleans+Repository.swift"; sourceTree = "<group>"; };
+		AEED4D6F25BB7CFB00756570 /* SecureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
 		AEF0DF07258EC8A8000F4BFF /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
 		AEF0DF10258ECB8D000F4BFF /* GeneralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
 		AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkView.swift; sourceTree = "<group>"; };
@@ -174,9 +184,12 @@
 		AE2F588B258EB73900D19421 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
+				AE8F4DDF25BD96A4007E6053 /* AnyTokenStore.swift */,
 				AEAB957925A51FD900F4B7D3 /* SearchStore.swift */,
+				AEED4D6F25BB7CFB00756570 /* SecureStore.swift */,
 				AE2F588C258EB84D00D19421 /* SettingsStore.swift */,
 				AE628CC5258FA2D300F91800 /* SettingsStoreChange.swift */,
+				AE8F4DDC25BD9687007E6053 /* TokenStoreProtocol.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -250,6 +263,14 @@
 			path = "Settings Login";
 			sourceTree = "<group>";
 		};
+		AE6D05CC25BC91B600BEDDD4 /* Property Wrappers */ = {
+			isa = PBXGroup;
+			children = (
+				AE6D05CD25BC920B00BEDDD4 /* SecureStorage.swift */,
+			);
+			path = "Property Wrappers";
+			sourceTree = "<group>";
+		};
 		AE792FF7258675DB00A68947 = {
 			isa = PBXGroup;
 			children = (
@@ -277,6 +298,7 @@
 				AE2E0AA325AB71320077CBDC /* Commands */,
 				AEBFB697259413B1001626AA /* Extensions */,
 				AE79301B2586841700A68947 /* Preview Content */,
+				AE6D05CC25BC91B600BEDDD4 /* Property Wrappers */,
 				AE00EA04258AD573002D9558 /* Repository */,
 				AE2F588B258EB73900D19421 /* Stores */,
 				AE793017258683C800A68947 /* Supporting Files */,
@@ -330,13 +352,14 @@
 		AE79301B2586841700A68947 /* Preview Content */ = {
 			isa = PBXGroup;
 			children = (
+				AE79300A258675DC00A68947 /* Preview Assets.xcassets */,
 				AEC72E102597890E008C7FF3 /* Preview.swift */,
 				AE9541ED259AC30600B1AA15 /* Preview+Networking.swift */,
 				AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */,
 				AE98296625A0709D00E857D8 /* Preview+Repository.swift */,
 				AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */,
 				AE83840F25979D1100A4C5A7 /* Preview+Settings.swift */,
-				AE79300A258675DC00A68947 /* Preview Assets.xcassets */,
+				AE8F4DD825BD93A3007E6053 /* Preview+TokenStore.swift */,
 			);
 			path = "Preview Content";
 			sourceTree = "<group>";
@@ -554,6 +577,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE6D05CE25BC920B00BEDDD4 /* SecureStorage.swift in Sources */,
 				AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */,
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
 				AE039704258E5B3900D744FB /* LoginViewModel.swift in Sources */,
@@ -566,8 +590,10 @@
 				AE10FAEA2594D54500C79B82 /* Tag+CoreDataClass.swift in Sources */,
 				AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */,
 				AE10FAED2594D54500C79B82 /* Bookmark+CoreDataClass.swift in Sources */,
+				AEED4D7025BB7CFB00756570 /* SecureStore.swift in Sources */,
 				AE9541EE259AC30600B1AA15 /* Preview+Networking.swift in Sources */,
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,
+				AE8F4DD925BD93A3007E6053 /* Preview+TokenStore.swift in Sources */,
 				AEAB957A25A51FD900F4B7D3 /* SearchStore.swift in Sources */,
 				AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */,
 				AEC72E112597890E008C7FF3 /* Preview.swift in Sources */,
@@ -589,6 +615,7 @@
 				AEC72E0E259780FF008C7FF3 /* Preview+Persistence.swift in Sources */,
 				AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */,
 				AE9F994625A1AC12001D2889 /* RefreshViewModel.swift in Sources */,
+				AE8F4DDD25BD9687007E6053 /* TokenStoreProtocol.swift in Sources */,
 				AE9F993E25A15F75001D2889 /* PrivateView.swift in Sources */,
 				AE9F994525A1AC12001D2889 /* RefreshView.swift in Sources */,
 				AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */,
@@ -603,6 +630,7 @@
 				AEC4A94F259B9F09000C65A8 /* SafariButton.swift in Sources */,
 				AEC4A953259B9F38000C65A8 /* ShareButton.swift in Sources */,
 				AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */,
+				AE8F4DE025BD96A4007E6053 /* AnyTokenStore.swift in Sources */,
 				AEBFB699259413C8001626AA /* NSSortDescriptor+App.swift in Sources */,
 				AE628CC6258FA2D300F91800 /* SettingsStoreChange.swift in Sources */,
 				AE2F588D258EB84D00D19421 /* SettingsStore.swift in Sources */,
@@ -736,6 +764,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -759,6 +788,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (

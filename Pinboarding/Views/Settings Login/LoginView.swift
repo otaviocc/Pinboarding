@@ -51,19 +51,21 @@ struct LoginView: View {
 struct LoginView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let settingsStore = Preview.makeSettingsStore()
-
         Group {
             LoginView(
                 viewModel: LoginViewModel(
-                    settingsStore: settingsStore
+                    tokenStore: AnyTokenStore(
+                        Preview.makeTokenStore(authToken: "valid:token")
+                    )
                 )
             )
             .preferredColorScheme(.light)
 
             LoginView(
                 viewModel: LoginViewModel(
-                    settingsStore: settingsStore
+                    tokenStore: AnyTokenStore(
+                        Preview.makeTokenStore(authToken: "invalidtoken")
+                    )
                 )
             )
             .preferredColorScheme(.dark)

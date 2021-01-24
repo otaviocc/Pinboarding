@@ -13,6 +13,7 @@ import SwiftUI
             MainView()
                 .environmentObject(appEnvironment.repository)
                 .environmentObject(appEnvironment.settingsStore)
+                .environmentObject(appEnvironment.tokenStore)
                 .environmentObject(appEnvironment.searchStore)
                 .environment(
                     \.managedObjectContext,
@@ -29,6 +30,7 @@ import SwiftUI
         Settings {
             SettingsView()
                 .environmentObject(appEnvironment.settingsStore)
+                .environmentObject(appEnvironment.tokenStore)
         }
     }
 }

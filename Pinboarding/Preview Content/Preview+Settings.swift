@@ -9,7 +9,6 @@ extension Preview {
             userDefaults: makePreviewUserDefaults()
         )
 
-        store.authToken = "mock token"
         store.isPrivate = true
         store.isToRead = false
 

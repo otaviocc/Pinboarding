@@ -11,6 +11,7 @@ struct SettingsView: View {
     // MARK: - Properties
 
     @EnvironmentObject private var settingsStore: SettingsStore
+    @EnvironmentObject private var tokenStore: AnyTokenStore
 
     // MARK: - Public
 
@@ -18,7 +19,7 @@ struct SettingsView: View {
         TabView {
             LoginView(
                 viewModel: LoginViewModel(
-                    settingsStore: settingsStore
+                    tokenStore: tokenStore
                 )
             )
             .tabItem {

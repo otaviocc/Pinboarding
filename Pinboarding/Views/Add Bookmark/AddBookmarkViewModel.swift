@@ -104,7 +104,7 @@ final class AddBookmarkViewModel: ObservableObject {
         $title
             .debounce(for: 0.3, scheduler: RunLoop.main)
             .removeDuplicates()
-            .map { $0.count > 0 }
+            .map { !$0.isEmpty }
             .eraseToAnyPublisher()
     }
 

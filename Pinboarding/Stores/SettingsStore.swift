@@ -6,7 +6,6 @@ final class SettingsStore: ObservableObject {
     // MARK: - Nested types
 
     private enum Key {
-        static let authToken = "settingsAuthToken"
         static let isPrivate = "settingsIsPrivate"
         static let isToRead = "settingsIsToRead"
         static let lastSyncDate = "syncLastUpdate"
@@ -44,20 +43,6 @@ final class SettingsStore: ObservableObject {
             )
             changesSubject.send(
                 .isToRead(isToRead)
-            )
-        }
-    }
-
-    /// Auth token required to perform the network requests.
-    var authToken: String {
-        get { userDefaults.string(forKey: Key.authToken) ?? "" }
-        set {
-            userDefaults.setValue(
-                newValue,
-                forKey: Key.authToken
-            )
-            changesSubject.send(
-                .authToken(authToken)
             )
         }
     }

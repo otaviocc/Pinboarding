@@ -9,6 +9,7 @@ final class NetworkController {
     private var cancellables = Set<AnyCancellable>()
     private let pinboardAPI: PinboardAPI
     private let settingsStore: SettingsStore
+    private let tokenStore: AnyTokenStore
     private let postResponseSubject =
         PassthroughSubject<[PostResponse], Never>()
 
@@ -21,11 +22,13 @@ final class NetworkController {
     // MARK: - Life cycle
 
     init(
-        settingsStore: SettingsStore
+        settingsStore: SettingsStore,
+        tokenStore: AnyTokenStore
     ) {
         self.settingsStore = settingsStore
+        self.tokenStore = tokenStore
         self.pinboardAPI = PinboardAPI {
-            settingsStore.authToken
+            tokenStore.authToken
         }
 
         recentBookmarksPublisher()

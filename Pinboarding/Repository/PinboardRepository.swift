@@ -62,7 +62,7 @@ public class PinboardRepository: ObservableObject {
             .receive(on: RunLoop.main)
             .sink(
                 receiveCompletion: { _ in },
-                receiveValue:  { _ in }
+                receiveValue: { _ in }
             )
     }
 

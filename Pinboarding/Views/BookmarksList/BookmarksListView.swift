@@ -61,6 +61,7 @@ private func matching(
 struct BookmarksList_Previews: PreviewProvider {
 
     static var previews: some View {
+        let searchStore = Preview.makeSearchStore()
         let controller = Preview.makePersistenceController(
             populated: true
         )
@@ -78,5 +79,6 @@ struct BookmarksList_Previews: PreviewProvider {
             \.managedObjectContext,
             controller.container.viewContext
         )
+        .environmentObject(searchStore)
     }
 }

@@ -29,6 +29,7 @@ struct BookmarksView: View {
 struct BookmarksView_Previews: PreviewProvider {
 
     static var previews: some View {
+        let searchStore = Preview.makeSearchStore()
         let controller = Preview.makePersistenceController(
             populated: true
         )
@@ -41,6 +42,7 @@ struct BookmarksView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
                 .frame(width: 320)
         }
+        .environmentObject(searchStore)
         .environment(
             \.managedObjectContext,
             controller.container.viewContext

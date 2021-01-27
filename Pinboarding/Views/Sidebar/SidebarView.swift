@@ -59,6 +59,8 @@ struct SidebarView_Previews: PreviewProvider {
             loading: false
         )
 
+        let searchStore = Preview.makeSearchStore()
+
         Group {
             SidebarView(
                 viewModel: SidebarViewModel(
@@ -76,6 +78,7 @@ struct SidebarView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
             .frame(width: 200)
         }
+        .environmentObject(searchStore)
         .environment(
             \.managedObjectContext,
             controller.container.viewContext

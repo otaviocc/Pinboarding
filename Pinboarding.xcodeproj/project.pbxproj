@@ -60,6 +60,7 @@
 		AEF0DF11258ECB8D000F4BFF /* GeneralViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DF10258ECB8D000F4BFF /* GeneralViewModel.swift */; };
 		AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */; };
 		AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */; };
+		AEF8A7B925C154A300E081B5 /* Preview+SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */; };
 		AEFAAB4B25883BE2001DB745 /* PinboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = AEFAAB4A25883BE2001DB745 /* PinboardKit */; };
 /* End PBXBuildFile section */
 
@@ -120,6 +121,7 @@
 		AEF0DF10258ECB8D000F4BFF /* GeneralViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GeneralViewModel.swift; sourceTree = "<group>"; };
 		AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkView.swift; sourceTree = "<group>"; };
 		AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkViewModel.swift; sourceTree = "<group>"; };
+		AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+SearchStore.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -332,6 +334,7 @@
 				AE9541ED259AC30600B1AA15 /* Preview+Networking.swift */,
 				AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */,
 				AE98296625A0709D00E857D8 /* Preview+Repository.swift */,
+				AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */,
 				AE83840F25979D1100A4C5A7 /* Preview+Settings.swift */,
 				AE79300A258675DC00A68947 /* Preview Assets.xcassets */,
 			);
@@ -579,6 +582,7 @@
 				AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */,
 				AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */,
 				AE7EE6BA25A9B3C0004EDEB9 /* TwoColumnsAlignment.swift in Sources */,
+				AEF8A7B925C154A300E081B5 /* Preview+SearchStore.swift in Sources */,
 				AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */,
 				AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */,
 				AE8384182597B5AE00A4C5A7 /* BookmarksListView.swift in Sources */,

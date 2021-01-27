@@ -55,6 +55,8 @@ struct MainView_Previews: PreviewProvider {
 
     static var previews: some View {
         let settingsStore = Preview.makeSettingsStore()
+        let searchStore = Preview.makeSearchStore()
+        let repository = Preview.makeRepository()
         let controller = Preview.makePersistenceController(
             populated: true
         )
@@ -67,6 +69,8 @@ struct MainView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
         }
         .environmentObject(settingsStore)
+        .environmentObject(searchStore)
+        .environmentObject(repository)
         .environment(
             \.managedObjectContext,
             controller.container.viewContext

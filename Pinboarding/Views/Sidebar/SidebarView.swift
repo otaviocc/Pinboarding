@@ -21,7 +21,7 @@ struct SidebarView: View {
     var body: some View {
         VStack {
             SearchField(searchTerm: $searchStore.currentSearchTerm)
-                .padding([.leading, .trailing])
+                .padding([.leading, .trailing, .bottom])
 
             List {
                 MyBookmarksSectionView(

@@ -54,13 +54,20 @@ struct SharingServicePicker: NSViewRepresentable {
     }
 
     final class Coordinator: NSObject, NSSharingServicePickerDelegate {
-        let picker: SharingServicePicker
 
-        init(
+        // MARK: - Properties
+
+        private let picker: SharingServicePicker
+
+        // MARK: - Life cycle
+
+        fileprivate init(
             picker: SharingServicePicker
         ) {
             self.picker = picker
         }
+
+        // MARK: - Public
 
         func sharingServicePicker(
             _ sharingServicePicker: NSSharingServicePicker,

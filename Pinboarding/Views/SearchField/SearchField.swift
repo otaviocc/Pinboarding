@@ -37,13 +37,20 @@ struct SearchField: NSViewRepresentable {
     }
 
     final class Coordinator: NSObject, NSSearchFieldDelegate {
-        let searchField: SearchField
 
-        init(
+        // MARK: - Properties
+
+        private let searchField: SearchField
+
+        // MARK: - Life cycle
+
+        fileprivate init(
             searchField: SearchField
         ) {
             self.searchField = searchField
         }
+
+        // MARK: - Public
 
         func controlTextDidChange(
             _ notification: Notification

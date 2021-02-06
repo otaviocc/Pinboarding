@@ -85,7 +85,7 @@ struct PersistenceController {
 
         request.predicate = NSPredicate(
             format: "NOT id IN %@",
-            posts.map { $0.hash }
+            posts.map(\.hash)
         )
 
         removeManagedObject(

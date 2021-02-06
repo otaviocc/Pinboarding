@@ -102,7 +102,7 @@ final class NetworkController {
     func forceRefreshBookmarksPublisher(
     ) -> AnyPublisher<[PostResponse], Error> {
         pinboardAPI.update()
-            .map { $0.updateTime }
+            .map(\.updateTime)
             .filter { $0 != self.settingsStore.lastSyncDate }
             .map { self.settingsStore.lastSyncDate = $0 }
             .flatMap { _ in self.pinboardAPI.all() }
@@ -119,7 +119,7 @@ final class NetworkController {
     private func allBookmarksPublisher(
     ) -> AnyPublisher<[PostResponse], Error> {
         pinboardAPI.update()
-            .map { $0.updateTime }
+            .map(\.updateTime)
             .filter { $0 != self.settingsStore.lastSyncDate }
             .map { self.settingsStore.lastSyncDate = $0 }
             .flatMap { _ in self.pinboardAPI.all() }
@@ -157,7 +157,7 @@ final class NetworkController {
     private func lastBookmarkPublisher(
     ) -> AnyPublisher<PostResponse, Error> {
         pinboardAPI.recents(count: 1)
-            .compactMap { $0.posts.first }
+            .compactMap(\.posts.first)
             .eraseToAnyPublisher()
     }
 }

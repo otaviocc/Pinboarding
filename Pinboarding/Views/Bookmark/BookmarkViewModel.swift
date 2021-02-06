@@ -30,7 +30,7 @@ final class BookmarkViewModel: BookmarkViewModelProtocol {
             ?? URL(string: "https://www.pinboard.in")!
         self.tags = bookmark.tags
             .compactMap { $0 as? Tag }
-            .map { $0.name }
+            .map(\.name)
             .joined(separator: ", ")
         self.isPrivate = !bookmark.isShared
     }

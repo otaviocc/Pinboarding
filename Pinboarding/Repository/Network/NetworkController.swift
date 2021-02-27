@@ -33,6 +33,7 @@ final class NetworkController {
 
         recentBookmarksPublisher()
             .receive(on: RunLoop.main)
+            .flatMap(Just.init)
             .sink(
                 receiveCompletion: { _ in },
                 receiveValue: {
@@ -63,6 +64,8 @@ final class NetworkController {
                     return .loading
                 case .finishedLoading:
                     return .finishedLoading
+                case .errorLoading:
+                    return .errorLoading
                 }
             }
             .eraseToAnyPublisher()

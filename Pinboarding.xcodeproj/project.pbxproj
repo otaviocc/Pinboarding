@@ -22,6 +22,7 @@
 		AE2E0AA525AB71530077CBDC /* BookmarkCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2E0AA425AB71530077CBDC /* BookmarkCommands.swift */; };
 		AE2F588D258EB84D00D19421 /* SettingsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE2F588C258EB84D00D19421 /* SettingsStore.swift */; };
 		AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE317AF72588FD9D00B7420A /* SettingsView.swift */; };
+		AE3FC50E25E0680E00A91B3A /* NWPathMonitor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3FC50D25E0680E00A91B3A /* NWPathMonitor.swift */; };
 		AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE5781F6258DE42F00A524F4 /* LoginView.swift */; };
 		AE628CC6258FA2D300F91800 /* SettingsStoreChange.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE628CC5258FA2D300F91800 /* SettingsStoreChange.swift */; };
 		AE6D05CE25BC920B00BEDDD4 /* SecureStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE6D05CD25BC920B00BEDDD4 /* SecureStorage.swift */; };
@@ -85,6 +86,7 @@
 		AE2E0AA425AB71530077CBDC /* BookmarkCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkCommands.swift; sourceTree = "<group>"; };
 		AE2F588C258EB84D00D19421 /* SettingsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStore.swift; sourceTree = "<group>"; };
 		AE317AF72588FD9D00B7420A /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		AE3FC50D25E0680E00A91B3A /* NWPathMonitor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NWPathMonitor.swift; sourceTree = "<group>"; };
 		AE5781F6258DE42F00A524F4 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		AE628CC5258FA2D300F91800 /* SettingsStoreChange.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsStoreChange.swift; sourceTree = "<group>"; };
 		AE6D05CD25BC920B00BEDDD4 /* SecureStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStorage.swift; sourceTree = "<group>"; };
@@ -184,12 +186,9 @@
 		AE2F588B258EB73900D19421 /* Stores */ = {
 			isa = PBXGroup;
 			children = (
-				AE8F4DDF25BD96A4007E6053 /* AnyTokenStore.swift */,
-				AEAB957925A51FD900F4B7D3 /* SearchStore.swift */,
-				AEED4D6F25BB7CFB00756570 /* SecureStore.swift */,
-				AE2F588C258EB84D00D19421 /* SettingsStore.swift */,
-				AE628CC5258FA2D300F91800 /* SettingsStoreChange.swift */,
-				AE8F4DDC25BD9687007E6053 /* TokenStoreProtocol.swift */,
+				AEEBE55525E94062009A0404 /* Search */,
+				AEEBE55625E9406C009A0404 /* Settings */,
+				AEEBE55725E94077009A0404 /* Token */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -246,6 +245,14 @@
 			path = Bookmark;
 			sourceTree = "<group>";
 		};
+		AE3FC50C25E067E300A91B3A /* Publishers */ = {
+			isa = PBXGroup;
+			children = (
+				AE3FC50D25E0680E00A91B3A /* NWPathMonitor.swift */,
+			);
+			path = Publishers;
+			sourceTree = "<group>";
+		};
 		AE494F40258ABE5200CFECB6 /* Main */ = {
 			isa = PBXGroup;
 			children = (
@@ -300,6 +307,7 @@
 				AE79301B2586841700A68947 /* Preview Content */,
 				AE6D05CC25BC91B600BEDDD4 /* Property Wrappers */,
 				AE00EA04258AD573002D9558 /* Repository */,
+				AE3FC50C25E067E300A91B3A /* Publishers */,
 				AE2F588B258EB73900D19421 /* Stores */,
 				AE793017258683C800A68947 /* Supporting Files */,
 				AE7930152586837900A68947 /* Views */,
@@ -493,6 +501,33 @@
 			path = "Core Data Models";
 			sourceTree = "<group>";
 		};
+		AEEBE55525E94062009A0404 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				AEAB957925A51FD900F4B7D3 /* SearchStore.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		AEEBE55625E9406C009A0404 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				AE2F588C258EB84D00D19421 /* SettingsStore.swift */,
+				AE628CC5258FA2D300F91800 /* SettingsStoreChange.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
+		AEEBE55725E94077009A0404 /* Token */ = {
+			isa = PBXGroup;
+			children = (
+				AE8F4DDF25BD96A4007E6053 /* AnyTokenStore.swift */,
+				AEED4D6F25BB7CFB00756570 /* SecureStore.swift */,
+				AE8F4DDC25BD9687007E6053 /* TokenStoreProtocol.swift */,
+			);
+			path = Token;
+			sourceTree = "<group>";
+		};
 		AEF0DF05258EC88B000F4BFF /* Settings General */ = {
 			isa = PBXGroup;
 			children = (
@@ -613,6 +648,7 @@
 				AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */,
 				AE8384182597B5AE00A4C5A7 /* BookmarksListView.swift in Sources */,
 				AEC72E0E259780FF008C7FF3 /* Preview+Persistence.swift in Sources */,
+				AE3FC50E25E0680E00A91B3A /* NWPathMonitor.swift in Sources */,
 				AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */,
 				AE9F994625A1AC12001D2889 /* RefreshViewModel.swift in Sources */,
 				AE8F4DDD25BD9687007E6053 /* TokenStoreProtocol.swift in Sources */,

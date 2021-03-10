@@ -59,6 +59,8 @@
 		AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6229A259222B4003FDE66 /* Post+Repository.swift */; };
 		AEC72E0E259780FF008C7FF3 /* Preview+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */; };
 		AEC72E112597890E008C7FF3 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC72E102597890E008C7FF3 /* Preview.swift */; };
+		AECC8C0725F8E16C008568EE /* QRCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8C0625F8E16C008568EE /* QRCodeView.swift */; };
+		AECC8C0B25F9460A008568EE /* QRCodeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8C0A25F9460A008568EE /* QRCodeButton.swift */; };
 		AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */; };
 		AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */; };
 		AEED4D7025BB7CFB00756570 /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED4D6F25BB7CFB00756570 /* SecureStore.swift */; };
@@ -126,6 +128,8 @@
 		AEC6229A259222B4003FDE66 /* Post+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Repository.swift"; sourceTree = "<group>"; };
 		AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Persistence.swift"; sourceTree = "<group>"; };
 		AEC72E102597890E008C7FF3 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		AECC8C0625F8E16C008568EE /* QRCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeView.swift; sourceTree = "<group>"; };
+		AECC8C0A25F9460A008568EE /* QRCodeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeButton.swift; sourceTree = "<group>"; };
 		AECE16F22591BD640024DC88 /* Pinboarding.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinboarding.xcdatamodel; sourceTree = "<group>"; };
 		AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Booleans+Repository.swift"; sourceTree = "<group>"; };
 		AEED4D6F25BB7CFB00756570 /* SecureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 				AE83841A2597B63400A4C5A7 /* BookmarksList */,
 				AE494F40258ABE5200CFECB6 /* Main */,
 				AE9F993C25A15F58001D2889 /* Private */,
+				AECC8C0525F8E158008568EE /* QRCode */,
+				AECC8C0925F945D8008568EE /* QRCodeButton */,
 				AE9F994225A1ABD9001D2889 /* Refresh */,
 				AEC4A94D259B9EF7000C65A8 /* SafariButton */,
 				AEA5340225A4E20B00AF2481 /* SearchField */,
@@ -470,6 +476,22 @@
 				AE9541EA259AB01A00B1AA15 /* NetworkActivityEvent.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		AECC8C0525F8E158008568EE /* QRCode */ = {
+			isa = PBXGroup;
+			children = (
+				AECC8C0625F8E16C008568EE /* QRCodeView.swift */,
+			);
+			path = QRCode;
+			sourceTree = "<group>";
+		};
+		AECC8C0925F945D8008568EE /* QRCodeButton */ = {
+			isa = PBXGroup;
+			children = (
+				AECC8C0A25F9460A008568EE /* QRCodeButton.swift */,
+			);
+			path = QRCodeButton;
 			sourceTree = "<group>";
 		};
 		AECE16F02591BD3F0024DC88 /* Persistence */ = {
@@ -635,6 +657,7 @@
 				AE793006258675DB00A68947 /* MainView.swift in Sources */,
 				AEF0DF11258ECB8D000F4BFF /* GeneralViewModel.swift in Sources */,
 				AE98296725A0709D00E857D8 /* Preview+Repository.swift in Sources */,
+				AECC8C0B25F9460A008568EE /* QRCodeButton.swift in Sources */,
 				AE9541F7259B2D8800B1AA15 /* MyBookmarksSectionView.swift in Sources */,
 				AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */,
 				AEA3DA94259B360600C4DB0F /* SharingServicePicker.swift in Sources */,
@@ -669,6 +692,7 @@
 				AE8F4DE025BD96A4007E6053 /* AnyTokenStore.swift in Sources */,
 				AEBFB699259413C8001626AA /* NSSortDescriptor+App.swift in Sources */,
 				AE628CC6258FA2D300F91800 /* SettingsStoreChange.swift in Sources */,
+				AECC8C0725F8E16C008568EE /* QRCodeView.swift in Sources */,
 				AE2F588D258EB84D00D19421 /* SettingsStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

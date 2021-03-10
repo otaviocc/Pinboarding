@@ -22,12 +22,17 @@ struct BookmarkView: View {
                 Text(viewModel.title)
                     .font(.title)
                     .foregroundColor(.accentColor)
+                    .help(viewModel.url.absoluteString)
 
                 Spacer()
 
                 HStack(alignment: .center, spacing: 8) {
                     PrivateView(
                         isPrivate: viewModel.isPrivate
+                    )
+
+                    QRCodeButton(
+                        url: viewModel.url
                     )
 
                     SafariButton(

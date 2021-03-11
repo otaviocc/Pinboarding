@@ -31,7 +31,7 @@ struct MainView: View {
 
                 Button(
                     action: { showAddBookmark.toggle() },
-                    label: { Image(systemName: "plus") }
+                    label: { Image(systemName: Icon.addBookmark) }
                 )
                 .help("Add a new bookmark")
                 .sheet(isPresented: $showAddBookmark) {

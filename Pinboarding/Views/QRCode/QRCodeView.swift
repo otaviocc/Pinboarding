@@ -60,7 +60,7 @@ private extension Image {
                 )
             }
 
-        return image ?? Image(systemName: "square.dashed")
+        return image ?? Image(systemName: Icon.qrCodePlaceholder)
     }
 }
 

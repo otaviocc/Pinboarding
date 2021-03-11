@@ -22,7 +22,7 @@ struct TagsSectionView: View {
                     label: {
                         SidebarItemView(
                             title: tag.name,
-                            iconName: "tag"
+                            iconName: Icon.tag
                         )
                     }
                 )

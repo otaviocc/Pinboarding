@@ -18,7 +18,7 @@ struct PrivateView: View {
 
     var body: some View {
         Image(
-            systemName: isPrivate ? "lock" : "lock.open"
+            systemName: isPrivate ? Icon.lockPrivate : Icon.lockPublic
         )
         .font(.title3)
         .foregroundColor(.accentColor)

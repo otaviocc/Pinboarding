@@ -25,7 +25,7 @@ struct ShareButton: View {
         Button(
             action: { showPicker = true },
             label: {
-                Image(systemName: "square.and.arrow.up")
+                Image(systemName: Icon.share)
                     .font(.title3)
                     .foregroundColor(.accentColor)
             }

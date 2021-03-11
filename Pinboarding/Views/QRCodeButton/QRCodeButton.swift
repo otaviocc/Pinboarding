@@ -17,12 +17,12 @@ struct QRCodeButton: View {
     }
 
     // MARK: - Public
-
+ 
     var body: some View {
         Button(
             action: { showPopover.toggle() },
             label: {
-                Image(systemName: "qrcode")
+                Image(systemName: Icon.qrCode)
                     .font(.title3)
                     .foregroundColor(.accentColor)
             }

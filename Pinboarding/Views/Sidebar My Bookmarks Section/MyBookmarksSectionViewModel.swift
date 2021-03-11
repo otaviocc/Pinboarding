@@ -1,4 +1,3 @@
-import Foundation
 import Combine
 
 final class MyBookmarksSectionViewModel: ObservableObject {

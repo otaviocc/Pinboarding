@@ -1,5 +1,3 @@
-import Foundation
-
 // Pinboard uses a literal yes/no as boolean.
 
 extension String {

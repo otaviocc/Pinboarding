@@ -1,5 +1,3 @@
-import Foundation
-
 enum Icon {
     static let addBookmark = "plus"
     static let lockPrivate = "lock"

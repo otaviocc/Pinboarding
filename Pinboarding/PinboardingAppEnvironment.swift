@@ -1,5 +1,3 @@
-import Foundation
-
 final class PinboardingAppEnvironment {
 
     // MARK: - Properties

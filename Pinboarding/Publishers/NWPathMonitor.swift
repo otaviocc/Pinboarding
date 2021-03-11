@@ -1,5 +1,4 @@
 import Combine
-import Foundation
 import Network
 
 extension NWPathMonitor {

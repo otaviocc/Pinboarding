@@ -1,5 +1,4 @@
 import CoreData
-import Foundation
 import PinboardKit
 
 extension Bookmark {

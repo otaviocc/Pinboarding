@@ -25,8 +25,6 @@ struct RefreshView: View {
         )
         .disabled(viewModel.isReloading)
     }
-
-    // MARK: - Private
 }
 
 // MARK: - PreviewProvider

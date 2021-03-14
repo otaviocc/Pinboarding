@@ -22,7 +22,7 @@ struct BookmarkView: View {
             HStack(alignment: .top) {
                 Text(viewModel.title)
                     .font(.title)
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(.primary)
                     .help(viewModel.url.absoluteString)
 
                 Spacer()
@@ -50,7 +50,7 @@ struct BookmarkView: View {
             if !viewModel.description.isEmpty {
                 Text(viewModel.description)
                     .font(.body)
-                    .foregroundColor(.primary)
+                    .foregroundColor(.secondary)
             }
 
             HStack {

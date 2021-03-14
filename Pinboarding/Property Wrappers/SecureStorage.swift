@@ -103,7 +103,7 @@ struct SecureStorage {
     }
 
     @discardableResult
-    func delete(
+    private func delete(
         _ key: String
     ) -> OSStatus {
         let query = [

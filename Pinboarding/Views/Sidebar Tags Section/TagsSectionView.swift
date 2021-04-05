@@ -37,10 +37,6 @@ struct TagsSectionView: View {
 struct TagsSectionView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let controller = Preview.makePersistenceController(
-            populated: true
-        )
-
         Group {
             List {
                 TagsSectionView()
@@ -55,7 +51,7 @@ struct TagsSectionView_Previews: PreviewProvider {
         .frame(width: 200)
         .environment(
             \.managedObjectContext,
-            controller.container.viewContext
+            previewAppEnvironment.persistenceController.container.viewContext
         )
     }
 }

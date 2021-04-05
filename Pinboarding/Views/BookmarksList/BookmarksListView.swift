@@ -61,13 +61,8 @@ private func matching(
 struct BookmarksList_Previews: PreviewProvider {
 
     static var previews: some View {
-        let searchStore = Preview.makeSearchStore()
-        let controller = Preview.makePersistenceController(
-            populated: true
-        )
-
         Group {
-            BookmarksListView(viewModel: .tag(name: "sample1"))
+            BookmarksListView(viewModel: .tag(name: "tag1"))
                 .frame(width: 320)
                 .preferredColorScheme(.light)
 
@@ -75,10 +70,10 @@ struct BookmarksList_Previews: PreviewProvider {
                 .frame(width: 320)
                 .preferredColorScheme(.dark)
         }
+        .environmentObject(previewAppEnvironment.searchStore)
         .environment(
             \.managedObjectContext,
-            controller.container.viewContext
+            previewAppEnvironment.persistenceController.container.viewContext
         )
-        .environmentObject(searchStore)
     }
 }

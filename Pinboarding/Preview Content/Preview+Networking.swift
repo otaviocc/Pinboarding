@@ -11,19 +11,3 @@ extension Preview {
             .eraseToAnyPublisher()
     }
 }
-
-extension Preview {
-
-    /// Network Controller for Swift UI Previews.
-    static func makeNetworkController(
-    ) -> NetworkController {
-        NetworkController(
-            settingsStore: Preview.makeSettingsStore(),
-            tokenStore: AnyTokenStore(
-                Preview.makeTokenStore(
-                    authToken: "valid:token"
-                )
-            )
-        )
-    }
-}

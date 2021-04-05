@@ -34,7 +34,7 @@ struct RefreshView_Previews: PreviewProvider {
     static var previews: some View {
         RefreshView(
             viewModel: RefreshViewModel(
-                repository: Preview.makeRepository()
+                repository: previewAppEnvironment.repository
             )
         )
     }

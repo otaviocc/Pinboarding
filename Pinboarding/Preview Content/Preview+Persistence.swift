@@ -17,11 +17,6 @@ extension Preview {
                 count: 3,
                 in: controller.container.viewContext
             )
-
-            makeTags(
-                count: 5,
-                in: controller.container.viewContext
-            )
         }
 
         return controller
@@ -46,32 +41,10 @@ extension Preview {
             bookmark.tags = []
 
             let tag = Tag(context: context)
-            tag.name = "sample\(i)"
+            tag.name = "tag\(i)"
             bookmark.tags = NSSet(array: [tag])
 
             try? context.save()
         }
-    }
-
-    /// Generates (and adds do Core Data) tags
-    /// for SwiftUI Previews.
-    static func makeTags(
-        count: Int,
-        in context: NSManagedObjectContext
-    ) {
-        for i in 0..<count {
-            let tag = Tag(context: context)
-            tag.name = "tag\(i)"
-            tag.bookmarks = []
-            try? context.save()
-        }
-    }
-
-    /// Publishes bookmarks updates for SwiftUI
-    /// Previews.
-    static func makeAllBookmarksUpdatesPublisher(
-    ) -> AnyPublisher<[PostResponse], Never> {
-        Just([])
-            .eraseToAnyPublisher()
     }
 }

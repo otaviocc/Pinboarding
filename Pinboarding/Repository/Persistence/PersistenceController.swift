@@ -18,9 +18,9 @@ struct PersistenceController {
         )
 
         if inMemory {
-            self.container.persistentStoreDescriptions.first?.url = URL(
-                fileURLWithPath: "/dev/null"
-            )
+            let description = NSPersistentStoreDescription()
+            description.url = URL(fileURLWithPath: "/dev/null")
+            self.container.persistentStoreDescriptions = [description]
         }
 
         self.container.loadPersistentStores { [container] _, _ in

@@ -91,8 +91,8 @@ struct AddBookmarkView_Previews: PreviewProvider {
         Group {
             AddBookmarkView(
                 viewModel: AddBookmarkViewModel(
-                    repository: Preview.makeRepository(),
-                    settingsStore: Preview.makeSettingsStore()
+                    repository: previewAppEnvironment.repository,
+                    settingsStore: previewAppEnvironment.settingsStore
                 ),
                 isPresented: .constant(false)
             )
@@ -101,8 +101,8 @@ struct AddBookmarkView_Previews: PreviewProvider {
 
             AddBookmarkView(
                 viewModel: AddBookmarkViewModel(
-                    repository: Preview.makeRepository(),
-                    settingsStore: Preview.makeSettingsStore()
+                    repository: previewAppEnvironment.repository,
+                    settingsStore: previewAppEnvironment.settingsStore
                 ),
                 isPresented: .constant(false)
             )

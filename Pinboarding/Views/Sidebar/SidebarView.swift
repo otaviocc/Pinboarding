@@ -47,10 +47,6 @@ struct SidebarView: View {
 struct SidebarView_Previews: PreviewProvider {
 
     static var previews: some View {
-        let controller = Preview.makePersistenceController(
-            populated: true
-        )
-
         let loadingPublisher = Preview.makeNetworkActivityPublisher(
             loading: true
         )
@@ -58,8 +54,6 @@ struct SidebarView_Previews: PreviewProvider {
         let notLoadingPublisher = Preview.makeNetworkActivityPublisher(
             loading: false
         )
-
-        let searchStore = Preview.makeSearchStore()
 
         Group {
             SidebarView(
@@ -78,10 +72,10 @@ struct SidebarView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
             .frame(width: 200)
         }
-        .environmentObject(searchStore)
+        .environmentObject(previewAppEnvironment.searchStore)
         .environment(
             \.managedObjectContext,
-            controller.container.viewContext
+            previewAppEnvironment.persistenceController.container.viewContext
         )
     }
 }

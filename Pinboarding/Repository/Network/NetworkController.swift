@@ -85,7 +85,7 @@ final class NetworkController {
         shared: String? = nil,
         toread: String? = nil
     ) -> AnyPublisher<PostResponse, Error> {
-        pinboardAPI.add(
+        pinboardAPI.addPublisher(
             url: url,
             description: description,
             extended: extended,
@@ -104,11 +104,11 @@ final class NetworkController {
     /// x minutes to pass. Used to force a full refresh.
     func forceRefreshBookmarksPublisher(
     ) -> AnyPublisher<[PostResponse], Error> {
-        pinboardAPI.update()
+        pinboardAPI.updatePublisher()
             .map(\.updateTime)
             .filter { $0 != self.settingsStore.lastSyncDate }
             .map { self.settingsStore.lastSyncDate = $0 }
-            .flatMap { _ in self.pinboardAPI.all() }
+            .flatMap { _ in self.pinboardAPI.allPublisher() }
             .eraseToAnyPublisher()
     }
 
@@ -121,11 +121,11 @@ final class NetworkController {
     /// change (which includes add, edit, and remove).
     private func allBookmarksPublisher(
     ) -> AnyPublisher<[PostResponse], Error> {
-        pinboardAPI.update()
+        pinboardAPI.updatePublisher()
             .map(\.updateTime)
             .filter { $0 != self.settingsStore.lastSyncDate }
             .map { self.settingsStore.lastSyncDate = $0 }
-            .flatMap { _ in self.pinboardAPI.all() }
+            .flatMap { _ in self.pinboardAPI.allPublisher() }
             .eraseToAnyPublisher()
     }
 
@@ -159,7 +159,7 @@ final class NetworkController {
     /// Publishes the latest bookmark.
     private func lastBookmarkPublisher(
     ) -> AnyPublisher<PostResponse, Error> {
-        pinboardAPI.recents(count: 1)
+        pinboardAPI.recentsPublisher(count: 1)
             .compactMap(\.posts.first)
             .eraseToAnyPublisher()
     }

@@ -11,10 +11,12 @@ final class AddBookmarkViewModel: ObservableObject {
     @Published var tags: String = ""
     @Published var isPrivate: Bool = false
     @Published var isToRead: Bool = false
+    @Published var suggestions: [String] = []
 
     @Published private(set) var isValid: Bool = false
     @Published private(set) var urlMessage: String = ""
     @Published private(set) var titleMessage: String = ""
+    @Published private(set) var hasSuggestions: Bool = false
 
     private let repository: PinboardRepository
     private let settingsStore: SettingsStore
@@ -50,6 +52,11 @@ final class AddBookmarkViewModel: ObservableObject {
         isFormValidPublisher()
             .receive(on: RunLoop.main)
             .assign(to: \.isValid, on: self)
+            .store(in: &cancellables)
+
+        hasSuggestionsPublisher()
+            .receive(on: RunLoop.main)
+            .assign(to: \.hasSuggestions, on: self)
             .store(in: &cancellables)
 
         isPrivate = settingsStore.isPrivate
@@ -112,6 +119,14 @@ final class AddBookmarkViewModel: ObservableObject {
     ) -> AnyPublisher<Bool, Never> {
         Publishers.CombineLatest(isURLValidPublisher(), isTitleValidPublisher())
             .map { $0 && $1 }
+            .eraseToAnyPublisher()
+    }
+
+    private func hasSuggestionsPublisher(
+    ) -> AnyPublisher<Bool, Never> {
+        $suggestions
+            .removeDuplicates()
+            .map { !$0.isEmpty }
             .eraseToAnyPublisher()
     }
 }

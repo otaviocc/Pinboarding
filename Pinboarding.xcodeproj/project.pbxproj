@@ -63,6 +63,7 @@
 		AECC8C0B25F9460A008568EE /* QRCodeButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AECC8C0A25F9460A008568EE /* QRCodeButton.swift */; };
 		AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = AECE16F12591BD640024DC88 /* Pinboarding.xcdatamodeld */; };
 		AED5883A25FA2F9100E31B33 /* Icon.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5883925FA2F9100E31B33 /* Icon.swift */; };
+		AED88E17264E9E9100EE0CB3 /* PredictingTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED88E16264E9E9100EE0CB3 /* PredictingTextField.swift */; };
 		AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */; };
 		AEED4D7025BB7CFB00756570 /* SecureStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEED4D6F25BB7CFB00756570 /* SecureStore.swift */; };
 		AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF0DF07258EC8A8000F4BFF /* GeneralView.swift */; };
@@ -133,6 +134,7 @@
 		AECC8C0A25F9460A008568EE /* QRCodeButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeButton.swift; sourceTree = "<group>"; };
 		AECE16F22591BD640024DC88 /* Pinboarding.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pinboarding.xcdatamodel; sourceTree = "<group>"; };
 		AED5883925FA2F9100E31B33 /* Icon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Icon.swift; sourceTree = "<group>"; };
+		AED88E16264E9E9100EE0CB3 /* PredictingTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PredictingTextField.swift; sourceTree = "<group>"; };
 		AEE78D99258BAF17001CA0EA /* Booleans+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Booleans+Repository.swift"; sourceTree = "<group>"; };
 		AEED4D6F25BB7CFB00756570 /* SecureStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureStore.swift; sourceTree = "<group>"; };
 		AEF0DF07258EC8A8000F4BFF /* GeneralView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralView.swift; sourceTree = "<group>"; };
@@ -329,6 +331,7 @@
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
 				AE83841A2597B63400A4C5A7 /* BookmarksList */,
 				AE494F40258ABE5200CFECB6 /* Main */,
+				AED88E15264E9E6000EE0CB3 /* Predicting Text Field */,
 				AE9F993C25A15F58001D2889 /* Private */,
 				AECC8C0525F8E158008568EE /* QRCode */,
 				AECC8C0925F945D8008568EE /* QRCodeButton */,
@@ -526,6 +529,14 @@
 			path = "Core Data Models";
 			sourceTree = "<group>";
 		};
+		AED88E15264E9E6000EE0CB3 /* Predicting Text Field */ = {
+			isa = PBXGroup;
+			children = (
+				AED88E16264E9E9100EE0CB3 /* PredictingTextField.swift */,
+			);
+			path = "Predicting Text Field";
+			sourceTree = "<group>";
+		};
 		AEEBE55525E94062009A0404 /* Search */ = {
 			isa = PBXGroup;
 			children = (
@@ -687,6 +698,7 @@
 				AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */,
 				AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */,
 				AE83841025979D1100A4C5A7 /* Preview+Settings.swift in Sources */,
+				AED88E17264E9E9100EE0CB3 /* PredictingTextField.swift in Sources */,
 				AE0F3B19258A339C00227428 /* SidebarPrimaryItem.swift in Sources */,
 				AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */,
 				AE9541EB259AB01A00B1AA15 /* NetworkActivityEvent.swift in Sources */,
@@ -825,7 +837,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Pinboarding/Supporting Files/Pinboarding.entitlements";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
@@ -850,7 +862,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Pinboarding/Supporting Files/Pinboarding.entitlements";
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";

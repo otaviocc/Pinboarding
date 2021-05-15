@@ -7,6 +7,12 @@ struct AddBookmarkView: View {
     @ObservedObject private var viewModel: AddBookmarkViewModel
     @Binding private var isPresented: Bool
 
+    @Environment(\.managedObjectContext)
+    private var viewContext
+
+    @FetchRequest(entity: Tag.entity(), sortDescriptors: [.makeSortByNameAscending()])
+    private var tags: FetchedResults<Tag>
+
     // MARK: - Life cycle
 
     init(
@@ -23,8 +29,12 @@ struct AddBookmarkView: View {
         VStack(alignment: .leading, spacing: 8) {
             makeInputView()
 
-            makeTogglesView()
-                .padding([.top, .bottom])
+            HStack(alignment: .top) {
+                makeSuggestionsView()
+                Spacer()
+                makeTogglesView()
+            }
+            .padding([.top, .bottom])
 
             makeButtonsView()
         }
@@ -50,21 +60,30 @@ struct AddBookmarkView: View {
                 .frame(height: 100)
 
             Text("Tags")
-            TextField("", text: $viewModel.tags)
+            PredictingTextField(
+                reference: tags.map(\.name),
+                text: $viewModel.tags,
+                predictions: $viewModel.suggestions
+            )
+        }
+    }
+
+    @ViewBuilder
+    private func makeSuggestionsView(
+    ) -> some View {
+        if viewModel.hasSuggestions {
+            Text(viewModel.suggestions.joined(separator: " "))
         }
     }
 
     private func makeTogglesView(
     ) -> some View {
-        HStack {
-            Spacer()
-            VStack(alignment: .trailing) {
-                Toggle("Private", isOn: $viewModel.isPrivate)
-                    .toggleStyle(SwitchToggleStyle())
+        VStack(alignment: .trailing) {
+            Toggle("Private", isOn: $viewModel.isPrivate)
+                .toggleStyle(SwitchToggleStyle())
 
-                Toggle("Read later", isOn: $viewModel.isToRead)
-                    .toggleStyle(SwitchToggleStyle())
-            }
+            Toggle("Read later", isOn: $viewModel.isToRead)
+                .toggleStyle(SwitchToggleStyle())
         }
     }
 

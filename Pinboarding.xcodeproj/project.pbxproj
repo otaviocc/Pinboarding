@@ -329,19 +329,19 @@
 				AE3675FF258AAF6700F57A3C /* Add Bookmark */,
 				AE367606258AAF9B00F57A3C /* Bookmark */,
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
-				AE83841A2597B63400A4C5A7 /* BookmarksList */,
+				AE83841A2597B63400A4C5A7 /* Bookmarks List */,
 				AE494F40258ABE5200CFECB6 /* Main */,
-				AED88E15264E9E6000EE0CB3 /* Predicting Text Field */,
+				AED88E15264E9E6000EE0CB3 /* Predicting TextField */,
 				AE9F993C25A15F58001D2889 /* Private */,
 				AECC8C0525F8E158008568EE /* QRCode */,
-				AECC8C0925F945D8008568EE /* QRCodeButton */,
+				AECC8C0925F945D8008568EE /* QRCode Button */,
 				AE9F994225A1ABD9001D2889 /* Refresh */,
-				AEC4A94D259B9EF7000C65A8 /* SafariButton */,
+				AEC4A94D259B9EF7000C65A8 /* Safari Button */,
 				AEA5340225A4E20B00AF2481 /* SearchField */,
 				AE367600258AAF7600F57A3C /* Settings */,
 				AEF0DF05258EC88B000F4BFF /* Settings General */,
 				AE5781FB258DE4DE00A524F4 /* Settings Login */,
-				AEC4A951259B9F1B000C65A8 /* ShareButton */,
+				AEC4A951259B9F1B000C65A8 /* Share Button */,
 				AEA3DA92259B35F100C4DB0F /* Sharing Service Picker */,
 				AE367602258AAF8600F57A3C /* Sidebar */,
 				AE367601258AAF7E00F57A3C /* Sidebar Item */,
@@ -392,13 +392,13 @@
 			path = Alignments;
 			sourceTree = "<group>";
 		};
-		AE83841A2597B63400A4C5A7 /* BookmarksList */ = {
+		AE83841A2597B63400A4C5A7 /* Bookmarks List */ = {
 			isa = PBXGroup;
 			children = (
 				AE8384172597B5AE00A4C5A7 /* BookmarksListView.swift */,
 				AE12D7822597DDCB007A9EFB /* BookmarksListViewModel.swift */,
 			);
-			path = BookmarksList;
+			path = "Bookmarks List";
 			sourceTree = "<group>";
 		};
 		AE9541F1259B2D0C00B1AA15 /* Sidebar Tags Section */ = {
@@ -459,20 +459,20 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
-		AEC4A94D259B9EF7000C65A8 /* SafariButton */ = {
+		AEC4A94D259B9EF7000C65A8 /* Safari Button */ = {
 			isa = PBXGroup;
 			children = (
 				AEC4A94E259B9F09000C65A8 /* SafariButton.swift */,
 			);
-			path = SafariButton;
+			path = "Safari Button";
 			sourceTree = "<group>";
 		};
-		AEC4A951259B9F1B000C65A8 /* ShareButton */ = {
+		AEC4A951259B9F1B000C65A8 /* Share Button */ = {
 			isa = PBXGroup;
 			children = (
 				AEC4A952259B9F38000C65A8 /* ShareButton.swift */,
 			);
-			path = ShareButton;
+			path = "Share Button";
 			sourceTree = "<group>";
 		};
 		AEC6228B2591DAD3003FDE66 /* Network */ = {
@@ -492,12 +492,12 @@
 			path = QRCode;
 			sourceTree = "<group>";
 		};
-		AECC8C0925F945D8008568EE /* QRCodeButton */ = {
+		AECC8C0925F945D8008568EE /* QRCode Button */ = {
 			isa = PBXGroup;
 			children = (
 				AECC8C0A25F9460A008568EE /* QRCodeButton.swift */,
 			);
-			path = QRCodeButton;
+			path = "QRCode Button";
 			sourceTree = "<group>";
 		};
 		AECE16F02591BD3F0024DC88 /* Persistence */ = {
@@ -529,12 +529,12 @@
 			path = "Core Data Models";
 			sourceTree = "<group>";
 		};
-		AED88E15264E9E6000EE0CB3 /* Predicting Text Field */ = {
+		AED88E15264E9E6000EE0CB3 /* Predicting TextField */ = {
 			isa = PBXGroup;
 			children = (
 				AED88E16264E9E9100EE0CB3 /* PredictingTextField.swift */,
 			);
-			path = "Predicting Text Field";
+			path = "Predicting TextField";
 			sourceTree = "<group>";
 		};
 		AEEBE55525E94062009A0404 /* Search */ = {

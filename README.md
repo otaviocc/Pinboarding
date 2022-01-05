@@ -13,3 +13,13 @@ A [Pinboard](https://pinboard.in) account is required to use the app.
 ![](Images/dark.jpg)
 
 ![](Images/light.jpg)
+
+# Building
+
+To build a release for your local machine
+
+    xcodebuild \
+      -scheme Pinboarding \
+      -configuration Release \
+      CODE_SIGN_IDENTITY="-" \
+      build

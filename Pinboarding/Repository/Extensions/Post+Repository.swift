@@ -1,5 +1,5 @@
 import CoreData
-import PinboardKit
+import MicroPinboard
 
 extension Bookmark {
 

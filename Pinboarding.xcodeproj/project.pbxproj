@@ -71,7 +71,7 @@
 		AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */; };
 		AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */; };
 		AEF8A7B925C154A300E081B5 /* Preview+SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */; };
-		AEFAAB4B25883BE2001DB745 /* PinboardKit in Frameworks */ = {isa = PBXBuildFile; productRef = AEFAAB4A25883BE2001DB745 /* PinboardKit */; };
+		E25C043628253A3B00DFBFA7 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E25C043528253A3B00DFBFA7 /* MicroPinboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AEFAAB4B25883BE2001DB745 /* PinboardKit in Frameworks */,
+				E25C043628253A3B00DFBFA7 /* MicroPinboard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +590,7 @@
 			);
 			name = Pinboarding;
 			packageProductDependencies = (
-				AEFAAB4A25883BE2001DB745 /* PinboardKit */,
+				E25C043528253A3B00DFBFA7 /* MicroPinboard */,
 			);
 			productName = Pinboarding;
 			productReference = AE793000258675DB00A68947 /* Pinboarding.app */;
@@ -603,7 +603,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1250;
+				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					AE792FFF258675DB00A68947 = {
 						CreatedOnToolsVersion = 12.3;
@@ -620,7 +620,7 @@
 			);
 			mainGroup = AE792FF7258675DB00A68947;
 			packageReferences = (
-				AEFAAB4925883BE2001DB745 /* XCRemoteSwiftPackageReference "PinboardKit" */,
+				E25C04322825311200DFBFA7 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */,
 			);
 			productRefGroup = AE793001258675DB00A68947 /* Products */;
 			projectDirPath = "";
@@ -767,7 +767,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -822,7 +822,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = macosx;
@@ -837,18 +837,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Pinboarding/Supporting Files/Pinboarding.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y2X6PL3L9L;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.otaviocc.Pinboarding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -862,18 +863,19 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = "Pinboarding/Supporting Files/Pinboarding.entitlements";
-				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = Y2X6PL3L9L;
+				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 11.0;
+				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 1.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.otaviocc.Pinboarding;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -905,21 +907,21 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AEFAAB4925883BE2001DB745 /* XCRemoteSwiftPackageReference "PinboardKit" */ = {
+		E25C04322825311200DFBFA7 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/otaviocc/PinboardKit";
+			repositoryURL = "https://github.com/otaviocc/MicroPinboardAPI.git";
 			requirement = {
-				branch = main;
-				kind = branch;
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
 			};
 		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AEFAAB4A25883BE2001DB745 /* PinboardKit */ = {
+		E25C043528253A3B00DFBFA7 /* MicroPinboard */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AEFAAB4925883BE2001DB745 /* XCRemoteSwiftPackageReference "PinboardKit" */;
-			productName = PinboardKit;
+			package = E25C04322825311200DFBFA7 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */;
+			productName = MicroPinboard;
 		};
 /* End XCSwiftPackageProductDependency section */
 

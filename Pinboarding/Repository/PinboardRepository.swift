@@ -1,6 +1,6 @@
 import Combine
 import Foundation
-import PinboardKit
+import MicroPinboard
 
 public class PinboardRepository: ObservableObject {
 

@@ -1,6 +1,7 @@
 import Combine
 import Foundation
-import PinboardKit
+import MicroClient
+import MicroPinboard
 
 final class NetworkController {
 

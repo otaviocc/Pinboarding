@@ -1,6 +1,6 @@
 import Combine
 import CoreData
-import PinboardKit
+import MicroPinboard
 
 struct PersistenceController {
 

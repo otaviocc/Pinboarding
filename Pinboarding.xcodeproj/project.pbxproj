@@ -71,7 +71,7 @@
 		AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */; };
 		AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */; };
 		AEF8A7B925C154A300E081B5 /* Preview+SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */; };
-		E25C043628253A3B00DFBFA7 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E25C043528253A3B00DFBFA7 /* MicroPinboard */; };
+		E2320E312836EED90045B349 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E2320E302836EED90045B349 /* MicroPinboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -149,7 +149,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E25C043628253A3B00DFBFA7 /* MicroPinboard in Frameworks */,
+				E2320E312836EED90045B349 /* MicroPinboard in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,7 +590,7 @@
 			);
 			name = Pinboarding;
 			packageProductDependencies = (
-				E25C043528253A3B00DFBFA7 /* MicroPinboard */,
+				E2320E302836EED90045B349 /* MicroPinboard */,
 			);
 			productName = Pinboarding;
 			productReference = AE793000258675DB00A68947 /* Pinboarding.app */;
@@ -620,7 +620,7 @@
 			);
 			mainGroup = AE792FF7258675DB00A68947;
 			packageReferences = (
-				E25C04322825311200DFBFA7 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */,
+				E2320E2F2836EED90045B349 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */,
 			);
 			productRefGroup = AE793001258675DB00A68947 /* Products */;
 			projectDirPath = "";
@@ -907,7 +907,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		E25C04322825311200DFBFA7 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */ = {
+		E2320E2F2836EED90045B349 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/otaviocc/MicroPinboardAPI.git";
 			requirement = {
@@ -918,9 +918,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		E25C043528253A3B00DFBFA7 /* MicroPinboard */ = {
+		E2320E302836EED90045B349 /* MicroPinboard */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E25C04322825311200DFBFA7 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */;
+			package = E2320E2F2836EED90045B349 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */;
 			productName = MicroPinboard;
 		};
 /* End XCSwiftPackageProductDependency section */

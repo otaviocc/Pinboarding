@@ -27,6 +27,8 @@ final class RefreshViewModel: ObservableObject {
 
     func refresh(
     ) {
-        repository.forceRefreshBookmarks()
+        Task {
+            await repository.forceRefreshBookmarks()
+        }
     }
 }

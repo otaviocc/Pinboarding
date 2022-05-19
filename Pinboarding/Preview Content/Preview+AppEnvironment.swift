@@ -1,3 +1,6 @@
+import MicroClient
+import MicroPinboard
+
 final class PreviewAppEnvironment {
 
     // MARK: - Properties
@@ -15,9 +18,13 @@ final class PreviewAppEnvironment {
         populated: true
     )
 
+    private(set) lazy var networkClient = PinboardAPIFactory().makePinboardAPIClient(
+        userToken: { self.tokenStore.authToken }
+    )
+
     private(set) lazy var networkController = NetworkController(
         settingsStore: settingsStore,
-        tokenStore: tokenStore
+        networkClient: networkClient
     )
 
     private(set) lazy var repository = PinboardRepository(

@@ -19,7 +19,9 @@ struct BookmarkCommands: Commands {
     var body: some Commands {
         CommandMenu("Bookmark") {
             Button("Refresh Bookmarks") {
-                repository.forceRefreshBookmarks()
+                Task {
+                    await repository.forceRefreshBookmarks()
+                }
             }
             .keyboardShortcut("r")
         }

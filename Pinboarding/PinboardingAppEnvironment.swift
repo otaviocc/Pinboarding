@@ -1,3 +1,6 @@
+import MicroClient
+import MicroPinboard
+
 final class PinboardingAppEnvironment {
 
     // MARK: - Properties
@@ -14,9 +17,13 @@ final class PinboardingAppEnvironment {
         inMemory: false
     )
 
+    private(set) lazy var networkClient = PinboardAPIFactory().makePinboardAPIClient(
+        userToken: { self.tokenStore.authToken }
+    )
+
     private(set) lazy var networkController = NetworkController(
         settingsStore: settingsStore,
-        tokenStore: tokenStore
+        networkClient: networkClient
     )
 
     private(set) lazy var repository = PinboardRepository(

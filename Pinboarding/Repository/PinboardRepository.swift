@@ -37,33 +37,34 @@ public class PinboardRepository: ObservableObject {
         replace: Bool = false,
         shared: Bool = false,
         toread: Bool = false
-    ) -> AnyPublisher<Void, Error> {
-        networkController.addBookmarkPublisher(
-            url: url,
-            description: title,
-            extended: description,
-            tags: tags,
-            date: date,
-            replace: replace.stringValue,
-            shared: shared.stringValue,
-            toread: toread.stringValue
-        )
-        .map(persistenceController.appendNewPostPublisher)
-        .eraseToAnyPublisher()
+    ) async {
+        Task {
+            let bookmark = await networkController.addBookmark(
+                url: url,
+                description: title,
+                extended: description,
+                tags: tags,
+                date: date,
+                replace: replace.stringValue,
+                shared: shared.stringValue,
+                toread: toread.stringValue
+            )
+
+            guard let bookmark = bookmark else {
+                return
+            }
+
+            persistenceController.appendNewPostPublisher(bookmark)
+        }
     }
 
     /// Forces an update without waiting for the next
     /// x minutes to pass.
     func forceRefreshBookmarks(
-    ) {
-        refreshCancellable?.cancel()
-        refreshCancellable = networkController.forceRefreshBookmarksPublisher()
-            .map(persistenceController.addAllPosts)
-            .receive(on: RunLoop.main)
-            .sink(
-                receiveCompletion: { _ in },
-                receiveValue: { _ in }
-            )
+    ) async {
+        let bookmarks = await networkController.allBookmarks()
+
+        persistenceController.addAllPosts(bookmarks)
     }
 
     /// Publishes the network status to update the UI

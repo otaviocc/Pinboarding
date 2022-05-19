@@ -72,21 +72,18 @@ final class AddBookmarkViewModel: ObservableObject {
             return
         }
 
-        repository.addBookmark(
-            url: url,
-            title: title,
-            description: description,
-            tags: tags,
-            shared: !isPrivate,
-            toread: isToRead
-        )
-        .sink(
-            receiveCompletion: { _ in },
-            receiveValue: { _ in
-                self.dismissViewSubject.send(true)
-            }
-        )
-        .store(in: &cancellables)
+        Task {
+            _ = await repository.addBookmark(
+                url: url,
+                title: title,
+                description: description,
+                tags: tags,
+                shared: !isPrivate,
+                toread: isToRead
+            )
+
+            dismissViewSubject.send(true)
+        }
     }
 
     func dismissViewPublisher(

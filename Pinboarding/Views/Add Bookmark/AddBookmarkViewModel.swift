@@ -65,23 +65,23 @@ final class AddBookmarkViewModel: ObservableObject {
 
     // MARK: - Public
 
-    func addBookmark() {
+    func addBookmark() async {
         guard
             let url = URL(string: urlString)
         else {
             return
         }
 
-        Task {
-            _ = await repository.addBookmark(
-                url: url,
-                title: title,
-                description: description,
-                tags: tags,
-                shared: !isPrivate,
-                toread: isToRead
-            )
+        _ = try? await repository.addBookmark(
+            url: url,
+            title: title,
+            description: description,
+            tags: tags,
+            shared: !isPrivate,
+            toread: isToRead
+        )
 
+        DispatchQueue.main.async { [dismissViewSubject] in
             dismissViewSubject.send(true)
         }
     }

@@ -17,7 +17,9 @@ final class PinboardingAppEnvironment {
         inMemory: false
     )
 
-    private(set) lazy var networkClient = PinboardAPIFactory().makePinboardAPIClient(
+    let apiFactory = PinboardAPIFactory()
+
+    private(set) lazy var networkClient = apiFactory.makePinboardAPIClient(
         userToken: { self.tokenStore.authToken }
     )
 

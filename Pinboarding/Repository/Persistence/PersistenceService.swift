@@ -2,7 +2,18 @@ import Combine
 import CoreData
 import MicroPinboard
 
-struct PersistenceService {
+protocol PersistenceServiceProtocol {
+
+    func appendNewPost(
+        _ post: PostResponse
+    )
+
+    func addAllPosts(
+        _ posts: [PostResponse]
+    )
+}
+
+final class PersistenceService: PersistenceServiceProtocol {
 
     // MARK: - Properties
 
@@ -32,7 +43,7 @@ struct PersistenceService {
     // MARK: - Public
 
     /// Adds a new post to Core Data as a Bookmark.
-    func appendNewPostPublisher(
+    func appendNewPost(
         _ post: PostResponse
     ) {
         do {

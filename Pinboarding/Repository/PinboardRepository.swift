@@ -2,7 +2,7 @@ import Combine
 import Foundation
 import MicroPinboard
 
-public class PinboardRepository: ObservableObject {
+final class PinboardRepository: ObservableObject {
 
     // MARK: - Properties
 
@@ -20,7 +20,8 @@ public class PinboardRepository: ObservableObject {
         self.networkService = networkService
         self.persistenceService = persistenceService
 
-        networkService.allBookmarksUpdatesPublisher()
+        networkService
+            .allBookmarksUpdatesPublisher()
             .sink { bookmarks in
                 persistenceService.addAllPosts(bookmarks)
             }
@@ -37,34 +38,32 @@ public class PinboardRepository: ObservableObject {
         replace: Bool = false,
         shared: Bool = false,
         toread: Bool = false
-    ) async {
-        Task {
-            let bookmark = await networkService.addBookmark(
-                url: url,
-                description: title,
-                extended: description,
-                tags: tags,
-                date: date,
-                replace: replace.stringValue,
-                shared: shared.stringValue,
-                toread: toread.stringValue
-            )
+    ) async throws {
+        let bookmark = try await networkService.addBookmark(
+            url: url,
+            description: title,
+            extended: description,
+            tags: tags,
+            date: date,
+            replace: replace.stringValue,
+            shared: shared.stringValue,
+            toread: toread.stringValue
+        )
 
-            guard let bookmark = bookmark else {
-                return
-            }
-
-            persistenceService.appendNewPostPublisher(bookmark)
-        }
+        persistenceService.appendNewPost(bookmark)
     }
 
     /// Forces an update without waiting for the next
     /// x minutes to pass.
     func forceRefreshBookmarks(
     ) async {
-        let bookmarks = await networkService.allBookmarks()
+        guard let bookmarks = try? await networkService.allBookmarks() else {
+            return
+        }
 
-        persistenceService.addAllPosts(bookmarks)
+        DispatchQueue.main.async { [persistenceService] in
+            persistenceService.addAllPosts(bookmarks)
+        }
     }
 
     /// Publishes the network status to update the UI

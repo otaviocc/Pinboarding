@@ -95,7 +95,9 @@ struct AddBookmarkView: View {
             }
             Spacer()
             Button("Add bookmark") {
-                viewModel.addBookmark()
+                Task {
+                    await viewModel.addBookmark()
+                }
             }
             .disabled(!viewModel.isValid)
         }

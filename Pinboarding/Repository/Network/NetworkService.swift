@@ -3,7 +3,36 @@ import Foundation
 import MicroClient
 import MicroPinboard
 
-final class NetworkService {
+protocol NetworkServiceProtocol {
+
+    /// Publishes all bookmarks during recurring
+    /// updates.
+    func allBookmarksUpdatesPublisher(
+    ) -> AnyPublisher<[PostResponse], Never>
+
+    /// Publishes the network status to update the UI
+    /// during update requests.
+    func networkActivityPublisher(
+    ) -> AnyPublisher<NetworkActivityEvent, Never>
+
+    /// Returns all saved bookmark.
+    func allBookmarks(
+    ) async throws -> [PostResponse]
+
+    /// Adds a new bookmark.
+    func addBookmark(
+        url: URL,
+        description: String,
+        extended: String?,
+        tags: String?,
+        date: Date?,
+        replace: String?,
+        shared: String?,
+        toread: String?
+    ) async throws -> PostResponse
+}
+
+final class NetworkService: NetworkServiceProtocol {
 
     // MARK: - Properties
 
@@ -42,38 +71,62 @@ final class NetworkService {
 
     // MARK: - Public
 
-    /// Publishes all bookmarks during recurring
-    /// updates.
     func allBookmarksUpdatesPublisher(
     ) -> AnyPublisher<[PostResponse], Never> {
         postResponseSubject
             .eraseToAnyPublisher()
     }
 
-    /// Publishes the network status to update the UI
-    /// during update requests.
     func networkActivityPublisher(
     ) -> AnyPublisher<NetworkActivityEvent, Never> {
-        Just(.finishedLoading).eraseToAnyPublisher()
-        //        pinboardAPI.eventPublisher()
-        //            .map { event in
-        //                switch event {
-        //                case .loading:
-        //                    return .loading
-        //                case .finishedLoading:
-        //                    return .finishedLoading
-        //                case .errorLoading:
-        //                    return .errorLoading
-        //                }
-        //            }
-        //            .eraseToAnyPublisher()
+        networkClient.statusPublisher()
+            .map { status in
+                switch status {
+                case .running: return .loading
+                case .idle: return .finishedLoading
+                }
+            }
+            .eraseToAnyPublisher()
+    }
+
+    func allBookmarks(
+    ) async throws -> [PostResponse] {
+        guard try await needsBookmarksUpdate() else {
+            throw NetworkServiceError.noNeedToSync
+        }
+
+        let request = PostsAPIFactory.makeAllRequest()
+        let response = try await networkClient.run(request)
+
+        return response.value
+    }
+
+    func addBookmark(
+        url: URL,
+        description: String,
+        extended: String? = nil,
+        tags: String? = nil,
+        date: Date? = nil,
+        replace: String? = nil,
+        shared: String? = nil,
+        toread: String? = nil
+    ) async throws -> PostResponse {
+        _ = try await addNewBookmark(
+            url: url,
+            description: description,
+            extended: extended,
+            tags: tags,
+            date: date,
+            replace: replace,
+            shared: shared,
+            toread: toread
+        )
+
+        return try await lastBookmark()
     }
 
     // MARK: - Private
 
-    /// Publishes every x minutes starting now.
-    /// This is used to schedule updates, emitting
-    /// the first event right when `sink` is called.
     private func timerPublisher(
     ) -> AnyPublisher<Date, Never> {
         Deferred {
@@ -97,47 +150,46 @@ final class NetworkService {
             .flatMap { _ in
                 Future { promise in
                     Task {
-                        let allBookmarks = await self.allBookmarks()
-                        promise(.success(allBookmarks))
+                        do {
+                            let allBookmarks = try await self.allBookmarks()
+                            promise(.success(allBookmarks))
+                        } catch {
+                            print("Error fetching recent bookmarks. Reason: \(error)")
+                        }
                     }
                 }
             }
             .eraseToAnyPublisher()
     }
 
-    /// Returns all saved bookmark.
-    func allBookmarks(
-    ) async -> [PostResponse] {
-        let request = PostsAPIFactory.makeAllRequest()
-        let response = try? await networkClient.run(request)
-
-        return response?.value ?? []
-    }
-
     /// Returns the latest saved bookmark.
     private func lastBookmark(
-    ) async -> PostResponse? {
+    ) async throws -> PostResponse {
         let request = PostsAPIFactory.makeRecentRequest(count: 1)
-        let response = try? await networkClient.run(request)
+        let response = try await networkClient.run(request)
 
-        return response?.value.posts.first
+        guard let bookmark = response.value.posts.first else {
+            throw NetworkServiceError.missingBookmark
+        }
+
+        return bookmark
     }
 
     private func needsBookmarksUpdate(
-    ) async -> Bool {
+    ) async throws -> Bool {
         let request = UpdateAPIFactory.makeUpdateRequest()
-        let response = try? await networkClient.run(request)
+        let response = try await networkClient.run(request)
 
-        guard settingsStore.lastSyncDate != response?.value.updateTime else {
+        guard settingsStore.lastSyncDate != response.value.updateTime else {
             return false
         }
 
-        settingsStore.lastSyncDate = response?.value.updateTime
+        settingsStore.lastSyncDate = response.value.updateTime
 
         return true
     }
 
-    private func addBookmark(
+    private func addNewBookmark(
         url: URL,
         description: String,
         extended: String? = nil,
@@ -146,7 +198,7 @@ final class NetworkService {
         replace: String? = nil,
         shared: String? = nil,
         toread: String? = nil
-    ) async -> Bool {
+    ) async throws -> Bool {
         let request = PostsAPIFactory.makeAddRequest(
             url: url,
             description: description,
@@ -157,36 +209,8 @@ final class NetworkService {
             shared: shared,
             toread: toread
         )
-        let response = try? await networkClient.run(request)
+        let response = try await networkClient.run(request)
 
-        return response?.value.resultCode == "done"
-    }
-
-    public func addBookmark(
-        url: URL,
-        description: String,
-        extended: String? = nil,
-        tags: String? = nil,
-        date: Date? = nil,
-        replace: String? = nil,
-        shared: String? = nil,
-        toread: String? = nil
-    ) async -> PostResponse? {
-        let didAddBookmark: Bool = await addBookmark(
-            url: url,
-            description: description,
-            extended: extended,
-            tags: tags,
-            date: date,
-            replace: replace,
-            shared: shared,
-            toread: toread
-        )
-
-        guard didAddBookmark == true else {
-            return nil
-        }
-
-        return await lastBookmark()
+        return response.value.resultCode == "done"
     }
 }

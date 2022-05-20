@@ -6,7 +6,7 @@ extension NSSortDescriptor {
     /// used to sort bookmarks.
     static func makeSortByTimeDescending(
     ) -> NSSortDescriptor {
-        NSSortDescriptor(
+        .init(
             key: "time",
             ascending: false
         )
@@ -16,7 +16,7 @@ extension NSSortDescriptor {
     /// used to sort tags on the sidebar.
     static func makeSortByNameAscending(
     ) -> NSSortDescriptor {
-        NSSortDescriptor(
+        .init(
             key: "name",
             ascending: true
         )

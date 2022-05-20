@@ -3,7 +3,7 @@ import Foundation
 import MicroClient
 import MicroPinboard
 
-final class NetworkController {
+final class NetworkService {
 
     // MARK: - Properties
 
@@ -136,7 +136,7 @@ final class NetworkController {
 
         return true
     }
-    
+
     private func addBookmark(
         url: URL,
         description: String,

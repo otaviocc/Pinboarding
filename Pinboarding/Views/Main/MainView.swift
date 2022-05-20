@@ -66,7 +66,7 @@ struct MainView_Previews: PreviewProvider {
         .environmentObject(previewAppEnvironment.repository)
         .environment(
             \.managedObjectContext,
-            previewAppEnvironment.persistenceController.container.viewContext
+            previewAppEnvironment.persistenceService.container.viewContext
         )
     }
 }

@@ -18,7 +18,7 @@ import Foundation
                 .environmentObject(appEnvironment.searchStore)
                 .environment(
                     \.managedObjectContext,
-                    appEnvironment.persistenceController.container.viewContext
+                    appEnvironment.persistenceService.container.viewContext
                 )
         }
         .commands {

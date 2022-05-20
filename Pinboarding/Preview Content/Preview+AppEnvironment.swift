@@ -14,7 +14,7 @@ final class PreviewAppEnvironment {
         )
     )
 
-    let persistenceController = Preview.makePersistenceController(
+    let persistenceService = Preview.makePersistenceController(
         populated: true
     )
 
@@ -22,14 +22,14 @@ final class PreviewAppEnvironment {
         userToken: { self.tokenStore.authToken }
     )
 
-    private(set) lazy var networkController = NetworkController(
+    private(set) lazy var networkService = NetworkService(
         settingsStore: settingsStore,
         networkClient: networkClient
     )
 
     private(set) lazy var repository = PinboardRepository(
-        networkController: networkController,
-        persistenceController: persistenceController
+        networkService: networkService,
+        persistenceService: persistenceService
     )
 }
 

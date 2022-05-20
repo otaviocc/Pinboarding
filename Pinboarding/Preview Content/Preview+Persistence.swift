@@ -7,8 +7,8 @@ extension Preview {
     /// In memory Persistence Controller for SwiftUI Previews.
     static func makePersistenceController(
         populated: Bool = false
-    ) -> PersistenceController {
-        let controller = PersistenceController(
+    ) -> PersistenceService {
+        let controller = PersistenceService(
             inMemory: true
         )
 

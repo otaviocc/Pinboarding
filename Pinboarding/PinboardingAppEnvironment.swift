@@ -13,7 +13,7 @@ final class PinboardingAppEnvironment {
 
     let tokenStore = AnyTokenStore(SecureStore())
 
-    let persistenceController = PersistenceController(
+    let persistenceService = PersistenceService(
         inMemory: false
     )
 
@@ -21,13 +21,13 @@ final class PinboardingAppEnvironment {
         userToken: { self.tokenStore.authToken }
     )
 
-    private(set) lazy var networkController = NetworkController(
+    private(set) lazy var networkService = NetworkService(
         settingsStore: settingsStore,
         networkClient: networkClient
     )
 
     private(set) lazy var repository = PinboardRepository(
-        networkController: networkController,
-        persistenceController: persistenceController
+        networkService: networkService,
+        persistenceService: persistenceService
     )
 }

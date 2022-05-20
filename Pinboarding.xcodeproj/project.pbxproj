@@ -54,8 +54,8 @@
 		AEBFB699259413C8001626AA /* NSSortDescriptor+App.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEBFB698259413C8001626AA /* NSSortDescriptor+App.swift */; };
 		AEC4A94F259B9F09000C65A8 /* SafariButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4A94E259B9F09000C65A8 /* SafariButton.swift */; };
 		AEC4A953259B9F38000C65A8 /* ShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC4A952259B9F38000C65A8 /* ShareButton.swift */; };
-		AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC622882591DA6F003FDE66 /* PersistenceController.swift */; };
-		AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6228C2591DB03003FDE66 /* NetworkController.swift */; };
+		AEC622892591DA6F003FDE66 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC622882591DA6F003FDE66 /* PersistenceService.swift */; };
+		AEC6228D2591DB03003FDE66 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6228C2591DB03003FDE66 /* NetworkService.swift */; };
 		AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC6229A259222B4003FDE66 /* Post+Repository.swift */; };
 		AEC72E0E259780FF008C7FF3 /* Preview+Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */; };
 		AEC72E112597890E008C7FF3 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEC72E102597890E008C7FF3 /* Preview.swift */; };
@@ -125,8 +125,8 @@
 		AEBFB698259413C8001626AA /* NSSortDescriptor+App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSSortDescriptor+App.swift"; sourceTree = "<group>"; };
 		AEC4A94E259B9F09000C65A8 /* SafariButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariButton.swift; sourceTree = "<group>"; };
 		AEC4A952259B9F38000C65A8 /* ShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareButton.swift; sourceTree = "<group>"; };
-		AEC622882591DA6F003FDE66 /* PersistenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceController.swift; sourceTree = "<group>"; };
-		AEC6228C2591DB03003FDE66 /* NetworkController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
+		AEC622882591DA6F003FDE66 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		AEC6228C2591DB03003FDE66 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		AEC6229A259222B4003FDE66 /* Post+Repository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Post+Repository.swift"; sourceTree = "<group>"; };
 		AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Persistence.swift"; sourceTree = "<group>"; };
 		AEC72E102597890E008C7FF3 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
@@ -478,7 +478,7 @@
 		AEC6228B2591DAD3003FDE66 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				AEC6228C2591DB03003FDE66 /* NetworkController.swift */,
+				AEC6228C2591DB03003FDE66 /* NetworkService.swift */,
 				AE9541EA259AB01A00B1AA15 /* NetworkActivityEvent.swift */,
 			);
 			path = Network;
@@ -503,7 +503,7 @@
 		AECE16F02591BD3F0024DC88 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
-				AEC622882591DA6F003FDE66 /* PersistenceController.swift */,
+				AEC622882591DA6F003FDE66 /* PersistenceService.swift */,
 				AECE16FC2591BEAA0024DC88 /* Core Data */,
 				AECE16FD2591BEB10024DC88 /* Core Data Models */,
 			);
@@ -649,7 +649,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AE6D05CE25BC920B00BEDDD4 /* SecureStorage.swift in Sources */,
-				AEC6228D2591DB03003FDE66 /* NetworkController.swift in Sources */,
+				AEC6228D2591DB03003FDE66 /* NetworkService.swift in Sources */,
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
 				AE039704258E5B3900D744FB /* LoginViewModel.swift in Sources */,
 				AE00EA07258AD5B1002D9558 /* PinboardRepository.swift in Sources */,
@@ -695,7 +695,7 @@
 				AE10FAEB2594D54500C79B82 /* Tag+CoreDataProperties.swift in Sources */,
 				AED5883A25FA2F9100E31B33 /* Icon.swift in Sources */,
 				AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */,
-				AEC622892591DA6F003FDE66 /* PersistenceController.swift in Sources */,
+				AEC622892591DA6F003FDE66 /* PersistenceService.swift in Sources */,
 				AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */,
 				AE83841025979D1100A4C5A7 /* Preview+Settings.swift in Sources */,
 				AED88E17264E9E9100EE0CB3 /* PredictingTextField.swift in Sources */,

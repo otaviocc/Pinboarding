@@ -40,7 +40,7 @@ struct BookmarksView_Previews: PreviewProvider {
         .environmentObject(previewAppEnvironment.searchStore)
         .environment(
             \.managedObjectContext,
-            previewAppEnvironment.persistenceController.container.viewContext
+            previewAppEnvironment.persistenceService.container.viewContext
         )
     }
 }

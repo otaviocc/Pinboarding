@@ -6,23 +6,23 @@ public class PinboardRepository: ObservableObject {
 
     // MARK: - Properties
 
-    private let persistenceController: PersistenceController
-    private let networkController: NetworkController
+    private let persistenceService: PersistenceService
+    private let networkService: NetworkService
     private var cancellables = Set<AnyCancellable>()
     private var refreshCancellable: AnyCancellable?
 
     // MARK: - Life cycle
 
     init(
-        networkController: NetworkController,
-        persistenceController: PersistenceController
+        networkService: NetworkService,
+        persistenceService: PersistenceService
     ) {
-        self.networkController = networkController
-        self.persistenceController = persistenceController
+        self.networkService = networkService
+        self.persistenceService = persistenceService
 
-        networkController.allBookmarksUpdatesPublisher()
+        networkService.allBookmarksUpdatesPublisher()
             .sink { bookmarks in
-                persistenceController.addAllPosts(bookmarks)
+                persistenceService.addAllPosts(bookmarks)
             }
             .store(in: &cancellables)
     }
@@ -39,7 +39,7 @@ public class PinboardRepository: ObservableObject {
         toread: Bool = false
     ) async {
         Task {
-            let bookmark = await networkController.addBookmark(
+            let bookmark = await networkService.addBookmark(
                 url: url,
                 description: title,
                 extended: description,
@@ -54,7 +54,7 @@ public class PinboardRepository: ObservableObject {
                 return
             }
 
-            persistenceController.appendNewPostPublisher(bookmark)
+            persistenceService.appendNewPostPublisher(bookmark)
         }
     }
 
@@ -62,15 +62,15 @@ public class PinboardRepository: ObservableObject {
     /// x minutes to pass.
     func forceRefreshBookmarks(
     ) async {
-        let bookmarks = await networkController.allBookmarks()
+        let bookmarks = await networkService.allBookmarks()
 
-        persistenceController.addAllPosts(bookmarks)
+        persistenceService.addAllPosts(bookmarks)
     }
 
     /// Publishes the network status to update the UI
     /// during update requests.
     func networkActivityPublisher(
     ) -> AnyPublisher<NetworkActivityEvent, Never> {
-        networkController.networkActivityPublisher()
+        networkService.networkActivityPublisher()
     }
 }

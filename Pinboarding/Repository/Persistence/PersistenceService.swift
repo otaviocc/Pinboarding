@@ -2,7 +2,7 @@ import Combine
 import CoreData
 import MicroPinboard
 
-struct PersistenceController {
+struct PersistenceService {
 
     // MARK: - Properties
 

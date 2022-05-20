@@ -51,7 +51,7 @@ struct TagsSectionView_Previews: PreviewProvider {
         .frame(width: 200)
         .environment(
             \.managedObjectContext,
-            previewAppEnvironment.persistenceController.container.viewContext
+            previewAppEnvironment.persistenceService.container.viewContext
         )
     }
 }

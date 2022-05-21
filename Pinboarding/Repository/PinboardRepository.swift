@@ -9,7 +9,6 @@ final class PinboardRepository: ObservableObject {
     private let persistenceService: PersistenceService
     private let networkService: NetworkService
     private var cancellables = Set<AnyCancellable>()
-    private var refreshCancellable: AnyCancellable?
 
     // MARK: - Life cycle
 

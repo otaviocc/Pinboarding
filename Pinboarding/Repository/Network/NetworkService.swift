@@ -40,7 +40,7 @@ final class NetworkService: NetworkServiceProtocol {
     private let networkClient: NetworkClientProtocol
     private let settingsStore: SettingsStore
     private let postResponseSubject =
-    PassthroughSubject<[PostResponse], Never>()
+        PassthroughSubject<[PostResponse], Never>()
 
 #if DEBUG
     let refreshInterval = 30.0

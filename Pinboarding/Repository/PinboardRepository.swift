@@ -6,15 +6,15 @@ final class PinboardRepository: ObservableObject {
 
     // MARK: - Properties
 
-    private let persistenceService: PersistenceService
-    private let networkService: NetworkService
+    private let persistenceService: PersistenceServiceProtocol
+    private let networkService: NetworkServiceProtocol
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
     init(
-        networkService: NetworkService,
-        persistenceService: PersistenceService
+        networkService: NetworkServiceProtocol,
+        persistenceService: PersistenceServiceProtocol
     ) {
         self.networkService = networkService
         self.persistenceService = persistenceService

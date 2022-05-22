@@ -1,35 +1,120 @@
 import MicroClient
 import MicroPinboard
 
-final class PinboardingAppEnvironment {
+final class DependencyContainer {
 
-    // MARK: - Properties
+    private var dependencies: [DependencyKey: Any] = [:]
 
-    let searchStore = SearchStore()
+    func register<T>(
+        type: T.Type,
+        name: String? = nil,
+        service: Any
+    ) {
+        let dependencyKey = DependencyKey(
+            type: type,
+            name: name
+        )
 
-    let settingsStore = SettingsStore(
-        userDefaults: .standard
-    )
+        dependencies[dependencyKey] = service
+    }
 
-    let tokenStore = AnyTokenStore(SecureStore())
+    func resolve<T>(
+        type: T.Type,
+        name: String? = nil
+    ) -> T {
+        let dependencyKey = DependencyKey(
+            type: type,
+            name: name
+        )
 
-    let persistenceService = PersistenceService(
-        inMemory: false
-    )
+        guard let dependency = dependencies[dependencyKey] as? T else {
+            fatalError("Missing dependency")
+        }
 
-    let apiFactory = PinboardAPIFactory()
+        return dependency
+    }
+}
 
-    private(set) lazy var networkClient = apiFactory.makePinboardAPIClient(
-        userToken: { self.tokenStore.authToken }
-    )
+final class DependencyKey: Hashable, Equatable {
+    private let type: Any.Type
+    private let name: String?
 
-    private(set) lazy var networkService = NetworkService(
-        settingsStore: settingsStore,
-        networkClient: networkClient
-    )
+    init(
+        type: Any.Type,
+        name: String? = nil
+    ) {
+        self.type = type
+        self.name = name
+    }
 
-    private(set) lazy var repository = PinboardRepository(
-        networkService: networkService,
-        persistenceService: persistenceService
-    )
+    func hash(
+        into hasher: inout Hasher
+    ) {
+        hasher.combine(ObjectIdentifier(type))
+        hasher.combine(name)
+    }
+
+    static func == (lhs: DependencyKey, rhs: DependencyKey) -> Bool {
+        return lhs.type == rhs.type && lhs.name == rhs.name
+    }
+}
+
+final class PinboardingAppContainer {
+
+    let container = DependencyContainer()
+
+    init() {
+        container.register(
+            type: SearchStore.self,
+            service: SearchStore()
+        )
+
+        container.register(
+            type: SettingsStore.self,
+            service: SettingsStore(
+                userDefaults: .standard
+            )
+        )
+
+        container.register(
+            type: AnyTokenStore.self,
+            service: AnyTokenStore(
+                SecureStore()
+            )
+        )
+
+        container.register(
+            type: PersistenceServiceProtocol.self,
+            service: PersistenceService(
+                inMemory: false
+            )
+        )
+
+        container.register(
+            type: NetworkClientProtocol.self,
+            service: PinboardAPIFactory()
+                .makePinboardAPIClient(
+                    userToken: { [unowned self] in
+                        let tokenStore = container.resolve(type: AnyTokenStore.self)
+                        return tokenStore.authToken
+                    }
+                )
+        )
+
+        container.register(
+            type: NetworkServiceProtocol.self,
+            service: NetworkService(
+                settingsStore: container.resolve(type: SettingsStore.self),
+                networkClient: container.resolve(type: NetworkClientProtocol.self)
+            )
+        )
+
+        container.register(
+            type: PinboardRepository.self,
+            service: PinboardRepository(
+                networkService: container.resolve(type: NetworkServiceProtocol.self),
+                persistenceService: container.resolve(type: PersistenceServiceProtocol.self)
+            )
+        )
+    }
 }

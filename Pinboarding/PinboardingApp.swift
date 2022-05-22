@@ -5,33 +5,33 @@ import Foundation
 
     // MARK: - Properties
 
-    private let appEnvironment = PinboardingAppEnvironment()
+    private let container = PinboardingAppContainer()
 
     // MARK: - Public
 
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(appEnvironment.repository)
-                .environmentObject(appEnvironment.settingsStore)
-                .environmentObject(appEnvironment.tokenStore)
-                .environmentObject(appEnvironment.searchStore)
+                .environmentObject(container.container.resolve(type: PinboardRepository.self))
+                .environmentObject(container.container.resolve(type: SettingsStore.self))
+                .environmentObject(container.container.resolve(type: AnyTokenStore.self))
+                .environmentObject(container.container.resolve(type: SearchStore.self))
                 .environment(
                     \.managedObjectContext,
-                    appEnvironment.persistenceService.container.viewContext
+                     (container.container.resolve(type: PersistenceServiceProtocol.self) as! PersistenceService).container.viewContext
                 )
         }
         .commands {
             SidebarCommands()
             BookmarkCommands(
-                repository: appEnvironment.repository
+                repository: container.container.resolve(type: PinboardRepository.self)
             )
         }
 
         Settings {
             SettingsView()
-                .environmentObject(appEnvironment.settingsStore)
-                .environmentObject(appEnvironment.tokenStore)
+                .environmentObject(container.container.resolve(type: SettingsStore.self))
+                .environmentObject(container.container.resolve(type: AnyTokenStore.self))
         }
     }
 }

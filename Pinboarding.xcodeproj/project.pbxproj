@@ -71,6 +71,7 @@
 		AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */; };
 		AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */; };
 		AEF8A7B925C154A300E081B5 /* Preview+SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */; };
+		B5CE3A522838D2000014FE73 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */; };
 		E2320E312836EED90045B349 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E2320E302836EED90045B349 /* MicroPinboard */; };
 /* End PBXBuildFile section */
 
@@ -142,6 +143,8 @@
 		AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkView.swift; sourceTree = "<group>"; };
 		AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkViewModel.swift; sourceTree = "<group>"; };
 		AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+SearchStore.swift"; sourceTree = "<group>"; };
+		B5CE3A502838B57A0014FE73 /* MicroClient */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicroClient; path = ../MicroClient; sourceTree = "<group>"; };
+		B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -289,6 +292,7 @@
 		AE792FF7258675DB00A68947 = {
 			isa = PBXGroup;
 			children = (
+				B5CE3A4F2838B57A0014FE73 /* Packages */,
 				AE793002258675DB00A68947 /* Pinboarding */,
 				AE793001258675DB00A68947 /* Products */,
 				AE1303BE2587E3DA0083EEFB /* Frameworks */,
@@ -480,6 +484,7 @@
 			children = (
 				AEC6228C2591DB03003FDE66 /* NetworkService.swift */,
 				AE9541EA259AB01A00B1AA15 /* NetworkActivityEvent.swift */,
+				B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -571,6 +576,14 @@
 				AEF0DF10258ECB8D000F4BFF /* GeneralViewModel.swift */,
 			);
 			path = "Settings General";
+			sourceTree = "<group>";
+		};
+		B5CE3A4F2838B57A0014FE73 /* Packages */ = {
+			isa = PBXGroup;
+			children = (
+				B5CE3A502838B57A0014FE73 /* MicroClient */,
+			);
+			name = Packages;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -676,6 +689,7 @@
 				AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */,
 				AEA3DA94259B360600C4DB0F /* SharingServicePicker.swift in Sources */,
 				AEBFB5072589D9FF001521A2 /* BookmarkViewModel.swift in Sources */,
+				B5CE3A522838D2000014FE73 /* NetworkServiceError.swift in Sources */,
 				AE9541F3259B2D1E00B1AA15 /* TagsSectionView.swift in Sources */,
 				AEE78D9A258BAF17001CA0EA /* Booleans+Repository.swift in Sources */,
 				AEC6229B259222B4003FDE66 /* Post+Repository.swift in Sources */,
@@ -841,7 +855,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
-				DEVELOPMENT_TEAM = Y2X6PL3L9L;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";
@@ -867,7 +881,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
-				DEVELOPMENT_TEAM = Y2X6PL3L9L;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";

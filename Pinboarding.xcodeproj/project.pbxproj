@@ -72,6 +72,7 @@
 		AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */; };
 		AEF8A7B925C154A300E081B5 /* Preview+SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */; };
 		B5CE3A522838D2000014FE73 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */; };
+		B5F2203528413859003A667E /* MicroContainer in Frameworks */ = {isa = PBXBuildFile; productRef = B5F2203428413859003A667E /* MicroContainer */; };
 		E2320E312836EED90045B349 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E2320E302836EED90045B349 /* MicroPinboard */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E2320E312836EED90045B349 /* MicroPinboard in Frameworks */,
+				B5F2203528413859003A667E /* MicroContainer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -604,6 +606,7 @@
 			name = Pinboarding;
 			packageProductDependencies = (
 				E2320E302836EED90045B349 /* MicroPinboard */,
+				B5F2203428413859003A667E /* MicroContainer */,
 			);
 			productName = Pinboarding;
 			productReference = AE793000258675DB00A68947 /* Pinboarding.app */;
@@ -634,6 +637,7 @@
 			mainGroup = AE792FF7258675DB00A68947;
 			packageReferences = (
 				E2320E2F2836EED90045B349 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */,
+				B5F2203328413859003A667E /* XCRemoteSwiftPackageReference "MicroContainer" */,
 			);
 			productRefGroup = AE793001258675DB00A68947 /* Products */;
 			projectDirPath = "";
@@ -921,6 +925,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		B5F2203328413859003A667E /* XCRemoteSwiftPackageReference "MicroContainer" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/otaviocc/MicroContainer";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.0.1;
+			};
+		};
 		E2320E2F2836EED90045B349 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/otaviocc/MicroPinboardAPI.git";
@@ -932,6 +944,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		B5F2203428413859003A667E /* MicroContainer */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B5F2203328413859003A667E /* XCRemoteSwiftPackageReference "MicroContainer" */;
+			productName = MicroContainer;
+		};
 		E2320E302836EED90045B349 /* MicroPinboard */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = E2320E2F2836EED90045B349 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */;

@@ -1,120 +1,87 @@
 import MicroClient
 import MicroPinboard
+import MicroContainer
 
-final class DependencyContainer {
+final class PinboardingAppEnvironment {
 
-    private var dependencies: [DependencyKey: Any] = [:]
+    // MARK: - Properties
 
-    func register<T>(
-        type: T.Type,
-        name: String? = nil,
-        service: Any
-    ) {
-        let dependencyKey = DependencyKey(
-            type: type,
-            name: name
-        )
+    private let container = DependencyContainer()
 
-        dependencies[dependencyKey] = service
-    }
+    var repository: PinboardRepository { container.resolve() }
+    var settingsStore: SettingsStore { container.resolve() }
+    var tokenStore: AnyTokenStore { container.resolve() }
+    var searchStore: SearchStore { container.resolve() }
+    var persistenceService: PersistenceServiceProtocol { container.resolve() }
 
-    func resolve<T>(
-        type: T.Type,
-        name: String? = nil
-    ) -> T {
-        let dependencyKey = DependencyKey(
-            type: type,
-            name: name
-        )
-
-        guard let dependency = dependencies[dependencyKey] as? T else {
-            fatalError("Missing dependency")
-        }
-
-        return dependency
-    }
-}
-
-final class DependencyKey: Hashable, Equatable {
-    private let type: Any.Type
-    private let name: String?
-
-    init(
-        type: Any.Type,
-        name: String? = nil
-    ) {
-        self.type = type
-        self.name = name
-    }
-
-    func hash(
-        into hasher: inout Hasher
-    ) {
-        hasher.combine(ObjectIdentifier(type))
-        hasher.combine(name)
-    }
-
-    static func == (lhs: DependencyKey, rhs: DependencyKey) -> Bool {
-        return lhs.type == rhs.type && lhs.name == rhs.name
-    }
-}
-
-final class PinboardingAppContainer {
-
-    let container = DependencyContainer()
+    // MARK: - Life cycle
 
     init() {
         container.register(
             type: SearchStore.self,
-            service: SearchStore()
-        )
+            allocation: .static
+        ) { _ in
+            SearchStore()
+        }
 
         container.register(
             type: SettingsStore.self,
-            service: SettingsStore(
+            allocation: .static
+        ) { _ in
+            SettingsStore(
                 userDefaults: .standard
             )
-        )
+        }
 
         container.register(
             type: AnyTokenStore.self,
-            service: AnyTokenStore(
+            allocation: .static
+        ) { _ in
+            AnyTokenStore(
                 SecureStore()
             )
-        )
+        }
 
         container.register(
             type: PersistenceServiceProtocol.self,
-            service: PersistenceService(
+            allocation: .static
+        ) { _ in
+            PersistenceService(
                 inMemory: false
             )
-        )
+        }
 
         container.register(
             type: NetworkClientProtocol.self,
-            service: PinboardAPIFactory()
+            allocation: .static
+        ) { container in
+            PinboardAPIFactory()
                 .makePinboardAPIClient(
-                    userToken: { [unowned self] in
-                        let tokenStore = container.resolve(type: AnyTokenStore.self)
+                    userToken: {
+                        let tokenStore: AnyTokenStore = container.resolve()
                         return tokenStore.authToken
                     }
                 )
-        )
+        }
 
         container.register(
             type: NetworkServiceProtocol.self,
-            service: NetworkService(
-                settingsStore: container.resolve(type: SettingsStore.self),
-                networkClient: container.resolve(type: NetworkClientProtocol.self)
+            allocation: .static
+        ) { container in
+            NetworkService(
+                settingsStore: container.resolve(),
+                networkClient: container.resolve()
             )
-        )
+        }
 
         container.register(
             type: PinboardRepository.self,
-            service: PinboardRepository(
-                networkService: container.resolve(type: NetworkServiceProtocol.self),
-                persistenceService: container.resolve(type: PersistenceServiceProtocol.self)
+            allocation: .static
+        ) { container in
+            PinboardRepository(
+                networkService: container.resolve(),
+                persistenceService: container.resolve()
             )
-        )
+        }
     }
 }

@@ -4,6 +4,8 @@ import MicroPinboard
 
 protocol PersistenceServiceProtocol {
 
+    var container: NSPersistentContainer { get }
+
     func appendNewPost(
         _ post: PostResponse
     )

@@ -1,36 +1,88 @@
 import MicroClient
 import MicroPinboard
+import MicroContainer
 
 final class PreviewAppEnvironment {
 
     // MARK: - Properties
 
-    let searchStore = Preview.makeSearchStore()
-    let settingsStore = Preview.makeSettingsStore()
+    private let container = DependencyContainer()
 
-    let tokenStore = AnyTokenStore(
-        Preview.makeTokenStore(
-            authToken: "token"
-        )
-    )
+    var repository: PinboardRepository { container.resolve() }
+    var settingsStore: SettingsStore { container.resolve() }
+    var tokenStore: AnyTokenStore { container.resolve() }
+    var searchStore: SearchStore { container.resolve() }
+    var persistenceService: PersistenceServiceProtocol { container.resolve() }
 
-    let persistenceService = Preview.makePersistenceController(
-        populated: true
-    )
+    // MARK: - Life cycle
 
-    private(set) lazy var networkClient = PinboardAPIFactory().makePinboardAPIClient(
-        userToken: { self.tokenStore.authToken }
-    )
+    init() {
+        container.register(
+            type: SearchStore.self,
+            allocation: .static
+        ) { _ in
+            Preview.makeSearchStore()
+        }
 
-    private(set) lazy var networkService = NetworkService(
-        settingsStore: settingsStore,
-        networkClient: networkClient
-    )
+        container.register(
+            type: SettingsStore.self,
+            allocation: .static
+        ) { _ in
+            Preview.makeSettingsStore()
+        }
 
-    private(set) lazy var repository = PinboardRepository(
-        networkService: networkService,
-        persistenceService: persistenceService
-    )
+        container.register(
+            type: AnyTokenStore.self,
+            allocation: .static
+        ) { _ in
+            AnyTokenStore(
+                Preview.makeTokenStore(
+                    authToken: "token"
+                )
+            )
+        }
+
+        container.register(
+            type: PersistenceServiceProtocol.self,
+            allocation: .static
+        ) { _ in
+            Preview.makePersistenceController(
+                populated: true
+            )
+        }
+
+        container.register(
+            type: NetworkClientProtocol.self,
+            allocation: .static
+        ) { container in
+            PinboardAPIFactory().makePinboardAPIClient(
+                userToken: {
+                    let tokenStore: AnyTokenStore = container.resolve()
+                    return tokenStore.authToken
+                }
+            )
+        }
+
+        container.register(
+            type: NetworkServiceProtocol.self,
+            allocation: .static
+        ) { container in
+            NetworkService(
+                settingsStore: container.resolve(),
+                networkClient: container.resolve()
+            )
+        }
+
+        container.register(
+            type: PinboardRepository.self,
+            allocation: .static
+        ) { container in
+            PinboardRepository(
+                networkService: container.resolve(),
+                persistenceService: container.resolve()
+            )
+        }
+    }
 }
 
 let previewAppEnvironment = PreviewAppEnvironment()

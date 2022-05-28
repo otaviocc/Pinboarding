@@ -5,8 +5,7 @@ struct SidebarView: View {
     // MARK: - Properties
 
     @ObservedObject private var viewModel: SidebarViewModel
-    @EnvironmentObject private var repository: PinboardRepository
-    @EnvironmentObject private var searchStore: SearchStore
+    @EnvironmentObject private var viewModelFactory: ViewModelFactory
 
     // MARK: - Life cycle
 
@@ -20,7 +19,7 @@ struct SidebarView: View {
 
     var body: some View {
         VStack {
-            SearchField(searchTerm: $searchStore.currentSearchTerm)
+            SearchField(searchTerm: $viewModel.currentSearchTerm)
                 .padding([.leading, .trailing, .bottom])
 
             List {
@@ -58,7 +57,8 @@ struct SidebarView_Previews: PreviewProvider {
         Group {
             SidebarView(
                 viewModel: SidebarViewModel(
-                    networkActivityPublisher: notLoadingPublisher
+                    networkActivityPublisher: notLoadingPublisher,
+                    searchStore: previewAppEnvironment.searchStore
                 )
             )
             .preferredColorScheme(.light)
@@ -66,7 +66,8 @@ struct SidebarView_Previews: PreviewProvider {
 
             SidebarView(
                 viewModel: SidebarViewModel(
-                    networkActivityPublisher: loadingPublisher
+                    networkActivityPublisher: loadingPublisher,
+                    searchStore: previewAppEnvironment.searchStore
                 )
             )
             .preferredColorScheme(.dark)

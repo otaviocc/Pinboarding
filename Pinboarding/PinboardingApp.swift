@@ -12,9 +12,7 @@ import Foundation
     var body: some Scene {
         WindowGroup {
             MainView()
-                .environmentObject(environment.repository)
-                .environmentObject(environment.settingsStore)
-                .environmentObject(environment.tokenStore)
+                .environmentObject(environment.viewModelFactory)
                 .environmentObject(environment.searchStore)
                 .environment(
                     \.managedObjectContext,
@@ -23,15 +21,27 @@ import Foundation
         }
         .commands {
             SidebarCommands()
+
             BookmarkCommands(
                 repository: environment.repository
             )
         }
 
+        WindowGroup("Add Bookmark") {
+            AddBookmarkView(
+                viewModel: environment.viewModelFactory.makeAddBookmarkViewModel(),
+                isPresented: .constant(true)
+            )
+            .frame(width: 640)
+            .environment(
+                \.managedObjectContext,
+                 environment.persistenceService.container.viewContext
+            )
+        }
+
         Settings {
             SettingsView()
-                .environmentObject(environment.settingsStore)
-                .environmentObject(environment.tokenStore)
+                .environmentObject(environment.viewModelFactory)
         }
     }
 }

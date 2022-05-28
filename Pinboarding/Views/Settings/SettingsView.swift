@@ -10,17 +10,14 @@ struct SettingsView: View {
 
     // MARK: - Properties
 
-    @EnvironmentObject private var settingsStore: SettingsStore
-    @EnvironmentObject private var tokenStore: AnyTokenStore
+    @EnvironmentObject private var viewModelFactory: ViewModelFactory
 
     // MARK: - Public
 
     var body: some View {
         TabView {
             LoginView(
-                viewModel: LoginViewModel(
-                    tokenStore: tokenStore
-                )
+                viewModel: viewModelFactory.makeLoginViewModel()
             )
             .tabItem {
                 Label("Login", systemImage: "person")
@@ -28,9 +25,7 @@ struct SettingsView: View {
             .tag(SettingsTab.login)
 
             GeneralView(
-                viewModel: GeneralViewModel(
-                    settingsStore: settingsStore
-                )
+                viewModel: viewModelFactory.makeGeneralViewModel()
             )
             .tabItem {
                 Label("General", systemImage: "gear")

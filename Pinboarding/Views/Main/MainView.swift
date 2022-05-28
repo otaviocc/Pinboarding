@@ -1,11 +1,11 @@
 import SwiftUI
+import MicroContainer
 
 struct MainView: View {
 
     // MARK: - Properties
 
-    @EnvironmentObject private var repository: PinboardRepository
-    @EnvironmentObject private var settingsStore: SettingsStore
+    @EnvironmentObject private var viewModelFactory: ViewModelFactory
     @State private var showAddBookmark = false
 
     // MARK: - Public
@@ -13,9 +13,7 @@ struct MainView: View {
     var body: some View {
         NavigationView {
             SidebarView(
-                viewModel: SidebarViewModel(
-                    networkActivityPublisher: repository.networkActivityPublisher()
-                )
+                viewModel: viewModelFactory.makeSidebarViewModel()
             )
 
             BookmarksView(viewModel: .all)
@@ -23,9 +21,7 @@ struct MainView: View {
         .toolbar {
             ToolbarItemGroup {
                 RefreshView(
-                    viewModel: RefreshViewModel(
-                        repository: repository
-                    )
+                    viewModel: viewModelFactory.makeRefreshViewModel()
                 )
                 .help("Force refresh")
 
@@ -36,10 +32,7 @@ struct MainView: View {
                 .help("Add a new bookmark")
                 .sheet(isPresented: $showAddBookmark) {
                     AddBookmarkView(
-                        viewModel: AddBookmarkViewModel(
-                            repository: repository,
-                            settingsStore: settingsStore
-                        ),
+                        viewModel: viewModelFactory.makeAddBookmarkViewModel(),
                         isPresented: $showAddBookmark
                     )
                     .frame(width: 640)

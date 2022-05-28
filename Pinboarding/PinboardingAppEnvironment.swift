@@ -1,3 +1,4 @@
+import Combine
 import MicroClient
 import MicroPinboard
 import MicroContainer
@@ -8,6 +9,7 @@ final class PinboardingAppEnvironment {
 
     private let container = DependencyContainer()
 
+    var viewModelFactory: ViewModelFactory { container.resolve() }
     var repository: PinboardRepository { container.resolve() }
     var settingsStore: SettingsStore { container.resolve() }
     var tokenStore: AnyTokenStore { container.resolve() }
@@ -81,6 +83,15 @@ final class PinboardingAppEnvironment {
             PinboardRepository(
                 networkService: container.resolve(),
                 persistenceService: container.resolve()
+            )
+        }
+
+        container.register(
+            type: ViewModelFactory.self,
+            allocation: .static
+        ) { container in
+            ViewModelFactory(
+                container: container
             )
         }
     }

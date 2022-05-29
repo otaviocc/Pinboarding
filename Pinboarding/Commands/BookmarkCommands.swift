@@ -17,7 +17,12 @@ struct BookmarkCommands: Commands {
     // MARK: - Public
 
     var body: some Commands {
-        CommandMenu("Bookmark") {
+        CommandGroup(replacing: .newItem) { }
+
+        CommandMenu("Bookmarks") {
+            Button("New Bookmark") { }
+            .keyboardShortcut("n")
+
             Button("Refresh Bookmarks") {
                 Task {
                     await repository.forceRefreshBookmarks()

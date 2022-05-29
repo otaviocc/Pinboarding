@@ -60,8 +60,7 @@ final class PinboardingAppEnvironment {
             PinboardAPIFactory()
                 .makePinboardAPIClient(
                     userToken: {
-                        let tokenStore: AnyTokenStore = container.resolve()
-                        return tokenStore.authToken
+                        (container.resolve() as AnyTokenStore).authToken
                     }
                 )
         }

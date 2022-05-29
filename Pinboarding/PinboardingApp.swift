@@ -27,7 +27,7 @@ import Foundation
             )
         }
 
-        WindowGroup("Add Bookmark") {
+        WindowGroup("New Bookmark") {
             AddBookmarkView(
                 viewModel: environment.viewModelFactory.makeAddBookmarkViewModel(),
                 isPresented: .constant(true)

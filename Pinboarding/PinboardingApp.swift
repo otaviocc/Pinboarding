@@ -29,8 +29,7 @@ import Foundation
 
         WindowGroup("New Bookmark") {
             AddBookmarkView(
-                viewModel: environment.viewModelFactory.makeAddBookmarkViewModel(),
-                isPresented: .constant(true)
+                viewModel: environment.viewModelFactory.makeAddBookmarkViewModel()
             )
             .frame(width: 640)
             .environment(
@@ -38,6 +37,7 @@ import Foundation
                  environment.persistenceService.container.viewContext
             )
         }
+        .handlesExternalEvents(matching: Set(arrayLiteral: "addbookmark"))
 
         Settings {
             SettingsView()

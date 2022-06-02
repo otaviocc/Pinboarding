@@ -6,8 +6,7 @@ struct AddBookmarkView: View {
 
     @ObservedObject private var viewModel: AddBookmarkViewModel
 
-    @Environment(\.presentationMode)
-    var presentationMode
+    @Binding private var isPresented: Bool
 
     @Environment(\.managedObjectContext)
     private var viewContext
@@ -18,9 +17,11 @@ struct AddBookmarkView: View {
     // MARK: - Life cycle
 
     init(
-        viewModel: AddBookmarkViewModel
+        viewModel: AddBookmarkViewModel,
+        isPresented: Binding<Bool>
     ) {
         self.viewModel = viewModel
+        self._isPresented = isPresented
     }
 
     // MARK: - Public
@@ -40,7 +41,7 @@ struct AddBookmarkView: View {
         }
         .padding()
         .onReceive(viewModel.dismissViewPublisher()) { _ in
-            presentationMode.wrappedValue.dismiss()
+            isPresented.toggle()
         }
     }
 
@@ -91,7 +92,7 @@ struct AddBookmarkView: View {
     ) -> some View {
         HStack {
             Button("Cancel") {
-                presentationMode.wrappedValue.dismiss()
+                isPresented.toggle()
             }
             Spacer()
             Button("Add bookmark") {
@@ -114,7 +115,8 @@ struct AddBookmarkView_Previews: PreviewProvider {
                 viewModel: AddBookmarkViewModel(
                     repository: previewAppEnvironment.repository,
                     settingsStore: previewAppEnvironment.settingsStore
-                )
+                ),
+                isPresented: .constant(false)
             )
             .frame(width: 640)
             .preferredColorScheme(.light)
@@ -123,7 +125,8 @@ struct AddBookmarkView_Previews: PreviewProvider {
                 viewModel: AddBookmarkViewModel(
                     repository: previewAppEnvironment.repository,
                     settingsStore: previewAppEnvironment.settingsStore
-                )
+                ),
+                isPresented: .constant(false)
             )
             .preferredColorScheme(.dark)
         }

@@ -6,7 +6,7 @@ struct MainView: View {
     // MARK: - Properties
 
     @EnvironmentObject private var viewModelFactory: ViewModelFactory
-    @Environment(\.openURL) var openURL
+    @State private var showAddBookmark = false
 
     // MARK: - Public
 
@@ -26,14 +26,17 @@ struct MainView: View {
                 .help("Force refresh")
 
                 Button(
-                    action: {
-                        if let url = URL(string: "pinboarding://addbookmark") {
-                            openURL(url)
-                        }
-                    },
+                    action: { showAddBookmark.toggle() },
                     label: { Image(systemName: Icon.addBookmark) }
                 )
                 .help("Add a new bookmark")
+                .sheet(isPresented: $showAddBookmark) {
+                    AddBookmarkView(
+                        viewModel: viewModelFactory.makeAddBookmarkViewModel(),
+                        isPresented: $showAddBookmark
+                    )
+                    .frame(width: 640)
+                }
             }
         }
     }

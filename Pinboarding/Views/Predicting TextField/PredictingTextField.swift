@@ -48,14 +48,7 @@ struct PredictingTextField: View {
 
     private func matchingPredictionsPublisher(
     ) -> AnyPublisher<[String], Never> {
-        guard
-            text.last != " ",
-            !text.isEmpty
-        else {
-            return Just([]).eraseToAnyPublisher()
-        }
-
-        return text
+        text
             .split(separator: " ")
             .last
             .publisher

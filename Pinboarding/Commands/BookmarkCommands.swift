@@ -21,7 +21,7 @@ struct BookmarkCommands: Commands {
 
         CommandMenu("Bookmarks") {
             Button("New Bookmark") { }
-            .keyboardShortcut("n")
+                .keyboardShortcut("n")
 
             Button("Refresh Bookmarks") {
                 Task {

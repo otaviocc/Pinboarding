@@ -11,8 +11,6 @@ final class PinboardingAppEnvironment {
 
     var viewModelFactory: ViewModelFactory { container.resolve() }
     var repository: PinboardRepository { container.resolve() }
-    var settingsStore: SettingsStore { container.resolve() }
-    var tokenStore: AnyTokenStore { container.resolve() }
     var searchStore: SearchStore { container.resolve() }
     var persistenceService: PersistenceServiceProtocol { container.resolve() }
 

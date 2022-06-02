@@ -74,7 +74,7 @@
 		B5308B1E2841DE87006A9B11 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308B1D2841DE87006A9B11 /* ViewModelFactory.swift */; };
 		B5CE3A522838D2000014FE73 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */; };
 		B5F2203528413859003A667E /* MicroContainer in Frameworks */ = {isa = PBXBuildFile; productRef = B5F2203428413859003A667E /* MicroContainer */; };
-		E2320E312836EED90045B349 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E2320E302836EED90045B349 /* MicroPinboard */; };
+		E245D1AA2848B8970085DF60 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E245D1A92848B8970085DF60 /* MicroPinboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -146,7 +146,6 @@
 		AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkViewModel.swift; sourceTree = "<group>"; };
 		AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+SearchStore.swift"; sourceTree = "<group>"; };
 		B5308B1D2841DE87006A9B11 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
-		B5CE3A502838B57A0014FE73 /* MicroClient */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = MicroClient; path = ../MicroClient; sourceTree = "<group>"; };
 		B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -155,7 +154,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E2320E312836EED90045B349 /* MicroPinboard in Frameworks */,
+				E245D1AA2848B8970085DF60 /* MicroPinboard in Frameworks */,
 				B5F2203528413859003A667E /* MicroContainer in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -296,7 +295,6 @@
 		AE792FF7258675DB00A68947 = {
 			isa = PBXGroup;
 			children = (
-				B5CE3A4F2838B57A0014FE73 /* Packages */,
 				AE793002258675DB00A68947 /* Pinboarding */,
 				AE793001258675DB00A68947 /* Products */,
 				AE1303BE2587E3DA0083EEFB /* Frameworks */,
@@ -591,14 +589,6 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
-		B5CE3A4F2838B57A0014FE73 /* Packages */ = {
-			isa = PBXGroup;
-			children = (
-				B5CE3A502838B57A0014FE73 /* MicroClient */,
-			);
-			name = Packages;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -616,8 +606,8 @@
 			);
 			name = Pinboarding;
 			packageProductDependencies = (
-				E2320E302836EED90045B349 /* MicroPinboard */,
 				B5F2203428413859003A667E /* MicroContainer */,
+				E245D1A92848B8970085DF60 /* MicroPinboard */,
 			);
 			productName = Pinboarding;
 			productReference = AE793000258675DB00A68947 /* Pinboarding.app */;
@@ -647,8 +637,8 @@
 			);
 			mainGroup = AE792FF7258675DB00A68947;
 			packageReferences = (
-				E2320E2F2836EED90045B349 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */,
 				B5F2203328413859003A667E /* XCRemoteSwiftPackageReference "MicroContainer" */,
+				E245D1A82848B8970085DF60 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */,
 			);
 			productRefGroup = AE793001258675DB00A68947 /* Products */;
 			projectDirPath = "";
@@ -871,7 +861,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
-				DEVELOPMENT_TEAM = JU92V989UQ;
+				DEVELOPMENT_TEAM = Y2X6PL3L9L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";
@@ -897,7 +887,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
-				DEVELOPMENT_TEAM = JU92V989UQ;
+				DEVELOPMENT_TEAM = Y2X6PL3L9L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";
@@ -945,7 +935,7 @@
 				minimumVersion = 0.0.1;
 			};
 		};
-		E2320E2F2836EED90045B349 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */ = {
+		E245D1A82848B8970085DF60 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/otaviocc/MicroPinboardAPI.git";
 			requirement = {
@@ -961,9 +951,9 @@
 			package = B5F2203328413859003A667E /* XCRemoteSwiftPackageReference "MicroContainer" */;
 			productName = MicroContainer;
 		};
-		E2320E302836EED90045B349 /* MicroPinboard */ = {
+		E245D1A92848B8970085DF60 /* MicroPinboard */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = E2320E2F2836EED90045B349 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */;
+			package = E245D1A82848B8970085DF60 /* XCRemoteSwiftPackageReference "MicroPinboardAPI" */;
 			productName = MicroPinboard;
 		};
 /* End XCSwiftPackageProductDependency section */

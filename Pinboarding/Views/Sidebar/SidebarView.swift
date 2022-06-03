@@ -24,7 +24,7 @@ struct SidebarView: View {
 
             List {
                 MyBookmarksSectionView(
-                    viewModel: MyBookmarksSectionViewModel()
+                    viewModel: viewModelFactory.makeMyBookmarksSectionViewModel()
                 )
                 TagsSectionView()
             }

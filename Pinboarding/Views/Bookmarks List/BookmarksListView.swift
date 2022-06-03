@@ -5,6 +5,7 @@ struct BookmarksListView: View {
 
     // MARK: - Properties
 
+    @EnvironmentObject private var viewModelFactory: ViewModelFactory
     @EnvironmentObject private var searchStore: SearchStore
 
     private var fetchRequest: FetchRequest<Bookmark>
@@ -35,7 +36,7 @@ struct BookmarksListView: View {
 
         List(bookmarks, id: \.self) { bookmark in
             BookmarkView(
-                viewModel: BookmarkViewModel(
+                viewModel: viewModelFactory.makeBookmarkViewModel(
                     bookmark: bookmark
                 )
             )

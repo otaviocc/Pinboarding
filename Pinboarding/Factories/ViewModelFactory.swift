@@ -30,6 +30,18 @@ final class ViewModelFactory: ObservableObject {
         )
     }
 
+    func makeBookmarkViewModel(
+        bookmark: Bookmark
+    ) -> BookmarkViewModelProtocol {
+        BookmarkViewModel(
+            bookmark: bookmark
+        )
+    }
+
+    func makeMyBookmarksSectionViewModel() -> MyBookmarksSectionViewModel {
+        MyBookmarksSectionViewModel()
+    }
+
     func makeLoginViewModel() -> LoginViewModel {
         LoginViewModel(
             tokenStore: container.resolve()

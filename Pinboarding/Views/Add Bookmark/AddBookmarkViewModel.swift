@@ -97,7 +97,7 @@ final class AddBookmarkViewModel: ObservableObject {
     private func isURLValidPublisher(
     ) -> AnyPublisher<Bool, Never> {
         $urlString
-            .debounce(for: 0.3, scheduler: RunLoop.main)
+            .debounce(for: 0.3, scheduler: DispatchQueue.main)
             .removeDuplicates()
             .map { URL(string: $0) != nil }
             .eraseToAnyPublisher()
@@ -106,7 +106,7 @@ final class AddBookmarkViewModel: ObservableObject {
     private func isTitleValidPublisher(
     ) -> AnyPublisher<Bool, Never> {
         $title
-            .debounce(for: 0.3, scheduler: RunLoop.main)
+            .debounce(for: 0.3, scheduler: DispatchQueue.main)
             .removeDuplicates()
             .map { !$0.isEmpty }
             .eraseToAnyPublisher()

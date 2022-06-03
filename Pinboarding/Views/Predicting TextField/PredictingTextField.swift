@@ -33,7 +33,7 @@ struct PredictingTextField: View {
         self._predictions = predictions
 
         matchingPredictionsPublisher()
-            .receive(on: RunLoop.main)
+            .receive(on: DispatchQueue.main)
             .assign(to: \.predictions, on: self)
             .store(in: &cancellables)
     }

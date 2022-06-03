@@ -23,8 +23,13 @@ struct LoginView: View {
             Text("Pinboarding uses auth token to access Pinboard.")
                 .font(.footnote)
 
-            Link("View your API key.", destination: URL(string: "https://pinboard.in/settings/password")!)
-                .font(.callout)
+            Link(
+                "View your API key.",
+                destination: URL(
+                    string: "https://pinboard.in/settings/password"
+                )!
+            )
+            .font(.callout)
 
             SecureField(
                 "Auth Token",

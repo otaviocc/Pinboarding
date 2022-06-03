@@ -11,20 +11,23 @@ final class ViewModelFactory: ObservableObject {
         self.container = container
     }
 
-    func makeAddBookmarkViewModel() -> AddBookmarkViewModel {
+    func makeAddBookmarkViewModel(
+    ) -> AddBookmarkViewModel {
         AddBookmarkViewModel(
             repository: container.resolve(),
             settingsStore: container.resolve()
         )
     }
 
-    func makeRefreshViewModel() -> RefreshViewModel {
+    func makeRefreshViewModel(
+    ) -> RefreshViewModel {
         RefreshViewModel(
             repository: container.resolve()
         )
     }
 
-    func makeGeneralViewModel() -> GeneralViewModel {
+    func makeGeneralViewModel(
+    ) -> GeneralViewModel {
         GeneralViewModel(
             settingsStore: container.resolve()
         )
@@ -38,17 +41,20 @@ final class ViewModelFactory: ObservableObject {
         )
     }
 
-    func makeMyBookmarksSectionViewModel() -> MyBookmarksSectionViewModel {
+    func makeMyBookmarksSectionViewModel(
+    ) -> MyBookmarksSectionViewModel {
         MyBookmarksSectionViewModel()
     }
 
-    func makeLoginViewModel() -> LoginViewModel {
+    func makeLoginViewModel(
+    ) -> LoginViewModel {
         LoginViewModel(
             tokenStore: container.resolve()
         )
     }
 
-    func makeSidebarViewModel() -> SidebarViewModel {
+    func makeSidebarViewModel(
+    ) -> SidebarViewModel {
         let searchStore: SearchStore = container.resolve()
         let repository: PinboardRepository = container.resolve()
         let publisher = repository.networkActivityPublisher()

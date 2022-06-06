@@ -16,7 +16,8 @@ final class PreviewAppEnvironment {
 
     // MARK: - Life cycle
 
-    init() {
+    init(
+    ) {
         container.register(
             type: SearchStore.self,
             allocation: .static

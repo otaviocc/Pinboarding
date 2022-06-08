@@ -33,7 +33,7 @@ struct SettingsView: View {
             .tag(SettingsTab.general)
         }
         .padding()
-        .frame(width: 500, height: 200)
+        .frame(width: 500)
     }
 }
 

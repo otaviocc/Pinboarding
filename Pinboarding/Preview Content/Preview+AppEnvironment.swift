@@ -10,7 +10,7 @@ final class PreviewAppEnvironment {
 
     var repository: PinboardRepository { container.resolve() }
     var settingsStore: SettingsStore { container.resolve() }
-    var tokenStore: AnyTokenStore { container.resolve() }
+    var tokenStore: TokenStoreProtocol { container.resolve() }
     var searchStore: SearchStore { container.resolve() }
     var persistenceService: PersistenceServiceProtocol { container.resolve() }
 
@@ -33,13 +33,11 @@ final class PreviewAppEnvironment {
         }
 
         container.register(
-            type: AnyTokenStore.self,
+            type: TokenStoreProtocol.self,
             allocation: .static
         ) { _ in
-            AnyTokenStore(
-                Preview.makeTokenStore(
-                    authToken: "token"
-                )
+            Preview.makeTokenStore(
+                authToken: "token"
             )
         }
 
@@ -58,8 +56,7 @@ final class PreviewAppEnvironment {
         ) { container in
             PinboardAPIFactory().makePinboardAPIClient(
                 userToken: {
-                    let tokenStore: AnyTokenStore = container.resolve()
-                    return tokenStore.authToken
+                    (container.resolve() as TokenStoreProtocol).authToken
                 }
             )
         }

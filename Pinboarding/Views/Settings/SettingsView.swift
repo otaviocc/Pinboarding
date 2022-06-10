@@ -46,17 +46,13 @@ struct SettingsView_Previews: PreviewProvider {
             SettingsView()
                 .preferredColorScheme(.light)
                 .environmentObject(
-                    AnyTokenStore(
-                        Preview.makeTokenStore(authToken: "valid:token")
-                    )
+                    Preview.makeTokenStore(authToken: "valid:token")
                 )
 
             SettingsView()
                 .preferredColorScheme(.dark)
                 .environmentObject(
-                    AnyTokenStore(
-                        Preview.makeTokenStore(authToken: "invalid_token")
-                    )
+                    Preview.makeTokenStore(authToken: "invalid_token")
                 )
         }
         .environmentObject(previewAppEnvironment.settingsStore)

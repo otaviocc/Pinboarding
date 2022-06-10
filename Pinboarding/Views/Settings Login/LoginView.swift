@@ -62,18 +62,14 @@ struct LoginView_Previews: PreviewProvider {
         Group {
             LoginView(
                 viewModel: LoginViewModel(
-                    tokenStore: AnyTokenStore(
-                        Preview.makeTokenStore(authToken: "valid:token")
-                    )
+                    tokenStore: Preview.makeTokenStore(authToken: "valid:token")
                 )
             )
             .preferredColorScheme(.light)
 
             LoginView(
                 viewModel: LoginViewModel(
-                    tokenStore: AnyTokenStore(
-                        Preview.makeTokenStore(authToken: "invalidtoken")
-                    )
+                    tokenStore: Preview.makeTokenStore(authToken: "invalidtoken")
                 )
             )
             .preferredColorScheme(.dark)

@@ -35,12 +35,10 @@ final class PinboardingAppEnvironment {
         }
 
         container.register(
-            type: AnyTokenStore.self,
+            type: TokenStoreProtocol.self,
             allocation: .static
         ) { _ in
-            AnyTokenStore(
-                SecureStore()
-            )
+            SecureStore()
         }
 
         container.register(
@@ -59,7 +57,7 @@ final class PinboardingAppEnvironment {
             PinboardAPIFactory()
                 .makePinboardAPIClient(
                     userToken: {
-                        (container.resolve() as AnyTokenStore).authToken
+                        (container.resolve() as TokenStoreProtocol).authToken
                     }
                 )
         }

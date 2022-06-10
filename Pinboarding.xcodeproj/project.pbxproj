@@ -36,7 +36,6 @@
 		AE8384182597B5AE00A4C5A7 /* BookmarksListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8384172597B5AE00A4C5A7 /* BookmarksListView.swift */; };
 		AE8F4DD925BD93A3007E6053 /* Preview+TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F4DD825BD93A3007E6053 /* Preview+TokenStore.swift */; };
 		AE8F4DDD25BD9687007E6053 /* TokenStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F4DDC25BD9687007E6053 /* TokenStoreProtocol.swift */; };
-		AE8F4DE025BD96A4007E6053 /* AnyTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE8F4DDF25BD96A4007E6053 /* AnyTokenStore.swift */; };
 		AE9541EB259AB01A00B1AA15 /* NetworkActivityEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9541EA259AB01A00B1AA15 /* NetworkActivityEvent.swift */; };
 		AE9541EE259AC30600B1AA15 /* Preview+Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9541ED259AC30600B1AA15 /* Preview+Networking.swift */; };
 		AE9541F3259B2D1E00B1AA15 /* TagsSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE9541F2259B2D1E00B1AA15 /* TagsSectionView.swift */; };
@@ -110,7 +109,6 @@
 		AE8384172597B5AE00A4C5A7 /* BookmarksListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarksListView.swift; sourceTree = "<group>"; };
 		AE8F4DD825BD93A3007E6053 /* Preview+TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+TokenStore.swift"; sourceTree = "<group>"; };
 		AE8F4DDC25BD9687007E6053 /* TokenStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStoreProtocol.swift; sourceTree = "<group>"; };
-		AE8F4DDF25BD96A4007E6053 /* AnyTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnyTokenStore.swift; sourceTree = "<group>"; };
 		AE9541EA259AB01A00B1AA15 /* NetworkActivityEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActivityEvent.swift; sourceTree = "<group>"; };
 		AE9541ED259AC30600B1AA15 /* Preview+Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Networking.swift"; sourceTree = "<group>"; };
 		AE9541F2259B2D1E00B1AA15 /* TagsSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsSectionView.swift; sourceTree = "<group>"; };
@@ -565,7 +563,6 @@
 		AEEBE55725E94077009A0404 /* Token */ = {
 			isa = PBXGroup;
 			children = (
-				AE8F4DDF25BD96A4007E6053 /* AnyTokenStore.swift */,
 				AEED4D6F25BB7CFB00756570 /* SecureStore.swift */,
 				AE8F4DDC25BD9687007E6053 /* TokenStoreProtocol.swift */,
 			);
@@ -725,7 +722,6 @@
 				AEC4A94F259B9F09000C65A8 /* SafariButton.swift in Sources */,
 				AEC4A953259B9F38000C65A8 /* ShareButton.swift in Sources */,
 				AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */,
-				AE8F4DE025BD96A4007E6053 /* AnyTokenStore.swift in Sources */,
 				AEBFB699259413C8001626AA /* NSSortDescriptor+App.swift in Sources */,
 				AE628CC6258FA2D300F91800 /* SettingsStoreChange.swift in Sources */,
 				AECC8C0725F8E16C008568EE /* QRCodeView.swift in Sources */,

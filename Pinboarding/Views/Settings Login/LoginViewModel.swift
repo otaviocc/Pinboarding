@@ -9,13 +9,13 @@ final class LoginViewModel: ObservableObject {
     @Published private(set) var authTokenMessage: String = ""
     @Published private(set) var isValid = false
 
-    private let tokenStore: AnyTokenStore
+    private var tokenStore: TokenStoreProtocol
     private var cancellables = Set<AnyCancellable>()
 
     // MARK: - Life cycle
 
     init(
-        tokenStore: AnyTokenStore
+        tokenStore: TokenStoreProtocol
     ) {
         self.tokenStore = tokenStore
         self.authToken = tokenStore.authToken ?? ""

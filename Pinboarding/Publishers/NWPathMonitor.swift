@@ -5,7 +5,7 @@ extension NWPathMonitor {
 
     public func pathPublisher(
         queue: DispatchQueue = .global(qos: .background)
-    ) -> AnyPublisher<NWPath, Never> {
+    ) -> AnyPublisher<NWPath.Status, Never> {
         PathMonitorPublisher(
             monitor: self,
             queue: queue
@@ -20,7 +20,7 @@ extension NWPathMonitor {
 
         // MARK: - Nested types
 
-        public typealias Output = NWPath
+        public typealias Output = NWPath.Status
         public typealias Failure = Never
 
         // MARK: - Properties
@@ -55,7 +55,7 @@ extension NWPathMonitor {
         }
     }
 
-    private final class PathMonitorSubscription<S: Subscriber>: Subscription where S.Input == NWPath {
+    private final class PathMonitorSubscription<S: Subscriber>: Subscription where S.Input == NWPath.Status {
 
         // MARK: - Nested types
 
@@ -88,7 +88,7 @@ extension NWPathMonitor {
             }
 
             monitor.pathUpdateHandler = { path in
-                _ = self.subscriber.receive(path)
+                _ = self.subscriber.receive(path.status)
             }
 
             monitor.start(

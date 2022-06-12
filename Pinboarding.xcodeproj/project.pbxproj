@@ -340,7 +340,7 @@
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
 				AE83841A2597B63400A4C5A7 /* Bookmarks List */,
 				AE494F40258ABE5200CFECB6 /* Main */,
-				B58526E92855F15200853428 /* Offline */,
+				B58526E92855F15200853428 /* Offline Button */,
 				AED88E15264E9E6000EE0CB3 /* Predicting TextField */,
 				AE9F993C25A15F58001D2889 /* Private */,
 				AECC8C0525F8E158008568EE /* QRCode */,
@@ -591,13 +591,13 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
-		B58526E92855F15200853428 /* Offline */ = {
+		B58526E92855F15200853428 /* Offline Button */ = {
 			isa = PBXGroup;
 			children = (
 				B58526EA2855F16C00853428 /* OfflineViewModel.swift */,
 				B58526EC2855F17600853428 /* OfflineView.swift */,
 			);
-			path = Offline;
+			path = "Offline Button";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

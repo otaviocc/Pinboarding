@@ -1,5 +1,6 @@
 import Combine
 import MicroContainer
+import Network
 
 final class ViewModelFactory: ObservableObject {
 
@@ -50,6 +51,16 @@ final class ViewModelFactory: ObservableObject {
     ) -> LoginViewModel {
         LoginViewModel(
             tokenStore: container.resolve()
+        )
+    }
+
+    func makeOfflineViewModel(
+    ) -> OfflineViewModel {
+        let monitor: NWPathMonitor = container.resolve()
+        let publisher = monitor.pathPublisher()
+
+        return OfflineViewModel(
+            pathMonitorPublisher: publisher
         )
     }
 

@@ -2,6 +2,7 @@ import Combine
 import MicroClient
 import MicroPinboard
 import MicroContainer
+import Network
 
 final class PinboardingAppEnvironment {
 
@@ -80,6 +81,13 @@ final class PinboardingAppEnvironment {
                 networkService: container.resolve(),
                 persistenceService: container.resolve()
             )
+        }
+
+        container.register(
+            type: NWPathMonitor.self,
+            allocation: .static
+        ) { _ in
+            NWPathMonitor()
         }
 
         container.register(

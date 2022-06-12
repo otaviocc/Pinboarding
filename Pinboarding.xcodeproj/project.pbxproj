@@ -71,6 +71,8 @@
 		AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */; };
 		AEF8A7B925C154A300E081B5 /* Preview+SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */; };
 		B5308B1E2841DE87006A9B11 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308B1D2841DE87006A9B11 /* ViewModelFactory.swift */; };
+		B58526EB2855F16C00853428 /* OfflineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58526EA2855F16C00853428 /* OfflineViewModel.swift */; };
+		B58526ED2855F17600853428 /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58526EC2855F17600853428 /* OfflineView.swift */; };
 		B5CE3A522838D2000014FE73 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */; };
 		B5F2203528413859003A667E /* MicroContainer in Frameworks */ = {isa = PBXBuildFile; productRef = B5F2203428413859003A667E /* MicroContainer */; };
 		E245D1AA2848B8970085DF60 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E245D1A92848B8970085DF60 /* MicroPinboard */; };
@@ -144,6 +146,8 @@
 		AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkViewModel.swift; sourceTree = "<group>"; };
 		AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+SearchStore.swift"; sourceTree = "<group>"; };
 		B5308B1D2841DE87006A9B11 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
+		B58526EA2855F16C00853428 /* OfflineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewModel.swift; sourceTree = "<group>"; };
+		B58526EC2855F17600853428 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,6 +340,7 @@
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
 				AE83841A2597B63400A4C5A7 /* Bookmarks List */,
 				AE494F40258ABE5200CFECB6 /* Main */,
+				B58526E92855F15200853428 /* Offline */,
 				AED88E15264E9E6000EE0CB3 /* Predicting TextField */,
 				AE9F993C25A15F58001D2889 /* Private */,
 				AECC8C0525F8E158008568EE /* QRCode */,
@@ -586,6 +591,15 @@
 			path = Factories;
 			sourceTree = "<group>";
 		};
+		B58526E92855F15200853428 /* Offline */ = {
+			isa = PBXGroup;
+			children = (
+				B58526EA2855F16C00853428 /* OfflineViewModel.swift */,
+				B58526EC2855F17600853428 /* OfflineView.swift */,
+			);
+			path = Offline;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -663,6 +677,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58526EB2855F16C00853428 /* OfflineViewModel.swift in Sources */,
 				AE6D05CE25BC920B00BEDDD4 /* SecureStorage.swift in Sources */,
 				AEC6228D2591DB03003FDE66 /* NetworkService.swift in Sources */,
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
@@ -672,6 +687,7 @@
 				AE2E0AA525AB71530077CBDC /* BookmarkCommands.swift in Sources */,
 				AE12D7832597DDCB007A9EFB /* BookmarksListViewModel.swift in Sources */,
 				AEA5340425A4E23200AF2481 /* SearchField.swift in Sources */,
+				B58526ED2855F17600853428 /* OfflineView.swift in Sources */,
 				AE10FAEC2594D54500C79B82 /* Bookmark+CoreDataProperties.swift in Sources */,
 				AE10FAEA2594D54500C79B82 /* Tag+CoreDataClass.swift in Sources */,
 				AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */,

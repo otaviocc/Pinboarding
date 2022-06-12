@@ -20,6 +20,10 @@ struct MainView: View {
         }
         .toolbar {
             ToolbarItemGroup {
+                OfflineView(
+                    viewModel: viewModelFactory.makeOfflineViewModel()
+                )
+
                 RefreshView(
                     viewModel: viewModelFactory.makeRefreshViewModel()
                 )
@@ -54,12 +58,13 @@ struct MainView_Previews: PreviewProvider {
             MainView()
                 .preferredColorScheme(.dark)
         }
+        .environmentObject(previewAppEnvironment.viewModelFactory)
         .environmentObject(previewAppEnvironment.settingsStore)
         .environmentObject(previewAppEnvironment.searchStore)
         .environmentObject(previewAppEnvironment.repository)
         .environment(
             \.managedObjectContext,
-            previewAppEnvironment.persistenceService.container.viewContext
+             previewAppEnvironment.persistenceService.container.viewContext
         )
     }
 }

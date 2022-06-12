@@ -5,11 +5,12 @@ extension NWPathMonitor {
 
     public func pathPublisher(
         queue: DispatchQueue = .global(qos: .background)
-    ) -> NWPathMonitor.PathMonitorPublisher {
+    ) -> AnyPublisher<NWPath, Never> {
         PathMonitorPublisher(
             monitor: self,
             queue: queue
         )
+        .eraseToAnyPublisher()
     }
 }
 

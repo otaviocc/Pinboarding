@@ -8,4 +8,5 @@ enum Icon {
     static let browser = "safari"
     static let share = "square.and.arrow.up"
     static let tag = "tag"
+    static let alert = "exclamationmark.triangle"
 }

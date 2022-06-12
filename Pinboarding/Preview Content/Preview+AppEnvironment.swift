@@ -8,6 +8,7 @@ final class PreviewAppEnvironment {
 
     private let container = DependencyContainer()
 
+    var viewModelFactory: ViewModelFactory { container.resolve() }
     var repository: PinboardRepository { container.resolve() }
     var settingsStore: SettingsStore { container.resolve() }
     var tokenStore: TokenStoreProtocol { container.resolve() }
@@ -78,6 +79,15 @@ final class PreviewAppEnvironment {
             PinboardRepository(
                 networkService: container.resolve(),
                 persistenceService: container.resolve()
+            )
+        }
+
+        container.register(
+            type: ViewModelFactory.self,
+            allocation: .static
+        ) { container in
+            ViewModelFactory(
+                container: container
             )
         }
     }

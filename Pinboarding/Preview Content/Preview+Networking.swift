@@ -12,6 +12,8 @@ extension Preview {
             .eraseToAnyPublisher()
     }
 
+    /// Publishes network status for
+    /// Swift UI Previews.
     static func makeNetworkStatusPublisher(
         isOnline: Bool
     ) -> AnyPublisher<NWPath.Status, Never> {

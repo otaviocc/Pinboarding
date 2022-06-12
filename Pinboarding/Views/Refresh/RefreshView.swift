@@ -24,6 +24,7 @@ struct RefreshView: View {
             }
         )
         .disabled(viewModel.isReloading)
+        .help("Force refresh")
     }
 }
 

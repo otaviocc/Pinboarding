@@ -27,13 +27,10 @@ struct MainView: View {
                 RefreshView(
                     viewModel: viewModelFactory.makeRefreshViewModel()
                 )
-                .help("Force refresh")
 
-                Button(
-                    action: { showAddBookmark.toggle() },
-                    label: { Image(systemName: Icon.addBookmark) }
+                AddView(
+                    showAddBookmark: $showAddBookmark
                 )
-                .help("Add a new bookmark")
                 .sheet(isPresented: $showAddBookmark) {
                     AddBookmarkView(
                         viewModel: viewModelFactory.makeAddBookmarkViewModel(),

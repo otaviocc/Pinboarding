@@ -70,6 +70,7 @@
 		AEF4F4782589529200FF8F45 /* AddBookmarkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */; };
 		AEF4F4792589529200FF8F45 /* AddBookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */; };
 		AEF8A7B925C154A300E081B5 /* Preview+SearchStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */; };
+		B52AFFAF28560FF10074CF65 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B52AFFAE28560FF10074CF65 /* AddView.swift */; };
 		B5308B1E2841DE87006A9B11 /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5308B1D2841DE87006A9B11 /* ViewModelFactory.swift */; };
 		B58526EB2855F16C00853428 /* OfflineViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58526EA2855F16C00853428 /* OfflineViewModel.swift */; };
 		B58526ED2855F17600853428 /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58526EC2855F17600853428 /* OfflineView.swift */; };
@@ -145,6 +146,7 @@
 		AEF4F4762589529200FF8F45 /* AddBookmarkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkView.swift; sourceTree = "<group>"; };
 		AEF4F4772589529200FF8F45 /* AddBookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBookmarkViewModel.swift; sourceTree = "<group>"; };
 		AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+SearchStore.swift"; sourceTree = "<group>"; };
+		B52AFFAE28560FF10074CF65 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		B5308B1D2841DE87006A9B11 /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
 		B58526EA2855F16C00853428 /* OfflineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewModel.swift; sourceTree = "<group>"; };
 		B58526EC2855F17600853428 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
@@ -335,6 +337,7 @@
 		AE7930152586837900A68947 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B52AFFAD28560FE80074CF65 /* Add Button */,
 				AE3675FF258AAF6700F57A3C /* Add Bookmark */,
 				AE367606258AAF9B00F57A3C /* Bookmark */,
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
@@ -583,6 +586,14 @@
 			path = "Settings General";
 			sourceTree = "<group>";
 		};
+		B52AFFAD28560FE80074CF65 /* Add Button */ = {
+			isa = PBXGroup;
+			children = (
+				B52AFFAE28560FF10074CF65 /* AddView.swift */,
+			);
+			path = "Add Button";
+			sourceTree = "<group>";
+		};
 		B5308B1C2841DE76006A9B11 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -727,6 +738,7 @@
 				AE0F3A5E258A07CA00227428 /* BookmarksView.swift in Sources */,
 				AE10FAEB2594D54500C79B82 /* Tag+CoreDataProperties.swift in Sources */,
 				AED5883A25FA2F9100E31B33 /* Icon.swift in Sources */,
+				B52AFFAF28560FF10074CF65 /* AddView.swift in Sources */,
 				AE5781F8258DE42F00A524F4 /* LoginView.swift in Sources */,
 				AEC622892591DA6F003FDE66 /* PersistenceService.swift in Sources */,
 				AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */,

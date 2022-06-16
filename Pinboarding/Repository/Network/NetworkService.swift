@@ -154,7 +154,7 @@ final class NetworkService: NetworkServiceProtocol {
                             let allBookmarks = try await self.allBookmarks()
                             promise(.success(allBookmarks))
                         } catch {
-                            print("Error fetching recent bookmarks. Reason: \(error)")
+                            print("Recent bookmarks: \(error)")
                         }
                     }
                 }

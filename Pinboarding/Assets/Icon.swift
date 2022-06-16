@@ -9,4 +9,8 @@ enum Icon {
     static let share = "square.and.arrow.up"
     static let tag = "tag"
     static let alert = "exclamationmark.triangle"
+    static let allBookmarks = "bookmark"
+    static let publicBookmarks = "person.2"
+    static let privateBookmarks = "lock"
+    static let unreadBookmarks = "envelope.badge"
 }

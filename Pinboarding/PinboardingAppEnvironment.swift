@@ -84,7 +84,7 @@ final class PinboardingAppEnvironment {
         }
 
         container.register(
-            type: NWPathMonitor.self,
+            type: NWPathMonitorPathPublishing.self,
             allocation: .static
         ) { _ in
             NWPathMonitor()

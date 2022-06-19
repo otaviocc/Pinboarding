@@ -84,10 +84,12 @@ final class PreviewAppEnvironment {
         }
 
         container.register(
-            type: NWPathMonitor.self,
+            type: NWPathMonitorPathPublishing.self,
             allocation: .static
         ) { _ in
-            NWPathMonitor()
+            Preview.makePathMonitorPublisher(
+                isOnline: false
+            )
         }
 
         container.register(

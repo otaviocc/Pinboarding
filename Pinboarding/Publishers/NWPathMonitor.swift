@@ -1,10 +1,24 @@
 import Combine
 import Network
 
-extension NWPathMonitor {
+protocol NWPathMonitorPathPublishing {
+    func pathPublisher(
+    ) -> AnyPublisher<NWPath.Status, Never>
+
+    func pathPublisher(
+        queue: DispatchQueue
+    ) -> AnyPublisher<NWPath.Status, Never>
+}
+
+extension NWPathMonitor: NWPathMonitorPathPublishing {
+
+    func pathPublisher(
+    )  -> AnyPublisher<NWPath.Status, Never> {
+        pathPublisher(queue:  .global(qos: .background))
+    }
 
     public func pathPublisher(
-        queue: DispatchQueue = .global(qos: .background)
+        queue: DispatchQueue
     ) -> AnyPublisher<NWPath.Status, Never> {
         PathMonitorPublisher(
             monitor: self,

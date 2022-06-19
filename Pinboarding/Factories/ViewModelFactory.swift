@@ -61,11 +61,10 @@ final class ViewModelFactory: ObservableObject {
 
     func makeOfflineViewModel(
     ) -> OfflineViewModel {
-        let monitor: NWPathMonitor = container.resolve()
-        let publisher = monitor.pathPublisher()
+        let publisher: NWPathMonitorPathPublishing = container.resolve()
 
         return OfflineViewModel(
-            pathMonitorPublisher: publisher
+            pathMonitorPublisher: publisher.pathPublisher()
         )
     }
 

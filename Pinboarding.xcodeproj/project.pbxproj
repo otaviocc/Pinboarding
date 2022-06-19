@@ -79,6 +79,7 @@
 		E245D1AA2848B8970085DF60 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E245D1A92848B8970085DF60 /* MicroPinboard */; };
 		EAD3F678285F1B6D008C4332 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F677285F1B6D008C4332 /* MainViewModel.swift */; };
 		EAD3F67A285F233E008C4332 /* Preview+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */; };
+		EAD3F67C285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F67B285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -155,6 +156,7 @@
 		B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		EAD3F677285F1B6D008C4332 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Dependencies.swift"; sourceTree = "<group>"; };
+		EAD3F67B285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+NWPathMonitorPathPublishing.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -394,6 +396,7 @@
 				AE78871D261B256700FBCC38 /* Preview+AppEnvironment.swift */,
 				EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */,
 				AE9541ED259AC30600B1AA15 /* Preview+Networking.swift */,
+				EAD3F67B285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift */,
 				AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */,
 				AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */,
 				AE83840F25979D1100A4C5A7 /* Preview+Settings.swift */,
@@ -733,6 +736,7 @@
 				AE7EE6BA25A9B3C0004EDEB9 /* TwoColumnsAlignment.swift in Sources */,
 				AEF8A7B925C154A300E081B5 /* Preview+SearchStore.swift in Sources */,
 				AE793004258675DB00A68947 /* PinboardingApp.swift in Sources */,
+				EAD3F67C285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift in Sources */,
 				AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */,
 				AE8384182597B5AE00A4C5A7 /* BookmarksListView.swift in Sources */,
 				AEC72E0E259780FF008C7FF3 /* Preview+Persistence.swift in Sources */,

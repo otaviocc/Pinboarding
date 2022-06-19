@@ -56,7 +56,7 @@ struct SidebarView_Previews: PreviewProvider {
 
         Group {
             SidebarView(
-                viewModel: SidebarViewModel(
+                viewModel: .init(
                     networkActivityPublisher: notLoadingPublisher,
                     searchStore: previewAppEnvironment.searchStore
                 )
@@ -65,7 +65,7 @@ struct SidebarView_Previews: PreviewProvider {
             .frame(width: 200)
 
             SidebarView(
-                viewModel: SidebarViewModel(
+                viewModel: .init(
                     networkActivityPublisher: loadingPublisher,
                     searchStore: previewAppEnvironment.searchStore
                 )

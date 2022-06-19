@@ -38,4 +38,3 @@ final class SidebarViewModel: ObservableObject {
             .eraseToAnyPublisher()
     }
 }
-

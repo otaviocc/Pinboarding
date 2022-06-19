@@ -64,13 +64,6 @@ struct MainView_Previews: PreviewProvider {
             MainView(viewModel: .init())
                 .preferredColorScheme(.dark)
         }
-        .environmentObject(previewAppEnvironment.viewModelFactory)
-        .environmentObject(previewAppEnvironment.settingsStore)
-        .environmentObject(previewAppEnvironment.searchStore)
-        .environmentObject(previewAppEnvironment.repository)
-        .environment(
-            \.managedObjectContext,
-             previewAppEnvironment.persistenceService.container.viewContext
-        )
+        .withPreviewDependencies()
     }
 }

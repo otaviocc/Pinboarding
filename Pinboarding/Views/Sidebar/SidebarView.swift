@@ -73,10 +73,6 @@ struct SidebarView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
             .frame(width: 200)
         }
-        .environmentObject(previewAppEnvironment.searchStore)
-        .environment(
-            \.managedObjectContext,
-            previewAppEnvironment.persistenceService.container.viewContext
-        )
+        .withPreviewDependencies()
     }
 }

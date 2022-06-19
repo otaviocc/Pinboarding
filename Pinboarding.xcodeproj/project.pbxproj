@@ -78,6 +78,7 @@
 		B5F2203528413859003A667E /* MicroContainer in Frameworks */ = {isa = PBXBuildFile; productRef = B5F2203428413859003A667E /* MicroContainer */; };
 		E245D1AA2848B8970085DF60 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E245D1A92848B8970085DF60 /* MicroPinboard */; };
 		EAD3F678285F1B6D008C4332 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F677285F1B6D008C4332 /* MainViewModel.swift */; };
+		EAD3F67A285F233E008C4332 /* Preview+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -153,6 +154,7 @@
 		B58526EC2855F17600853428 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		EAD3F677285F1B6D008C4332 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
+		EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Dependencies.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -390,6 +392,7 @@
 			children = (
 				AEC72E102597890E008C7FF3 /* Preview.swift */,
 				AE78871D261B256700FBCC38 /* Preview+AppEnvironment.swift */,
+				EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */,
 				AE9541ED259AC30600B1AA15 /* Preview+Networking.swift */,
 				AEC72E0D259780FF008C7FF3 /* Preview+Persistence.swift */,
 				AEF8A7B825C154A300E081B5 /* Preview+SearchStore.swift */,
@@ -608,8 +611,8 @@
 		B58526E92855F15200853428 /* Offline Button */ = {
 			isa = PBXGroup;
 			children = (
-				B58526EA2855F16C00853428 /* OfflineViewModel.swift */,
 				B58526EC2855F17600853428 /* OfflineView.swift */,
+				B58526EA2855F16C00853428 /* OfflineViewModel.swift */,
 			);
 			path = "Offline Button";
 			sourceTree = "<group>";
@@ -748,6 +751,7 @@
 				AEBFB68A25940F4D001626AA /* PinboardingAppEnvironment.swift in Sources */,
 				AE83841025979D1100A4C5A7 /* Preview+Settings.swift in Sources */,
 				AED88E17264E9E9100EE0CB3 /* PredictingTextField.swift in Sources */,
+				EAD3F67A285F233E008C4332 /* Preview+Dependencies.swift in Sources */,
 				AE0F3B19258A339C00227428 /* SidebarPrimaryItem.swift in Sources */,
 				AEF0DF09258EC8A8000F4BFF /* GeneralView.swift in Sources */,
 				AE9541EB259AB01A00B1AA15 /* NetworkActivityEvent.swift in Sources */,

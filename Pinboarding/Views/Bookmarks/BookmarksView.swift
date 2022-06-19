@@ -37,10 +37,6 @@ struct BookmarksView_Previews: PreviewProvider {
                 .preferredColorScheme(.dark)
                 .frame(width: 320)
         }
-        .environmentObject(previewAppEnvironment.searchStore)
-        .environment(
-            \.managedObjectContext,
-            previewAppEnvironment.persistenceService.container.viewContext
-        )
+        .withPreviewDependencies()
     }
 }

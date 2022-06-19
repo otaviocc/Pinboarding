@@ -55,6 +55,6 @@ struct SettingsView_Previews: PreviewProvider {
                     Preview.makeTokenStore(authToken: "invalid_token")
                 )
         }
-        .environmentObject(previewAppEnvironment.settingsStore)
+        .withPreviewDependencies()
     }
 }

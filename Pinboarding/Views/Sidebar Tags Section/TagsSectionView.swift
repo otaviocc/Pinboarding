@@ -48,10 +48,7 @@ struct TagsSectionView_Previews: PreviewProvider {
                     .preferredColorScheme(.dark)
             }
         }
+        .withPreviewDependencies()
         .frame(width: 200)
-        .environment(
-            \.managedObjectContext,
-            previewAppEnvironment.persistenceService.container.viewContext
-        )
     }
 }

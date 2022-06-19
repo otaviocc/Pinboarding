@@ -77,6 +77,7 @@
 		B5CE3A522838D2000014FE73 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */; };
 		B5F2203528413859003A667E /* MicroContainer in Frameworks */ = {isa = PBXBuildFile; productRef = B5F2203428413859003A667E /* MicroContainer */; };
 		E245D1AA2848B8970085DF60 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E245D1A92848B8970085DF60 /* MicroPinboard */; };
+		EAD3F678285F1B6D008C4332 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F677285F1B6D008C4332 /* MainViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -151,6 +152,7 @@
 		B58526EA2855F16C00853428 /* OfflineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewModel.swift; sourceTree = "<group>"; };
 		B58526EC2855F17600853428 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		EAD3F677285F1B6D008C4332 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -275,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				AE793005258675DB00A68947 /* MainView.swift */,
+				EAD3F677285F1B6D008C4332 /* MainViewModel.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -691,6 +694,7 @@
 				B58526EB2855F16C00853428 /* OfflineViewModel.swift in Sources */,
 				AE6D05CE25BC920B00BEDDD4 /* SecureStorage.swift in Sources */,
 				AEC6228D2591DB03003FDE66 /* NetworkService.swift in Sources */,
+				EAD3F678285F1B6D008C4332 /* MainViewModel.swift in Sources */,
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
 				AE039704258E5B3900D744FB /* LoginViewModel.swift in Sources */,
 				AE00EA07258AD5B1002D9558 /* PinboardRepository.swift in Sources */,

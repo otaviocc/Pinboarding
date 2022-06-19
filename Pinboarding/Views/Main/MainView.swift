@@ -1,3 +1,4 @@
+import Combine
 import SwiftUI
 import MicroContainer
 
@@ -6,7 +7,15 @@ struct MainView: View {
     // MARK: - Properties
 
     @EnvironmentObject private var viewModelFactory: ViewModelFactory
-    @State private var showAddBookmark = false
+    @ObservedObject private var viewModel: MainViewModel
+
+    // MARK: - Life cycle
+
+    init(
+        viewModel: MainViewModel
+    ) {
+        self.viewModel = viewModel
+    }
 
     // MARK: - Public
 
@@ -29,12 +38,12 @@ struct MainView: View {
                 )
 
                 AddView(
-                    showAddBookmark: $showAddBookmark
+                    showAddBookmark: $viewModel.showAddBookmark
                 )
-                .sheet(isPresented: $showAddBookmark) {
+                .sheet(isPresented: $viewModel.showAddBookmark) {
                     AddBookmarkView(
                         viewModel: viewModelFactory.makeAddBookmarkViewModel(),
-                        isPresented: $showAddBookmark
+                        isPresented: $viewModel.showAddBookmark
                     )
                     .frame(width: 640)
                 }
@@ -49,10 +58,10 @@ struct MainView_Previews: PreviewProvider {
 
     static var previews: some View {
         Group {
-            MainView()
+            MainView(viewModel: .init())
                 .preferredColorScheme(.light)
 
-            MainView()
+            MainView(viewModel: .init())
                 .preferredColorScheme(.dark)
         }
         .environmentObject(previewAppEnvironment.viewModelFactory)

@@ -11,13 +11,15 @@ import Foundation
 
     var body: some Scene {
         WindowGroup {
-            MainView()
-                .environmentObject(environment.viewModelFactory)
-                .environmentObject(environment.searchStore)
-                .environment(
-                    \.managedObjectContext,
-                     environment.persistenceService.container.viewContext
-                )
+            MainView(
+                viewModel: environment.viewModelFactory.makeMainViewModel()
+            )
+            .environmentObject(environment.viewModelFactory)
+            .environmentObject(environment.searchStore)
+            .environment(
+                \.managedObjectContext,
+                 environment.persistenceService.container.viewContext
+            )
         }
         .commands {
             SidebarCommands()

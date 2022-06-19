@@ -12,6 +12,11 @@ final class ViewModelFactory: ObservableObject {
         self.container = container
     }
 
+    func makeMainViewModel(
+    ) -> MainViewModel {
+        return MainViewModel()
+    }
+
     func makeAddBookmarkViewModel(
     ) -> AddBookmarkViewModel {
         AddBookmarkViewModel(

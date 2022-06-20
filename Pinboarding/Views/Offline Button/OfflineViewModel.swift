@@ -7,6 +7,14 @@ final class OfflineViewModel: ObservableObject {
 
     @Published private(set) var isOnline = false
 
+    var iconName: String {
+        isOnline ? Icon.online : Icon.alert
+    }
+
+    var iconTooltip: String {
+        isOnline ? "Online" : "Offline"
+    }
+
     private var monitorCancellable: Cancellable?
 
     // MARK: - Life cycle

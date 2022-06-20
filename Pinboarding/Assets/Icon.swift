@@ -13,4 +13,5 @@ enum Icon {
     static let publicBookmarks = "person.2"
     static let privateBookmarks = "lock"
     static let unreadBookmarks = "envelope.badge"
+    static let online = "cloud"
 }

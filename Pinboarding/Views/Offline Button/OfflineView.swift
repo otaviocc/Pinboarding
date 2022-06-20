@@ -17,17 +17,13 @@ struct OfflineView: View {
     // MARK: - Public
 
     var body: some View {
-        if !viewModel.isOnline {
-            Button(
-                action: { },
-                label: {
-                    Image(systemName: Icon.alert)
-                }
-            )
-            .help("Offline")
-        } else {
-            EmptyView()
-        }
+        Button(
+            action: { },
+            label: {
+                Image(systemName: viewModel.iconName)
+            }
+        )
+        .help(viewModel.iconTooltip)
     }
 }
 

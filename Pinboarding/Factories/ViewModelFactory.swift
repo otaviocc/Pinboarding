@@ -14,7 +14,7 @@ final class ViewModelFactory: ObservableObject {
 
     func makeMainViewModel(
     ) -> MainViewModel {
-        return MainViewModel()
+        MainViewModel()
     }
 
     func makeAddBookmarkViewModel(

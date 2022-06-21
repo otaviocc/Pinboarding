@@ -2,7 +2,7 @@ import Combine
 import Foundation
 import MicroPinboard
 
-final class PinboardRepository: ObservableObject {
+final class PinboardRepository {
 
     // MARK: - Properties
 

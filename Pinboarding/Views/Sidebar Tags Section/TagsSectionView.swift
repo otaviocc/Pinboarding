@@ -22,7 +22,8 @@ struct TagsSectionView: View {
                     label: {
                         SidebarItemView(
                             title: tag.name,
-                            iconName: Icon.tag
+                            iconName: Icon.tag,
+                            counter: String(tag.bookmarks.count)
                         )
                     }
                 )

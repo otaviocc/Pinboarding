@@ -6,10 +6,14 @@ protocol PersistenceServiceProtocol {
 
     var container: NSPersistentContainer { get }
 
+    /// Adds a new post to Core Data as a Bookmark.
     func appendNewPost(
         _ post: PostResponse
     )
 
+    /// Adds all posts to Core Data as Bookmarks,
+    /// removing from Core Data posts that are not
+    /// in the payload, and unused tags.
     func addAllPosts(
         _ posts: [PostResponse]
     )
@@ -44,7 +48,6 @@ final class PersistenceService: PersistenceServiceProtocol {
 
     // MARK: - Public
 
-    /// Adds a new post to Core Data as a Bookmark.
     func appendNewPost(
         _ post: PostResponse
     ) {
@@ -58,9 +61,6 @@ final class PersistenceService: PersistenceServiceProtocol {
         }
     }
 
-    /// Adds all posts to Core Data as Bookmarks,
-    /// removing from Core Data posts that are not
-    /// in the payload, and unused tags.
     func addAllPosts(
         _ posts: [PostResponse]
     ) {

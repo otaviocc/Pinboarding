@@ -1,6 +1,6 @@
 import Combine
 
-final class MyBookmarksSectionViewModel: ObservableObject {
+final class MyBookmarksSectionViewModel {
 
     // MARK: - Properties
 

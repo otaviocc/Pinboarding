@@ -1,7 +1,7 @@
 import Combine
 import Foundation
 
-final class SettingsStore: ObservableObject {
+final class SettingsStore {
 
     // MARK: - Nested types
 

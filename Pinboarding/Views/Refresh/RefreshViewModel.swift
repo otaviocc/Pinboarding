@@ -7,13 +7,13 @@ final class RefreshViewModel: ObservableObject {
 
     @Published private(set) var isReloading = false
 
-    private let repository: PinboardRepository
+    private let repository: PinboardRepositoryProtocol
     private var activityCancellable: AnyCancellable?
 
     // MARK: - Life cycle
 
     init(
-        repository: PinboardRepository
+        repository: PinboardRepositoryProtocol
     ) {
         self.repository = repository
 

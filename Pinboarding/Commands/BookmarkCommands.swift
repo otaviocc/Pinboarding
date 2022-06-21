@@ -4,12 +4,12 @@ struct BookmarkCommands: Commands {
 
     // MARK: - Properties
 
-    private let repository: PinboardRepository
+    private let repository: PinboardRepositoryProtocol
 
     // MARK: - Life cycle
 
     init(
-        repository: PinboardRepository
+        repository: PinboardRepositoryProtocol
     ) {
         self.repository = repository
     }

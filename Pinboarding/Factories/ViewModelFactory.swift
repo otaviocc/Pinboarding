@@ -71,7 +71,7 @@ final class ViewModelFactory: ObservableObject {
     func makeSidebarViewModel(
     ) -> SidebarViewModel {
         let searchStore: SearchStore = container.resolve()
-        let repository: PinboardRepository = container.resolve()
+        let repository: PinboardRepositoryProtocol = container.resolve()
         let publisher = repository.networkActivityPublisher()
 
         return SidebarViewModel(

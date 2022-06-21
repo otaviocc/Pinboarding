@@ -2,7 +2,32 @@ import Combine
 import Foundation
 import MicroPinboard
 
-final class PinboardRepository {
+protocol PinboardRepositoryProtocol {
+
+    /// Adds a new bookmark.
+    func addBookmark(
+        url: URL,
+        title: String,
+        description: String?,
+        tags: String?,
+        date: Date?,
+        replace: Bool,
+        shared: Bool,
+        toread: Bool
+    ) async throws
+
+    /// Forces an update without waiting for the next
+    /// x minutes to pass.
+    func forceRefreshBookmarks(
+    ) async
+
+    /// Publishes the network status to update the UI
+    /// during update requests.
+    func networkActivityPublisher(
+    ) -> AnyPublisher<NetworkActivityEvent, Never>
+}
+
+final class PinboardRepository: PinboardRepositoryProtocol {
 
     // MARK: - Properties
 
@@ -27,7 +52,6 @@ final class PinboardRepository {
             .store(in: &cancellables)
     }
 
-    /// Adds a new bookmark.
     func addBookmark(
         url: URL,
         title: String,
@@ -52,8 +76,6 @@ final class PinboardRepository {
         persistenceService.appendNewPost(bookmark)
     }
 
-    /// Forces an update without waiting for the next
-    /// x minutes to pass.
     func forceRefreshBookmarks(
     ) async {
         guard let bookmarks = try? await networkService.allBookmarks() else {
@@ -65,8 +87,6 @@ final class PinboardRepository {
         }
     }
 
-    /// Publishes the network status to update the UI
-    /// during update requests.
     func networkActivityPublisher(
     ) -> AnyPublisher<NetworkActivityEvent, Never> {
         networkService.networkActivityPublisher()

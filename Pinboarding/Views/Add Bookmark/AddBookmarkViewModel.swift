@@ -18,7 +18,7 @@ final class AddBookmarkViewModel: ObservableObject {
     @Published private(set) var titleMessage: String = ""
     @Published private(set) var hasSuggestions: Bool = false
 
-    private let repository: PinboardRepository
+    private let repository: PinboardRepositoryProtocol
     private let settingsStore: SettingsStore
     private var cancellables = Set<AnyCancellable>()
     private let dismissViewSubject =
@@ -27,7 +27,7 @@ final class AddBookmarkViewModel: ObservableObject {
     // MARK: - Life cycle
 
     init(
-        repository: PinboardRepository,
+        repository: PinboardRepositoryProtocol,
         settingsStore: SettingsStore
     ) {
         self.repository = repository
@@ -77,6 +77,8 @@ final class AddBookmarkViewModel: ObservableObject {
             title: title,
             description: description,
             tags: tags,
+            date: nil,
+            replace: false,
             shared: !isPrivate,
             toread: isToRead
         )

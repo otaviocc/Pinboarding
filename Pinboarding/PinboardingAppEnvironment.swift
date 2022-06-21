@@ -11,7 +11,7 @@ final class PinboardingAppEnvironment {
     private let container = DependencyContainer()
 
     var viewModelFactory: ViewModelFactory { container.resolve() }
-    var repository: PinboardRepository { container.resolve() }
+    var repository: PinboardRepositoryProtocol { container.resolve() }
     var searchStore: SearchStore { container.resolve() }
     var persistenceService: PersistenceServiceProtocol { container.resolve() }
 
@@ -74,7 +74,7 @@ final class PinboardingAppEnvironment {
         }
 
         container.register(
-            type: PinboardRepository.self,
+            type: PinboardRepositoryProtocol.self,
             allocation: .static
         ) { container in
             PinboardRepository(

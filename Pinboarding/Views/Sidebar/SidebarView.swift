@@ -19,9 +19,6 @@ struct SidebarView: View {
 
     var body: some View {
         VStack {
-            SearchField(searchTerm: $viewModel.currentSearchTerm)
-                .padding([.leading, .trailing, .bottom])
-
             List {
                 MyBookmarksSectionView(
                     viewModel: viewModelFactory.makeMyBookmarksSectionViewModel()

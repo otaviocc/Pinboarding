@@ -16,7 +16,8 @@ extension Preview {
             self.isOnline = isOnline
         }
 
-        func pathPublisher() -> AnyPublisher<NWPath.Status, Never> {
+        func pathPublisher(
+        ) -> AnyPublisher<NWPath.Status, Never> {
             pathPublisher(queue: .main)
         }
 

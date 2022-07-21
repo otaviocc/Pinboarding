@@ -20,7 +20,7 @@ struct OfflineView: View {
         Button(
             action: { },
             label: {
-                Image(systemName: viewModel.iconName)
+                Image(systemName: "circle")
             }
         )
         .help(viewModel.iconTooltip)

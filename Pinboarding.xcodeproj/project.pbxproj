@@ -76,7 +76,9 @@
 		B58526ED2855F17600853428 /* OfflineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B58526EC2855F17600853428 /* OfflineView.swift */; };
 		B5CE3A522838D2000014FE73 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */; };
 		B5F2203528413859003A667E /* MicroContainer in Frameworks */ = {isa = PBXBuildFile; productRef = B5F2203428413859003A667E /* MicroContainer */; };
+		E211258128891B8100ED217A /* SearchTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E211258028891B8100ED217A /* SearchTextView.swift */; };
 		E245D1AA2848B8970085DF60 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E245D1A92848B8970085DF60 /* MicroPinboard */; };
+		EA392DA1286E4B1700F1DF39 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA392DA0286E4B1700F1DF39 /* SearchBarViewModel.swift */; };
 		EAD3F678285F1B6D008C4332 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F677285F1B6D008C4332 /* MainViewModel.swift */; };
 		EAD3F67A285F233E008C4332 /* Preview+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */; };
 		EAD3F67C285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F67B285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift */; };
@@ -154,6 +156,8 @@
 		B58526EA2855F16C00853428 /* OfflineViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineViewModel.swift; sourceTree = "<group>"; };
 		B58526EC2855F17600853428 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
+		E211258028891B8100ED217A /* SearchTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextView.swift; sourceTree = "<group>"; };
+		EA392DA0286E4B1700F1DF39 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		EAD3F677285F1B6D008C4332 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Dependencies.swift"; sourceTree = "<group>"; };
 		EAD3F67B285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+NWPathMonitorPathPublishing.swift"; sourceTree = "<group>"; };
@@ -344,8 +348,8 @@
 		AE7930152586837900A68947 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B52AFFAD28560FE80074CF65 /* Add Button */,
 				AE3675FF258AAF6700F57A3C /* Add Bookmark */,
+				B52AFFAD28560FE80074CF65 /* Add Button */,
 				AE367606258AAF9B00F57A3C /* Bookmark */,
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
 				AE83841A2597B63400A4C5A7 /* Bookmarks List */,
@@ -357,6 +361,7 @@
 				AECC8C0925F945D8008568EE /* QRCode Button */,
 				AE9F994225A1ABD9001D2889 /* Refresh */,
 				AEC4A94D259B9EF7000C65A8 /* Safari Button */,
+				E211257F28891B7100ED217A /* Search Text */,
 				AEA5340225A4E20B00AF2481 /* SearchField */,
 				AE367600258AAF7600F57A3C /* Settings */,
 				AEF0DF05258EC88B000F4BFF /* Settings General */,
@@ -469,6 +474,7 @@
 			isa = PBXGroup;
 			children = (
 				AEA5340325A4E23200AF2481 /* SearchField.swift */,
+				EA392DA0286E4B1700F1DF39 /* SearchBarViewModel.swift */,
 			);
 			path = SearchField;
 			sourceTree = "<group>";
@@ -620,6 +626,14 @@
 			path = "Offline Button";
 			sourceTree = "<group>";
 		};
+		E211257F28891B7100ED217A /* Search Text */ = {
+			isa = PBXGroup;
+			children = (
+				E211258028891B8100ED217A /* SearchTextView.swift */,
+			);
+			path = "Search Text";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -699,6 +713,7 @@
 			files = (
 				B58526EB2855F16C00853428 /* OfflineViewModel.swift in Sources */,
 				AE6D05CE25BC920B00BEDDD4 /* SecureStorage.swift in Sources */,
+				EA392DA1286E4B1700F1DF39 /* SearchBarViewModel.swift in Sources */,
 				AEC6228D2591DB03003FDE66 /* NetworkService.swift in Sources */,
 				EAD3F678285F1B6D008C4332 /* MainViewModel.swift in Sources */,
 				AE0F3B12258A0F9200227428 /* SidebarView.swift in Sources */,
@@ -716,6 +731,7 @@
 				AEED4D7025BB7CFB00756570 /* SecureStore.swift in Sources */,
 				AE9541EE259AC30600B1AA15 /* Preview+Networking.swift in Sources */,
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,
+				E211258128891B8100ED217A /* SearchTextView.swift in Sources */,
 				AE8F4DD925BD93A3007E6053 /* Preview+TokenStore.swift in Sources */,
 				AEAB957A25A51FD900F4B7D3 /* SearchStore.swift in Sources */,
 				AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */,
@@ -897,7 +913,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
-				DEVELOPMENT_TEAM = JU92V989UQ;
+				DEVELOPMENT_TEAM = Y2X6PL3L9L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";
@@ -923,7 +939,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
-				DEVELOPMENT_TEAM = JU92V989UQ;
+				DEVELOPMENT_TEAM = Y2X6PL3L9L;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pinboarding/Supporting Files/Info.plist";

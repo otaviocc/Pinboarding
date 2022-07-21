@@ -68,6 +68,13 @@ final class ViewModelFactory: ObservableObject {
         )
     }
 
+    func makeSearchBarViewModel(
+    ) -> SearchTextViewModel {
+        SearchTextViewModel(
+            searchStore: container.resolve()
+        )
+    }
+
     func makeSidebarViewModel(
     ) -> SidebarViewModel {
         let searchStore: SearchStore = container.resolve()

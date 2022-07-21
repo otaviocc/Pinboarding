@@ -8,6 +8,7 @@ struct MainView: View {
 
     @EnvironmentObject private var viewModelFactory: ViewModelFactory
     @ObservedObject private var viewModel: MainViewModel
+    @State private var searchExpanded = false
 
     // MARK: - Life cycle
 
@@ -29,10 +30,10 @@ struct MainView: View {
         }
         .toolbar {
             ToolbarItemGroup {
-                OfflineView(
-                    viewModel: viewModelFactory.makeOfflineViewModel()
-                )
+                SearchBarView()
+            }
 
+            ToolbarItemGroup {
                 RefreshView(
                     viewModel: viewModelFactory.makeRefreshViewModel()
                 )

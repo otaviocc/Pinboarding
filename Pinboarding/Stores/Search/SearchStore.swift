@@ -18,7 +18,6 @@ final class SearchStore: ObservableObject {
     init(
     ) {
         self.searchTermPublisher()
-            .receive(on: RunLoop.main)
             .assign(to: \.searchTerm, on: self)
             .store(in: &cancellables)
     }

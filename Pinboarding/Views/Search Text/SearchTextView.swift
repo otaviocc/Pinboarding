@@ -19,16 +19,19 @@ struct SearchTextView: View {
 
     var body: some View {
         ZStack(alignment: .trailing) {
-            TextField("Search", text: $viewModel.currentSearchTerm)
-                .focusable(true)
-                .focused($isFocused)
-                .textFieldStyle(RoundedBorderTextFieldStyle())
-                .frame(minWidth: 200)
-                .onChange(of: isFocused) { newValue in
-                    if newValue == false && viewModel.currentSearchTerm.isEmpty {
-                        action()
-                    }
+            TextField(
+                "Search",
+                text: $viewModel.currentSearchTerm
+            )
+            .focusable(true)
+            .focused($isFocused)
+            .textFieldStyle(RoundedBorderTextFieldStyle())
+            .frame(minWidth: 200)
+            .onChange(of: isFocused) { newValue in
+                if newValue == false && viewModel.currentSearchTerm.isEmpty {
+                    action()
                 }
+            }
 
             Button(
                 action:  {

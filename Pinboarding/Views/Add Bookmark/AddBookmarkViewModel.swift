@@ -66,9 +66,7 @@ final class AddBookmarkViewModel: ObservableObject {
     // MARK: - Public
 
     func addBookmark() async {
-        guard
-            let url = URL(string: urlString)
-        else {
+        guard let url = URL(string: urlString) else {
             return
         }
 

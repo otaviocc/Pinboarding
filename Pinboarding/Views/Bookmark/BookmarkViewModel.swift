@@ -6,6 +6,7 @@ protocol BookmarkViewModelProtocol {
     var description: String { get }
     var tags: String { get }
     var url: URL { get }
+    var hostURL: String { get }
     var iconURL: URL? { get }
     var isPrivate: Bool { get }
 }
@@ -18,6 +19,7 @@ final class BookmarkViewModel: BookmarkViewModelProtocol {
     let description: String
     let tags: String
     let url: URL
+    let hostURL: String
     let iconURL: URL?
     let isPrivate: Bool
 
@@ -30,6 +32,7 @@ final class BookmarkViewModel: BookmarkViewModelProtocol {
         self.description = bookmark.abstract
         self.url = URL(string: bookmark.href)
             ?? URL(string: "https://www.pinboard.in")!
+        self.hostURL = url.host?.uppercased() ?? ""
         self.iconURL = URL(
             string: "https://www.google.com/s2/favicons?sz=16&domain=\(url.host!)"
         )

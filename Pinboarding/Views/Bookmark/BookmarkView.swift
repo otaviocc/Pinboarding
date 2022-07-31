@@ -28,10 +28,14 @@ struct BookmarkView: View {
             }
             .frame(width: 16, height: 16)
 
-            VStack(alignment: .leading, spacing: 8) {
+            VStack(alignment: .leading, spacing: 4) {
+                Text(viewModel.hostURL)
+                    .font(.caption)
+                    .foregroundColor(.secondary)
+
                 HStack(alignment: .top) {
                     Text(viewModel.title)
-                        .font(.title)
+                        .font(.title2)
                         .foregroundColor(.primary)
                         .help(viewModel.url.absoluteString)
 
@@ -74,7 +78,7 @@ struct BookmarkView: View {
                 }
             }
         }
-        .padding()
+        .padding(4)
     }
 }
 
@@ -87,6 +91,7 @@ struct BookmarkView_Previews: PreviewProvider {
         var description = "Nulla purus urna, fermentum eu tristique non, bibendum nec purus."
         var tags = "tag1, tag2, tag3, tag4"
         var url = URL(string: "https://otaviocc.github.io")!
+        let hostURL = "OTAVIO.CC"
         var iconURL: URL? = nil
         var isPrivate = true
     }
@@ -96,6 +101,7 @@ struct BookmarkView_Previews: PreviewProvider {
         var description = ""
         var tags = "tag1, tag2, tag3, tag4"
         var url = URL(string: "https://otaviocc.github.io")!
+        let hostURL = "OTAVIO.CC"
         var iconURL: URL? = nil
         var isPrivate = false
     }

@@ -22,9 +22,13 @@ struct QRCodeButton: View {
         Button(
             action: { showPopover.toggle() },
             label: {
-                Image(systemName: Icon.qrCode)
-                    .font(.title3)
+                HStack {
+                    Image(systemName: Icon.qrCode)
+                        .font(.title3)
                     .foregroundColor(.accentColor)
+
+                    Text("QR Code")
+                }
             }
         )
         .buttonStyle(PlainButtonStyle())

@@ -5,6 +5,9 @@ struct BookmarkView: View {
 
     // MARK: - Properties
 
+    @EnvironmentObject private var viewModelFactory: ViewModelFactory
+    @State private var isPopoverPresented = false
+
     private let viewModel: BookmarkViewModelProtocol
 
     // MARK: - Life cycle
@@ -38,27 +41,6 @@ struct BookmarkView: View {
                         .font(.title2)
                         .foregroundColor(.primary)
                         .help(viewModel.url.absoluteString)
-
-                    Spacer()
-
-                    HStack(alignment: .center, spacing: 8) {
-                        PrivateView(
-                            isPrivate: viewModel.isPrivate
-                        )
-
-                        QRCodeButton(
-                            url: viewModel.url
-                        )
-
-                        SafariButton(
-                            url: viewModel.url
-                        )
-
-                        ShareButton(
-                            title: viewModel.title,
-                            url: viewModel.url
-                        )
-                    }
                 }
 
                 if !viewModel.description.isEmpty {
@@ -78,7 +60,27 @@ struct BookmarkView: View {
                 }
             }
         }
+        .onTapGesture {
+            isPopoverPresented = true
+        }
+        .popover(isPresented: $isPopoverPresented, arrowEdge: .bottom) {
+            makeBookmarkActionView()
+        }
         .padding(4)
+    }
+
+    // MARK: - Private
+
+    @ViewBuilder
+    func makeBookmarkActionView(
+    ) -> some View {
+        BookmarkActionPopoverView(
+            viewModel: viewModelFactory.makeBookmarkActionPopoverViewModel(
+                isPrivate: viewModel.isPrivate,
+                title: viewModel.title,
+                url: viewModel.url
+            )
+        )
     }
 }
 

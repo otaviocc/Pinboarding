@@ -78,6 +78,8 @@
 		B5F2203528413859003A667E /* MicroContainer in Frameworks */ = {isa = PBXBuildFile; productRef = B5F2203428413859003A667E /* MicroContainer */; };
 		E211258128891B8100ED217A /* SearchTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E211258028891B8100ED217A /* SearchTextView.swift */; };
 		E245D1AA2848B8970085DF60 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E245D1A92848B8970085DF60 /* MicroPinboard */; };
+		E2BB493D2897D90900937C3D /* BookmarkActionPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB493B2897D90900937C3D /* BookmarkActionPopoverView.swift */; };
+		E2BB493E2897D90900937C3D /* BookmarkActionPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB493C2897D90900937C3D /* BookmarkActionPopoverViewModel.swift */; };
 		EA392DA1286E4B1700F1DF39 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA392DA0286E4B1700F1DF39 /* SearchBarViewModel.swift */; };
 		EAD3F678285F1B6D008C4332 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F677285F1B6D008C4332 /* MainViewModel.swift */; };
 		EAD3F67A285F233E008C4332 /* Preview+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */; };
@@ -157,6 +159,8 @@
 		B58526EC2855F17600853428 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		E211258028891B8100ED217A /* SearchTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextView.swift; sourceTree = "<group>"; };
+		E2BB493B2897D90900937C3D /* BookmarkActionPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkActionPopoverView.swift; sourceTree = "<group>"; };
+		E2BB493C2897D90900937C3D /* BookmarkActionPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkActionPopoverViewModel.swift; sourceTree = "<group>"; };
 		EA392DA0286E4B1700F1DF39 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		EAD3F677285F1B6D008C4332 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Dependencies.swift"; sourceTree = "<group>"; };
@@ -351,6 +355,7 @@
 				AE3675FF258AAF6700F57A3C /* Add Bookmark */,
 				B52AFFAD28560FE80074CF65 /* Add Button */,
 				AE367606258AAF9B00F57A3C /* Bookmark */,
+				E2BB493A2897D8F500937C3D /* Bookmark Action Popover */,
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
 				AE83841A2597B63400A4C5A7 /* Bookmarks List */,
 				AE494F40258ABE5200CFECB6 /* Main */,
@@ -634,6 +639,15 @@
 			path = "Search Text";
 			sourceTree = "<group>";
 		};
+		E2BB493A2897D8F500937C3D /* Bookmark Action Popover */ = {
+			isa = PBXGroup;
+			children = (
+				E2BB493B2897D90900937C3D /* BookmarkActionPopoverView.swift */,
+				E2BB493C2897D90900937C3D /* BookmarkActionPopoverViewModel.swift */,
+			);
+			path = "Bookmark Action Popover";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -739,6 +753,7 @@
 				AE793006258675DB00A68947 /* MainView.swift in Sources */,
 				B5308B1E2841DE87006A9B11 /* ViewModelFactory.swift in Sources */,
 				AEF0DF11258ECB8D000F4BFF /* GeneralViewModel.swift in Sources */,
+				E2BB493D2897D90900937C3D /* BookmarkActionPopoverView.swift in Sources */,
 				AECC8C0B25F9460A008568EE /* QRCodeButton.swift in Sources */,
 				AE78871E261B256700FBCC38 /* Preview+AppEnvironment.swift in Sources */,
 				AE9541F7259B2D8800B1AA15 /* MyBookmarksSectionView.swift in Sources */,
@@ -755,6 +770,7 @@
 				EAD3F67C285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift in Sources */,
 				AE0F3B13258A0F9200227428 /* SidebarViewModel.swift in Sources */,
 				AE8384182597B5AE00A4C5A7 /* BookmarksListView.swift in Sources */,
+				E2BB493E2897D90900937C3D /* BookmarkActionPopoverViewModel.swift in Sources */,
 				AEC72E0E259780FF008C7FF3 /* Preview+Persistence.swift in Sources */,
 				AE3FC50E25E0680E00A91B3A /* NWPathMonitor.swift in Sources */,
 				AECE16F32591BD640024DC88 /* Pinboarding.xcdatamodeld in Sources */,

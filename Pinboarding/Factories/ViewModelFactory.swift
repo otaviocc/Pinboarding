@@ -1,4 +1,5 @@
 import Combine
+import Foundation
 import MicroContainer
 import Network
 
@@ -44,6 +45,18 @@ final class ViewModelFactory: ObservableObject {
     ) -> BookmarkViewModelProtocol {
         BookmarkViewModel(
             bookmark: bookmark
+        )
+    }
+
+    func makeBookmarkActionPopoverViewModel(
+        isPrivate: Bool,
+        title: String,
+        url: URL
+    ) -> BookmarkActionPopoverViewModel {
+        BookmarkActionPopoverViewModel(
+            isPrivate: isPrivate,
+            title: title,
+            url: url
         )
     }
 

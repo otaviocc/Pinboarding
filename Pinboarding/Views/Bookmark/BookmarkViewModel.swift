@@ -1,17 +1,7 @@
 import Combine
 import Foundation
 
-protocol BookmarkViewModelProtocol {
-    var title: String { get }
-    var description: String { get }
-    var tags: String { get }
-    var url: URL { get }
-    var hostURL: String { get }
-    var iconURL: URL? { get }
-    var isPrivate: Bool { get }
-}
-
-final class BookmarkViewModel: BookmarkViewModelProtocol {
+final class BookmarkViewModel {
 
     // MARK: - Properties
 
@@ -24,6 +14,24 @@ final class BookmarkViewModel: BookmarkViewModelProtocol {
     let isPrivate: Bool
 
     // MARK: - Life cycle
+
+    init(
+        title: String,
+        description: String,
+        tags: String,
+        url: URL,
+        hostURL: String,
+        iconURL: URL?,
+        isPrivate: Bool
+    ) {
+        self.title = title
+        self.description = description
+        self.tags = tags
+        self.url = url
+        self.hostURL = hostURL
+        self.iconURL = iconURL
+        self.isPrivate = isPrivate
+    }
 
     init(
         bookmark: Bookmark

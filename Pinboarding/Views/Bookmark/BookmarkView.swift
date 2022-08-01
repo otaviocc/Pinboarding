@@ -8,12 +8,12 @@ struct BookmarkView: View {
     @EnvironmentObject private var viewModelFactory: ViewModelFactory
     @State private var isPopoverPresented = false
 
-    private let viewModel: BookmarkViewModelProtocol
+    private let viewModel: BookmarkViewModel
 
     // MARK: - Life cycle
 
     init(
-        viewModel: BookmarkViewModelProtocol
+        viewModel: BookmarkViewModel
     ) {
         self.viewModel = viewModel
     }
@@ -88,37 +88,17 @@ struct BookmarkView: View {
 
 struct BookmarkView_Previews: PreviewProvider {
 
-    struct BookmarkMock: BookmarkViewModelProtocol {
-        var title = "Lorem Ipsum"
-        var description = "Nulla purus urna, fermentum eu tristique non, bibendum nec purus."
-        var tags = "tag1, tag2, tag3, tag4"
-        var url = URL(string: "https://otaviocc.github.io")!
-        let hostURL = "OTAVIO.CC"
-        var iconURL: URL? = nil
-        var isPrivate = true
-    }
-
-    struct EmptyDescriptionBookmarkMock: BookmarkViewModelProtocol {
-        var title = "Lorem Ipsum"
-        var description = ""
-        var tags = "tag1, tag2, tag3, tag4"
-        var url = URL(string: "https://otaviocc.github.io")!
-        let hostURL = "OTAVIO.CC"
-        var iconURL: URL? = nil
-        var isPrivate = false
-    }
-
     static var previews: some View {
         Group {
-            BookmarkView(viewModel: BookmarkMock())
+            BookmarkView(viewModel: Preview.makeBookmarkViewModel())
                 .frame(width: 320)
                 .preferredColorScheme(.light)
 
-            BookmarkView(viewModel: BookmarkMock())
+            BookmarkView(viewModel: Preview.makeBookmarkViewModel())
                 .frame(width: 320)
                 .preferredColorScheme(.dark)
 
-            BookmarkView(viewModel: EmptyDescriptionBookmarkMock())
+            BookmarkView(viewModel: Preview.makeEmptyBookmarkViewModel())
                 .frame(width: 320)
                 .preferredColorScheme(.dark)
         }

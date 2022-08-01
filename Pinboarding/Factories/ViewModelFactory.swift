@@ -42,7 +42,7 @@ final class ViewModelFactory: ObservableObject {
 
     func makeBookmarkViewModel(
         bookmark: Bookmark
-    ) -> BookmarkViewModelProtocol {
+    ) -> BookmarkViewModel {
         BookmarkViewModel(
             bookmark: bookmark
         )

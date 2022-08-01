@@ -8,7 +8,7 @@ final class OfflineViewModel: ObservableObject {
     @Published private(set) var isOnline = false
 
     var iconName: String {
-        isOnline ? Icon.online : Icon.alert
+        isOnline ? Asset.Connection.online: Asset.Connection.offline
     }
 
     var iconTooltip: String {

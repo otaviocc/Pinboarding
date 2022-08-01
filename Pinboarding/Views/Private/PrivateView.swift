@@ -18,7 +18,7 @@ struct PrivateView: View {
 
     var body: some View {
         Image(
-            systemName: isPrivate ? Icon.lockPrivate : Icon.lockPublic
+            systemName: isPrivate ? Asset.Lock.closed : Asset.Lock.open
         )
         .help("Bookmark visibility")
     }

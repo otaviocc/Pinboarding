@@ -23,7 +23,7 @@ struct SafariButton: View {
             action: { openURL(url) },
             label: {
                 HStack {
-                    Image(systemName: Icon.browser)
+                    Image(systemName: Asset.Action.open)
                         .font(.title3)
                         .foregroundColor(.accentColor)
 

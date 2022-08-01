@@ -60,7 +60,7 @@ private extension Image {
                 )
             }
 
-        return image ?? Image(systemName: Icon.qrCodePlaceholder)
+        return image ?? Image(systemName: Asset.QRCode.placeholder)
     }
 }
 

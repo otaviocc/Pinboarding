@@ -26,7 +26,7 @@ struct ShareButton: View {
             action: { showPicker = true },
             label: {
                 HStack {
-                    Image(systemName: Icon.share)
+                    Image(systemName: Asset.Action.share)
                         .font(.title3)
                         .foregroundColor(.accentColor)
 

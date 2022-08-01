@@ -20,7 +20,7 @@ struct RefreshView: View {
         Button(
             action: { viewModel.refresh() },
             label: {
-                Image(systemName: Icon.refresh)
+                Image(systemName: Asset.Action.refresh)
             }
         )
         .disabled(viewModel.isReloading)

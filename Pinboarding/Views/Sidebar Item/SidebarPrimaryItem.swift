@@ -10,10 +10,10 @@ enum SidebarPrimaryItem: String, CaseIterable {
 
     var iconName: String {
         switch self {
-        case .all: return Icon.allBookmarks
-        case .public: return Icon.publicBookmarks
-        case .private: return Icon.privateBookmarks
-        case .unread: return Icon.unreadBookmarks
+        case .all: return Asset.Bookmark.all
+        case .public: return Asset.Bookmark.public
+        case .private: return Asset.Bookmark.private
+        case .unread: return Asset.Bookmark.unread
         }
     }
 

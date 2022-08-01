@@ -13,7 +13,7 @@ struct AddView: View {
     var body: some View {
         Button(
             action: { showAddBookmark.toggle() },
-            label: { Image(systemName: Icon.addBookmark) }
+            label: { Image(systemName: Asset.Action.add) }
         )
         .help("Add a new bookmark")
     }

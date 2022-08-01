@@ -43,7 +43,7 @@ struct SearchTextView: View {
                     isFocused = false
                 },
                 label:  {
-                    Image(systemName: Icon.clear)
+                    Image(systemName: Asset.Action.clear)
                 }
             )
             .buttonStyle(BorderlessButtonStyle())

@@ -20,8 +20,6 @@ struct PrivateView: View {
         Image(
             systemName: isPrivate ? Icon.lockPrivate : Icon.lockPublic
         )
-        .font(.title3)
-        .foregroundColor(.accentColor)
         .help("Bookmark visibility")
     }
 }

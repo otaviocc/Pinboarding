@@ -22,19 +22,10 @@ struct BookmarkView: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            AsyncImage(url: viewModel.iconURL) { phase in
-                if let image = phase.image {
-                    image
-                } else {
-                    Image(systemName: "link")
-                }
-            }
-            .frame(width: 16, height: 16)
+            makeWebsideImage()
 
             VStack(alignment: .leading, spacing: 4) {
-                Text(viewModel.hostURL)
-                    .font(.caption)
-                    .foregroundColor(.secondary)
+                makeHeader()
 
                 HStack(alignment: .top) {
                     Text(viewModel.title)
@@ -72,6 +63,19 @@ struct BookmarkView: View {
     // MARK: - Private
 
     @ViewBuilder
+    func makeWebsideImage(
+    ) -> some View {
+        AsyncImage(url: viewModel.iconURL) { phase in
+            if let image = phase.image {
+                image
+            } else {
+                Image(systemName: "link")
+            }
+        }
+        .frame(width: 16, height: 16)
+    }
+
+    @ViewBuilder
     func makeBookmarkActionView(
     ) -> some View {
         BookmarkActionPopoverView(
@@ -81,6 +85,22 @@ struct BookmarkView: View {
                 url: viewModel.url
             )
         )
+    }
+
+    @ViewBuilder
+    func makeHeader(
+    ) -> some View {
+        HStack(alignment: .center, spacing: 2) {
+            Text(viewModel.hostURL)
+                .font(.caption)
+                .foregroundColor(.secondary)
+
+            PrivateView(
+                isPrivate: viewModel.isPrivate
+            )
+            .font(.caption)
+            .foregroundColor(.secondary)
+        }
     }
 }
 

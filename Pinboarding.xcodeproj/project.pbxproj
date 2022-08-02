@@ -77,6 +77,8 @@
 		B5CE3A522838D2000014FE73 /* NetworkServiceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */; };
 		B5F2203528413859003A667E /* MicroContainer in Frameworks */ = {isa = PBXBuildFile; productRef = B5F2203428413859003A667E /* MicroContainer */; };
 		E211258128891B8100ED217A /* SearchTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E211258028891B8100ED217A /* SearchTextView.swift */; };
+		E214C0E128995CF100954004 /* MicroBlogButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214C0E028995CF100954004 /* MicroBlogButton.swift */; };
+		E214C0E3289970DC00954004 /* MicroBlogButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E214C0E2289970DC00954004 /* MicroBlogButtonViewModel.swift */; };
 		E245D1AA2848B8970085DF60 /* MicroPinboard in Frameworks */ = {isa = PBXBuildFile; productRef = E245D1A92848B8970085DF60 /* MicroPinboard */; };
 		E2BB493D2897D90900937C3D /* BookmarkActionPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB493B2897D90900937C3D /* BookmarkActionPopoverView.swift */; };
 		E2BB493E2897D90900937C3D /* BookmarkActionPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB493C2897D90900937C3D /* BookmarkActionPopoverViewModel.swift */; };
@@ -160,6 +162,8 @@
 		B58526EC2855F17600853428 /* OfflineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineView.swift; sourceTree = "<group>"; };
 		B5CE3A512838D2000014FE73 /* NetworkServiceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServiceError.swift; sourceTree = "<group>"; };
 		E211258028891B8100ED217A /* SearchTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextView.swift; sourceTree = "<group>"; };
+		E214C0E028995CF100954004 /* MicroBlogButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroBlogButton.swift; sourceTree = "<group>"; };
+		E214C0E2289970DC00954004 /* MicroBlogButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicroBlogButtonViewModel.swift; sourceTree = "<group>"; };
 		E2BB493B2897D90900937C3D /* BookmarkActionPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkActionPopoverView.swift; sourceTree = "<group>"; };
 		E2BB493C2897D90900937C3D /* BookmarkActionPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkActionPopoverViewModel.swift; sourceTree = "<group>"; };
 		E2BB493F2897F67500937C3D /* Preview+BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+BookmarkViewModel.swift"; sourceTree = "<group>"; };
@@ -361,6 +365,7 @@
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
 				AE83841A2597B63400A4C5A7 /* Bookmarks List */,
 				AE494F40258ABE5200CFECB6 /* Main */,
+				E214C0DF28995CCF00954004 /* Micro.blog Button */,
 				B58526E92855F15200853428 /* Offline Button */,
 				AED88E15264E9E6000EE0CB3 /* Predicting TextField */,
 				AE9F993C25A15F58001D2889 /* Private */,
@@ -642,6 +647,15 @@
 			path = "Search Text";
 			sourceTree = "<group>";
 		};
+		E214C0DF28995CCF00954004 /* Micro.blog Button */ = {
+			isa = PBXGroup;
+			children = (
+				E214C0E028995CF100954004 /* MicroBlogButton.swift */,
+				E214C0E2289970DC00954004 /* MicroBlogButtonViewModel.swift */,
+			);
+			path = "Micro.blog Button";
+			sourceTree = "<group>";
+		};
 		E2BB493A2897D8F500937C3D /* Bookmark Action Popover */ = {
 			isa = PBXGroup;
 			children = (
@@ -737,6 +751,7 @@
 				AE039704258E5B3900D744FB /* LoginViewModel.swift in Sources */,
 				AE00EA07258AD5B1002D9558 /* PinboardRepository.swift in Sources */,
 				AE9541FA259B2DD500B1AA15 /* MyBookmarksSectionViewModel.swift in Sources */,
+				E214C0E128995CF100954004 /* MicroBlogButton.swift in Sources */,
 				AE2E0AA525AB71530077CBDC /* BookmarkCommands.swift in Sources */,
 				AE12D7832597DDCB007A9EFB /* BookmarksListViewModel.swift in Sources */,
 				E2BB49402897F67500937C3D /* Preview+BookmarkViewModel.swift in Sources */,
@@ -746,6 +761,7 @@
 				AE10FAEA2594D54500C79B82 /* Tag+CoreDataClass.swift in Sources */,
 				AE317AF92588FD9D00B7420A /* SettingsView.swift in Sources */,
 				AE10FAED2594D54500C79B82 /* Bookmark+CoreDataClass.swift in Sources */,
+				E214C0E3289970DC00954004 /* MicroBlogButtonViewModel.swift in Sources */,
 				AEED4D7025BB7CFB00756570 /* SecureStore.swift in Sources */,
 				AE9541EE259AC30600B1AA15 /* Preview+Networking.swift in Sources */,
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,

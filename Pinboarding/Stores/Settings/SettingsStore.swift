@@ -8,6 +8,7 @@ final class SettingsStore {
     private enum Key {
         static let isPrivate = "settingsIsPrivate"
         static let isToRead = "settingsIsToRead"
+        static let showMicroBlog = "settingsShowMicroBlog"
         static let lastSyncDate = "syncLastUpdate"
     }
 
@@ -59,6 +60,20 @@ final class SettingsStore {
             )
             changesSubject.send(
                 .lastSyncDate(lastSyncDate)
+            )
+        }
+    }
+
+    /// Flat used to store preferences for Micro.blog integration.
+    var showMicroBlog: Bool {
+        get { userDefaults.bool(forKey: Key.showMicroBlog) }
+        set {
+            userDefaults.setValue(
+                newValue,
+                forKey: Key.showMicroBlog
+            )
+            changesSubject.send(
+                .isToRead(showMicroBlog)
             )
         }
     }

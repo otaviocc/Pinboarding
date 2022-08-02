@@ -56,6 +56,15 @@ final class ViewModelFactory: ObservableObject {
         BookmarkActionPopoverViewModel(
             isPrivate: isPrivate,
             title: title,
+            url: url,
+            settingsStore: container.resolve()
+        )
+    }
+
+    func makeMicroBlogButtonViewModel(
+        url: URL
+    ) -> MicroBlogButtonViewModel {
+        MicroBlogButtonViewModel(
             url: url
         )
     }

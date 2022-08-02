@@ -4,13 +4,17 @@ extension Preview {
 
     /// User Defaults Store for SwiftUI Previews.
     static func makeSettingsStore(
+        isPrivate: Bool = true,
+        isToRead: Bool = false,
+        showMicroBlog: Bool = true
     ) -> SettingsStore {
         let store = SettingsStore(
             userDefaults: makePreviewUserDefaults()
         )
 
-        store.isPrivate = true
-        store.isToRead = false
+        store.isPrivate = isPrivate
+        store.isToRead = isToRead
+        store.showMicroBlog = showMicroBlog
 
         return store
     }

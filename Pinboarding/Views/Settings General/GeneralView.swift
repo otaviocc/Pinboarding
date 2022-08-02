@@ -33,6 +33,16 @@ struct GeneralView: View {
                 isOn: $viewModel.isToRead
             )
             .rightColumnAlignmentGuide()
+
+            HStack {
+                Text("Micro.blog")
+
+                Toggle(
+                    "Show \"Read on Micro.blog\"",
+                    isOn: $viewModel.showMicroBlog
+                )
+                .rightColumnAlignmentGuide()
+            }
         }
         .padding()
     }
@@ -45,15 +55,19 @@ struct GeneralView_Previews: PreviewProvider {
     static var previews: some View {
         Group {
             GeneralView(
-                viewModel: GeneralViewModel(
-                    settingsStore: previewAppEnvironment.settingsStore
+                viewModel: .init(
+                    settingsStore: Preview.makeSettingsStore()
                 )
             )
             .preferredColorScheme(.light)
 
             GeneralView(
-                viewModel: GeneralViewModel(
-                    settingsStore: previewAppEnvironment.settingsStore
+                viewModel: .init(
+                    settingsStore: Preview.makeSettingsStore(
+                        isPrivate: false,
+                        isToRead: true,
+                        showMicroBlog: false
+                    )
                 )
             )
             .preferredColorScheme(.dark)

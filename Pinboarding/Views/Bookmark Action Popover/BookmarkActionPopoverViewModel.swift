@@ -8,16 +8,19 @@ final class BookmarkActionPopoverViewModel: ObservableObject {
     let isPrivate: Bool
     let title: String
     let url: URL
+    let showMicroBlog: Bool
 
     // MARK: - Life cycle
 
     init(
         isPrivate: Bool,
         title: String,
-        url: URL
+        url: URL,
+        settingsStore: SettingsStore
     ) {
         self.isPrivate = isPrivate
         self.title = title
         self.url = url
+        self.showMicroBlog = settingsStore.showMicroBlog
     }
 }

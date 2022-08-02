@@ -42,13 +42,9 @@ struct BookmarkView: View {
                         .truncationMode(.tail)
                 }
 
-                HStack {
-                    Spacer()
-
-                    Text(viewModel.tags)
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
-                }
+                Text(viewModel.tags)
+                    .font(.footnote)
+                    .foregroundColor(.accentColor)
             }
         }
         .onTapGesture {

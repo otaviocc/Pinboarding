@@ -43,6 +43,16 @@ struct GeneralView: View {
                 )
                 .rightColumnAlignmentGuide()
             }
+
+            HStack {
+                Text("Images")
+
+                Toggle(
+                    "Show website icon",
+                    isOn: $viewModel.showWebsiteIcons
+                )
+                .rightColumnAlignmentGuide()
+            }
         }
         .padding()
     }

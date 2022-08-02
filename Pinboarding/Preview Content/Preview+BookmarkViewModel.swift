@@ -11,7 +11,8 @@ extension Preview {
             url: URL(string: "https://otaviocc.github.io")!,
             hostURL: "OTAVIO.CC",
             iconURL: nil,
-            isPrivate: true
+            isPrivate: true,
+            shouldShowWebsiteIcon: true
         )
     }
 
@@ -24,7 +25,8 @@ extension Preview {
             url: URL(string: "https://otaviocc.github.io")!,
             hostURL: "OTAVIO.CC",
             iconURL: nil,
-            isPrivate: true
+            isPrivate: true,
+            shouldShowWebsiteIcon: false
         )
     }
 }

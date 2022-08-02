@@ -7,6 +7,7 @@ final class GeneralViewModel: ObservableObject {
     @Published var isPrivate: Bool = true
     @Published var isToRead: Bool = false
     @Published var showMicroBlog: Bool = false
+    @Published var showWebsiteIcons: Bool = false
 
     private let settingsStore: SettingsStore
     private var cancellables = Set<AnyCancellable>()
@@ -20,6 +21,7 @@ final class GeneralViewModel: ObservableObject {
         self.isPrivate = settingsStore.isPrivate
         self.isToRead = settingsStore.isToRead
         self.showMicroBlog = settingsStore.showMicroBlog
+        self.showWebsiteIcons = settingsStore.showWebsiteIcons
 
         $isPrivate
             .dropFirst()
@@ -34,6 +36,11 @@ final class GeneralViewModel: ObservableObject {
         $showMicroBlog
             .dropFirst()
             .assign(to: \.settingsStore.showMicroBlog, on: self)
+            .store(in: &cancellables)
+
+        $showWebsiteIcons
+            .dropFirst()
+            .assign(to: \.settingsStore.showWebsiteIcons, on: self)
             .store(in: &cancellables)
     }
 }

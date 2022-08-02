@@ -9,6 +9,7 @@ final class SettingsStore {
         static let isPrivate = "settingsIsPrivate"
         static let isToRead = "settingsIsToRead"
         static let showMicroBlog = "settingsShowMicroBlog"
+        static let showWebsiteIcons = "settingsWebsiteIcons"
         static let lastSyncDate = "syncLastUpdate"
     }
 
@@ -64,7 +65,7 @@ final class SettingsStore {
         }
     }
 
-    /// Flat used to store preferences for Micro.blog integration.
+    /// Flag used to store preferences for Micro.blog integration.
     var showMicroBlog: Bool {
         get { userDefaults.bool(forKey: Key.showMicroBlog) }
         set {
@@ -73,7 +74,21 @@ final class SettingsStore {
                 forKey: Key.showMicroBlog
             )
             changesSubject.send(
-                .isToRead(showMicroBlog)
+                .showMicroBlog(showMicroBlog)
+            )
+        }
+    }
+
+    /// Flag used to store preferences website icons.
+    var showWebsiteIcons: Bool {
+        get { userDefaults.bool(forKey: Key.showWebsiteIcons) }
+        set {
+            userDefaults.setValue(
+                newValue,
+                forKey: Key.showWebsiteIcons
+            )
+            changesSubject.send(
+                .showWebsiteIcons(showWebsiteIcons)
             )
         }
     }

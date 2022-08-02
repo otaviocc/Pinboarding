@@ -44,7 +44,8 @@ final class ViewModelFactory: ObservableObject {
         bookmark: Bookmark
     ) -> BookmarkViewModel {
         BookmarkViewModel(
-            bookmark: bookmark
+            bookmark: bookmark,
+            settingsStore: container.resolve()
         )
     }
 

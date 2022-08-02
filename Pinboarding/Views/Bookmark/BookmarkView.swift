@@ -6,9 +6,9 @@ struct BookmarkView: View {
     // MARK: - Properties
 
     @EnvironmentObject private var viewModelFactory: ViewModelFactory
+    @ObservedObject private var viewModel: BookmarkViewModel
     @State private var isPopoverPresented = false
 
-    private let viewModel: BookmarkViewModel
 
     // MARK: - Life cycle
 
@@ -22,7 +22,9 @@ struct BookmarkView: View {
 
     var body: some View {
         HStack(alignment: .top, spacing: 8) {
-            makeWebsideImage()
+            if viewModel.shouldShowWebsiteIcon {
+                makeWebsideIcon()
+            }
 
             VStack(alignment: .leading, spacing: 4) {
                 makeHeader()
@@ -59,7 +61,7 @@ struct BookmarkView: View {
     // MARK: - Private
 
     @ViewBuilder
-    func makeWebsideImage(
+    func makeWebsideIcon(
     ) -> some View {
         AsyncImage(url: viewModel.iconURL) { phase in
             if let image = phase.image {

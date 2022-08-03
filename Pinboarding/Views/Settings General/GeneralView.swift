@@ -38,7 +38,7 @@ struct GeneralView: View {
                 Text("Micro.blog")
 
                 Toggle(
-                    "Show \"Read on Micro.blog\"",
+                    "Show \"Bookmark on Micro.blog\"",
                     isOn: $viewModel.showMicroBlog
                 )
                 .rightColumnAlignmentGuide()

@@ -23,11 +23,11 @@ struct MicroBlogButton: View {
             action: { openURL(viewModel.microblogURL) },
             label: {
                 HStack {
-                    Image(systemName: Asset.Action.open)
+                    Image(systemName: Asset.Action.bookmark)
                         .font(.title3)
                         .foregroundColor(.accentColor)
 
-                    Text("Read on Micro.blog")
+                    Text("Bookmark on Micro.blog")
                 }
             }
         )

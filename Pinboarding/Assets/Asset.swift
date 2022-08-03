@@ -16,6 +16,7 @@ enum Asset {
         static let share = "square.and.arrow.up"
         static let open = "safari"
         static let clear = "xmark.circle.fill"
+        static let bookmark = "bookmark"
     }
 
     enum Bookmark {

@@ -115,10 +115,6 @@ struct BookmarkView_Previews: PreviewProvider {
             BookmarkView(viewModel: Preview.makeBookmarkViewModel())
                 .frame(width: 320)
                 .preferredColorScheme(.dark)
-
-            BookmarkView(viewModel: Preview.makeEmptyBookmarkViewModel())
-                .frame(width: 320)
-                .preferredColorScheme(.dark)
         }
         .previewLayout(.sizeThatFits)
     }

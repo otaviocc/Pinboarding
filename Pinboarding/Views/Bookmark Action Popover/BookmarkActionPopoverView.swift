@@ -73,5 +73,6 @@ struct BookmarkActionPopoverView_Previews: PreviewProvider {
             .preferredColorScheme(.dark)
             .previewLayout(.sizeThatFits)
         }
+        .withPreviewDependencies()
     }
 }

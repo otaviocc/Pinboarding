@@ -30,6 +30,11 @@ protocol NetworkServiceProtocol {
         shared: String?,
         toread: String?
     ) async throws -> PostResponse
+
+    /// Deletes a bookmark.
+    func deleteBookmark(
+        url: URL
+    ) async throws -> Bool
 }
 
 final class NetworkService: NetworkServiceProtocol {
@@ -123,6 +128,15 @@ final class NetworkService: NetworkServiceProtocol {
         )
 
         return try await lastBookmark()
+    }
+
+    func deleteBookmark(
+        url: URL
+    ) async throws -> Bool {
+        let request = PostsAPIFactory.makeDeleteRequest(url: url)
+        let response = try await networkClient.run(request)
+
+        return response.value.resultCode == "done"
     }
 
     // MARK: - Private

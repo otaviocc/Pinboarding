@@ -16,6 +16,11 @@ protocol PinboardRepositoryProtocol {
         toread: Bool
     ) async throws
 
+    /// Deletes a bookmark.
+    func deleteBookmark(
+        url: URL
+    ) async
+
     /// Forces an update without waiting for the next
     /// x minutes to pass.
     func forceRefreshBookmarks(
@@ -74,6 +79,18 @@ final class PinboardRepository: PinboardRepositoryProtocol {
         )
 
         persistenceService.appendNewPost(bookmark)
+    }
+
+    func deleteBookmark(
+        url: URL
+    ) async {
+        guard let _ = try? await networkService.deleteBookmark(url: url) else {
+            return
+        }
+
+        DispatchQueue.main.async { [persistenceService] in
+            persistenceService.deleteBookmark(url)
+        }
     }
 
     func forceRefreshBookmarks(

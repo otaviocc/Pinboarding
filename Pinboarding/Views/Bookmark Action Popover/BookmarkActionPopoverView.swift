@@ -6,6 +6,7 @@ struct BookmarkActionPopoverView: View {
 
     @ObservedObject private var viewModel: BookmarkActionPopoverViewModel
     @EnvironmentObject private var viewModelFactory: ViewModelFactory
+    @Environment(\.presentationMode) var presentationMode
 
     // MARK: - Life cycle
 
@@ -35,6 +36,14 @@ struct BookmarkActionPopoverView: View {
                 )
             }
 
+            DeleteButton(
+                url: viewModel.url,
+                action: {
+                    presentationMode.wrappedValue.dismiss()
+                    viewModel.deleteBookmark()
+                }
+            )
+
             ShareButton(
                 title: viewModel.title,
                 url: viewModel.url
@@ -54,6 +63,7 @@ struct BookmarkActionPopoverView_Previews: PreviewProvider {
                     isPrivate: true,
                     title: "Some fake title",
                     url: URL(string: "https://otavio.cc")!,
+                    repository: previewAppEnvironment.repository,
                     settingsStore: Preview.makeSettingsStore()
                 )
             )
@@ -65,6 +75,7 @@ struct BookmarkActionPopoverView_Previews: PreviewProvider {
                     isPrivate: true,
                     title: "Some fake title",
                     url: URL(string: "https://otavio.cc")!,
+                    repository: previewAppEnvironment.repository,
                     settingsStore: Preview.makeSettingsStore(
                         showMicroBlog: false
                     )

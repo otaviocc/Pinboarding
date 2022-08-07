@@ -84,6 +84,7 @@
 		E2BB493E2897D90900937C3D /* BookmarkActionPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB493C2897D90900937C3D /* BookmarkActionPopoverViewModel.swift */; };
 		E2BB49402897F67500937C3D /* Preview+BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB493F2897F67500937C3D /* Preview+BookmarkViewModel.swift */; };
 		EA392DA1286E4B1700F1DF39 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA392DA0286E4B1700F1DF39 /* SearchBarViewModel.swift */; };
+		EA9FAFB328A04BB2009172D1 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9FAFB228A04BB2009172D1 /* DeleteButton.swift */; };
 		EAD3F678285F1B6D008C4332 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F677285F1B6D008C4332 /* MainViewModel.swift */; };
 		EAD3F67A285F233E008C4332 /* Preview+Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */; };
 		EAD3F67C285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift in Sources */ = {isa = PBXBuildFile; fileRef = EAD3F67B285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift */; };
@@ -168,6 +169,7 @@
 		E2BB493C2897D90900937C3D /* BookmarkActionPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkActionPopoverViewModel.swift; sourceTree = "<group>"; };
 		E2BB493F2897F67500937C3D /* Preview+BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+BookmarkViewModel.swift"; sourceTree = "<group>"; };
 		EA392DA0286E4B1700F1DF39 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
+		EA9FAFB228A04BB2009172D1 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
 		EAD3F677285F1B6D008C4332 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
 		EAD3F679285F233E008C4332 /* Preview+Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+Dependencies.swift"; sourceTree = "<group>"; };
 		EAD3F67B285F26E7008C4332 /* Preview+NWPathMonitorPathPublishing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+NWPathMonitorPathPublishing.swift"; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 				E2BB493A2897D8F500937C3D /* Bookmark Action Popover */,
 				AE367604258AAF8F00F57A3C /* Bookmarks */,
 				AE83841A2597B63400A4C5A7 /* Bookmarks List */,
+				EA9FAFB128A04B99009172D1 /* Delete Button */,
 				AE494F40258ABE5200CFECB6 /* Main */,
 				E214C0DF28995CCF00954004 /* Micro.blog Button */,
 				B58526E92855F15200853428 /* Offline Button */,
@@ -665,6 +668,14 @@
 			path = "Bookmark Action Popover";
 			sourceTree = "<group>";
 		};
+		EA9FAFB128A04B99009172D1 /* Delete Button */ = {
+			isa = PBXGroup;
+			children = (
+				EA9FAFB228A04BB2009172D1 /* DeleteButton.swift */,
+			);
+			path = "Delete Button";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -767,6 +778,7 @@
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,
 				E211258128891B8100ED217A /* SearchTextView.swift in Sources */,
 				AE8F4DD925BD93A3007E6053 /* Preview+TokenStore.swift in Sources */,
+				EA9FAFB328A04BB2009172D1 /* DeleteButton.swift in Sources */,
 				AEAB957A25A51FD900F4B7D3 /* SearchStore.swift in Sources */,
 				AE0F3B18258A339C00227428 /* SidebarItemView.swift in Sources */,
 				AEC72E112597890E008C7FF3 /* Preview.swift in Sources */,

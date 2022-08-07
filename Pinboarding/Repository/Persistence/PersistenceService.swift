@@ -17,6 +17,11 @@ protocol PersistenceServiceProtocol {
     func addAllPosts(
         _ posts: [PostResponse]
     )
+
+    /// Delete a bookmark.
+    func deleteBookmark(
+        _ postURL: URL
+    )
 }
 
 final class PersistenceService: PersistenceServiceProtocol {
@@ -67,6 +72,23 @@ final class PersistenceService: PersistenceServiceProtocol {
         addNewBookmarks(posts)
         removeDeletedBookmarks(posts)
         removeUnusedTags()
+    }
+
+    func deleteBookmark(
+        _ postURL: URL
+    ) {
+        let request = NSFetchRequest<Bookmark>(
+            entityName: "Bookmark"
+        )
+
+        request.predicate = NSPredicate(
+            format: "href == %@",
+            postURL.absoluteString
+        )
+
+        removeManagedObject(
+            fetchRequest: request
+        )
     }
 
     // MARK: - Private

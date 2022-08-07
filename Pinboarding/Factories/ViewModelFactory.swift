@@ -58,6 +58,7 @@ final class ViewModelFactory: ObservableObject {
             isPrivate: isPrivate,
             title: title,
             url: url,
+            repository: container.resolve(),
             settingsStore: container.resolve()
         )
     }

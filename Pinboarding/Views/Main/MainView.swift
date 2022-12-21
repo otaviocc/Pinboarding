@@ -25,8 +25,12 @@ struct MainView: View {
             SidebarView(
                 viewModel: viewModelFactory.makeSidebarViewModel()
             )
+            .frame(minWidth: 160, idealWidth: 160)
 
-            BookmarksView(viewModel: .all)
+            BookmarksView(
+                viewModel: .all
+            )
+            .frame(minWidth: 320, idealWidth: 640)
         }
         .toolbar {
             ToolbarItemGroup {

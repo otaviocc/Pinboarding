@@ -21,17 +21,20 @@ struct MainView: View {
     // MARK: - Public
 
     var body: some View {
-        NavigationView {
-            SidebarView(
-                viewModel: viewModelFactory.makeSidebarViewModel()
-            )
-            .frame(minWidth: 160, idealWidth: 160)
-
-            BookmarksView(
-                viewModel: .all
-            )
-            .frame(minWidth: 320, idealWidth: 640)
-        }
+        NavigationSplitView(
+            sidebar: {
+                SidebarView(
+                    viewModel: viewModelFactory.makeSidebarViewModel()
+                )
+                .frame(minWidth: 160, idealWidth: 160)
+            },
+            detail: {
+                BookmarksView(
+                    viewModel: .all
+                )
+                .frame(minWidth: 320, idealWidth: 640)
+            }
+        )
         .toolbar {
             ToolbarItemGroup {
                 SearchBarView()

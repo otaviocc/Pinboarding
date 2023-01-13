@@ -8,7 +8,7 @@ struct MainView: View {
 
     @ObservedObject private var viewModel: MainViewModel
     @EnvironmentObject private var viewModelFactory: ViewModelFactory
-    @EnvironmentObject private var navigationModel: NavigationModel
+    @EnvironmentObject private var navigationStore: NavigationStore
     @State private var searchExpanded = false
 
     // MARK: - Life cycle
@@ -32,7 +32,7 @@ struct MainView: View {
             detail: {
                 BookmarksView(
                     viewModel: viewModelFactory.makeBookmarksListViewModel(
-                        item: navigationModel.path
+                        item: navigationStore.selection
                     )
                 )
                 .frame(minWidth: 320, idealWidth: 640)

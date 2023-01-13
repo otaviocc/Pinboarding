@@ -14,7 +14,7 @@ final class PinboardingAppEnvironment {
     var repository: PinboardRepositoryProtocol { container.resolve() }
     var searchStore: SearchStore { container.resolve() }
     var persistenceService: PersistenceServiceProtocol { container.resolve() }
-    var navigationModel: NavigationModel { container.resolve() }
+    var navigationStore: NavigationStore { container.resolve() }
 
     // MARK: - Life cycle
 
@@ -101,10 +101,10 @@ final class PinboardingAppEnvironment {
         }
 
         container.register(
-            type: NavigationModel.self,
+            type: NavigationStore.self,
             allocation: .static
         ) { _ in
-            NavigationModel()
+            NavigationStore()
         }
     }
 }

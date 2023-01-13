@@ -6,7 +6,7 @@ struct SidebarView: View {
 
     @ObservedObject private var viewModel: SidebarViewModel
     @EnvironmentObject private var viewModelFactory: ViewModelFactory
-    @EnvironmentObject private var navigationModel: NavigationModel
+    @EnvironmentObject private var navigationStore: NavigationStore
 
     // MARK: - Life cycle
 
@@ -20,7 +20,7 @@ struct SidebarView: View {
 
     var body: some View {
         VStack {
-            List(selection: $navigationModel.path) {
+            List(selection: $navigationStore.selection) {
                 MyBookmarksSectionView(
                     viewModel: viewModelFactory.makeMyBookmarksSectionViewModel()
                 )

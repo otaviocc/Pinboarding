@@ -83,7 +83,7 @@
 		E2BB493D2897D90900937C3D /* BookmarkActionPopoverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB493B2897D90900937C3D /* BookmarkActionPopoverView.swift */; };
 		E2BB493E2897D90900937C3D /* BookmarkActionPopoverViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB493C2897D90900937C3D /* BookmarkActionPopoverViewModel.swift */; };
 		E2BB49402897F67500937C3D /* Preview+BookmarkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E2BB493F2897F67500937C3D /* Preview+BookmarkViewModel.swift */; };
-		EA03F0662971043D003C588C /* NavigationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03F0652971043D003C588C /* NavigationModel.swift */; };
+		EA03F0662971043D003C588C /* NavigationStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03F0652971043D003C588C /* NavigationStore.swift */; };
 		EA03F068297105EC003C588C /* NavigationDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA03F067297105EC003C588C /* NavigationDestination.swift */; };
 		EA392DA1286E4B1700F1DF39 /* SearchBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA392DA0286E4B1700F1DF39 /* SearchBarViewModel.swift */; };
 		EA9FAFB328A04BB2009172D1 /* DeleteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA9FAFB228A04BB2009172D1 /* DeleteButton.swift */; };
@@ -170,7 +170,7 @@
 		E2BB493B2897D90900937C3D /* BookmarkActionPopoverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkActionPopoverView.swift; sourceTree = "<group>"; };
 		E2BB493C2897D90900937C3D /* BookmarkActionPopoverViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookmarkActionPopoverViewModel.swift; sourceTree = "<group>"; };
 		E2BB493F2897F67500937C3D /* Preview+BookmarkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preview+BookmarkViewModel.swift"; sourceTree = "<group>"; };
-		EA03F0652971043D003C588C /* NavigationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationModel.swift; sourceTree = "<group>"; };
+		EA03F0652971043D003C588C /* NavigationStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationStore.swift; sourceTree = "<group>"; };
 		EA03F067297105EC003C588C /* NavigationDestination.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationDestination.swift; sourceTree = "<group>"; };
 		EA392DA0286E4B1700F1DF39 /* SearchBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBarViewModel.swift; sourceTree = "<group>"; };
 		EA9FAFB228A04BB2009172D1 /* DeleteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteButton.swift; sourceTree = "<group>"; };
@@ -676,7 +676,7 @@
 		EA03F06429710427003C588C /* Navigation */ = {
 			isa = PBXGroup;
 			children = (
-				EA03F0652971043D003C588C /* NavigationModel.swift */,
+				EA03F0652971043D003C588C /* NavigationStore.swift */,
 				EA03F067297105EC003C588C /* NavigationDestination.swift */,
 			);
 			path = Navigation;
@@ -721,7 +721,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1230;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1420;
 				TargetAttributes = {
 					AE792FFF258675DB00A68947 = {
 						CreatedOnToolsVersion = 12.3;
@@ -790,7 +790,7 @@
 				AEED4D7025BB7CFB00756570 /* SecureStore.swift in Sources */,
 				AE9541EE259AC30600B1AA15 /* Preview+Networking.swift in Sources */,
 				AEBFB5062589D9FF001521A2 /* BookmarkView.swift in Sources */,
-				EA03F0662971043D003C588C /* NavigationModel.swift in Sources */,
+				EA03F0662971043D003C588C /* NavigationStore.swift in Sources */,
 				E211258128891B8100ED217A /* SearchTextView.swift in Sources */,
 				AE8F4DD925BD93A3007E6053 /* Preview+TokenStore.swift in Sources */,
 				EA9FAFB328A04BB2009172D1 /* DeleteButton.swift in Sources */,
@@ -886,6 +886,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -947,6 +948,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -976,6 +978,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
 				DEVELOPMENT_TEAM = JU92V989UQ;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -1002,6 +1005,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "Pinboarding/Preview\\ Content";
 				DEVELOPMENT_TEAM = JU92V989UQ;
 				ENABLE_HARDENED_RUNTIME = YES;

@@ -20,9 +20,7 @@ struct MyBookmarksSectionView: View {
         Section(header: Text("My Bookmarks")) {
             ForEach(viewModel.primaryItems, id: \.self) { item in
                 NavigationLink(
-                    destination: BookmarksView(
-                        viewModel: item.listType
-                    ),
+                    value: NavigationDestination(item: item),
                     label: {
                         SidebarItemView(
                             title: item.title,

@@ -16,9 +16,7 @@ struct TagsSectionView: View {
         Section(header: Text("Tags")) {
             ForEach(tags, id: \.self) { tag in
                 NavigationLink(
-                    destination: BookmarksView(
-                        viewModel: .tag(name: tag.name)
-                    ),
+                    value: NavigationDestination.tag(name: tag.name),
                     label: {
                         SidebarItemView(
                             title: tag.name,

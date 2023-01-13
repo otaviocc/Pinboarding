@@ -16,6 +16,7 @@ import Foundation
             )
             .environmentObject(environment.viewModelFactory)
             .environmentObject(environment.searchStore)
+            .environmentObject(environment.navigationModel)
             .environment(
                 \.managedObjectContext,
                  environment.persistenceService.container.viewContext

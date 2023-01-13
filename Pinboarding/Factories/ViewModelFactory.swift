@@ -110,4 +110,12 @@ final class ViewModelFactory: ObservableObject {
             searchStore: searchStore
         )
     }
+
+    func makeBookmarksListViewModel(
+        item: NavigationDestination
+    ) -> BookmarksListViewModel {
+        BookmarksListViewModel(
+            item: item
+        )
+    }
 }

@@ -41,6 +41,7 @@ struct BookmarkView: View {
                         .font(.body)
                         .foregroundColor(.secondary)
                         .lineLimit(3)
+                        .lineSpacing(2)
                         .truncationMode(.tail)
                 }
 

@@ -1,6 +1,6 @@
 import Foundation
 
-enum BookmarksListViewModel {
+enum BookmarksListViewModel: Hashable {
     case all
     case `public`
     case `private`
@@ -30,6 +30,20 @@ enum BookmarksListViewModel {
                 format: "ANY tags.name = %@",
                 tagName
             )
+        }
+    }
+
+    // MARK: - Life cycle
+
+    init(
+        item: NavigationDestination
+    ) {
+        switch item {
+        case .all: self = .all
+        case .public: self = .public
+        case .private: self = .private
+        case .unread: self = .unread
+        case .tag(let name): self = .tag(name: name)
         }
     }
 }
